@@ -1,0 +1,41 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JWGWXT03G7ZRCJ65YMZB10",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "hioffer/__init__.py",
+    "hioffer/agents/__init__.py",
+    "hioffer/agents/advisor_scout.py",
+    "hioffer/agents/librarian.py",
+    "hioffer/agents/program_researcher.py",
+    "hioffer/agents/verifier.py",
+    "hioffer/agents/writer.py",
+    "hioffer/cli.py",
+    "hioffer/config.py",
+    "hioffer/llm.py",
+    "hioffer/orchestrator.py",
+    "hioffer/state.py",
+    "hioffer/tools/__init__.py",
+    "hioffer/tools/files.py",
+    "hioffer/tools/scholar.py",
+    "hioffer/tools/web.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 396,
+    "cache_creation_tokens": 49858,
+    "cache_read_tokens": 1942863,
+    "output_tokens": 32808,
+    "api_call_count": 18
+  }
+}

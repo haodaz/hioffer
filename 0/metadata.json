@@ -1,0 +1,89 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JWGWXT03G7ZRCJ65YMZB10",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T12:27:38.692364Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "hioffer/__init__.py",
+    "hioffer/agents/__init__.py",
+    "hioffer/agents/advisor_scout.py",
+    "hioffer/agents/librarian.py",
+    "hioffer/agents/program_researcher.py",
+    "hioffer/agents/verifier.py",
+    "hioffer/agents/writer.py",
+    "hioffer/cli.py",
+    "hioffer/config.py",
+    "hioffer/llm.py",
+    "hioffer/orchestrator.py",
+    "hioffer/state.py",
+    "hioffer/tools/__init__.py",
+    "hioffer/tools/files.py",
+    "hioffer/tools/scholar.py",
+    "hioffer/tools/web.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "5f21d4b08b00",
+  "checkpoint_transcript_start": 202,
+  "transcript_lines_at_start": 202,
+  "compact_transcript_start": 33,
+  "token_usage": {
+    "input_tokens": 396,
+    "cache_creation_tokens": 49858,
+    "cache_read_tokens": 1942863,
+    "output_tokens": 32808,
+    "api_call_count": 18
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T12:27:38.662634Z",
+    "agent_lines": 41,
+    "agent_removed": 0,
+    "human_added": 306,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 347,
+    "total_lines_changed": 347,
+    "agent_percentage": 11.815561959654179,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 931,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "examples/applicants/priya/README.md": 4,
+        "examples/applicants/priya/cv.md": 28,
+        "examples/applicants/priya/interests.md": 9,
+        "examples/applicants/priya/profile.md": 8,
+        "examples/applicants/priya/programs.yaml": 6,
+        "examples/applicants/priya/recommenders.md": 5,
+        "examples/applicants/priya/sop_draft.md": 13,
+        "hioffer/__init__.py": 1,
+        "hioffer/agents/advisor_scout.py": 38,
+        "hioffer/agents/librarian.py": 36,
+        "hioffer/agents/program_researcher.py": 33,
+        "hioffer/agents/verifier.py": 61,
+        "hioffer/agents/writer.py": 53,
+        "hioffer/cli.py": 33,
+        "hioffer/config.py": 48,
+        "hioffer/llm.py": 130,
+        "hioffer/orchestrator.py": 91,
+        "hioffer/state.py": 38,
+        "hioffer/tools/files.py": 21,
+        "hioffer/tools/scholar.py": 88,
+        "hioffer/tools/web.py": 56,
+        "pyproject.toml": 3,
+        "uv.lock": 128
+      }
+    }
+  ]
+}
