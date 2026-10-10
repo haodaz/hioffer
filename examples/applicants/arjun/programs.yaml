@@ -1,0 +1,13 @@
+programs:
+  - name: University of Michigan Robotics PhD
+    short: UMich
+    institution: University of Michigan
+    department: Robotics Department
+    admissions_url: https://robotics.umich.edu/academics/graduate/admissions/
+    faculty_url: https://robotics.umich.edu/people/faculty/
+  - name: CMU Robotics Institute PhD
+    short: CMU
+    institution: Carnegie Mellon University
+    department: Robotics Institute
+    admissions_url: https://www.ri.cmu.edu/education/academic-programs/doctoral-robotics-program/
+    faculty_url: https://www.ri.cmu.edu/people/

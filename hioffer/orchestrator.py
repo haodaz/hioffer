@@ -27,7 +27,12 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
     ws = Workspace(Path(workspace_root) / applicant_dir.name)
     programs = load_programs(applicant_dir, ws.root)
     if program_filter:
-        programs = [p for p in programs if any(f.lower() in p["name"].lower() for f in program_filter)]
+        def matches(p: dict) -> bool:
+            hay = " ".join([p["name"], p.get("short", ""), p.get("institution", "")]).lower()
+            return any(f.lower() in hay for f in program_filter)
+        programs = [p for p in programs if matches(p)]
+        if not programs:
+            raise SystemExit(f"no program matches {program_filter}; known: {[p['name'] for p in load_programs(applicant_dir, ws.root)]}")
 
     # Step 1: material library (shared by all programs).
     if ws.has("library"):

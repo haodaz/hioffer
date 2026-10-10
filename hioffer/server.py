@@ -24,7 +24,7 @@ from datetime import date
 from . import config
 from .agents.decider import compare_offers
 from .agents.interview import evaluate_answer, plan_interview
-from .agents.places import build_places
+from .agents.places import build_places, build_rankings
 from .chat import ChatAgent
 from .programs import load_programs
 from .state import Workspace
@@ -83,8 +83,21 @@ def build_state(applicant: str) -> dict:
             ws.load("signals", []),
         ),
         "places": ws.load("places", {}),
+        "rankings": ws.load("rankings", {}),
         "summary": ws.load("summary"),
     }
+
+
+@app.post("/api/applicants/{applicant}/rankings")
+def refresh_rankings(applicant: str) -> dict:
+    """Approximate rankings for every institution in the program list and the latest recommendations."""
+    ws = _ws(applicant)
+    names = [p["institution"] for p in load_programs(APPLICANTS_DIR / applicant, ws.root)]
+    rec = ws.load("recommendations") or {}
+    names += [it["institution"] for items in rec.get("tiers", {}).values() for it in items]
+    rankings = build_rankings(list(dict.fromkeys(names)), ws.load("rankings", {}))
+    ws.save("rankings", rankings)
+    return rankings
 
 
 @app.post("/api/applicants/{applicant}/places")

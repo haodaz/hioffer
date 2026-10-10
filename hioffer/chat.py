@@ -167,6 +167,7 @@ class ChatAgent:
         if not library:
             return {"error": "no material library yet; run the librarian first (run_prepare)"}
         rec = recommend_programs(library, country=country or "US", log=self._log)
+        self.ws.save("recommendations", rec)
         self.card("recommendations", {"existing": [p["institution"] for p in self.programs], **rec})
         return {"positioning": rec.get("positioning"), "tiers": {k: [(i["institution"], i["papers"]) for i in v] for k, v in rec.get("tiers", {}).items()}, "caveat": rec["caveat"]}
 

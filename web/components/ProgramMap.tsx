@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /** Leaflet via CDN (no bundler config, no API key) with OpenStreetMap tiles. */
 type Place = { lat: number; lng: number; city?: string; region?: string; climate?: { jan_low_c?: number; jul_high_c?: number; rain_days?: number }; living?: { cost_of_living?: string } };
-type Item = { name: string; short?: string; deadline?: string; advisors: number; status: string; place?: Place };
+type Item = { name: string; short?: string; deadline?: string; advisors: number; status: string; place?: Place; color?: string; note?: string };
 
 declare global {
   interface Window {
@@ -30,7 +30,7 @@ function loadLeaflet(): Promise<void> {
   });
 }
 
-export function ProgramMap({ items, selected, onSelect }: { items: Item[]; selected?: string; onSelect: (name: string) => void }) {
+export function ProgramMap({ items, selected, onSelect, height = 520 }: { items: Item[]; selected?: string; onSelect: (name: string) => void; height?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mapRef = useRef<any>(null);
@@ -52,7 +52,7 @@ export function ProgramMap({ items, selected, onSelect }: { items: Item[]; selec
         pts.push([lat, lng]);
         const icon = L.divIcon({
           className: "",
-          html: `<div style="background:#2f6bff;color:#fff;border-radius:999px;padding:4px 10px;font:600 12px system-ui;white-space:nowrap;box-shadow:0 2px 8px rgba(22,33,58,.25)">${it.short ?? it.name}</div>`,
+          html: `<div style="background:${it.color ?? "#2f6bff"};color:#fff;border-radius:999px;padding:4px 10px;font:600 12px system-ui;white-space:nowrap;box-shadow:0 2px 8px rgba(22,33,58,.25)">${it.short ?? it.name}</div>`,
           iconAnchor: [30, 14],
         });
         const c = it.place.climate ?? {};
@@ -62,7 +62,7 @@ export function ProgramMap({ items, selected, onSelect }: { items: Item[]; selec
             (c.jan_low_c != null ? `Jan low ${c.jan_low_c}°C · Jul high ${c.jul_high_c}°C · ${c.rain_days} rain days<br/>` : "") +
             (it.place.living?.cost_of_living ? `Cost of living: ${it.place.living.cost_of_living}<br/>` : "") +
             (it.deadline ? `Deadline: ${it.deadline}<br/>` : "") +
-            `${it.advisors} advisors · ${it.status}</div>`,
+            (it.note ? `${it.note}</div>` : `${it.advisors} advisors · ${it.status}</div>`),
         );
         m.on("click", () => onSelect(it.name));
         markersRef.current[it.name] = m;
@@ -83,5 +83,5 @@ export function ProgramMap({ items, selected, onSelect }: { items: Item[]; selec
     }
   }, [selected]);
 
-  return <div ref={ref} className="h-[520px] w-full overflow-hidden rounded-2xl border border-line" />;
+  return <div ref={ref} style={{ height }} className="w-full overflow-hidden rounded-2xl border border-line" />;
 }

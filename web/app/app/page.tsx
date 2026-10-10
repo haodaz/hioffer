@@ -86,7 +86,7 @@ function ChatPage() {
               </button>
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto p-3">
-              <CardView card={pane} t={t} onAction={(m) => onMessagesSeed(m)} />
+              <CardView card={pane.kind === "recommendations" ? { ...pane, rankings: state?.rankings } : pane} t={t} onAction={(m) => onMessagesSeed(m)} />
             </div>
           </aside>
         )}

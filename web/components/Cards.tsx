@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { Card } from "@/lib/api";
 import type { Key } from "@/lib/i18n";
 import { Icon } from "./Icons";
+import { ProgramMap } from "./ProgramMap";
 
 type T = (k: Key) => string;
 type Fact = { key: string; required?: string; value: string; source_url?: string; quote?: string };
@@ -477,14 +478,59 @@ export function OffersCard({ cmp, t }: { cmp: Comparison; t: T }) {
   );
 }
 
-type RecItem = { institution: string; department_guess?: string; papers?: number; reason: string; evidence_url?: string; tier: string };
+type RecItem = { institution: string; department_guess?: string; papers?: number; reason: string; evidence_url?: string; tier: string; geo?: { lat: number; lng: number; city?: string; region?: string; logo?: string | null } | null };
+const TIER_COLOR: Record<string, string> = { reach: "#c0262d", match: "#2f6bff", safety: "#15803d" };
+
+export type Ranking = { qs_world?: number | null; the_world?: number | null; usnews_cs?: number | null; csrankings_us?: number | null; year?: number; approx?: boolean; links?: Record<string, string> };
+const RANK_LABEL: Record<string, string> = { qs_world: "QS", the_world: "THE", usnews_cs: "US News CS", csrankings_us: "CSRankings" };
+
+/** Ranking chips. Always marked approximate; each chip links to the official ranking page. */
+export function RankChips({ r, compact }: { r?: Ranking | null; compact?: boolean }) {
+  if (!r) return null;
+  const keys = (["qs_world", "the_world", "usnews_cs", "csrankings_us"] as const).filter((k) => r[k] != null);
+  if (!keys.length) return null;
+  return (
+    <span className="inline-flex flex-wrap items-center gap-1">
+      {keys.map((k) => (
+        <a key={k} href={r.links?.[k]} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}
+           className="rounded-md bg-background px-1.5 py-0.5 text-[11px] text-muted hover:text-brand" title={`${RANK_LABEL[k]} ${r.year ?? ""} · approximate, verify`}>
+          {RANK_LABEL[k]} <b className="text-foreground">#{r[k]}</b>
+        </a>
+      ))}
+      {!compact && <span className="text-[11px] text-muted">≈ {r.year}</span>}
+    </span>
+  );
+}
+
+export function Logo({ src, name, size = 28 }: { src?: string | null; name: string; size?: number }) {
+  if (!src) return <span className="inline-flex shrink-0 items-center justify-center rounded-lg bg-brand-soft text-xs font-semibold text-brand-ink" style={{ width: size, height: size }}>{name.replace(/^(The )?University of /, "").slice(0, 1)}</span>;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt="" width={size} height={size} className="shrink-0 rounded-lg bg-white object-contain" style={{ width: size, height: size }} />;
+}
 export function RecommendationsCard({ card, t, onAction }: { card: Card; t: T; onAction: (m: string) => void }) {
   const tiers = (card.tiers as Record<string, RecItem[]>) ?? {};
   const existing = new Set((card.existing as string[]) ?? []);
   const label: Record<string, string> = { reach: t("reach"), match: t("match"), safety: t("safety") };
+  const mapItems = (["reach", "match", "safety"] as const).flatMap((k) =>
+    (tiers[k] ?? []).filter((it) => it.geo).map((it) => ({
+      name: it.institution, short: it.institution.replace(/^(The )?University of /, "U. "), advisors: 0, status: k, color: TIER_COLOR[k],
+      note: `${label[k]} · ${it.papers} ${t("papersShort")}`,
+      place: { lat: it.geo!.lat, lng: it.geo!.lng, city: it.geo!.city, region: it.geo!.region },
+    })),
+  );
   return (
     <div className="card">
       <div className="mb-1 text-sm font-semibold">{t("recommendations")}</div>
+      {mapItems.length > 0 && (
+        <div className="mb-3">
+          <ProgramMap items={mapItems} onSelect={() => {}} height={300} />
+          <div className="mt-1 flex gap-3 text-xs text-muted">
+            {(["reach", "match", "safety"] as const).map((k) => (
+              <span key={k} className="flex items-center gap-1"><span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: TIER_COLOR[k] }} /> {label[k]}</span>
+            ))}
+          </div>
+        </div>
+      )}
       {typeof card.positioning === "string" && <p className="mb-2 text-sm">{card.positioning}</p>}
       <p className="mb-2 text-xs text-muted">
         OpenAlex · {(card.queries as string[])?.join(" / ")} · {card.caveat as string}
@@ -495,8 +541,11 @@ export function RecommendationsCard({ card, t, onAction }: { card: Card; t: T; o
           <ul className="divide-y divide-line">
             {(tiers[k] ?? []).map((it) => (
               <li key={it.institution} className="flex flex-wrap items-center justify-between gap-2 py-1.5 text-sm">
+                <Logo src={it.geo?.logo} name={it.institution} />
                 <div className="min-w-0 flex-1">
                   <span className="font-medium">{it.institution}</span>
+                  {it.geo?.city && <span className="text-xs text-muted"> · {it.geo.city}</span>}
+                  <div><RankChips r={(card.rankings as Record<string, Ranking> | undefined)?.[it.institution]} compact /></div>
                   <span className="text-xs text-muted"> · {it.department_guess}</span>
                   {it.evidence_url && (
                     <a className="ml-2 text-xs text-brand underline" href={it.evidence_url} target="_blank" rel="noreferrer">

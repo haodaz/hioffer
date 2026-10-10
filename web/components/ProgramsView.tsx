@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Icon } from "@/components/Icons";
 import type { Key } from "@/lib/i18n";
 import { ProgramMap } from "./ProgramMap";
-import { RequirementsCard } from "./Cards";
+import { Logo, RankChips, RequirementsCard } from "./Cards";
 
 type T = (k: Key) => string;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,6 +30,8 @@ export function ProgramsView({ state, t, onAction }: { state: State; t: T; onAct
     facts: p.requirements?.facts?.length ?? 0,
     status: statusOf(p),
     place: places[p.name],
+    ranking: (state.rankings ?? {})[p.institution],
+    institution: p.institution,
     requirements: p.requirements,
   }));
   const modes = [
@@ -85,10 +87,14 @@ function PlaceCard({ it, t, active, onClick, compact }: { it: State; t: T; activ
   return (
     <button onClick={onClick} className={`card text-left transition hover:border-brand ${active ? "border-brand" : ""}`}>
       <div className="flex items-start justify-between gap-2">
-        <div>
-          <div className="font-semibold">{it.name}</div>
-          <div className="text-xs text-muted">
-            {p ? `${p.city}, ${p.region}` : "—"} · {it.deadline ? `${t("deadline")} ${it.deadline}` : ""}
+        <div className="flex items-start gap-3">
+          <Logo src={p?.logo} name={it.institution} size={36} />
+          <div>
+            <div className="font-semibold">{it.name}</div>
+            <div className="text-xs text-muted">
+              {p ? `${p.city}, ${p.region}` : "—"} · {it.deadline ? `${t("deadline")} ${it.deadline}` : ""}
+            </div>
+            <div className="mt-1"><RankChips r={it.ranking} compact={compact} /></div>
           </div>
         </div>
         <span className={`text-xs font-medium ${statusColor}`}>{t(`status_${it.status}` as Key)}</span>

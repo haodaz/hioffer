@@ -32,6 +32,18 @@ Return JSON: {"positioning": 2-3 sentences on where this profile sits and what w
   "papers": int, "reason": one sentence citing the count}}"""
 
 
+def institution_geo_by_id(inst_id: str) -> dict | None:
+    """City and coordinates from the OpenAlex institution record (cached by _get)."""
+    try:
+        r = _get(f"/institutions/{inst_id}", select="display_name,geo,image_thumbnail_url")
+    except Exception:
+        return None
+    g = r.get("geo") or {}
+    if g.get("latitude") is None:
+        return None
+    return {"city": g.get("city"), "region": g.get("region"), "country": g.get("country_code"), "lat": g["latitude"], "lng": g["longitude"], "logo": r.get("image_thumbnail_url")}
+
+
 @neatlogs.span(kind="AGENT", name="recommender")
 def recommend_programs(library: dict, country: str = "US", log=print) -> dict:
     interests = next((i["text"] for i in library["items"] if i["type"] == "interests"), "")
@@ -67,5 +79,7 @@ def recommend_programs(library: dict, country: str = "US", log=print) -> dict:
             it["papers"] = src.get("papers", it.get("papers"))
             it["evidence_url"] = src.get("evidence_url")
             it["tier"] = tier
+            it["openalex_id"] = src.get("openalex_id")
+            it["geo"] = institution_geo_by_id(src["openalex_id"]) if src.get("openalex_id") else None
     return {"queries": q.get("queries", []), "country": country, "candidates": ranked, **tiers,
             "caveat": "Paper counts are OpenAlex evidence of research activity; tiers add general knowledge of selectivity, not admissions data."}
