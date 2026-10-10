@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K3Z59B6BYZ75Z0V3EDYCB9",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "hioffer/agents/decider.py",
+    "hioffer/chat.py",
+    "hioffer/server.py",
+    "web/app/app/page.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 426,
+    "cache_creation_tokens": 33884,
+    "cache_read_tokens": 6067858,
+    "output_tokens": 19961,
+    "api_call_count": 18,
+    "subagent_tokens": {
+      "input_tokens": 12,
+      "cache_creation_tokens": 53268,
+      "cache_read_tokens": 188174,
+      "output_tokens": 86,
+      "api_call_count": 6
+    }
+  }
+}

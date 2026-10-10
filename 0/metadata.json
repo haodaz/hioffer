@@ -1,0 +1,108 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K3Z59B6BYZ75Z0V3EDYCB9",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T14:37:46.167035Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "hioffer/agents/decider.py",
+    "hioffer/chat.py",
+    "hioffer/server.py",
+    "web/app/app/page.tsx"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "ac7b45220fb4",
+  "checkpoint_transcript_start": 1719,
+  "transcript_lines_at_start": 1719,
+  "compact_transcript_start": 219,
+  "token_usage": {
+    "input_tokens": 426,
+    "cache_creation_tokens": 33884,
+    "cache_read_tokens": 6067858,
+    "output_tokens": 19961,
+    "api_call_count": 18,
+    "subagent_tokens": {
+      "input_tokens": 12,
+      "cache_creation_tokens": 53268,
+      "cache_read_tokens": 188174,
+      "output_tokens": 86,
+      "api_call_count": 6
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 24
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T14:37:46.045447Z",
+    "agent_lines": 11,
+    "agent_removed": 3,
+    "human_added": 13,
+    "human_modified": 6,
+    "human_removed": 0,
+    "total_committed": 30,
+    "total_lines_changed": 44,
+    "agent_percentage": 31.818181818181817,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 385,
+      "user_lines_removed": 6,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "examples/demo-workspace/priya/offers.json": 22,
+        "examples/demo-workspace/priya/signals.json": 38,
+        "hioffer/agents/decider.py": 38,
+        "hioffer/chat.py": 56,
+        "hioffer/server.py": 52,
+        "web/components/Cards.tsx": 94,
+        "web/components/Panels.tsx": 48,
+        "web/lib/api.ts": 9,
+        "web/lib/i18n.ts": 28
+      },
+      "user_removed_per_file": {
+        "hioffer/chat.py": 1,
+        "web/components/Panels.tsx": 5
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tool_use_id": "toolu_01LfoYekLgjvFQjrQ3AMEykx",
+  "agent_id": "a039932fa8c10f24b",
+  "subagent_type": "Explore",
+  "task_description": "Study zhijipro program recommendation",
+  "token_usage": {
+    "input_tokens": 12,
+    "cache_creation_tokens": 53268,
+    "cache_read_tokens": 188174,
+    "output_tokens": 86,
+    "api_call_count": 6
+  },
+  "started_at": "2026-10-10T10:35:51.601689-04:00",
+  "completed_at": "2026-10-10T10:36:25.320578-04:00"
+}
