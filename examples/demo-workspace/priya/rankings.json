@@ -1,0 +1,212 @@
+{
+  "University of Washington": {
+    "qs_world": 85,
+    "the_world": 92,
+    "usnews_cs": 6,
+    "csrankings_us": 3,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "University of Maryland": {
+    "qs_world": 148,
+    "the_world": 132,
+    "usnews_cs": 15,
+    "csrankings_us": 8,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Cornell": {
+    "qs_world": 13,
+    "the_world": 20,
+    "usnews_cs": 8,
+    "csrankings_us": 6,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Carnegie Mellon University": {
+    "qs_world": 52,
+    "the_world": 27,
+    "usnews_cs": 1,
+    "csrankings_us": 1,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Stanford University": {
+    "qs_world": 5,
+    "the_world": 4,
+    "usnews_cs": 3,
+    "csrankings_us": 4,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Massachusetts Institute of Technology": {
+    "qs_world": 1,
+    "the_world": 5,
+    "usnews_cs": 1,
+    "csrankings_us": 5,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Johns Hopkins University": {
+    "qs_world": 31,
+    "the_world": 15,
+    "usnews_cs": 21,
+    "csrankings_us": 15,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "University of Pennsylvania": {
+    "qs_world": 22,
+    "the_world": 14,
+    "usnews_cs": 18,
+    "csrankings_us": 12,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Georgia Institute of Technology": {
+    "qs_world": 97,
+    "the_world": 117,
+    "usnews_cs": 6,
+    "csrankings_us": 7,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "University of Illinois Urbana-Champaign": {
+    "qs_world": 111,
+    "the_world": 62,
+    "usnews_cs": 5,
+    "csrankings_us": 2,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "The University of Texas at Austin": {
+    "qs_world": 114,
+    "the_world": 71,
+    "usnews_cs": 11,
+    "csrankings_us": 10,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Northeastern University": {
+    "qs_world": 344,
+    "the_world": 351,
+    "usnews_cs": 30,
+    "csrankings_us": 25,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "University of Florida": {
+    "qs_world": 264,
+    "the_world": 201,
+    "usnews_cs": 34,
+    "csrankings_us": 30,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  },
+  "Purdue University West Lafayette": {
+    "qs_world": 109,
+    "the_world": 121,
+    "usnews_cs": 17,
+    "csrankings_us": 20,
+    "year": 2024,
+    "approx": true,
+    "caveat": "Approximate, from the model's training data; verify on the official sites.",
+    "links": {
+      "qs_world": "https://www.topuniversities.com/university-rankings/world-university-rankings",
+      "the_world": "https://www.timeshighereducation.com/world-university-rankings",
+      "usnews_cs": "https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings",
+      "csrankings_us": "https://csrankings.org/"
+    }
+  }
+}

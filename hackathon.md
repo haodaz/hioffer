@@ -121,6 +121,21 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   isolating the confounder — exactly the kind of thing an advisor would say. Plans and answers are cached in
   `workspace/priya/interviews/`.
 
+- **Logos and rankings.** Institution logos come from the OpenAlex institution record (Wikimedia). Rankings
+  (QS, THE, US News CS, CSRankings) have no free API, so one model call per batch returns approximate positions
+  that are labelled `≈ year` on every chip and link to the official ranking pages; the same honesty rule as the
+  living notes. Recommendations now also show a tier-coloured map (reach / match / safety).
+
+### 2026-10-10 — stress test with a second applicant (evening)
+
+- New fictional applicant `examples/applicants/arjun` (robotics / embodied AI, M.Tech at IISc, different file
+  mix, programs the agent has never seen: Michigan Robotics, CMU RI). Georgia Tech was dropped before the run
+  because both its pages returned 404 — a program the researcher cannot fetch is reported as not found, but the
+  test should exercise the pipeline, not a dead link.
+- **Finding 1 (before any model call):** `--program UMich` matched nothing because the CLI filter only looked
+  at the full program name, and the run then "succeeded" with an empty program list ($0.04 spent on the library).
+  Fixed: the filter matches name, short alias and institution, and an empty match now exits with the known names.
+
 ### 2026-10-10 — business plan and cost
 
 - **cfo.ai** (public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR; inputs `business/cfo-ai-inputs.md`, results

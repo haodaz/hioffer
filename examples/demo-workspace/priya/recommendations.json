@@ -238,7 +238,15 @@
         "papers": 197,
         "reason": "CMU leads all candidates with 197 papers including 91 on low-resource LMs and 75 on PEFT, making it the strongest research-activity fit for Priya's core topics, but selectivity at LTI is among the highest in NLP globally (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI74973139%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "reach"
+        "tier": "reach",
+        "openalex_id": "I74973139",
+        "geo": {
+          "city": "Pittsburgh",
+          "region": "Pennsylvania",
+          "country": "US",
+          "lat": 40.44062,
+          "lng": -79.99589
+        }
       },
       {
         "institution": "Stanford University",
@@ -246,7 +254,15 @@
         "papers": 116,
         "reason": "Stanford's 116 papers spanning 59 on low-resource LMs and 13 on code-switching evaluation align well with Priya's interests, but CS PhD admission selectivity is extremely high (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI97018004%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "reach"
+        "tier": "reach",
+        "openalex_id": "I97018004",
+        "geo": {
+          "city": "Stanford",
+          "region": "California",
+          "country": "US",
+          "lat": 37.42411,
+          "lng": -122.16608
+        }
       },
       {
         "institution": "Massachusetts Institute of Technology",
@@ -254,7 +270,15 @@
         "papers": 75,
         "reason": "MIT's 75 papers including 41 on PEFT and 34 on low-resource LMs show solid activity in Priya's areas, though overall CS PhD selectivity is among the most competitive in the US (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI63966007%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "reach"
+        "tier": "reach",
+        "openalex_id": "I63966007",
+        "geo": {
+          "city": "Cambridge",
+          "region": "Massachusetts",
+          "country": "US",
+          "lat": 42.3751,
+          "lng": -71.10561
+        }
       }
     ],
     "match": [
@@ -264,7 +288,15 @@
         "papers": 87,
         "reason": "JHU's 87 papers with 49 on low-resource LMs and strong historical presence in speech and multilingual NLP (CLSP) map directly onto Priya's code-switching and speech-text interests, and selectivity is high but navigable for a profile at this level (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI145311948%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "match"
+        "tier": "match",
+        "openalex_id": "I145311948",
+        "geo": {
+          "city": "Baltimore",
+          "region": "Maryland",
+          "country": "US",
+          "lat": 39.29038,
+          "lng": -76.61219
+        }
       },
       {
         "institution": "University of Pennsylvania",
@@ -272,7 +304,15 @@
         "papers": 77,
         "reason": "Penn's 77 papers include 8 on code-switching evaluation and 4 on speech-text multilingual models\u2014two of Priya's most specific research axes\u2014at a selectivity level that makes it a realistic target (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI79576946%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "match"
+        "tier": "match",
+        "openalex_id": "I79576946",
+        "geo": {
+          "city": "Philadelphia",
+          "region": "Pennsylvania",
+          "country": "US",
+          "lat": 39.95238,
+          "lng": -75.16362
+        }
       },
       {
         "institution": "Georgia Institute of Technology",
@@ -280,7 +320,15 @@
         "papers": 85,
         "reason": "Georgia Tech's 85 papers with 44 on PEFT and known strength in speech and NLP provide strong topical alignment, and PhD admission selectivity is competitive but typically more accessible than top-5 programs (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI130701444%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "match"
+        "tier": "match",
+        "openalex_id": "I130701444",
+        "geo": {
+          "city": "Atlanta",
+          "region": "Georgia",
+          "country": "US",
+          "lat": 33.749,
+          "lng": -84.38798
+        }
       },
       {
         "institution": "University of Illinois Urbana-Champaign",
@@ -288,7 +336,15 @@
         "papers": 76,
         "reason": "UIUC's 76 papers including 44 on PEFT and active multilingual NLP groups offer a good research fit, and PhD selectivity is high but the department's size increases placement probability for strong international applicants (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI157725225%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "match"
+        "tier": "match",
+        "openalex_id": "I157725225",
+        "geo": {
+          "city": "Urbana",
+          "region": "Illinois",
+          "country": "US",
+          "lat": 40.11059,
+          "lng": -88.20727
+        }
       },
       {
         "institution": "The University of Texas at Austin",
@@ -296,7 +352,15 @@
         "papers": 70,
         "reason": "UT Austin's 70 papers stand out with 4 on tokenizer adaptation multilingual and 5 on code-switching evaluation\u2014directly matching Priya's most specialized work\u2014at a selectivity level appropriate for a match tier (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI86519309%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "match"
+        "tier": "match",
+        "openalex_id": "I86519309",
+        "geo": {
+          "city": "Austin",
+          "region": "Texas",
+          "country": "US",
+          "lat": 30.26715,
+          "lng": -97.74306
+        }
       }
     ],
     "safety": [
@@ -306,7 +370,15 @@
         "papers": 74,
         "reason": "Northeastern's 74 papers including 37 on PEFT and 4 on speech-text multilingual models show meaningful activity in Priya's areas, and PhD admission selectivity is comparatively lower than peer research universities making it a viable safety (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI12912129%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "safety"
+        "tier": "safety",
+        "openalex_id": "I12912129",
+        "geo": {
+          "city": "Boston",
+          "region": "Massachusetts",
+          "country": "US",
+          "lat": 42.35843,
+          "lng": -71.05977
+        }
       },
       {
         "institution": "University of Florida",
@@ -314,7 +386,15 @@
         "papers": 37,
         "reason": "UF's 37 papers with 31 on low-resource LMs and 6 on code-switching evaluation confirm relevant faculty activity, and PhD program selectivity is considerably more accessible, providing a strong safety option (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI33213144%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Acode-switching%20evaluation",
-        "tier": "safety"
+        "tier": "safety",
+        "openalex_id": "I33213144",
+        "geo": {
+          "city": "Gainesville",
+          "region": "Florida",
+          "country": "US",
+          "lat": 29.65163,
+          "lng": -82.32483
+        }
       },
       {
         "institution": "Purdue University West Lafayette",
@@ -322,7 +402,15 @@
         "papers": 36,
         "reason": "Purdue's 36 papers including 31 on PEFT and 5 on code-switching evaluation show focused activity matching Priya's core methods, and overall PhD admission selectivity is lower than most peers on this list, making it a reliable safety (general knowledge, not data).",
         "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI219193219%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
-        "tier": "safety"
+        "tier": "safety",
+        "openalex_id": "I219193219",
+        "geo": {
+          "city": "West Lafayette",
+          "region": "Indiana",
+          "country": "US",
+          "lat": 40.42587,
+          "lng": -86.90807
+        }
       }
     ]
   },

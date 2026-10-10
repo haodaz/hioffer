@@ -23,7 +23,8 @@
       "international_note": "Seattle has a large, well-established international community with diverse Asian, East African, and Latin American neighborhoods, plentiful international grocery stores, and a major international airport (SEA-TAC) with global connections.",
       "caveat": "General knowledge as of the model's training; verify before deciding."
     },
-    "verify_url": "https://www.numbeo.com/cost-of-living/in/Seattle"
+    "verify_url": "https://www.numbeo.com/cost-of-living/in/Seattle",
+    "logo": "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/University%20of%20Washington%20signature.svg&width=300"
   },
   "University of Maryland CS PhD": {
     "institution": "University of Maryland, College Park",
@@ -49,7 +50,8 @@
       "international_note": "UMD hosts a large and diverse international student community, the D.C. metro area offers extensive international grocery options and cultural communities, and three major airports (BWI, DCA, IAD) provide strong global connectivity.",
       "caveat": "General knowledge as of the model's training; verify before deciding."
     },
-    "verify_url": "https://www.numbeo.com/cost-of-living/in/College-Park"
+    "verify_url": "https://www.numbeo.com/cost-of-living/in/College-Park",
+    "logo": "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/University%20of%20Maryland%20wordmark.svg&width=300"
   },
   "Cornell University CS PhD": {
     "institution": "Cornell University",
@@ -75,6 +77,7 @@
       "international_note": "Cornell's large, diverse international community supports a wide range of ethnic grocery stores, restaurants, and cultural organizations, and the closest major airports are in Syracuse and Rochester with occasional direct flights from larger hubs.",
       "caveat": "General knowledge as of the model's training; verify before deciding."
     },
-    "verify_url": "https://www.numbeo.com/cost-of-living/in/Ithaca"
+    "verify_url": "https://www.numbeo.com/cost-of-living/in/Ithaca",
+    "logo": "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Cornell%2BUniversity.jpg&width=300"
   }
 }
