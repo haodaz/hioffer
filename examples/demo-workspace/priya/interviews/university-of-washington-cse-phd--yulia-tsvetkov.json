@@ -1,0 +1,105 @@
+{
+  "advisor": "Yulia Tsvetkov",
+  "questions": [
+    {
+      "id": "q1",
+      "stage": "fit",
+      "question": "My lab's 'NLP for All' agenda focuses on extending language technology to communities that are left behind by mainstream NLP. How does your background with Tamil and Kannada connect to that broader mission, and what gaps do you think still need to be addressed for Indian languages specifically?",
+      "why": "Tsvetkov would want to assess whether Priya's technical Indian-language work reflects a genuine alignment with equity-driven NLP goals, not just engineering interest [lib:interests, lib:cv].",
+      "strong_answer_includes": [
+        "Connect personal/cultural motivation for working on Tamil/Kannada to systemic underrepresentation of Indian languages in LLM training data and benchmarks",
+        "Identify concrete gaps: lack of culturally grounded evaluation sets, tokenizer inefficiency penalizing Indic scripts, and scarcity of labeled data for code-switching",
+        "Reference awareness of Tsvetkov lab work (e.g., MAGNET on tokenization fairness, Voices Unheard on Yorùbá) to show the connection between African and Indian low-resource contexts"
+      ]
+    },
+    {
+      "id": "q2",
+      "stage": "your_project",
+      "question": "You found that open 7B models dropped 18–26 points on your Tamil–English code-switched evaluation set compared to monolingual Tamil. What do you believe is the primary driver of that drop—tokenization, lack of code-switched training data, or something else—and how did you try to isolate the cause?",
+      "why": "This is the central empirical finding in Priya's first-author paper and the professor would probe methodological rigor before considering the work as a foundation for PhD research [lib:cv, lib:sop_draft].",
+      "strong_answer_includes": [
+        "Describe ablations or error analyses performed (e.g., examining token fertility differences on CS vs. monolingual inputs, or analyzing error types like named-entity confusion vs. grammatical errors)",
+        "Acknowledge limitations of isolating causes without controlled training-data experiments and state what follow-up experiments would be needed",
+        "Mention awareness that tokenizer fragmentation of mixed-script input likely compounds the data-scarcity problem, linking to the Kannada tokenizer work"
+      ]
+    },
+    {
+      "id": "q3",
+      "stage": "your_project",
+      "question": "In your Kannada tokenizer adaptation, adding 6,000 tokens cut sentence length by 41% and improved QA F1 by 3.4 points. How did you decide on 6,000 tokens specifically, and did you analyze the trade-off between vocabulary size and the cost of re-training the embedding matrix?",
+      "why": "Tsvetkov's MAGNET paper directly addresses multilingual tokenization fairness, so she would scrutinize the design choices and trade-off analysis in Priya's most technically detailed project [lib:cv, paper: MAGNET/W4401042371 context].",
+      "strong_answer_includes": [
+        "Explain the vocabulary-size selection process (e.g., token fertility analysis, ablation over 2k/4k/6k/8k sizes, or a budget constraint from embedding-matrix parameter count)",
+        "Discuss embedding initialization strategy for new tokens (random vs. subword averaging) and how it affects convergence",
+        "Acknowledge open questions: whether gains hold across task types beyond QA, and how the approach would scale to a family of Indian languages simultaneously"
+      ]
+    },
+    {
+      "id": "q4",
+      "stage": "advisor_papers",
+      "question": "In 'Trusting Your Evidence: Hallucinate Less with Context-aware Decoding,' we show that models systematically under-weight retrieved context relative to their parametric knowledge. Do you think this faithfulness problem is more severe for multilingual or low-resource settings, and how might you test that hypothesis?",
+      "why": "Priya lists faithfulness evaluation as a core interest and RAG for Indian-language health/government information as a secondary goal, making this paper a direct bridge between her interests and Tsvetkov's recent work [lib:interests, paper:W4401042371].",
+      "strong_answer_includes": [
+        "Argue that low-resource languages likely have weaker parametric knowledge, so the model may either over-rely on (possibly noisy) context or fail to parse it—both are failure modes distinct from English",
+        "Propose a multilingual version of the CAD evaluation: retrieve context in Tamil/Kannada, measure how often the model reverts to English-centric or parametric answers",
+        "Connect to the evaluation methodology interest: need for non-translated benchmarks with culturally appropriate gold answers to measure faithfulness meaningfully"
+      ]
+    },
+    {
+      "id": "q5",
+      "stage": "methods",
+      "question": "You mention using PEFT/LoRA for LLM adaptation. For the tokenizer-adaptation setting—where you've added new vocabulary items—LoRA on the transformer layers alone may be insufficient because the new embedding rows are randomly initialized. How would you handle that mismatch in a parameter-efficient framework?",
+      "why": "Tsvetkov's lab works at the intersection of tokenization and LLM adaptation, and this is a precise technical pitfall in Priya's stated methodology that a careful advisor would probe [lib:cv, lib:interests].",
+      "strong_answer_includes": [
+        "Acknowledge the problem: new embedding rows need full gradient updates or smart initialization, while LoRA freezes most parameters",
+        "Propose a hybrid approach: full fine-tuning only for embedding/unembedding rows of new tokens plus LoRA on attention layers, keeping added parameters modest",
+        "Mention subword-averaging initialization as a way to reduce the number of steps needed before new embeddings are useful, citing relevant prior work"
+      ]
+    },
+    {
+      "id": "q6",
+      "stage": "future",
+      "question": "If you joined the lab, what would a two-year research agenda look like that connects your tokenization and code-switching work to a broader multilingual evaluation framework suitable for publication at a top venue?",
+      "why": "Tsvetkov would want to gauge whether Priya can scope a coherent multi-project arc rather than pursuing isolated engineering contributions, given the lab's emphasis on systematic multilingual NLP [lib:sop_draft, lib:interests].",
+      "strong_answer_includes": [
+        "Year 1: Extend the Tamil–English CS evaluation set methodology to additional Indian language pairs and release a benchmark, building on the existing 2,400-sentence set",
+        "Year 1–2: Develop a principled multilingual tokenizer adaptation pipeline (generalizing the Kannada work) with fairness metrics analogous to MAGNET's token-fertility disparity measure",
+        "Year 2: Connect evaluation + adaptation in an end-to-end study showing that tokenizer-fair models improve on culturally grounded benchmarks, targeting ACL/EMNLP"
+      ]
+    },
+    {
+      "id": "q7",
+      "stage": "logistics",
+      "question": "You're finishing your B.Tech in May 2027 and targeting Fall 2027 admission. Do you have any constraints on funding, timeline, or collaboration—for example, obligations to Microsoft Research India or your undergraduate advisor—that would affect when and how you could start?",
+      "why": "Priya's recommender notes and internship history raise practical questions about any post-internship commitments or return obligations that Tsvetkov would need to clarify before making an offer [lib:cv, lib:recommenders].",
+      "strong_answer_includes": [
+        "Clearly state there are no contractual return obligations from the MSR India internship and confirm the May 2027 graduation date is on track",
+        "Mention willingness to start any pre-arrival remote collaboration (e.g., replicating a lab paper) to demonstrate initiative and fit",
+        "Express openness to RA/TA funding structures and confirm awareness that UW CSE PhD students are typically fully funded, showing the application is well-researched"
+      ]
+    }
+  ],
+  "program": "University of Washington CSE PhD",
+  "stages": [
+    "fit",
+    "your_project",
+    "advisor_papers",
+    "methods",
+    "future",
+    "logistics"
+  ],
+  "caveat": "Plausible questions from your materials and this professor's papers, not the real interview.",
+  "answers": [
+    {
+      "question_id": "q2",
+      "answer": "We built the set from 2,400 sentences collected from Tamil forums and chat logs, then had two annotators mark code-switch points. We compared each model on the same prompts in monolingual Tamil and in code-switched form, so the 18 to 26 point drop is the within-model difference. The main threat is that code-switched sentences are also slightly longer, so part of the drop could be length rather than switching; we did not control for that yet.",
+      "scores": {
+        "fit": 2,
+        "depth": 1,
+        "clarity": 3
+      },
+      "feedback": "You spent almost your entire answer on dataset construction details the professor didn't ask about, then landed on a single confounder ('code-switched sentences are also slightly longer') without doing any ablation to investigate it—that's not an isolation attempt, it's an admission of a gap. Tsvetkov's question explicitly asked about tokenization versus data scarcity versus other causes, and you never touched tokenizer fertility, error-type analysis, or training-data hypotheses, which are the exact levers a NLP researcher would be expected to reach for first.",
+      "follow_up": "If you ran a token-fertility analysis on your 2,400 sentences and found that code-switched inputs fragment into, say, 40% more subword tokens than monolingual Tamil, how would you then disentangle whether the performance drop is driven by that fragmentation versus the model simply never seeing Tamil–English mixed text during pretraining?"
+    }
+  ]
+}

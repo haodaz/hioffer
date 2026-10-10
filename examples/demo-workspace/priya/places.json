@@ -1,0 +1,80 @@
+{
+  "University of Washington CSE PhD": {
+    "institution": "University of Washington",
+    "openalex_id": "https://openalex.org/I201448701",
+    "homepage": "https://www.washington.edu",
+    "city": "Seattle",
+    "region": "Washington",
+    "country": "United States",
+    "lat": 47.60621,
+    "lng": -122.33207,
+    "climate": {
+      "year": 2025,
+      "jan_low_c": 1.8,
+      "jul_high_c": 25.9,
+      "rain_days": 127,
+      "precip_mm": 1036,
+      "source": "Open-Meteo archive (ERA5), daily values aggregated"
+    },
+    "living": {
+      "cost_of_living": "high",
+      "rent_note": "Rent in Seattle is high relative to most US university towns, though UW's location in the University District offers relatively more affordable options close to campus.",
+      "city_feel": "Seattle is a large, mid-paced Pacific Northwest city with an extensive bus and light-rail network, easy access to mountains, forests, and water, and a strong tech-industry presence.",
+      "international_note": "Seattle has a large, well-established international community with diverse Asian, East African, and Latin American neighborhoods, plentiful international grocery stores, and a major international airport (SEA-TAC) with global connections.",
+      "caveat": "General knowledge as of the model's training; verify before deciding."
+    },
+    "verify_url": "https://www.numbeo.com/cost-of-living/in/Seattle"
+  },
+  "University of Maryland CS PhD": {
+    "institution": "University of Maryland, College Park",
+    "openalex_id": "https://openalex.org/I66946132",
+    "homepage": "https://umd.edu",
+    "city": "College Park",
+    "region": "Maryland",
+    "country": "United States",
+    "lat": 38.98067,
+    "lng": -76.93692,
+    "climate": {
+      "year": 2025,
+      "jan_low_c": -5.3,
+      "jul_high_c": 31.5,
+      "rain_days": 128,
+      "precip_mm": 1272,
+      "source": "Open-Meteo archive (ERA5), daily values aggregated"
+    },
+    "living": {
+      "cost_of_living": "high",
+      "rent_note": "Rents near campus are moderate-to-high for the region, though sharing apartments is common among grad students and helps manage costs.",
+      "city_feel": "College Park is a mid-sized college town with a suburban feel, close proximity to Washington D.C. via Metro, and easy access to regional parks and the Chesapeake Bay area.",
+      "international_note": "UMD hosts a large and diverse international student community, the D.C. metro area offers extensive international grocery options and cultural communities, and three major airports (BWI, DCA, IAD) provide strong global connectivity.",
+      "caveat": "General knowledge as of the model's training; verify before deciding."
+    },
+    "verify_url": "https://www.numbeo.com/cost-of-living/in/College-Park"
+  },
+  "Cornell University CS PhD": {
+    "institution": "Cornell University",
+    "openalex_id": "https://openalex.org/I205783295",
+    "homepage": "https://www.cornell.edu",
+    "city": "Ithaca",
+    "region": "New York",
+    "country": "United States",
+    "lat": 42.44063,
+    "lng": -76.49661,
+    "climate": {
+      "year": 2025,
+      "jan_low_c": -7.9,
+      "jul_high_c": 28.7,
+      "rain_days": 161,
+      "precip_mm": 972,
+      "source": "Open-Meteo archive (ERA5), daily values aggregated"
+    },
+    "living": {
+      "cost_of_living": "moderate",
+      "rent_note": "Rents are moderate relative to major US cities but can feel high for a small town, with most PhD students living within a few miles of campus in apartments or shared houses.",
+      "city_feel": "Ithaca is a small, walkable college town set among gorges and lakes in the Finger Lakes region, with a lively local culture but limited public transit and harsh winters that make a car or bike very helpful.",
+      "international_note": "Cornell's large, diverse international community supports a wide range of ethnic grocery stores, restaurants, and cultural organizations, and the closest major airports are in Syracuse and Rochester with occasional direct flights from larger hubs.",
+      "caveat": "General knowledge as of the model's training; verify before deciding."
+    },
+    "verify_url": "https://www.numbeo.com/cost-of-living/in/Ithaca"
+  }
+}
