@@ -66,6 +66,23 @@ uv run uvicorn hioffer.server:app --port 8000 --reload
 cd web && npm run dev          # then open http://localhost:3000
 ```
 
+## Tests
+
+```bash
+NEATLOGS_API_KEY=x uv run pytest -q
+```
+
+Covers the deterministic parts: JSON parsing, tool-result pruning, citation tags, offer scoring, to-do
+merging and program-list merging. The model-driven stages are checked by the verifier at runtime and by
+the neatlogs traces.
+
+## Evidence
+
+- `evidence/neatlogs/` — trace list, trace tree, detections, the run-1 error inside the trace.
+- `evidence/entire/` — `entire checkpoint list`, `checkpoint explain`, `checkpoint tokens`, `entire why`.
+- `evidence/cfo-ai/` — the financial model pages; public link above.
+- `evidence/2026-10-10-run*/` — raw agent outputs before and after each fix.
+
 ## Limitations
 
 - Faculty discovery depends on department pages being fetchable and on OpenAlex author disambiguation;
