@@ -1,4 +1,11 @@
-export const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+// The API base is public by nature (the browser calls it). Env var first; otherwise the hosted demo
+// API when the page itself is not served from localhost.
+const HOSTED_API = "https://hioffer-production.up.railway.app";
+export const API =
+  process.env.NEXT_PUBLIC_API_URL ??
+  (typeof window !== "undefined" && !["localhost", "127.0.0.1"].includes(window.location.hostname)
+    ? HOSTED_API
+    : "http://localhost:8000");
 export const APPLICANT = process.env.NEXT_PUBLIC_APPLICANT ?? "priya";
 
 export type Card = { kind: string } & Record<string, unknown>;
