@@ -1,0 +1,30 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K1AK5XZ2J2KEG8XH2W7V8S",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "hioffer/agents/advisor_scout.py",
+    "hioffer/agents/identity.py",
+    "hioffer/agents/writer.py",
+    "scripts/backfill_identity.py",
+    "web/components/Cards.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 196,
+    "cache_creation_tokens": 9496,
+    "cache_read_tokens": 2249411,
+    "output_tokens": 7303,
+    "api_call_count": 8
+  }
+}
