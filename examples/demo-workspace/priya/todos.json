@@ -1,0 +1,209 @@
+[
+  {
+    "task": "Email Yulia Tsvetkov (draft ready)",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-10-31",
+    "kind": "outreach",
+    "source_url": "https://homes.cs.washington.edu/~yuliats/",
+    "id": "university-of-washington-cse-phd-1",
+    "done": false
+  },
+  {
+    "task": "Email Hannaneh Hajishirzi (draft ready)",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-10-31",
+    "kind": "outreach",
+    "source_url": "https://homes.cs.washington.edu/~hannaneh/",
+    "id": "university-of-washington-cse-phd-2",
+    "done": false
+  },
+  {
+    "task": "Ask recommenders: Exactly 3 letters required. Should come from those who can speak to demonstrated research potential with specific details. Not personal references. Submitted electronically via the application system (Interfolio is not accepted). Letters must be received by the application deadline.",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-11-17",
+    "kind": "letters",
+    "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+    "id": "university-of-washington-cse-phd-3",
+    "done": false
+  },
+  {
+    "task": "Remind recommenders (letters due with the application)",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-12-08",
+    "kind": "letters",
+    "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+    "id": "university-of-washington-cse-phd-4",
+    "done": false
+  },
+  {
+    "task": "Send English test scores: Required for all non-native English speakers unless holding a qualifying English-medium degree. Accepted tests: TOEFL iB",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-11-24",
+    "kind": "tests",
+    "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+    "id": "university-of-washington-cse-phd-5",
+    "done": false
+  },
+  {
+    "task": "Upload transcripts: Unofficial transcripts uploaded at application time (PDF). Official transcripts are NOT required until after an offer is",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-12-01",
+    "kind": "documents",
+    "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+    "id": "university-of-washington-cse-phd-6",
+    "done": false
+  },
+  {
+    "task": "Pay application fee ($90 USD, non-refundable, paid online via MasterCard or Visa.) and submit",
+    "program": "University of Washington CSE PhD",
+    "due": "2026-12-15",
+    "kind": "submit",
+    "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+    "id": "university-of-washington-cse-phd-7",
+    "done": false
+  },
+  {
+    "task": "Email Marine Carpuat (draft ready)",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-10-20",
+    "kind": "outreach",
+    "source_url": "https://www.cs.umd.edu/~marine/",
+    "id": "university-of-maryland-cs-phd-1",
+    "done": false
+  },
+  {
+    "task": "Email Rachel Rudinger (draft ready)",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-10-20",
+    "kind": "outreach",
+    "source_url": "https://www.rachelrudinger.com/",
+    "id": "university-of-maryland-cs-phd-2",
+    "done": false
+  },
+  {
+    "task": "Email Sarah Wiegreffe (draft ready)",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-10-20",
+    "kind": "outreach",
+    "source_url": "https://sarahwie.github.io/",
+    "id": "university-of-maryland-cs-phd-3",
+    "done": false
+  },
+  {
+    "task": "Ask recommenders: Three letters of recommendation from individuals qualified to assess academic or research potential. Letter writers have until two weeks after the December 4 application deadline to submit.",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-11-06",
+    "kind": "letters",
+    "source_url": "https://www.cs.umd.edu/grad/apply",
+    "id": "university-of-maryland-cs-phd-4",
+    "done": false
+  },
+  {
+    "task": "Remind recommenders (letters due with the application)",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-11-27",
+    "kind": "letters",
+    "source_url": "https://www.cs.umd.edu/grad/apply",
+    "id": "university-of-maryland-cs-phd-5",
+    "done": false
+  },
+  {
+    "task": "Send English test scores: Required for all applicants whose native language is not English (unless degree from U.S. or exempt English-speaking cou",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-11-13",
+    "kind": "tests",
+    "source_url": "https://gradschool.umd.edu/admissions/english-language-proficiency-requirements",
+    "id": "university-of-maryland-cs-phd-6",
+    "done": false
+  },
+  {
+    "task": "Upload transcripts: Official transcripts from all colleges attended. Upload unofficial copies initially; official copies required upon admis",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-11-20",
+    "kind": "documents",
+    "source_url": "https://www.cs.umd.edu/grad/apply",
+    "id": "university-of-maryland-cs-phd-7",
+    "done": false
+  },
+  {
+    "task": "Pay application fee ($90 non-refundable fee per program application (Graduate Sch) and submit",
+    "program": "University of Maryland CS PhD",
+    "due": "2026-12-04",
+    "kind": "submit",
+    "source_url": "https://gradschool.umd.edu/admissions/application-process/apply-now",
+    "id": "university-of-maryland-cs-phd-8",
+    "done": false
+  },
+  {
+    "task": "Email Marten van Schijndel (draft ready)",
+    "program": "Cornell University CS PhD",
+    "due": "2026-10-31",
+    "kind": "outreach",
+    "source_url": null,
+    "id": "cornell-university-cs-phd-1",
+    "done": false
+  },
+  {
+    "task": "Email Allison Koenecke (draft ready)",
+    "program": "Cornell University CS PhD",
+    "due": "2026-10-31",
+    "kind": "outreach",
+    "source_url": null,
+    "id": "cornell-university-cs-phd-2",
+    "done": false
+  },
+  {
+    "task": "Email Yoav Artzi (draft ready)",
+    "program": "Cornell University CS PhD",
+    "due": "2026-10-31",
+    "kind": "outreach",
+    "source_url": "https://yoavartzi.com/",
+    "id": "cornell-university-cs-phd-3",
+    "done": false
+  },
+  {
+    "task": "Ask recommenders: Minimum 2 required; maximum 3–4 allowed. Must be submitted electronically; no paper copies accepted.",
+    "program": "Cornell University CS PhD",
+    "due": "2026-11-17",
+    "kind": "letters",
+    "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+    "id": "cornell-university-cs-phd-4",
+    "done": false
+  },
+  {
+    "task": "Remind recommenders (letters due with the application)",
+    "program": "Cornell University CS PhD",
+    "due": "2026-12-08",
+    "kind": "letters",
+    "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+    "id": "cornell-university-cs-phd-5",
+    "done": false
+  },
+  {
+    "task": "Send English test scores: Required for international applicants. Both TOEFL and IELTS accepted. Score minimums not available (Graduate School deta",
+    "program": "Cornell University CS PhD",
+    "due": "2026-11-24",
+    "kind": "tests",
+    "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+    "id": "cornell-university-cs-phd-6",
+    "done": false
+  },
+  {
+    "task": "Upload transcripts: Scanned unofficial transcripts of all previous college/university work uploaded by applicant; official transcripts requi",
+    "program": "Cornell University CS PhD",
+    "due": "2026-12-01",
+    "kind": "documents",
+    "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+    "id": "cornell-university-cs-phd-7",
+    "done": false
+  },
+  {
+    "task": "Pay application fee (Fee required (exact amount not found; Graduate School fee pa) and submit",
+    "program": "Cornell University CS PhD",
+    "due": "2026-12-15",
+    "kind": "submit",
+    "source_url": "https://www.cs.cornell.edu/phd-computer-science",
+    "id": "cornell-university-cs-phd-8",
+    "done": false
+  }
+]

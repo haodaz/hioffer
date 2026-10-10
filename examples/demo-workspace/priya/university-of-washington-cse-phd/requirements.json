@@ -1,0 +1,110 @@
+{
+  "program": "University of Washington — Allen School CSE PhD",
+  "start_url": "https://www.cs.washington.edu/academics/phd/admissions",
+  "facts": [
+    {
+      "key": "deadline",
+      "required": "yes",
+      "value": "December 15 (or the next business day if the 15th falls on a weekend), 11:59 pm Pacific Time. One cycle per year; autumn start only.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "All Ph.D. application materials are submitted electronically through the online application portal and must be received by December 15th (or the next business day if the 15th falls on a weekend) at 11:59pm, Pacific Time."
+    },
+    {
+      "key": "application_fee",
+      "required": "yes",
+      "value": "$90 USD, non-refundable, paid online via MasterCard or Visa.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "The UW Graduate School administers the online application portal and collects an $90, non-refundable application fee for all graduate program applications to UW."
+    },
+    {
+      "key": "fee_waiver",
+      "required": "optional",
+      "value": "Available from UW Graduate School (not the department) to U.S. citizens, permanent residents, and undocumented applicants who demonstrate financial need (income-based, using Washington College Grant 100% MFI threshold); also available to McNair Scholars, PPIA Fellows, and stacked-degree applicants. F-1/J-1 visa holders are not eligible for financial-need or McNair/PPIA waivers. Request must be made at least 7 days before the program deadline.",
+      "source_url": "https://grad.uw.edu/prospective-students/how-to-apply/application-fee-waivers/",
+      "quote": "Application fee waivers are available to U.S. citizens, permanent residents, and undocumented applicants who demonstrate financial need or hardship… Application fee waiver requests must be made at least seven (7) days before your program's application deadline to allow time for review."
+    },
+    {
+      "key": "personal_statement",
+      "required": "yes",
+      "value": "One personal statement (also called statement of purpose). No stated word or page limit. Must address: (a) how you became interested in research, (b) a relevant project or research experience, and (c) future plans in CS. May also address strengths, weaknesses, and diversity background.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Submit a personal statement of that includes: a) how you became interested in doing research, b) a relevant project or research experience that shows your technical knowledge and skill, and c) your plans for the future in computer science."
+    },
+    {
+      "key": "statement_of_purpose",
+      "required": "no",
+      "value": "Not a separate document — the program uses a single 'Personal Statement' (sometimes referred to as a statement of purpose or 'the essay'). No standalone SOP form exists.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "The purpose of the personal statement (sometimes referred to as a statement of purpose, or 'the essay') is to provide a narrative of your approach to the Ph.D. program."
+    },
+    {
+      "key": "research_statement",
+      "required": "no",
+      "value": "Not required as a separate document. Research experience is addressed within the personal statement and through supplemental short-answer questions (300 characters each).",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "In 300 characters or less summarize your research experience. Highlight accomplishments such as papers, presentations, research related internships, projects completed, papers published, ongoing efforts."
+    },
+    {
+      "key": "letters_of_recommendation",
+      "required": "yes",
+      "value": "Exactly 3 letters required. Should come from those who can speak to demonstrated research potential with specific details. Not personal references. Submitted electronically via the application system (Interfolio is not accepted). Letters must be received by the application deadline.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Three letters are required from all applicants. The best folks to write letters of recommendation are those people who can speak to your demonstrated research potential with specific details about the work you've done… the email will indicate the application deadline of your desired entry quarter and specify that letters need to be received by that date."
+    },
+    {
+      "key": "cv",
+      "required": "yes",
+      "value": "Current CV required. No length or formatting requirements; may be more than one page. Should provide detailed descriptions of research accomplishments and technical skills.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Upload a current copy of your CV that provides detailed descriptions of your research accomplishments and other technical skills. There are no requirements for length or formatting; you may be as descriptive as you would like and may utilize more than one page."
+    },
+    {
+      "key": "transcripts",
+      "required": "yes",
+      "value": "Unofficial transcripts uploaded at application time (PDF). Official transcripts are NOT required until after an offer is accepted. Report each institution attended, dates, and GPA.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Report each higher education institution you have attended and your dates of attendance. For each school, upload unofficial copies of your transcript… Official transcripts are not required during the application process; you will only have to submit official documents to the UW Graduate School if you accept an admission offer."
+    },
+    {
+      "key": "gre",
+      "required": "no",
+      "value": "GRE is NOT required and NOT accepted. Scores will not be reviewed or considered even if submitted.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/faq/",
+      "quote": "GRE scores are no longer required or accepted for the Ph.D. program. GRE scores will not be reviewed or considered by the Allen School, even if they are submitted to the University of Washington."
+    },
+    {
+      "key": "toefl_ielts",
+      "required": "yes",
+      "value": "Required for all non-native English speakers unless holding a qualifying English-medium degree. Accepted tests: TOEFL iBT ≥ 4.0 (or ≥ 80 for tests taken before Jan 21, 2026; program page states minimum 4.0 / MyBest 4.0); Academic IELTS ≥ 7.0 (program recommends 7.0 for full satisfaction); Duolingo English Test ≥ 120 (program page) / ≥ 115 minimum per Graduate School policy. Scores must be valid at time of application submission. UW ETS code: 4854.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "TOEFL scores showing a minimum total score or MyBest score of 4.0 or higher… Academic IELTS scores showing a total score of 7.0 or higher… Duolingo English Test scores showing a minimum total score of 120 or higher."
+    },
+    {
+      "key": "writing_sample",
+      "required": "no",
+      "value": "Not listed anywhere in the PhD application checklist or requirements.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Application Checklist: Applicant Profile and Program Information / Academic History / Research Interests and Faculty / Recommendation Letters / Resume or CV / Personal Statement / Proof of English Proficiency / Application Fee / Submit Application."
+    }
+  ],
+  "not_found": [],
+  "pages_checked": [
+    "https://www.cs.washington.edu/academics/phd/admissions",
+    "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/",
+    "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/faq/",
+    "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+    "https://grad.uw.edu/prospective-students/how-to-apply/apply-now/",
+    "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+    "https://grad.uw.edu/prospective-students/how-to-apply/application-fee-waivers/"
+  ],
+  "notes": [
+    "STRICT DEADLINE: December 15 at 11:59 pm Pacific (one cycle per year, autumn start). If Dec 15 falls on a weekend, the next business day applies.",
+    "GRE is completely abolished — do not submit scores; they will be ignored.",
+    "Only ONE personal statement is required (called 'personal statement' or 'statement of purpose' interchangeably). There is no separate research statement or SOP form.",
+    "Letters of recommendation must arrive by the December 15 deadline. The application system emails recommenders directly; Interfolio is NOT accepted.",
+    "Official transcripts are required ONLY after accepting an admission offer — unofficial PDFs suffice at application stage.",
+    "Fee waivers are handled exclusively by the UW Graduate School (not the CSE department); domestic applicants with financial need, McNair Scholars, and PPIA Fellows may qualify. Request must be submitted at least 7 days before the deadline. International students on F-1/J-1 visas are not eligible for financial-need or McNair/PPIA waivers.",
+    "TOEFL minimum on the program page (4.0 / 80 pre-Jan 2026) is the Graduate School floor; the program itself lists 7.0 IELTS as the minimum — note that scores below the 'recommended' threshold (4.5 TOEFL / 7.0 IELTS / 130 Duolingo) may require additional English language coursework after admission.",
+    "Supplemental short-answer questions (300 characters each) are required inside the application: research summary, awards summary, and faculty/research area selection (up to 3 areas + ranked faculty names)."
+  ]
+}

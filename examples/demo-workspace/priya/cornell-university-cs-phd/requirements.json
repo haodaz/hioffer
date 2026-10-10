@@ -1,0 +1,128 @@
+{
+  "program": "Cornell University PhD in Computer Science",
+  "start_url": "https://www.cs.cornell.edu/phd/admissions",
+  "facts": [
+    {
+      "key": "deadline",
+      "required": "yes",
+      "value": "December 15 (Fall semester only; Fall 2026 deadline is December 15th). Early application strongly advised.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "The department accepts applications for the Fall semester only. The deadline for the Fall 2026 semester is December 15th. Applying early is strongly advised."
+    },
+    {
+      "key": "application_fee",
+      "required": "unknown",
+      "value": "Fee required (exact amount not found; Graduate School fee pages returned 403 errors). Fee waivers available via Graduate School pipeline programs.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science",
+      "quote": "The Graduate School offers application fee waivers to participants in eligible pipeline programs. Instructions and eligibility details can be found here, and waiver requests are typically processed within three business days."
+    },
+    {
+      "key": "fee_waiver",
+      "required": "optional",
+      "value": "Available to participants in eligible pipeline programs through the Graduate School; requests processed within three business days.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science",
+      "quote": "The Graduate School offers application fee waivers to participants in eligible pipeline programs. Instructions and eligibility details can be found here, and waiver requests are typically processed within three business days."
+    },
+    {
+      "key": "statement_of_purpose",
+      "required": "yes",
+      "value": "Required. No explicit word/page limit stated on the CS page. Should express research plans, interests, areas of research excited about, and specific faculty of interest.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "You should think carefully when writing your Statement of Purpose. Express your plans and interests in computer science in a concise and clear manner. Please note what area(s) of research you are excited about, and any specific faculty you might be interested in working with during your graduate studies at Cornell."
+    },
+    {
+      "key": "personal_statement",
+      "required": "yes",
+      "value": "Required. 1,000-word limit. Must describe how background and experiences influenced decision to pursue graduate degree and ability to contribute to Cornell's community of inclusion and belonging.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "The personal statement will ask you to describe within 1,000 words how your background and experiences influenced your decision and ability to pursue a graduate degree. Additionally, you'll be asked to provide insights into your potential to contribute to Cornell University's core value to provide a community of inclusion, belonging, and respect."
+    },
+    {
+      "key": "research_statement",
+      "required": "no",
+      "value": "Not mentioned as a separate required component; research interests are addressed in the Statement of Purpose.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "You should think carefully when writing your Statement of Purpose. Express your plans and interests in computer science in a concise and clear manner."
+    },
+    {
+      "key": "letters_of_recommendation",
+      "required": "yes",
+      "value": "Minimum 2 required; maximum 3–4 allowed. Must be submitted electronically; no paper copies accepted.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "2 Letters of recommendation are required; 3 - 4 allowed. … We will not accept paper copies of letters of recommendation."
+    },
+    {
+      "key": "cv",
+      "required": "unknown",
+      "value": "CV/résumé is part of the online application (referenced in the Student-Applicant Support Program which provides feedback on 'resume and statement of purpose'), but no explicit standalone requirement statement found.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "You will then receive one round of detailed feedback on your resume and statement of purpose."
+    },
+    {
+      "key": "transcripts",
+      "required": "yes",
+      "value": "Scanned unofficial transcripts of all previous college/university work uploaded by applicant; official transcripts required upon admission. No paper copies accepted.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "Your application should include completed and scanned transcripts of all previous college and university work, including any work done at Cornell. If you are submitting unofficial transcripts, the Graduate School will require that you submit official transcripts should you be accepted into the program. We do not accept paper copies of transcripts."
+    },
+    {
+      "key": "gre",
+      "required": "unknown",
+      "value": "GRE policy not explicitly stated for regular PhD applicants on the pages fetched. Non-degree PhD-student applicants are exempt ('need not submit recommendation letters or GRE scores'), implying GRE is otherwise part of the standard application, but no explicit requirement or waiver statement found for regular PhD applicants.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "Non-degree applicants who are Ph.D. students at other institutions need not submit recommendation letters or GRE scores."
+    },
+    {
+      "key": "toefl_ielts",
+      "required": "yes",
+      "value": "Required for international applicants. Both TOEFL and IELTS accepted. Score minimums not available (Graduate School detail page returned 403). Application may be submitted before taking the exam but scores must arrive by December 15.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "International applicants must demonstrate competency in the English language. Cornell will accept either the TOEFL or IELTS. Because the TOEFL or IELTS is required for international students, you may submit your application before taking those exam(s). Nonetheless we strongly advise that you ensure that your application will be complete by December 15th."
+    },
+    {
+      "key": "writing_sample",
+      "required": "optional",
+      "value": "Not required; may be submitted if applicant feels it enhances the application.",
+      "source_url": "https://www.cs.cornell.edu/phd-computer-science/apply",
+      "quote": "A writing sample is not required but may be submitted if you feel this will enhance your application."
+    }
+  ],
+  "not_found": [
+    "application_fee (exact dollar amount — Graduate School fee pages all returned 403)",
+    "gre (explicit required/not-required policy for regular PhD applicants not stated)",
+    "cv (explicit required/optional status not stated; referenced only indirectly)"
+  ],
+  "pages_checked": [
+    "https://www.cs.cornell.edu/phd/admissions (redirected to below)",
+    "https://www.cs.cornell.edu/phd-computer-science/apply",
+    "https://www.cs.cornell.edu/phd-computer-science",
+    "https://gradschool.cornell.edu/admissions/application-steps/personal-statements/",
+    "https://gradschool.cornell.edu/admissions/prepare/english-language-proficiency-requirement/ (403)",
+    "https://gradschool.cornell.edu/admissions/apply/apply-now/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/pay-fees/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/statements-of-purpose/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/required-tests/ (403)",
+    "https://gradschool.cornell.edu/admissions/admitted-students/admissions-and-admitted-student-faq-2/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/ (403)",
+    "https://gradschool.cornell.edu/admissions/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/transcripts/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/pay-fees/international/ (403)",
+    "https://gradschool.cornell.edu/inclusion/funding-and-resources/graduate-school-fellowships-in-support-of-diversity/ (403)",
+    "https://gradschool.cornell.edu/admissions/application-steps/recommendations/ (403)",
+    "https://gradschool.cornell.edu/ (403)",
+    "https://www.cs.cornell.edu/phd/admissions/faq (404)",
+    "https://www.cs.cornell.edu/phd-computer-science/faq (404)",
+    "https://www.cs.cornell.edu/phd/apply (404)",
+    "https://www.cs.cornell.edu/phd/apply/faq (404)"
+  ],
+  "notes": [
+    "Fall admission only. Deadline is December 15 (strict — delays in test scores delay review).",
+    "The Graduate School (gradschool.cornell.edu) sub-pages were all inaccessible (403 Forbidden) during this research session, preventing retrieval of exact application fee, GRE policy, TOEFL/IELTS minimum scores, and fee-waiver eligibility details.",
+    "Two statements are required: (1) Statement of Purpose (no stated word limit) and (2) Personal Statement (1,000-word limit). Content should not duplicate between them.",
+    "Letters of recommendation must be submitted electronically via the online application system; paper copies not accepted.",
+    "Applicants may submit the application before TOEFL/IELTS scores arrive, but scores should be received by December 15.",
+    "Diversity Recruitment Fellowships available for eligible domestic doctoral students — applicants must indicate interest within the Graduate School application.",
+    "The CS Student-Applicant Support Program offers mentorship and feedback on application materials (separate deadlines in October/November)."
+  ]
+}

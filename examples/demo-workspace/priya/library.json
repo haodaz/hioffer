@@ -1,0 +1,121 @@
+{
+  "items": [
+    {
+      "id": "lib:README",
+      "file": "README.md",
+      "word_count": 37,
+      "text": "# Demo applicant (fictional)\n\nPriya Raman is a fictional applicant used for the hioffer demo. Every fact in this folder is invented;\nany resemblance to a real person is coincidental. The target programs are real public pages.\n",
+      "type": "profile",
+      "title": "Demo Applicant README",
+      "summary": "This file identifies Priya Raman as a fictional applicant created for the hioffer demo. All facts associated with this applicant are invented and any resemblance to real persons is coincidental. The target PhD programs referenced are based on real public pages.",
+      "key_facts": [
+        "The applicant name is Priya Raman.",
+        "Priya Raman is a fictional character created for the hioffer demo.",
+        "Every fact in the associated folder is invented.",
+        "Any resemblance to a real person is stated to be coincidental.",
+        "The target programs referenced are described as real public pages."
+      ]
+    },
+    {
+      "id": "lib:cv",
+      "file": "cv.md",
+      "word_count": 244,
+      "text": "# Priya Raman — CV\n\n## Education\n- B.Tech, Computer Science and Engineering, NIT Tiruchirappalli, 2023–2027 (expected). CGPA 9.21/10.\n\n## Research experience\n- **Undergraduate researcher, AI4Bharat-style multilingual NLP lab at NIT Trichy** (Jan 2025 – present), advised by Prof. S. Venkatesan.\n  Built a Tamil–English code-switched evaluation set of 2,400 sentences; showed that two open 7B models lose 18–26 points on code-switched inputs versus monolingual Tamil. Led to a workshop paper.\n- **Research intern, Microsoft Research India (Bangalore), summer 2026** (May–July 2026), mentor: Dr. Anjali Mehra.\n  Worked on tokenizer adaptation for Kannada: extending a sentencepiece vocabulary with 6k Kannada tokens cut average token count per sentence by 41% and improved downstream QA F1 by 3.4 points at the same fine-tuning budget.\n- **Course project, Speech Processing (Spring 2026):** trained a small wav2vec2-style model on 40 hours of Tamil radio audio; WER 31% on a held-out set.\n\n## Publications\n- P. Raman, K. Iyer, S. Venkatesan. \"Code-Switch Robustness of Open LLMs for Tamil–English.\" Student Research Workshop at an ACL-family conference, 2026. (peer-reviewed workshop paper, first author)\n\n## Teaching\n- Teaching assistant, Introduction to Machine Learning, Fall 2026 (120 students).\n\n## Skills\n- Python, PyTorch, Hugging Face Transformers, PEFT/LoRA, sentencepiece, FAISS, basic Rust.\n- Languages: Tamil (native), English (fluent), Hindi (conversational), Kannada (basic).\n\n## Awards\n- Institute Merit Scholarship, 2024, 2025, 2026.\n- Second place, Inter-NIT hackathon 2025 (multilingual FAQ bot for a district hospital).\n\n## Service\n- Organiser, NIT Trichy NLP reading group (2025–present), ~25 members.\n",
+      "type": "cv",
+      "title": "Priya Raman — Undergraduate CV (NLP/Multilingual AI)",
+      "summary": "CV of Priya Raman, a B.Tech Computer Science student at NIT Tiruchirappalli (expected 2027) with a CGPA of 9.21/10, specializing in multilingual NLP for South Asian languages. She has research experience at NIT Trichy's NLP lab and Microsoft Research India, and is a first-author on a peer-reviewed workshop paper at an ACL-family conference. Her work spans code-switching robustness, tokenizer adaptation, and speech processing for Tamil and Kannada.",
+      "key_facts": [
+        "B.Tech in Computer Science and Engineering at NIT Tiruchirappalli, 2023–2027 (expected), CGPA 9.21/10.",
+        "Undergraduate researcher at an AI4Bharat-style multilingual NLP lab at NIT Trichy, advised by Prof. S. Venkatesan, January 2025–present.",
+        "Built a Tamil–English code-switched evaluation set of 2,400 sentences; open 7B models lost 18–26 points versus monolingual Tamil baselines.",
+        "Research intern at Microsoft Research India (Bangalore), May–July 2026, mentored by Dr. Anjali Mehra.",
+        "Tokenizer adaptation for Kannada: adding 6k tokens cut average token count by 41% and improved downstream QA F1 by 3.4 points.",
+        "First-author publication: 'Code-Switch Robustness of Open LLMs for Tamil–English,' Student Research Workshop at an ACL-family conference, 2026.",
+        "Trained a wav2vec2-style model on 40 hours of Tamil radio audio achieving 31% WER on a held-out set (Spring 2026 course project).",
+        "Teaching assistant for Introduction to Machine Learning, Fall 2026, serving 120 students.",
+        "Institute Merit Scholarship awarded in 2024, 2025, and 2026.",
+        "Second place at Inter-NIT hackathon 2025 for a multilingual FAQ bot for a district hospital.",
+        "Organiser of NIT Trichy NLP reading group (2025–present), approximately 25 members.",
+        "Technical skills include Python, PyTorch, Hugging Face Transformers, PEFT/LoRA, sentencepiece, FAISS, and basic Rust."
+      ]
+    },
+    {
+      "id": "lib:interests",
+      "file": "interests.md",
+      "word_count": 90,
+      "text": "# Research interests\n\nI want to work on natural language processing for low-resource and multilingual settings, especially:\n\n1. Efficient adaptation of large language models to Indian languages (Tamil, Hindi, Kannada) with small amounts of data: parameter-efficient fine-tuning, tokenizer adaptation, and data selection.\n2. Evaluation that actually measures what matters for multilingual users: cultural grounding, code-switching, and faithfulness, rather than translated English benchmarks.\n3. Speech-text models for languages with mostly spoken (not written) data.\n\nSecondary interests: retrieval-augmented generation for government and health information in Indian languages; model compression for on-device inference.\n",
+      "type": "interests",
+      "title": "Research Interests in Multilingual NLP",
+      "summary": "The applicant focuses on NLP for low-resource and multilingual settings, with an emphasis on Indian languages. Core interests include efficient LLM adaptation, culturally grounded evaluation, and speech-text models for spoken languages. Secondary interests cover retrieval-augmented generation and model compression for on-device use.",
+      "key_facts": [
+        "Primary interest: efficient adaptation of large language models to Indian languages (Tamil, Hindi, Kannada) with small amounts of data.",
+        "Specific techniques of interest include parameter-efficient fine-tuning, tokenizer adaptation, and data selection.",
+        "Interest in evaluation methodologies that measure cultural grounding, code-switching, and faithfulness rather than relying on translated English benchmarks.",
+        "Interest in speech-text models for languages where data is primarily spoken rather than written.",
+        "Secondary interest in retrieval-augmented generation for government and health information in Indian languages.",
+        "Secondary interest in model compression for on-device inference."
+      ]
+    },
+    {
+      "id": "lib:profile",
+      "file": "profile.md",
+      "word_count": 66,
+      "text": "# Profile\n\n- Name: Priya Raman\n- Current: final-year B.Tech in Computer Science and Engineering, National Institute of Technology, Tiruchirappalli (NIT Trichy), India. Expected graduation: May 2027.\n- CGPA: 9.21 / 10 (top 5% of the department)\n- Target: CS PhD programs in the United States, Fall 2027 intake\n- Tests: TOEFL iBT 112 (R29 L30 S26 W27), taken June 2026. No GRE.\n- Citizenship: India\n",
+      "type": "profile",
+      "title": "Priya Raman – PhD Applicant Profile",
+      "summary": "Priya Raman is a final-year B.Tech Computer Science and Engineering student at NIT Trichy, India, with a CGPA of 9.21/10. She is targeting CS PhD programs in the United States for Fall 2027. She has taken the TOEFL iBT (score 112) but not the GRE.",
+      "key_facts": [
+        "Name: Priya Raman",
+        "Currently enrolled in final-year B.Tech in Computer Science and Engineering at National Institute of Technology, Tiruchirappalli (NIT Trichy), India",
+        "Expected graduation: May 2027",
+        "CGPA: 9.21 / 10, placing her in the top 5% of the department",
+        "Targeting CS PhD programs in the United States for Fall 2027 intake",
+        "TOEFL iBT score: 112 (Reading 29, Listening 30, Speaking 26, Writing 27), taken June 2026",
+        "Has not taken the GRE",
+        "Citizenship: India"
+      ]
+    },
+    {
+      "id": "lib:recommenders",
+      "file": "recommenders.md",
+      "word_count": 66,
+      "text": "# Recommenders\n\n1. Prof. S. Venkatesan, NIT Tiruchirappalli — undergraduate research advisor (Jan 2025 – present); co-author of the workshop paper. Status: agreed, will submit.\n2. Dr. Anjali Mehra, Microsoft Research India — summer 2026 internship mentor. Status: agreed, prefers a reminder two weeks before each deadline.\n3. Prof. R. Krishnan, NIT Tiruchirappalli — taught Speech Processing; supervised the course project. Status: asked, waiting for reply.\n",
+      "type": "recommenders",
+      "title": "Recommender List",
+      "summary": "The applicant has identified three potential recommenders from their undergraduate institution and an industry internship. Two have agreed to write letters, while one reply is still pending. The recommenders include a research advisor, an internship mentor, and a course instructor.",
+      "key_facts": [
+        "Prof. S. Venkatesan is from NIT Tiruchirappalli and served as the applicant's undergraduate research advisor starting January 2025.",
+        "Prof. S. Venkatesan is a co-author on a workshop paper with the applicant.",
+        "Prof. S. Venkatesan has agreed to submit a recommendation letter.",
+        "Dr. Anjali Mehra is from Microsoft Research India and was the applicant's mentor during a summer 2026 internship.",
+        "Dr. Anjali Mehra has agreed to write a letter but prefers a reminder two weeks before each deadline.",
+        "Prof. R. Krishnan is from NIT Tiruchirappalli and taught the applicant Speech Processing.",
+        "Prof. R. Krishnan supervised the applicant's course project in Speech Processing.",
+        "Prof. R. Krishnan has been asked but has not yet replied regarding the recommendation letter."
+      ]
+    },
+    {
+      "id": "lib:sop_draft",
+      "file": "sop_draft.md",
+      "word_count": 249,
+      "text": "# Statement of purpose — rough draft\n\nI am applying to the PhD program in Computer Science to work on multilingual natural language processing, specifically making large language models useful for the hundreds of millions of people who speak Indian languages but are poorly served by today's models.\n\nMy interest comes from a concrete failure. In 2025 I built a Tamil–English code-switched evaluation set of 2,400 sentences and found that two open 7B models lost 18–26 points compared with monolingual Tamil inputs. People in Chennai do not speak monolingual Tamil to a chatbot; they switch. That result became my first-author workshop paper and convinced me that evaluation, not just training, is where multilingual NLP is broken.\n\nAt Microsoft Research India in summer 2026 I worked on the other side of the problem: adaptation. Extending a sentencepiece vocabulary with 6k Kannada tokens cut tokens per sentence by 41% and improved QA F1 by 3.4 points at the same fine-tuning budget. The lesson was that cheap, targeted changes to the tokenizer can matter as much as expensive fine-tuning.\n\nIn a PhD I want to study (1) parameter-efficient and data-efficient adaptation of LLMs to low-resource languages, (2) evaluation that captures code-switching, cultural grounding and faithfulness, and (3) speech-text models for languages whose data is mostly spoken.\n\nI have a 9.21/10 CGPA, a first-author workshop paper, and experience as a TA for a 120-student machine learning course. I organise my department's NLP reading group.\n\n[TODO: a paragraph about specific faculty at this program]\n",
+      "type": "sop",
+      "title": "Statement of Purpose – Multilingual NLP for Indian Languages",
+      "summary": "The applicant is seeking a PhD in Computer Science with a focus on multilingual NLP, particularly improving large language models for Indian language speakers. Their work spans building code-switched evaluation sets, tokenizer adaptation at Microsoft Research India, and they outline three core research directions for their PhD. The document is a rough draft with a placeholder for faculty-specific content.",
+      "key_facts": [
+        "Applying to a PhD program in Computer Science focused on multilingual NLP for Indian languages.",
+        "Built a Tamil–English code-switched evaluation set of 2,400 sentences in 2025.",
+        "Found that two open 7B models lost 18–26 points on code-switched vs. monolingual Tamil inputs.",
+        "Authored a first-author workshop paper based on the Tamil–English code-switching evaluation work.",
+        "Completed an internship at Microsoft Research India in summer 2026.",
+        "Extended a SentencePiece vocabulary with 6,000 Kannada tokens, cutting tokens per sentence by 41%.",
+        "Tokenizer adaptation improved QA F1 by 3.4 points at the same fine-tuning budget.",
+        "Holds a CGPA of 9.21/10.",
+        "Served as a TA for a 120-student machine learning course.",
+        "Organizes their department's NLP reading group.",
+        "Three stated PhD research directions: parameter/data-efficient LLM adaptation, code-switching and cultural evaluation, and speech-text models for low-resource languages.",
+        "Document contains a TODO placeholder for a paragraph about specific faculty at the target program."
+      ]
+    }
+  ]
+}

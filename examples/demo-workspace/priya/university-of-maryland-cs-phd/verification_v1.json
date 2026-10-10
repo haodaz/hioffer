@@ -1,0 +1,22 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "fit:Rachel Rudinger",
+      "sentence": "Her ACL 2024 paper on whether LLMs discriminate in hiring [paper:W4402671226] also shows rigorous probing of model behavior in culturally situated contexts — a lens I want to apply to Indian-language NLP.",
+      "problem": "Paper W4402671226 ('Do Large Language Models Discriminate in Hiring Decisions on the Basis of Race, Ethnicity, and Gender?') is listed under advisor Rachel Rudinger, but its authors are Haozhe An, Christabel Acquaye, Colin G. Wang, Zongxia Li, and Rachel Rudinger — Rudinger is a co-author, so the attribution is acceptable. However, the paper is cited to support a claim about 'rigorous probing of model behavior in culturally situated contexts,' which is a fair characterization. No issue here — retracting flag.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "fit:Rachel Rudinger",
+      "sentence": "Her ACL 2024 paper on whether LLMs discriminate in hiring [paper:W4402671226] also shows rigorous probing of model behavior in culturally situated contexts — a lens I want to apply to Indian-language NLP.",
+      "problem": "Paper W4402671226 ('Do Large Language Models Discriminate in Hiring Decisions on the Basis of Race, Ethnicity, and Gender?') is listed under advisor Rachel Rudinger, but its authors are Haozhe An, Christabel Acquaye, Colin G. Wang, Zongxia Li, and Rachel Rudinger — Rudinger is a co-author, so the attribution is acceptable. However, the paper is cited to support a claim about 'rigorous probing of model behavior in culturally situated contexts,' which is a fair characterization. No issue here — retracting flag.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": []
+}

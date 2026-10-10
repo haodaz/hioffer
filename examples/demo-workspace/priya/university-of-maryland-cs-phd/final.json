@@ -1,0 +1,20 @@
+{
+  "materials_version": 2,
+  "passed": false,
+  "issues": [
+    {
+      "check": "citation",
+      "where": "fit:Sarah Wiegreffe",
+      "problem": "unknown citation [paper:W4401042639]",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Sarah Wiegreffe",
+      "sentence": "Her work interrogating what 'mechanistic' actually means for explanation methods [paper:W4404784049] and her findings on easy training data for hard tasks [paper:W4401042639] raise questions I find relevant when asking why tokenizer-adapted Kannada models improve on QA but may still fail on culturally grounded prompts [lib:cv].",
+      "problem": "The paper ID 'W4401042639' does not exist in the provided papers list. The paper on easy training data for hard tasks has ID W4402671639, and moreover it is listed under advisor Sarah Wiegreffe but its authors are Peter Hase, Mohit Bansal, Peter E. Clark, and Sarah Wiegreffe — Wiegreffe is not the lead author, which is fine, but the citation ID cited is invented/wrong.",
+      "fixable_by": "writer"
+    }
+  ],
+  "todos": []
+}

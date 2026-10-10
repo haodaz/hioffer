@@ -1,0 +1,122 @@
+{
+  "program": "University of Maryland – PhD in Computer Science (CMSC)",
+  "start_url": "https://www.cs.umd.edu/grad/admissions",
+  "facts": [
+    {
+      "key": "deadline",
+      "required": "yes",
+      "value": "December 4, 2026 (both domestic and international applicants; Fall 2027 entry only — no spring admission). Letter writers have two weeks past this deadline to submit.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Application deadline: December 4, 2026 … All materials must be submitted. Letter writers have two weeks past this deadline to submit letters of recommendation."
+    },
+    {
+      "key": "application_fee",
+      "required": "yes",
+      "value": "$90 non-refundable fee per program application (Graduate School authoritative figure); CS dept page separately states $75 — applicants should rely on the Graduate School portal amount of $90.",
+      "source_url": "https://gradschool.umd.edu/admissions/application-process/apply-now",
+      "quote": "You will be assessed a non-refundable $90 application processing fee for each program to which you apply."
+    },
+    {
+      "key": "fee_waiver",
+      "required": "optional",
+      "value": "Fee waivers available through the Graduate School (not the CS dept). Two routes: (1) Graduate School Fee Waiver Request Form — request ≥3 weeks before deadline; (2) Big Ten FreeApp for domestic students with financial need (FAFSA documentation required; available until April 15, 2027).",
+      "source_url": "https://gradschool.umd.edu/feewaiverinformation",
+      "quote": "The University of Maryland Graduate School's application fee waiver program helps applicants who have completed certain career and professional preparatory programs … The FreeApp is designed to increase access to graduate education for domestic students."
+    },
+    {
+      "key": "statement_of_purpose",
+      "required": "yes",
+      "value": "One 'Statement of Purpose' (called 'personal statement' on the apply page) describing academic background, research interests, and goals. No word/page limit stated on any fetched page.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Statement of Purpose: A personal statement describing your academic background, research interests, and goals."
+    },
+    {
+      "key": "personal_statement",
+      "required": "unknown",
+      "value": "The CS apply page labels this field 'Statement of Purpose' and describes it as 'a personal statement.' No separate personal statement distinct from the SOP is mentioned on any fetched page.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Statement of Purpose: A personal statement describing your academic background, research interests, and goals."
+    },
+    {
+      "key": "research_statement",
+      "required": "no",
+      "value": "No separate research statement listed among application requirements on any fetched page.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Application Requirements … Statement of Purpose … Letters of Recommendation … Résumé / CV … English Proficiency … [no research statement listed]"
+    },
+    {
+      "key": "letters_of_recommendation",
+      "required": "yes",
+      "value": "Three letters of recommendation from individuals qualified to assess academic or research potential. Letter writers have until two weeks after the December 4 application deadline to submit.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Letters of Recommendation: Three letters from individuals qualified to assess your academic or research potential … Letter writers have two weeks past this deadline to submit letters of recommendation."
+    },
+    {
+      "key": "cv",
+      "required": "yes",
+      "value": "Current curriculum vitae (Résumé/CV) detailing academic and professional experience.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Résumé / CV: Current curriculum vitae detailing your academic and professional experience."
+    },
+    {
+      "key": "transcripts",
+      "required": "yes",
+      "value": "Official transcripts from all colleges attended. Upload unofficial copies initially; official copies required upon admission. International transcripts must include certified English translation.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Transcripts: Official transcripts from all colleges attended. Upload unofficial copies initially; official copies required upon admission."
+    },
+    {
+      "key": "gre",
+      "required": "no",
+      "value": "GRE scores are NOT required. Submitting them is optional and their absence will not negatively impact the application.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "GRE scores are not required."
+    },
+    {
+      "key": "toefl_ielts",
+      "required": "yes",
+      "value": "Required for all applicants whose native language is not English (unless degree from U.S. or exempt English-speaking country). Accepted tests: TOEFL iBT, IELTS Academic, PTE Academic. Full enrollment minimums: TOEFL iBT ≥96 total (legacy scoring) or overall band 5 (new scoring); IELTS ≥7.0 overall; PTE ≥68. Scores sent directly from testing agency; self-reported not accepted. TOEFL/GRE institution code: 5814.",
+      "source_url": "https://gradschool.umd.edu/admissions/english-language-proficiency-requirements",
+      "quote": "You will be required to submit TOEFL iBT, IELTS Academic, or PTE Academic scores if you do not hold a degree from a regionally accredited U.S. institution or from a recognized institution from one of the English speaking countries … Requirements for Full Enrollment: [TOEFL iBT] Total 96 … [IELTS] Overall 7."
+    },
+    {
+      "key": "writing_sample",
+      "required": "no",
+      "value": "No writing sample is listed among the application requirements on any fetched page.",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Application Requirements … [lists: Online Application, Application Fee, Transcripts, Statement of Purpose, Letters of Recommendation, Résumé / CV, English Proficiency — no writing sample listed]"
+    },
+    {
+      "key": "other",
+      "required": "yes",
+      "value": "Entry is Fall semester only; no spring admission for PhD. Application submitted via TerpEngage portal (opens July 1, 2026). Admissions decisions released mid-Feb – late Mar 2027. Offer acceptance deadline April 15, 2027 (national April 15 Resolution). All PhD admits are guaranteed full funding (TA/RA).",
+      "source_url": "https://www.cs.umd.edu/grad/apply",
+      "quote": "Portal Opens: July 1, 2026 … Portal Closes: Dec 4, 2026 … Entry Term: Fall Only … Decisions Released: Feb–Mar 2027 … Offer Acceptance: Apr 15, 2027."
+    }
+  ],
+  "not_found": [
+    "word/page limit for statement of purpose (none stated on any fetched page)",
+    "separate personal_statement distinct from statement of purpose",
+    "writing_sample"
+  ],
+  "pages_checked": [
+    "https://www.cs.umd.edu/grad/admissions",
+    "https://www.cs.umd.edu/grad/apply",
+    "https://www.cs.umd.edu/grad/admissions-faq",
+    "https://gradschool.umd.edu/feewaiverinformation",
+    "https://gradschool.umd.edu/admissions/english-language-proficiency-requirements",
+    "https://www.cs.umd.edu/grad/phd-catalog",
+    "https://gradschool.umd.edu/admissions/application-process",
+    "https://gradschool.umd.edu/admissions/application-process/apply-now"
+  ],
+  "notes": [
+    "FEE DISCREPANCY: The CS dept apply page states '$75' but the Graduate School's own Apply Now page states '$90 non-refundable.' The Graduate School processes the payment, so $90 is the operative amount. Applicants should confirm in the live portal.",
+    "DEADLINE IS STRICT: The December 4, 2026 deadline applies to all submitted materials. The only exception is that letter writers get a 2-week grace period after that date.",
+    "LETTERS GRACE PERIOD: Recommenders may submit up to ~December 18, 2026 (two weeks after the Dec 4 deadline), but the applicant's own materials must be in by Dec 4.",
+    "GRE IS TRULY OPTIONAL: 'If you choose not to submit GRE scores, the absence of these scores will not impact your application' (FAQ page).",
+    "TOEFL EXEMPTION: Applicants who hold (or will hold before enrollment) a degree from a U.S. regionally accredited institution or from one of ~40 listed English-speaking countries are exempt from submitting TOEFL/IELTS/PTE.",
+    "FALL ONLY: No spring-semester PhD admissions. The portal opens July 1, 2026 for Fall 2027 entry.",
+    "FUNDING: All admitted PhD students are guaranteed a TA or RA — stipends $30,800–$33,100 for 9.5 months (AY 2025-26), plus tuition remission and health insurance.",
+    "NO WRITING SAMPLE required at any stage per all pages reviewed."
+  ]
+}
