@@ -21,10 +21,16 @@ cite which fact or paper it comes from. Return JSON:
   "why": one sentence on why they'd ask, citing [lib:..] or [paper:..],
   "strong_answer_includes": [3 short bullets]}]}"""
 
-EVAL = """You are coaching a PhD applicant after one interview answer. Score fit, depth and clarity from 1 to 5,
-give two sentences of feedback that quote the applicant's own words where useful, and one natural follow-up
-question the professor might ask next. Be concrete, not polite. Return JSON:
-{"scores": {"fit": int, "depth": int, "clarity": int}, "feedback": str, "follow_up": str}"""
+EVAL = """You are coaching a PhD applicant after one interview answer. Be concrete, not polite.
+Return JSON:
+{"scores": {"fit": int 1-5, "depth": int 1-5, "clarity": int 1-5},
+ "impression_delta": int from -3 to +3 (how the professor's impression moved after this answer),
+ "impression_note": 6-10 words on why it moved,
+ "good": [1-3 short bullets: what worked, quoting the applicant's words where useful],
+ "improve": [1-3 short bullets: what to add or cut, each actionable],
+ "model_answer_hint": one sentence sketching what a strong version would have said,
+ "feedback": two spoken sentences the professor might say back (natural, no bullet points),
+ "follow_up": one natural follow-up question}"""
 
 
 @neatlogs.span(kind="AGENT", name="interview_plan")

@@ -10,7 +10,7 @@ import type { Key, Lang } from "@/lib/i18n";
 
 type Q = { id: string; stage: string; question: string; why: string; strong_answer_includes: string[] };
 type Plan = { advisor: string; program: string; questions: Q[]; stages: string[]; caveat: string; answers: Eval[] };
-type Eval = { question_id: string; answer: string; scores: { fit: number; depth: number; clarity: number }; feedback: string; follow_up: string };
+type Eval = { question_id: string; answer: string; scores: { fit: number; depth: number; clarity: number }; feedback: string; follow_up: string; impression_delta?: number; impression_note?: string; good?: string[]; improve?: string[]; model_answer_hint?: string };
 type Phase = "idle" | "speaking" | "listening" | "thinking";
 type Line = { role: "ai" | "you"; text: string };
 
@@ -99,7 +99,8 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
     setLoading(false);
     if (!r.ok) { setError(`HTTP ${r.status}`); return; }
     const p: Plan = await r.json();
-    setPlan(p); planRef.current = p; setEvals([]); setLines([]); setElapsed(0); setFinished(false);
+    const prior = p.questions.map((qq) => [...(p.answers ?? [])].reverse().find((a) => a.question_id === qq.id)).filter(Boolean) as Eval[];
+    setPlan(p); planRef.current = p; setEvals(prior); setLines([]); setElapsed(0); setFinished(false);
     setIdx(0); idxRef.current = 0;
     const surname = p.advisor.split(" ").pop();
     const intro = `Hello, and thank you for your interest in our group. I am standing in for Professor ${surname} today. ${p.questions.length} questions, about ten minutes. Take your time; I will wait for a pause.`;
@@ -228,7 +229,10 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
 
   // ── stage ──
   const stageIdx = plan.stages.indexOf(q!.stage);
+  const impression = evals.reduce((v, e) => Math.max(0, Math.min(100, v + (e.impression_delta ?? 0) * 10)), 50);
+  const latest = evals[evals.length - 1];
   return (
+    <div className="grid gap-6 md:grid-cols-[1.15fr_0.85fr]">
     <div className="flex min-h-[70vh] flex-col items-center">
       <div className="flex w-full max-w-3xl items-center justify-between text-xs text-muted">
         <div className="flex gap-1">
@@ -246,11 +250,6 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
           <Logo src={state?.places?.[plan.program]?.logo} name={plan.program} size={22} />
           <span className="font-medium">{plan.advisor}</span>
           <span className="text-muted">· {plan.program}</span>
-        </div>
-        {/* the applicant's own agent sits in the corner, not in the judge's chair */}
-        <div className="absolute -left-40 bottom-0 hidden items-end gap-2 md:flex">
-          <Image src="/mascot-bot.png" alt="" width={56} height={76} className="h-16 w-auto opacity-90" />
-          <span className="mb-2 rounded-full bg-surface px-2 py-0.5 text-[11px] text-muted shadow-sm">{t("withYou")}</span>
         </div>
       </div>
 
@@ -289,6 +288,106 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
       )}
       {error && <p className="mt-3 text-xs text-bad">{error}</p>}
       <p className="mt-6 text-xs text-muted">{plan.caveat}</p>
+    </div>
+
+    {/* coaching column: the interviewer's impression so far, then an analysis card per answer */}
+    <div className="space-y-4">
+      <div className="card">
+        <div className="flex items-center justify-between text-xs text-muted">
+          <span>{t("impression")}</span>
+          <span>{evals.length}/{plan.questions.length} {t("answered")}</span>
+        </div>
+        <div className="mt-2 flex items-end gap-3">
+          <div className="text-4xl font-semibold tracking-tight" style={{ color: impression >= 60 ? "var(--ok)" : impression < 40 ? "var(--bad)" : "var(--brand-ink)" }}>{impression}</div>
+          {latest?.impression_delta != null && (
+            <div className={`mb-1 text-sm font-medium ${latest.impression_delta > 0 ? "text-ok" : latest.impression_delta < 0 ? "text-bad" : "text-muted"}`}>
+              {latest.impression_delta > 0 ? "+" : ""}{latest.impression_delta * 10} <span className="font-normal text-muted">· {latest.impression_note}</span>
+            </div>
+          )}
+        </div>
+        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-background">
+          <div className="h-2 rounded-full transition-all duration-700" style={{ width: `${impression}%`, background: impression >= 60 ? "var(--ok)" : impression < 40 ? "var(--bad)" : "var(--brand)" }} />
+        </div>
+        {evals.length > 0 && <ImpressionChart evals={evals} total={plan.questions.length} questions={plan.questions} />}
+      </div>
+
+      {latest ? (
+        <div className="card border-brand/40">
+          <div className="flex items-center justify-between text-xs text-muted">
+            <span>{t("analysis")} · Q{plan.questions.findIndex((x) => x.id === latest.question_id) + 1}</span>
+            <span>fit {latest.scores.fit} · depth {latest.scores.depth} · clarity {latest.scores.clarity}</span>
+          </div>
+          {latest.good?.length ? (<div className="mt-3"><div className="text-xs font-semibold text-ok">{t("whatWorked")}</div><ul className="mt-1 list-disc pl-5 text-sm">{latest.good.map((g) => <li key={g}>{g}</li>)}</ul></div>) : null}
+          {latest.improve?.length ? (<div className="mt-3"><div className="text-xs font-semibold text-warn">{t("whatToImprove")}</div><ul className="mt-1 list-disc pl-5 text-sm">{latest.improve.map((g) => <li key={g}>{g}</li>)}</ul></div>) : null}
+          {latest.model_answer_hint && <p className="mt-3 rounded-xl bg-background p-3 text-sm"><span className="text-xs font-semibold text-muted">{t("strongerVersion")} · </span>{latest.model_answer_hint}</p>}
+          {!latest.good && <p className="mt-2 text-sm">{latest.feedback}</p>}
+          <p className="mt-3 text-sm"><span className="text-xs font-semibold text-muted">{t("followUp")} · </span>{latest.follow_up}</p>
+        </div>
+      ) : (
+        <div className="card text-sm text-muted">{t("analysisEmpty")}</div>
+      )}
+
+      {evals.length > 1 && (
+        <details className="card text-sm">
+          <summary className="cursor-pointer text-xs text-muted">{t("earlierAnswers")} ({evals.length - 1})</summary>
+          <div className="mt-2 space-y-3">
+            {evals.slice(0, -1).reverse().map((e, i) => (
+              <div key={i} className="border-t border-line pt-2">
+                <div className="text-xs text-muted">Q{plan.questions.findIndex((x) => x.id === e.question_id) + 1} · fit {e.scores.fit} · depth {e.scores.depth} · clarity {e.scores.clarity}{e.impression_delta != null ? ` · ${e.impression_delta > 0 ? "+" : ""}${e.impression_delta * 10}` : ""}</div>
+                {e.improve?.length ? <ul className="mt-1 list-disc pl-5 text-xs">{e.improve.map((g) => <li key={g}>{g}</li>)}</ul> : <p className="mt-1 text-xs">{e.feedback}</p>}
+              </div>
+            ))}
+          </div>
+        </details>
+      )}
+
+      <div className="card">
+        <div className="text-xs font-semibold text-muted">{t("strongAnswer")}</div>
+        <ul className="mt-1 list-disc pl-5 text-sm">{q!.strong_answer_includes.map((x) => <li key={x}>{x}</li>)}</ul>
+      </div>
+    </div>
+    </div>
+  );
+}
+
+
+/** Impression over the interview: 50 is neutral; each answer moves it by its delta. Green up, red down. */
+function ImpressionChart({ evals, total, questions }: { evals: Eval[]; total: number; questions: Q[] }) {
+  const W = 320, H = 120, padX = 18, padT = 16, padB = 22;
+  const pts: { x: number; y: number; v: number; d: number; label: string; note?: string }[] = [];
+  let v = 50;
+  const x = (i: number) => padX + (i * (W - 2 * padX)) / Math.max(total, 1);
+  const y = (val: number) => padT + (100 - val) * ((H - padT - padB) / 100);
+  pts.push({ x: x(0), y: y(50), v: 50, d: 0, label: "" });
+  evals.forEach((e, i) => {
+    const d = (e.impression_delta ?? 0) * 10;
+    v = Math.max(0, Math.min(100, v + d));
+    pts.push({ x: x(i + 1), y: y(v), v, d, label: `Q${questions.findIndex((q) => q.id === e.question_id) + 1}`, note: e.impression_note });
+  });
+  return (
+    <div className="mt-3">
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
+        <line x1={padX} x2={W - padX} y1={y(50)} y2={y(50)} stroke="var(--line)" strokeDasharray="3 3" />
+        {pts.slice(1).map((pt, i) => {
+          const prev = pts[i];
+          return <line key={i} x1={prev.x} y1={prev.y} x2={pt.x} y2={pt.y} stroke={pt.d > 0 ? "var(--ok)" : pt.d < 0 ? "var(--bad)" : "var(--muted)"} strokeWidth="2.5" strokeLinecap="round" />;
+        })}
+        {pts.slice(1).map((pt, i) => (
+          <g key={i}>
+            <circle cx={pt.x} cy={pt.y} r="4.5" fill={pt.d > 0 ? "var(--ok)" : pt.d < 0 ? "var(--bad)" : "var(--muted)"} />
+            <text x={pt.x} y={pt.y - 9} textAnchor="middle" fontSize="10" fontWeight="600" fill={pt.d > 0 ? "var(--ok)" : pt.d < 0 ? "var(--bad)" : "var(--muted)"}>{pt.d > 0 ? `+${pt.d}` : pt.d}</text>
+            <text x={pt.x} y={H - 6} textAnchor="middle" fontSize="10" fill="var(--muted)">{pt.label}</text>
+          </g>
+        ))}
+        <circle cx={pts[0].x} cy={pts[0].y} r="3" fill="var(--muted)" />
+      </svg>
+      <div className="mt-1 flex flex-wrap gap-1">
+        {pts.slice(1).map((pt, i) => (
+          <span key={i} title={pt.note} className={`rounded-md px-1.5 py-0.5 text-[11px] ${pt.d > 0 ? "bg-ok-soft text-ok" : pt.d < 0 ? "bg-bad-soft text-bad" : "bg-background text-muted"}`}>
+            {pt.label} {pt.d > 0 ? `+${pt.d}` : pt.d}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
