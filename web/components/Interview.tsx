@@ -101,10 +101,14 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
     const p: Plan = await r.json();
     const prior = p.questions.map((qq) => [...(p.answers ?? [])].reverse().find((a) => a.question_id === qq.id)).filter(Boolean) as Eval[];
     setPlan(p); planRef.current = p; setEvals(prior); setLines([]); setElapsed(0); setFinished(false);
-    setIdx(0); idxRef.current = 0;
+    const answered = new Set(prior.map((a) => a.question_id));
+    const first = Math.max(0, p.questions.findIndex((qq) => !answered.has(qq.id)));
+    setIdx(first); idxRef.current = first;
     const surname = p.advisor.split(" ").pop();
-    const intro = `Hello, and thank you for your interest in our group. I am standing in for Professor ${surname} today. ${p.questions.length} questions, about ten minutes. Take your time; I will wait for a pause.`;
-    say(intro, () => ask(0));
+    const intro = prior.length
+      ? `Welcome back. We continue with question ${first + 1} of ${p.questions.length}.`
+      : `Hello, and thank you for your interest in our group. I am standing in for Professor ${surname} today. ${p.questions.length} questions, about ten minutes. Take your time; I will wait for a pause.`;
+    say(intro, () => ask(first));
   }
 
   function ask(i: number) {
@@ -357,7 +361,11 @@ function ImpressionChart({ evals, total, questions }: { evals: Eval[]; total: nu
   const pts: { x: number; y: number; v: number; d: number; label: string; note?: string }[] = [];
   let v = 50;
   const x = (i: number) => padX + (i * (W - 2 * padX)) / Math.max(total, 1);
-  const y = (val: number) => padT + (100 - val) * ((H - padT - padB) / 100);
+  const vals: number[] = [50];
+  evals.forEach((e) => { v = Math.max(0, Math.min(100, v + (e.impression_delta ?? 0) * 10)); vals.push(v); });
+  const lo = Math.min(...vals) - 15, hi = Math.max(...vals) + 15;
+  const y = (val: number) => padT + (hi - val) * ((H - padT - padB) / (hi - lo));
+  v = 50;
   pts.push({ x: x(0), y: y(50), v: 50, d: 0, label: "" });
   evals.forEach((e, i) => {
     const d = (e.impression_delta ?? 0) * 10;
