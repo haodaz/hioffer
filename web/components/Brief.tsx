@@ -50,7 +50,7 @@ export function Brief({ state, lang, t, onAsk }: { state: State | null; lang: La
         <Image src="/mascot-duo.png" alt="" width={300} height={316} className="hidden h-auto w-44 shrink-0 md:block" priority />
         <div className="card flex-1">
           <div className="text-2xl font-semibold tracking-tight">
-            {L ? `你好，${name}。我是 hioffer。` : `Hi, ${name}. I'm hioffer.`}
+            {L ? `你好，${name}。我是 HiOffer。` : `Hi, ${name}. I'm HiOffer.`}
           </div>
           <p className="mt-1 text-sm text-muted">{t("sub")}</p>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -63,7 +63,7 @@ export function Brief({ state, lang, t, onAsk }: { state: State | null; lang: La
       </div>
       <div className="card">
         <div className="mb-2 flex items-center gap-2 text-xs font-medium text-muted">
-          <Image src="/mascot-bot.png" alt="" width={20} height={27} className="h-5 w-auto" /> {L ? "hioffer 说" : "hioffer says"}
+          <Image src="/mascot-bot.png" alt="" width={20} height={27} className="h-5 w-auto" /> {L ? "HiOffer 说" : "HiOffer says"}
         </div>
         <ul className="space-y-2">
           {lines.map((l, i) => {

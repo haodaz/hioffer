@@ -71,7 +71,7 @@ export default function Landing() {
         <div className="flex items-center gap-2 text-xl font-bold tracking-tight">
           <Image src="/mascot-bot.png" alt="" width={30} height={40} className="h-8 w-auto" />
           <span>
-            hi<span className="text-brand">offer</span>
+            Hi<span className="text-brand">Offer</span>
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -110,7 +110,7 @@ export default function Landing() {
         </div>
         <div className="relative">
           <div className="absolute inset-6 rounded-full bg-brand-soft blur-3xl" />
-          <Image src="/mascot-duo.png" alt="hioffer: an applicant and her agent" width={760} height={800} priority className="relative mx-auto h-auto w-full max-w-md" />
+          <Image src="/mascot-duo.png" alt="HiOffer: an applicant and her agent" width={760} height={800} priority className="relative mx-auto h-auto w-full max-w-md" />
         </div>
       </section>
 

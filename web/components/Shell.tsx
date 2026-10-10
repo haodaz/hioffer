@@ -40,7 +40,7 @@ export function Shell({
         <Link href="/" className="flex items-center gap-2 px-5 py-4 text-lg font-bold tracking-tight">
           <Image src="/mascot-bot.png" alt="" width={30} height={40} className="h-8 w-auto" />
           <span>
-            hi<span className="text-brand">offer</span>
+            Hi<span className="text-brand">Offer</span>
           </span>
         </Link>
         <nav className="space-y-0.5 px-3">

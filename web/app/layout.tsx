@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "hioffer — your PhD application agent",
+  title: "HiOffer — your PhD application agent",
   description:
     "Finds the right advisors, keeps one material library, tailors it to every program. Built in public for neatHack.",
 };
