@@ -1,0 +1,5 @@
+Remove the public framework prefix to keep this value private. Public prefixes expose values to the browser. If that’s safe, change the variable to Config.
+
+---
+
+选不了config
