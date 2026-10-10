@@ -143,6 +143,15 @@
   finding:** with 70% of sales in Oct–Dec, the funded scenario runs out of cash in **August of Year 2**
   ($17,650 short) right before the peak, while bootstrapping needs only a ~$900 bridge. Decision: bootstrap
   the first cycle, pre-sell passes in Aug–Sep, and treat cheaper model routing as the margin lever.
+- **Cheaper-model routing, negative result (Oct 10, noon):** added `HIOFFER_RESEARCH_MODEL` so the
+  tool-loop agents can run on a cheaper model, and re-ran the Cornell requirements research on
+  `claude-haiku` (tags `haiku-vs-sonnet`, `research-haiku`). Haiku made 12 calls ($0.20 est.), re-requested
+  the same Graduate School page eleven times despite the "you already made this call" reply, and returned
+  **0 facts**; Sonnet on the same task returned 12 sourced facts from 22 pages. Evidence:
+  `evidence/2026-10-10-haiku-vs-sonnet/`. Consequence: the "$22 → $9 COGS" assumption in the cfo.ai model is
+  **not yet earned**; the proven lever so far is context pruning (per-call input tokens halved). Next
+  options: a stricter scaffold for small models (explicit page queue, no free navigation) or Haiku only for
+  extraction after Sonnet picks the pages. Routing stays on Sonnet for now.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 

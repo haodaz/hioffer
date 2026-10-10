@@ -1,4 +1,5 @@
 """Advisor scout: match faculty to the applicant's interests, with cited recent papers."""
+from ..config import RESEARCH_MODEL
 from ..llm import Tool, parse_json, run_tool_agent
 from .identity import anchor_identity
 from ..tools.scholar import FIND_AUTHOR, RECENT_WORKS
@@ -45,6 +46,7 @@ def scout_advisors(department: str, faculty_url: str, institution: str, interest
     recording_tool = Tool(RECENT_WORKS.name, RECENT_WORKS.description, RECENT_WORKS.parameters, recent_works_recording)
     text = run_tool_agent(
         name="advisor_scout",
+        model=RESEARCH_MODEL,
         system=SYSTEM,
         user=f"Department: {department}\nInstitution (for OpenAlex filter): {institution}\n"
         f"Faculty directory: {faculty_url}\n\nApplicant's research interests:\n{interests}",

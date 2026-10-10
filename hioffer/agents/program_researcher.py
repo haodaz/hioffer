@@ -1,4 +1,5 @@
 """Program researcher: read official pages and extract requirements with sources."""
+from ..config import RESEARCH_MODEL
 from ..llm import parse_json, run_tool_agent
 from ..tools.web import FETCH_PAGE
 
@@ -23,6 +24,7 @@ Return JSON:
 def research_program(name: str, start_url: str, log=print) -> dict:
     text = run_tool_agent(
         name="program_researcher",
+        model=RESEARCH_MODEL,
         system=SYSTEM,
         user=f"Program: {name}\nStart URL: {start_url}\nChecklist: deadline, application fee and waivers, "
         f"statement(s) required with word/page limits, number of recommendation letters, CV, transcripts, GRE policy, "

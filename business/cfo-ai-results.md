@@ -33,6 +33,12 @@ zero opening cash, upfront collection, 70% of purchases in Oct–Dec.
   from **Oct-28**, December 2029 cash **$1,076,600**.
 - Ari flagged what the inputs did not cover: free-tier delivery cost, taxes, fees, capex, working-capital delays.
 
+## Caveat added after testing (same day)
+The "$9 from month 7" cost assumption relies on moving the research tool loops to a cheaper model. A first
+test on `claude-haiku` returned no usable facts (see `hackathon.md`), so that assumption is unproven; the
+model should be re-run with COGS staying at ~$15–22 until cheaper routing is demonstrated. With COGS at $22
+the gross margin is 55%, below the 60% target, which makes the routing work the top engineering priority.
+
 ## Decisions taken from this
 1. Keep the $49 Season Pass; the $19.60 COGS ceiling confirms the Haiku-routing work (target $9) is the
    lever that matters, and today's $22 is above the 60% line.
