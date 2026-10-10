@@ -9,7 +9,7 @@
 
 ## Team
 
-- Zhuang H. (solo), building with Claude Code.
+- Zhuang H. (@vibedding on X), solo, building with Claude Code.
 
 ## Stack
 
@@ -113,5 +113,5 @@
 - [ ] Entire checkpoints / entire-graph output
 - [ ] cfo.ai business plan
 - [ ] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai
-- [ ] Public posts on X with #neatHack
+- [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190
 - [ ] Quote post of the official neatlogs post during the submission window
