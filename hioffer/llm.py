@@ -28,8 +28,8 @@ def parse_json(text: str, repair: bool = True) -> Any:
     except json.JSONDecodeError:
         pass
     start = min([i for i in (text.find("{"), text.find("[")) if i >= 0] or [0])
-    try:
-        return json.loads(text[start:])
+    try:  # first complete JSON value; trailing prose after it is ignored
+        return json.JSONDecoder().raw_decode(text[start:])[0]
     except json.JSONDecodeError as e:
         if not repair:
             raise
