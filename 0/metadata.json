@@ -1,0 +1,110 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K5N623S5RGWVFJRD7TRKGV",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T15:07:16.484169Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "business/cfo-ai-results.md",
+    "evidence/2026-10-10-haiku-vs-sonnet/cornell-requirements-haiku.json",
+    "hackathon.md",
+    "hioffer/agents/advisor_scout.py",
+    "hioffer/agents/program_researcher.py",
+    "hioffer/config.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "8c864e252845",
+  "checkpoint_transcript_start": 2413,
+  "transcript_lines_at_start": 2413,
+  "compact_transcript_start": 300,
+  "token_usage": {
+    "input_tokens": 96,
+    "cache_creation_tokens": 5969,
+    "cache_read_tokens": 1438856,
+    "output_tokens": 4006,
+    "api_call_count": 3
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01JYYANzCuCWopVWrWEFfUr4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d6f8c4a4dcfd",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2159,
+        "end": 2160,
+        "entry_ids": [
+          "4b71a9d0-5499-460c-b123-6c70644d1517"
+        ],
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 27
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T15:07:16.30392Z",
+    "agent_lines": 26,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 26,
+    "total_lines_changed": 26,
+    "agent_percentage": 100,
+    "metric_version": 2
+  }
+}

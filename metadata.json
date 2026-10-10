@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K5N623S5RGWVFJRD7TRKGV",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "business/cfo-ai-results.md",
+    "evidence/2026-10-10-haiku-vs-sonnet/cornell-requirements-haiku.json",
+    "hackathon.md",
+    "hioffer/agents/advisor_scout.py",
+    "hioffer/agents/program_researcher.py",
+    "hioffer/config.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 96,
+    "cache_creation_tokens": 5969,
+    "cache_read_tokens": 1438856,
+    "output_tokens": 4006,
+    "api_call_count": 3
+  }
+}
