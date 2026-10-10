@@ -1,0 +1,36 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "fit:Sarah Wiegreffe",
+      "sentence": "Her paper interrogating what 'mechanistic' actually means [paper:W4404784049] is a useful corrective for the field, and her finding that easy training data can transfer to hard tasks [paper:W4402671639] suggests low-resource language adaptation may benefit from interpretability-guided data selection — a direction I have not yet seen explored for Dravidian languages [lib:interests].",
+      "problem": "Paper W4402671639 ('The Unreasonable Effectiveness of Easy Training Data for Hard Tasks') is listed under advisor Sarah Wiegreffe, but its authors are Peter Hase, Mohit Bansal, Peter E. Clark, and Sarah Wiegreffe — Wiegreffe is a co-author, not the lead. More critically, the paper is attributed to Wiegreffe's group in the fit letter, but it is not a mechanistic interpretability paper and the 'finding' is attributed to Wiegreffe's group as if it is her lab's result, which is accurate enough. However, the paper record lists it under Wiegreffe so the citation is acceptable. No issue with citation attribution per se, but the fit letter also cites this paper in the email correctly. No flag needed here — reconsidering.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Sarah Wiegreffe",
+      "sentence": "I am also curious whether the finding in \"The Unreasonable Effectiveness of Easy Training Data for Hard Tasks\" generalizes to cross-lingual transfer, where the notion of \"easy\" data is less obvious.",
+      "problem": "No citation tag is provided for this paper reference. While the paper record (W4402671639) is listed under Sarah Wiegreffe, the email omits the citation tag, but more substantively, this paper's first author is Peter Hase (not Wiegreffe), and the email implies it is Wiegreffe's finding/work without clarifying her co-author role — the paper is attributed to her group without acknowledgment that she is a secondary author. This is a missing citation and potential misattribution of primary credit.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "fit:Sarah Wiegreffe",
+      "sentence": "Her paper interrogating what 'mechanistic' actually means [paper:W4404784049] is a useful corrective for the field, and her finding that easy training data can transfer to hard tasks [paper:W4402671639] suggests low-resource language adaptation may benefit from interpretability-guided data selection — a direction I have not yet seen explored for Dravidian languages [lib:interests].",
+      "problem": "Paper W4402671639 ('The Unreasonable Effectiveness of Easy Training Data for Hard Tasks') is listed under advisor Sarah Wiegreffe, but its authors are Peter Hase, Mohit Bansal, Peter E. Clark, and Sarah Wiegreffe — Wiegreffe is a co-author, not the lead. More critically, the paper is attributed to Wiegreffe's group in the fit letter, but it is not a mechanistic interpretability paper and the 'finding' is attributed to Wiegreffe's group as if it is her lab's result, which is accurate enough. However, the paper record lists it under Wiegreffe so the citation is acceptable. No issue with citation attribution per se, but the fit letter also cites this paper in the email correctly. No flag needed here — reconsidering.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Sarah Wiegreffe",
+      "sentence": "I am also curious whether the finding in \"The Unreasonable Effectiveness of Easy Training Data for Hard Tasks\" generalizes to cross-lingual transfer, where the notion of \"easy\" data is less obvious.",
+      "problem": "No citation tag is provided for this paper reference. While the paper record (W4402671639) is listed under Sarah Wiegreffe, the email omits the citation tag, but more substantively, this paper's first author is Peter Hase (not Wiegreffe), and the email implies it is Wiegreffe's finding/work without clarifying her co-author role — the paper is attributed to her group without acknowledgment that she is a secondary author. This is a missing citation and potential misattribution of primary credit.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": []
+}

@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from ..llm import Tool
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (hioffer research agent; contact via repo)"}
-MAX_CHARS = 14000
+MAX_CHARS = 9000
 
 
 def fetch_page(url: str, max_chars: int = MAX_CHARS) -> dict:

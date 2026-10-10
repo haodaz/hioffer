@@ -55,7 +55,28 @@
   applicant to-dos instead of writer feedback. `advisor_scout` records every work OpenAlex actually returned and
   drops any cited paper whose id was not among them (moved to `unverified_mentions`), so the writer can only cite
   verified papers.
-- **Run 3 (tags `run3`, `after-fix`):** result below.
+- **Run 3 (tags `run3`, `after-fix`):** verification now *caught* real fabrications instead of missing them
+  (11 → 6 → 8 writer issues over three drafts): invented project names, papers attributed to the wrong
+  professor, applicant files cited for claims about professors. Root causes were mine: the OpenAlex author
+  filter dropped faculty whose last-known institution is a lab (3 of 5 advisors ended with zero verified
+  papers, so the writer had nothing to cite), the writer had no citation type for advisor facts, and the
+  auditor could not see paper authors/venues. Evidence: `evidence/2026-10-10-run3-before-fix/`.
+- **Fix 3:** soft institution match; advisors without verified papers are demoted to `skipped`; new
+  `[advisor:<name>]` citation type; auditor sees authors/venue/year; per-run token/cost estimate.
+- **Run 4 (tags `run4`, `after-fix-2`), three programs:**
+  - UW: passed on the first draft, no fabrications (`evidence/2026-10-10-run4/uw-materials-passed.json`).
+  - UMD: 3 verified advisors; failed on two new bugs of mine (author lists truncated to 6 names made the
+    auditor doubt authorship; a one-digit paper-id typo was treated as fabrication). Fixed: full author
+    lists + a note to the auditor; near-miss ids are repaired in code and logged.
+  - Cornell: **OpenAlex's free daily budget ran out mid-run** (HTTP 429, `retry-after` ≈ 11 h), the scout
+    returned zero advisors, and the package still "passed" because there was nothing to check. Fixed: OpenAlex
+    responses cached on disk, optional `OPENALEX_API_KEY`, budget-exhausted 429 fails fast; a program with no
+    verified advisors is now reported as `blocked`, not complete.
+  - **Cost:** run 4 used ~1.95M input tokens / 45k output tokens over 71 Sonnet calls (≈ $6.5 at list
+    price). The tool loops re-send every fetched page on every step. Fix: older tool results are pruned to
+    600 chars (newest 3 kept), page text capped at 9k chars. Before/after cost comparison is the next run.
+- **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
+  each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 
 ## Demo
 

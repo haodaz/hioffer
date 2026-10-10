@@ -1,0 +1,60 @@
+{
+  "programs": [
+    {
+      "program": "University of Washington CSE PhD",
+      "facts": 12,
+      "not_found": [],
+      "advisors": [
+        "Yulia Tsvetkov",
+        "Hannaneh Hajishirzi"
+      ],
+      "materials_version": 0,
+      "passed": true,
+      "open_issues": 0,
+      "applicant_todos": 0
+    },
+    {
+      "program": "University of Maryland CS PhD",
+      "facts": 13,
+      "not_found": [
+        "word/page limit for statement of purpose (none stated on any fetched page)",
+        "separate personal_statement distinct from statement of purpose",
+        "writing_sample"
+      ],
+      "advisors": [
+        "Marine Carpuat",
+        "Rachel Rudinger",
+        "Sarah Wiegreffe"
+      ],
+      "materials_version": 2,
+      "passed": false,
+      "open_issues": 2,
+      "applicant_todos": 0
+    },
+    {
+      "program": "Cornell University CS PhD",
+      "facts": 12,
+      "not_found": [
+        "application_fee (exact dollar amount — Graduate School fee pages all returned 403)",
+        "gre (explicit required/not-required policy for regular PhD applicants not stated)",
+        "cv (explicit required/optional status not stated; referenced only indirectly)"
+      ],
+      "advisors": [],
+      "materials_version": 0,
+      "passed": true,
+      "open_issues": 0,
+      "applicant_todos": 0
+    }
+  ],
+  "usage": {
+    "models": {
+      "claude-sonnet-4.6": {
+        "calls": 71,
+        "input_tokens": 1945299,
+        "output_tokens": 44916,
+        "est_usd": 6.5096
+      }
+    },
+    "est_total_usd": 6.5096
+  }
+}

@@ -69,6 +69,19 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
                 ws.save(f"{key}/advisors_connected", {**advisors, "connector_error": str(e)})
         advisors = ws.load(f"{key}/advisors_connected")
 
+        if not advisors.get("advisors"):
+            # No verified advisor means no honest fit paragraphs or emails: stop here and say so
+            # instead of producing a package that "passes" with nothing in it.
+            log("writer: skipped, no OpenAlex-verified advisors (re-run after the advisor stage succeeds)")
+            ws.path(f"{key}/advisors").unlink(missing_ok=True)
+            ws.path(f"{key}/advisors_connected").unlink(missing_ok=True)
+            summary["programs"].append(
+                {"program": prog["name"], "facts": len(requirements.get("facts", [])),
+                 "not_found": requirements.get("not_found", []), "advisors": [], "status": "blocked",
+                 "reason": advisors.get("connector_error") or "advisor scout returned no verified advisors"}
+            )
+            continue
+
         # Step 4 + 5: write, verify, revise.
         feedback: list[str] = []
         for attempt in range(MAX_REVISIONS + 1):
@@ -102,6 +115,7 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
                 "not_found": requirements.get("not_found", []),
                 "advisors": [a["name"] for a in advisors.get("advisors", [])],
                 "materials_version": attempt,
+                "status": "complete" if result["passed"] else "needs_review",
                 "passed": result["passed"],
                 "open_issues": len(result["writer_issues"]),
                 "applicant_todos": len(todos),

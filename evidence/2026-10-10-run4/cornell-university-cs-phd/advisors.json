@@ -1,0 +1,43 @@
+{
+  "department": "Department of Computer Science",
+  "faculty_url": "https://www.cs.cornell.edu/directory",
+  "advisors": [],
+  "skipped": [
+    {
+      "name": "Yoav Artzi",
+      "why": "Works on NLU and interactive systems at Cornell Tech (NYC), but recent research focuses on instruction following and grounding in robotics/embodied agents rather than multilingual or low-resource NLP for Indian languages."
+    },
+    {
+      "name": "Claire Cardie",
+      "why": "Senior NLP faculty but listed as emeritus/semi-retired; no evidence of active PhD student recruitment in recent years."
+    },
+    {
+      "name": "Marten van Schijndel",
+      "why": "Linguistics department field member; focuses on computational psycholinguistics and incremental processing rather than multilingual LLM adaptation or Indian language NLP."
+    },
+    {
+      "name": "Aditya Vashistha",
+      "why": "no OpenAlex-verified recent papers"
+    },
+    {
+      "name": "Tanya Goyal",
+      "why": "no OpenAlex-verified recent papers"
+    },
+    {
+      "name": "Kilian Weinberger",
+      "why": "no OpenAlex-verified recent papers"
+    },
+    {
+      "name": "David Mimno",
+      "why": "no OpenAlex-verified recent papers"
+    },
+    {
+      "name": "John Thickstun",
+      "why": "no OpenAlex-verified recent papers"
+    }
+  ],
+  "verification": {
+    "openalex_works_seen": 0,
+    "papers_dropped_as_unverified": 0
+  }
+}

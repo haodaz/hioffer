@@ -130,6 +130,7 @@ def run_tool_agent(
             if not msg.tool_calls:
                 return msg.content or ""
             messages.append(msg.model_dump(exclude_none=True))
+            _prune_old_tool_results(messages)
             for call in msg.tool_calls:
                 tool = by_name[call.function.name]
                 args = json.loads(call.function.arguments or "{}")
@@ -147,6 +148,24 @@ def run_tool_agent(
         return resp.choices[0].message.content or ""
 
     return _run()
+
+
+KEEP_FULL_RESULTS = 3
+PRUNED_CHARS = 600
+
+
+def _prune_old_tool_results(messages: list[dict]) -> None:
+    """Shrink all but the newest tool results in place.
+
+    Each step of a tool loop re-sends the whole history, so ten full web pages cost ten times
+    their size per step. The model has already extracted what it needed from older pages; keep a
+    short head of each so it can still recognise them, and the full text only for the latest few.
+    """
+    idx = [i for i, m in enumerate(messages) if m.get("role") == "tool"]
+    for i in idx[:-KEEP_FULL_RESULTS]:
+        content = messages[i]["content"]
+        if len(content) > PRUNED_CHARS and not content.endswith("[truncated]"):
+            messages[i]["content"] = content[:PRUNED_CHARS] + "\n...[truncated]"
 
 
 def _call_tool(tool: Tool, args: dict) -> str:
