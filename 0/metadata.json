@@ -1,0 +1,159 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KQENT800NWXSW02TAFNY0K",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T20:18:17.991363Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "web/components/Interview.tsx"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "d87d628def6b",
+  "checkpoint_transcript_start": 3525,
+  "transcript_lines_at_start": 3525,
+  "compact_transcript_start": 437,
+  "token_usage": {
+    "input_tokens": 266,
+    "cache_creation_tokens": 26185,
+    "cache_read_tokens": 9264381,
+    "output_tokens": 15168,
+    "api_call_count": 13,
+    "subagent_tokens": {
+      "input_tokens": 20,
+      "cache_creation_tokens": 48816,
+      "cache_read_tokens": 327325,
+      "output_tokens": 89,
+      "api_call_count": 10
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01JYYANzCuCWopVWrWEFfUr4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d6f8c4a4dcfd",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2159,
+        "end": 2160,
+        "entry_ids": [
+          "4b71a9d0-5499-460c-b123-6c70644d1517"
+        ],
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01LhjXtAXkpJsDzxgQipaNd4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "demo-video"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "af73f90af6d6",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2839,
+        "end": 2840,
+        "entry_ids": [
+          "ff633840-064f-412b-8e93-83d508d4bace"
+        ],
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: demo-video",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 43
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T20:18:17.638596Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 7,
+    "human_removed": 149,
+    "total_committed": 0,
+    "total_lines_changed": 156,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 223,
+      "user_lines_removed": 156,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "web/components/Interview.tsx": 201,
+        "web/lib/i18n.ts": 22
+      },
+      "user_removed_per_file": {
+        "web/components/Interview.tsx": 156
+      }
+    }
+  ]
+}
