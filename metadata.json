@@ -1,0 +1,37 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K54JMN438M6SV9VTXHXTZE",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "evidence/neatlogs/01-traces-list-oct10.jpg",
+    "evidence/neatlogs/02-run5-trace-tree.jpg",
+    "evidence/neatlogs/03-detections-rules.jpg",
+    "evidence/neatlogs/04-execution-failed-flagged-spans.jpg",
+    "evidence/neatlogs/05-run1-json-error-in-trace.jpg",
+    "examples/demo-workspace/priya/cornell-university-cs-phd/advisors_connected.json",
+    "examples/demo-workspace/priya/recommendations.json",
+    "examples/demo-workspace/priya/signals.json",
+    "examples/demo-workspace/priya/university-of-maryland-cs-phd/advisors_connected.json",
+    "examples/demo-workspace/priya/university-of-washington-cse-phd/advisors_connected.json",
+    "hackathon.md",
+    "hioffer/tools/scholar.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 548,
+    "cache_creation_tokens": 37732,
+    "cache_read_tokens": 8016897,
+    "output_tokens": 10780,
+    "api_call_count": 19
+  }
+}
