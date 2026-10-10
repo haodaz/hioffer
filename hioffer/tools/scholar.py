@@ -57,8 +57,8 @@ def find_author(name: str, institution: str = "") -> dict:
     data = _get("/authors", search=name, per_page=5)
     out = []
     for a in data.get("results", []):
-        insts = [i.get("display_name", "") for i in a.get("last_known_institutions", [])]
-        affs = [x.get("institution", {}).get("display_name", "") for x in a.get("affiliations", [])]
+        insts = [i.get("display_name", "") for i in (a.get("last_known_institutions") or [])]
+        affs = [(x.get("institution") or {}).get("display_name", "") for x in (a.get("affiliations") or [])]
         # Soft match only: faculty often have a lab or industry affiliation as "last known"
         # institution (e.g. a UW professor listed under an AI institute), so never drop candidates.
         hit = bool(institution) and any(institution.lower() in i.lower() for i in insts + affs)
@@ -71,7 +71,7 @@ def find_author(name: str, institution: str = "") -> dict:
                 "institution_match": hit,
                 "works_count": a.get("works_count"),
                 "cited_by_count": a.get("cited_by_count"),
-                "topics": [t.get("display_name") for t in a.get("topics", [])[:5]],
+                "topics": [t.get("display_name") for t in (a.get("topics") or [])[:5]],
             }
         )
     out.sort(key=lambda c: (not c["institution_match"], -(c["works_count"] or 0)))
@@ -142,8 +142,8 @@ def author_profile(author_id: str) -> dict:
         "id": author_id,
         "name": a.get("display_name"),
         "affiliations": [
-            {"institution": x.get("institution", {}).get("display_name"), "years": x.get("years", [])}
-            for x in a.get("affiliations", [])
+            {"institution": (x.get("institution") or {}).get("display_name"), "years": x.get("years") or []}
+            for x in (a.get("affiliations") or [])
         ],
         "url": a["id"],
     }
