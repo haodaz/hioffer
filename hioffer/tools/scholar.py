@@ -1,4 +1,10 @@
 """OpenAlex lookups: find an author and list their recent works. No API key needed."""
+import hashlib
+import json
+import os
+import time
+from pathlib import Path
+
 import httpx
 
 from ..llm import Tool
@@ -7,8 +13,42 @@ BASE = "https://api.openalex.org"
 HEADERS = {"User-Agent": "hioffer (mailto:hioffer@example.com)"}
 
 
+CACHE_DIR = Path(os.environ.get("HIOFFER_CACHE_DIR", ".cache/openalex"))
+
+
 def _get(path: str, **params) -> dict:
-    r = httpx.get(f"{BASE}{path}", params=params, headers=HEADERS, timeout=30)
+    """GET with a disk cache and backoff.
+
+    OpenAlex charges every call against a small free daily budget (shared per IP without a key),
+    so identical requests are served from `.cache/openalex/` and a personal key is sent when set.
+    """
+    if os.environ.get("OPENALEX_MAILTO"):
+        params["mailto"] = os.environ["OPENALEX_MAILTO"]
+    key = hashlib.sha1(f"{path}?{json.dumps(params, sort_keys=True)}".encode()).hexdigest()
+    cached = CACHE_DIR / f"{key}.json"
+    if cached.exists():
+        return json.loads(cached.read_text())
+    headers = dict(HEADERS)
+    if os.environ.get("OPENALEX_API_KEY"):
+        headers["Authorization"] = f"Bearer {os.environ['OPENALEX_API_KEY']}"
+    for attempt in range(4):
+        r = httpx.get(f"{BASE}{path}", params=params, headers=headers, timeout=30)
+        if r.status_code == 429:
+            retry_after = int(r.headers.get("retry-after", "0") or 0)
+            if retry_after > 120:  # daily budget exhausted: waiting will not help
+                raise RuntimeError(
+                    "OpenAlex daily budget exhausted; set OPENALEX_API_KEY in .env (free key) or retry after reset"
+                )
+            time.sleep(1.5 * 2**attempt)
+            continue
+        if r.status_code >= 500:
+            time.sleep(1.5 * 2**attempt)
+            continue
+        r.raise_for_status()
+        data = r.json()
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cached.write_text(json.dumps(data))
+        return data
     r.raise_for_status()
     return r.json()
 
@@ -57,10 +97,12 @@ def recent_works(author_id: str, since_year: int = 2024, limit: int = 6) -> dict
                 "venue": src.get("display_name"),
                 "cited_by": w.get("cited_by_count"),
                 "url": loc.get("landing_page_url") or w.get("doi") or w["id"],
-                "authors": [a["author"]["display_name"] for a in w.get("authorships", [])[:6]],
+                "authors": [a["author"]["display_name"] for a in w.get("authorships", [])[:8]],
+                "author_count": len(w.get("authorships", [])),
             }
         )
-    return {"author_id": author_id, "works": works}
+    return {"author_id": author_id, "works": works,
+            "note": "author lists show the first 8 names; every work here lists the queried author among its authorships"}
 
 
 FIND_AUTHOR = Tool(
@@ -91,3 +133,38 @@ RECENT_WORKS = Tool(
     },
     fn=recent_works,
 )
+
+
+def author_profile(author_id: str) -> dict:
+    """Affiliation history with years: used for alumni overlap."""
+    a = _get(f"/authors/{author_id}")
+    return {
+        "id": author_id,
+        "name": a.get("display_name"),
+        "affiliations": [
+            {"institution": x.get("institution", {}).get("display_name"), "years": x.get("years", [])}
+            for x in a.get("affiliations", [])
+        ],
+        "url": a["id"],
+    }
+
+
+def coauthors(author_id: str, since_year: int = 2021, limit: int = 100) -> dict:
+    """Co-author set from recent works: name, id, shared paper count and one example paper."""
+    data = _get(
+        "/works",
+        filter=f"authorships.author.id:{author_id},from_publication_date:{since_year}-01-01",
+        per_page=limit,
+        select="id,title,publication_year,authorships",
+    )
+    people: dict[str, dict] = {}
+    for w in data.get("results", []):
+        for au in w.get("authorships", []):
+            aid = au["author"]["id"].rsplit("/", 1)[-1]
+            if aid == author_id:
+                continue
+            p = people.setdefault(aid, {"id": aid, "name": au["author"]["display_name"], "papers": 0, "example": None})
+            p["papers"] += 1
+            if not p["example"]:
+                p["example"] = {"id": w["id"].rsplit("/", 1)[-1], "title": w.get("title"), "year": w.get("publication_year")}
+    return {"author_id": author_id, "works_scanned": len(data.get("results", [])), "coauthors": list(people.values())}

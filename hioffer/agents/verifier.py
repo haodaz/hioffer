@@ -10,6 +10,8 @@ AUDIT_SYSTEM = """You audit a PhD applicant's drafted materials against their so
 Sources: LIBRARY items (facts about the applicant, cited [lib:id]); PAPERS (cited [paper:id], with authors,
 venue, year and the advisor they are listed under); ADVISORS (areas, match_reason, takes_students evidence,
 cited [advisor:name]).
+Paper author lists are truncated to the first names; each paper was retrieved from the record of the advisor it is
+listed under, so that advisor IS an author even when not shown. Do not flag that.
 Flag a sentence only when it states a fact that is (a) missing a citation tag, or (b) cited to a source that
 does not contain it, or (c) attributes a paper to the wrong advisor, or (d) invents specifics (numbers, names,
 project names, venues). A first-author "et al." plus venue/year that matches the paper record is fine.
@@ -31,7 +33,28 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
     if sop.get("word_limit") and sop["word_count"] > sop["word_limit"]:
         issues.append({"check": "word_limit", "problem": f"SOP is {sop['word_count']} words, limit {sop['word_limit']}"})
 
-    # 2. Citation tags must resolve.
+    # 2. Citation tags must resolve. A paper id that is one or two characters off from exactly one
+    #    known id is a transcription slip, not a fabrication: repair it in place and record the fix.
+    repaired: list[str] = []
+
+    def _fix_ids(text: str) -> str:
+        def sub(m):
+            kind, ident = m.group(1), m.group(2)
+            if kind != "paper" or ident in paper_ids:
+                return m.group(0)
+            close = [p for p in paper_ids if len(p) == len(ident) and sum(a != b for a, b in zip(p, ident)) <= 2]
+            if len(close) == 1:
+                repaired.append(f"{ident}->{close[0]}")
+                return f"[paper:{close[0]}]"
+            return m.group(0)
+        return TAG.sub(sub, text)
+
+    sop["text"] = _fix_ids(sop["text"])
+    for p in materials.get("fit_paragraphs", []):
+        p["text"] = _fix_ids(p["text"])
+    for e in materials.get("emails", []):
+        e["body"] = _fix_ids(e["body"])
+
     texts = {"sop": sop["text"]}
     texts.update({f"fit:{p['advisor']}": p["text"] for p in materials.get("fit_paragraphs", [])})
     texts.update({f"email:{e['advisor']}": e["body"] for e in materials.get("emails", [])})
@@ -88,4 +111,5 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
         it.setdefault("fixable_by", "writer")
     writer_issues = [i for i in issues if i["fixable_by"] == "writer"]
     return {"passed": not writer_issues, "issues": issues, "writer_issues": writer_issues,
-            "applicant_todos": [i for i in issues if i["fixable_by"] == "applicant"]}
+            "applicant_todos": [i for i in issues if i["fixable_by"] == "applicant"],
+            "repaired_citations": repaired}

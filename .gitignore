@@ -16,3 +16,4 @@ workspace/
 
 # OS
 .DS_Store
+.cache/

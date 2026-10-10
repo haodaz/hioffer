@@ -5,6 +5,7 @@ import neatlogs
 import yaml
 
 from .agents.advisor_scout import scout_advisors
+from .agents.connector import find_connections
 from .agents.librarian import build_library
 from .agents.program_researcher import research_program
 from .agents.verifier import verify
@@ -58,6 +59,16 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
             )
         advisors = ws.load(f"{key}/advisors")
 
+        # Step 3b: light relationship graph (co-authors, alumni) between the applicant's circle and each advisor.
+        if not ws.has(f"{key}/advisors_connected"):
+            log("connector: co-author / alumni links")
+            try:
+                ws.save(f"{key}/advisors_connected", find_connections(library, advisors, log=log))
+            except Exception as e:  # a quota failure here must not block the application package
+                log(f"connector: skipped ({e})")
+                ws.save(f"{key}/advisors_connected", {**advisors, "connector_error": str(e)})
+        advisors = ws.load(f"{key}/advisors_connected")
+
         # Step 4 + 5: write, verify, revise.
         feedback: list[str] = []
         for attempt in range(MAX_REVISIONS + 1):
@@ -69,7 +80,10 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
             vkey = f"{key}/verification_v{attempt}"
             if not ws.has(vkey):
                 log(f"verifier: checking v{attempt}")
-                ws.save(vkey, verify(library, requirements, advisors, materials))
+                result = verify(library, requirements, advisors, materials)
+                if result.get("repaired_citations"):
+                    ws.save(mkey, materials)  # verifier repaired near-miss paper ids in place
+                ws.save(vkey, result)
             result = ws.load(vkey)
             if result["passed"]:
                 log(f"verifier: v{attempt} passed")
