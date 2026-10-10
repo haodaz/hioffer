@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K5JA23YP43QFB7NH7WCHRV",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "business/cfo-ai-results.md",
+    "evidence/cfo-ai/01-assumptions-page.jpg",
+    "evidence/cfo-ai/02-monthly-pnl-cashflow.jpg",
+    "evidence/cfo-ai/03-financial-outlook-funding-gap.jpg",
+    "evidence/cfo-ai/04-monthly-pnl-and-cashflow-tables.jpg",
+    "hackathon.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 290,
+    "cache_creation_tokens": 29359,
+    "cache_read_tokens": 4568489,
+    "output_tokens": 7915,
+    "api_call_count": 10
+  }
+}
