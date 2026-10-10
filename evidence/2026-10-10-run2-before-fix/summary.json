@@ -1,0 +1,21 @@
+{
+  "programs": [
+    {
+      "program": "University of Washington CSE PhD",
+      "facts": 12,
+      "not_found": [
+        "writing_sample"
+      ],
+      "advisors": [
+        "Yulia Tsvetkov",
+        "Hannaneh Hajishirzi",
+        "Noah A. Smith",
+        "Pang Wei Koh",
+        "Luke Zettlemoyer"
+      ],
+      "materials_version": 2,
+      "passed": false,
+      "open_issues": 1
+    }
+  ]
+}

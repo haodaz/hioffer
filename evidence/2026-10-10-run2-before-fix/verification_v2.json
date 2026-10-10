@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "coverage",
+      "problem": "program requires research_statement but library has none"
+    }
+  ]
+}

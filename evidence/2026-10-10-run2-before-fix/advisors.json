@@ -1,0 +1,258 @@
+{
+  "department": "Paul G. Allen School of Computer Science & Engineering",
+  "faculty_url": "https://www.cs.washington.edu/people/faculty-members/",
+  "advisors": [
+    {
+      "name": "Yulia Tsvetkov",
+      "openalex_id": "A5062910836",
+      "profile_url": "https://homes.cs.washington.edu/~yuliats/",
+      "areas": [
+        "Multilingual NLP",
+        "Culturally-inclusive language modeling",
+        "LLM evaluation & faithfulness",
+        "Ethics & fairness in NLP",
+        "Low-resource language technology"
+      ],
+      "match_reason": "Tsvetkov's lab explicitly pursues 'NLP for All' — extending language technology across linguistic and cultural boundaries — making it the single closest match to the applicant's interests. Her group published 'MAGNET: Improving the Multilingual Fairness of Language Models with Adaptive Gradient-Based Tokenization' (NeurIPS 2024), directly addressing the tokenizer adaptation bottleneck for underrepresented languages, and 'Voices Unheard: NLP Resources and Models for Yorùbá Regional Dialects' (EMNLP 2024), a template for the kind of low-resource language resource work the applicant wants to do for Indian languages. The 2025 'CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming' (ACL 2025) maps directly onto the applicant's interest in cultural grounding and moving beyond translated English benchmarks. In 2026, 'One Form to Transfer Them All: Pretraining Multilingual Language Models Beyond Native Orthography' (EMNLP 2026) explores multilingual pretraining beyond script-centric assumptions — highly relevant to Indic scripts.",
+      "papers": [
+        {
+          "id": "W4401042371",
+          "title": "Trusting Your Evidence: Hallucinate Less with Context-aware Decoding",
+          "year": 2024,
+          "venue": "NAACL 2024",
+          "url": "https://doi.org/10.18653/v1/2024.naacl-short.69"
+        },
+        {
+          "id": "tsvetkov-magnet-2024",
+          "title": "MAGNET: Improving the Multilingual Fairness of Language Models with Adaptive Gradient-Based Tokenization",
+          "year": 2024,
+          "venue": "NeurIPS 2024",
+          "url": "https://arxiv.org/abs/2407.08818"
+        },
+        {
+          "id": "tsvetkov-voices-2024",
+          "title": "Voices Unheard: NLP Resources and Models for Yorùbá Regional Dialects",
+          "year": 2024,
+          "venue": "EMNLP 2024",
+          "url": "https://arxiv.org/abs/2406.15951"
+        },
+        {
+          "id": "tsvetkov-culturalbench-2025",
+          "title": "CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming",
+          "year": 2025,
+          "venue": "ACL 2025",
+          "url": "https://arxiv.org/abs/2410.02677"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "TsvetShop lab page lists multiple active PhD students at UW. Tsvetkov's homepage describes ongoing research group with current graduate student roster and active publications.",
+        "source_url": "https://tsvetshop.github.io/"
+      },
+      "fit_score": 5
+    },
+    {
+      "name": "Hannaneh Hajishirzi",
+      "openalex_id": "A5082305994",
+      "profile_url": "https://hannaneh.ai",
+      "areas": [
+        "Large language models (open science)",
+        "Retrieval-augmented generation",
+        "Efficient LLM training & evaluation",
+        "Post-training alignment (Tulu)",
+        "Data selection and tokenization"
+      ],
+      "match_reason": "Hajishirzi co-leads OLMo and Tulu — the leading fully open LLM infrastructure efforts — giving PhD students exceptional access to full training pipelines to study data selection and parameter-efficient adaptation. 'Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research' (ACL 2024) and 'OLMo: Accelerating the Science of Language Models' (ACL 2024) provide the open pre-training stack the applicant could extend to Indic languages. The RAG work 'Synthesizing scientific literature with retrieval-augmented language models' (Nature 2026, as OpenScholar) maps to the applicant's secondary interest in RAG for health/government information. 'MatFormer: Nested Transformer for Elastic Inference' (NeurIPS 2024, co-authored with Tsvetkov) addresses model compression for on-device inference. H2Lab actively recruits and Hajishirzi explicitly states 'I am always looking to hire … students and postdocs at H2Lab.'",
+      "papers": [
+        {
+          "id": "W4402671236",
+          "title": "OLMo: Accelerating the Science of Language Models",
+          "year": 2024,
+          "venue": "ACL 2024",
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.841"
+        },
+        {
+          "id": "W4402671286",
+          "title": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research",
+          "year": 2024,
+          "venue": "ACL 2024",
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.840"
+        },
+        {
+          "id": "W7127589252",
+          "title": "Synthesizing scientific literature with retrieval-augmented language models (OpenScholar)",
+          "year": 2026,
+          "venue": "Nature",
+          "url": "https://doi.org/10.1038/s41586-025-10072-4"
+        },
+        {
+          "id": "W4416036482",
+          "title": "s1: Simple test-time scaling",
+          "year": 2025,
+          "venue": "EMNLP 2025",
+          "url": "https://doi.org/10.18653/v1/2025.emnlp-main.1025"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "\"I am always looking to hire talented research engineers and scientists at Ai2 … and students and postdocs at H2Lab. If you are an undergraduate student and want to work with my lab, please fill out this questionnaire.\"",
+        "source_url": "https://hannaneh.ai"
+      },
+      "fit_score": 4
+    },
+    {
+      "name": "Noah A. Smith",
+      "openalex_id": null,
+      "profile_url": "https://nasmith.github.io/",
+      "areas": [
+        "NLP methodology & evaluation",
+        "Multilingual NLP",
+        "Open language modeling (OLMo co-lead)",
+        "Tokenization & subword models",
+        "Computational social science"
+      ],
+      "match_reason": "Smith is a deep match for the applicant's interest in evaluation that 'measures what matters': his lab published 'The Leaderboard Illusion' (NeurIPS 2025) and 'Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation' (NeurIPS 2025), both directly targeting benchmark validity. 'MAGNET' (NeurIPS 2024, with Tsvetkov) and 'SuperBPE: Space Travel for Language Models' (COLM 2025) show active work on tokenization for underrepresented languages. 'Voices Unheard' (EMNLP 2024, co-authored with Tsvetkov) involves low-resource African language NLP — a direct analog for the applicant's Indian language goals. Smith is also OLMo co-lead, giving access to open pre-training infrastructure for Indic language extension experiments. His track record of mentoring 35 PhD graduates into faculty positions is exceptional.",
+      "papers": [
+        {
+          "id": "smith-leaderboard-2025",
+          "title": "The Leaderboard Illusion",
+          "year": 2025,
+          "venue": "NeurIPS 2025 Datasets & Benchmarks",
+          "url": "https://arxiv.org/abs/2504.20879"
+        },
+        {
+          "id": "smith-superbpe-2025",
+          "title": "SuperBPE: Space Travel for Language Models",
+          "year": 2025,
+          "venue": "COLM 2025",
+          "url": "https://arxiv.org/abs/2503.13423"
+        },
+        {
+          "id": "smith-voices-2024",
+          "title": "Voices Unheard: NLP Resources and Models for Yorùbá Regional Dialects",
+          "year": 2024,
+          "venue": "EMNLP 2024",
+          "url": "https://arxiv.org/abs/2406.15951"
+        },
+        {
+          "id": "smith-magnet-2024",
+          "title": "MAGNET: Improving the Multilingual Fairness of Language Models with Adaptive Gradient-Based Tokenization",
+          "year": 2024,
+          "venue": "NeurIPS 2024",
+          "url": "https://arxiv.org/abs/2407.08818"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "Noah's ARK page states: 'If you are an undergraduate or masters student in Seattle and would like to work on research with Noah's ARK, please complete this demonstration of research interest.' Smith's homepage also notes he is actively mentoring and has graduated 35 PhD students as of 2026.",
+        "source_url": "https://noahs-ark.github.io/"
+      },
+      "fit_score": 4
+    },
+    {
+      "name": "Pang Wei Koh",
+      "openalex_id": null,
+      "profile_url": "https://koh.pw/",
+      "areas": [
+        "Data selection & curation for LLMs",
+        "Retrieval-augmented generation",
+        "Reliable & responsible ML",
+        "Evaluation of foundation models",
+        "Societally impactful AI (health, science)"
+      ],
+      "match_reason": "Koh is the strongest match for the applicant's secondary interests in RAG for health/government information and data selection. 'Frustratingly simple retrieval improves challenging, reasoning-intensive benchmarks' (ICLR 2026) and the OpenScholar Nature paper (RAG for scientific literature) directly address RAG quality. 'Spokes: Optimizing for diverse pretraining data selection' (arXiv 2026, with Zettlemoyer) is about principled data selection — a key technique for building Indic-language LLMs from small data budgets. 'ReasonIR: Training Retrievers for Reasoning Tasks' (COLM 2025) covers the retrieval backbone needed for government/health RAG applications. Koh's joining page explicitly invites PhD applicants to discuss common interests in 'societally important applications such as biomedicine, public health … and education.'",
+      "papers": [
+        {
+          "id": "koh-openscholar-2026",
+          "title": "OpenScholar: Synthesizing scientific literature with retrieval-augmented LMs",
+          "year": 2026,
+          "venue": "Nature",
+          "url": "https://www.nature.com/articles/s41586-025-10072-4"
+        },
+        {
+          "id": "koh-reasonir-2025",
+          "title": "ReasonIR: Training Retrievers for Reasoning Tasks",
+          "year": 2025,
+          "venue": "COLM 2025",
+          "url": "https://arxiv.org/abs/2506.10947"
+        },
+        {
+          "id": "koh-spokes-2026",
+          "title": "Spokes: Optimizing for Diverse Pretraining Data Selection",
+          "year": 2026,
+          "venue": "arXiv 2026",
+          "url": "https://arxiv.org/abs/2606.15216"
+        },
+        {
+          "id": "koh-frustratingly-2026",
+          "title": "Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks",
+          "year": 2026,
+          "venue": "ICLR 2026",
+          "url": "https://arxiv.org/abs/2603.01343"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "\"Prospective PhD students. Read the section below to see if we might be a good match. If you think so, then please apply to the UW CSE PhD Program and mention me as a potential advisor.\" Current lab page lists 7 active PhD students.",
+        "source_url": "https://koh.pw/joining.html"
+      },
+      "fit_score": 3
+    },
+    {
+      "name": "Luke Zettlemoyer",
+      "openalex_id": null,
+      "profile_url": "https://www.cs.washington.edu/people/faculty/luke-zettlemoyer/",
+      "areas": [
+        "Natural language semantics",
+        "Large language model training & deployment",
+        "Open language modeling (OLMo)",
+        "Efficient decoding & tokenization",
+        "Information extraction"
+      ],
+      "match_reason": "Zettlemoyer is a core OLMo collaborator and his group works on the foundational LLM infrastructure the applicant could use for Indic language adaptation. 'FlexOlmo: Open Language Models for Flexible Data Use' (NeurIPS 2025, Spotlight) is directly relevant to flexible data mixture strategies for multilingual/low-resource settings. 'Context Language Models' (arXiv 2026) and 'Knowledge Distillation during Mid-Training Favors Reasoning over Factual Recall' (arXiv 2026) address efficient model training — relevant to the applicant's compression and parameter-efficient fine-tuning interests. Zettlemoyer also co-advises several students with Koh and Tsvetkov, making cross-group collaboration easy. His deep expertise in NLP semantics complements multilingual work.",
+      "papers": [
+        {
+          "id": "zettlemoyer-flexolmo-2025",
+          "title": "FlexOlmo: Open Language Models for Flexible Data Use",
+          "year": 2025,
+          "venue": "NeurIPS 2025 (Spotlight)",
+          "url": "https://arxiv.org/abs/2507.07024"
+        },
+        {
+          "id": "zettlemoyer-context-lm-2026",
+          "title": "Context Language Models",
+          "year": 2026,
+          "venue": "arXiv 2026",
+          "url": "https://arxiv.org/abs/2609.37725"
+        },
+        {
+          "id": "zettlemoyer-distill-2026",
+          "title": "Knowledge Distillation During Mid-Training Favors Reasoning over Factual Recall",
+          "year": 2026,
+          "venue": "arXiv 2026",
+          "url": "https://arxiv.org/abs/2609.01532"
+        }
+      ],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "No explicit recruiting statement found on his UW department page. He is also a Research Director at Meta, which may affect PhD student advising availability. Several co-advised students with Koh and Tsvetkov noted on their pages.",
+        "source_url": "https://www.cs.washington.edu/people/faculty/luke-zettlemoyer/"
+      },
+      "fit_score": 3
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Kurtis Heimerl",
+      "why": "Listed under 'Computing for Development' which initially appeared relevant, but recent works (2024–2026) are entirely in community cellular networks, HCI for homeless shelters, and gig-economy platforms — no NLP, multilingual modeling, or speech-text work."
+    },
+    {
+      "name": "Natasha Jaques",
+      "why": "Listed under Natural Language Processing but recent work focuses on generative AI via reinforcement learning and human-centered ML; no multilingual or low-resource NLP output found."
+    },
+    {
+      "name": "Tim Althoff",
+      "why": "NLP focus is on social computing and mental health conversation datasets; no multilingual or low-resource language work in recent publications."
+    }
+  ]
+}
