@@ -138,6 +138,7 @@ const dict = {
     reportTitle: "Interview report",
     practiceAgain: "Practice again",
     limitReached: "Evaluation limit reached for this interview.",
+    withYou: "HiOffer, with you",
   },
   zh: {
     tagline: "你的博士申请助理。",
@@ -272,6 +273,7 @@ const dict = {
     reportTitle: "面试报告",
     practiceAgain: "再练一次",
     limitReached: "这场面试的评估次数已用完。",
+    withYou: "HiOffer 陪你",
   },
 } as const;
 

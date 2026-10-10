@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/Icons";
+import { Logo } from "@/components/Cards";
+import { ProfessorAvatar } from "@/components/ProfessorAvatar";
 import { API, APPLICANT } from "@/lib/api";
 import type { Key, Lang } from "@/lib/i18n";
 
@@ -99,9 +101,8 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
     const p: Plan = await r.json();
     setPlan(p); planRef.current = p; setEvals([]); setLines([]); setElapsed(0); setFinished(false);
     setIdx(0); idxRef.current = 0;
-    const intro = L
-      ? `Hello. I will play ${p.advisor}. ${p.questions.length} questions, about ten minutes. Take your time; I will wait for a pause.`
-      : `Hello. I will play ${p.advisor}. ${p.questions.length} questions, about ten minutes. Take your time; I will wait for a pause.`;
+    const surname = p.advisor.split(" ").pop();
+    const intro = `Hello, and thank you for your interest in our group. I am standing in for Professor ${surname} today. ${p.questions.length} questions, about ten minutes. Take your time; I will wait for a pause.`;
     say(intro, () => ask(0));
   }
 
@@ -236,10 +237,20 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
         <span>{plan.advisor} · {idx + 1}/{plan.questions.length} · {q!.stage.replace(/_/g, " ")} · {fmt(elapsed)}</span>
       </div>
 
-      <div className="relative mt-10 flex flex-col items-center">
+      <div className="relative mt-8 flex flex-col items-center">
         <div className={`absolute inset-0 rounded-full blur-2xl transition ${phase === "speaking" ? "bg-brand/30 animate-pulse" : phase === "listening" ? "bg-ok/25" : "bg-brand-soft"}`} style={{ transform: `scale(${1 + (phase === "listening" ? level * 0.8 : 0)})` }} />
-        <div className={`relative rounded-full bg-surface p-5 ${phase === "speaking" ? "ring-8 ring-brand/30" : phase === "listening" ? "ring-8 ring-ok/30" : "ring-4 ring-line"}`}>
-          <Image src="/mascot-bot.png" alt="" width={200} height={270} className="h-52 w-auto" priority />
+        <div className={`relative rounded-full bg-surface p-2 ${phase === "speaking" ? "ring-8 ring-brand/30" : phase === "listening" ? "ring-8 ring-ok/30" : "ring-4 ring-line"}`}>
+          <ProfessorAvatar size={190} talking={phase === "speaking"} />
+        </div>
+        <div className="relative mt-3 flex items-center gap-2 text-sm">
+          <Logo src={state?.places?.[plan.program]?.logo} name={plan.program} size={22} />
+          <span className="font-medium">{plan.advisor}</span>
+          <span className="text-muted">· {plan.program}</span>
+        </div>
+        {/* the applicant's own agent sits in the corner, not in the judge's chair */}
+        <div className="absolute -left-40 bottom-0 hidden items-end gap-2 md:flex">
+          <Image src="/mascot-bot.png" alt="" width={56} height={76} className="h-16 w-auto opacity-90" />
+          <span className="mb-2 rounded-full bg-surface px-2 py-0.5 text-[11px] text-muted shadow-sm">{t("withYou")}</span>
         </div>
       </div>
 
