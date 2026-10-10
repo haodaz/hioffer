@@ -116,6 +116,14 @@
   returned 0-1 institutions (OpenAlex ANDs every word); 2-3-word standard terms fixed it (CMU 197 papers,
   Stanford 116, JHU 87). Each tier item has an "Add" button → `add_program` → `workspace/programs_extra.json`,
   merged with `programs.yaml`; programs without URLs are reported as blocked until the applicant supplies them.
+- **Interaction model rework (Oct 10, afternoon):** the always-on right panel contradicted the "agent leads"
+  idea. Now: left sidebar = the human-managed pages (Programs, Advisors, Materials, Timeline, Signals, Offers)
+  on top, conversation history below; the chat is the full-width main stage; when the agent answers with a
+  card, a preview pane slides in on the right (like opening a document) and the chat keeps a small chip to
+  reopen it; each management page has an "Ask hioffer about this page" box that jumps back into the chat with
+  the page as context. Conversations persist in the browser. Found and fixed during the rework: a seeded
+  question created the conversation twice; the avatar was stretched by flex; Next.js 16 requires `useParams`
+  inside `<Suspense>` for prerendering.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 

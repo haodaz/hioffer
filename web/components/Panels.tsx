@@ -11,28 +11,21 @@ export type Tab = "programs" | "advisors" | "materials" | "timeline" | "signals"
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type State = any;
 
-export function Panels({ state, tab, setTab, t, onAction, refresh }: { state: State; tab: Tab; setTab: (t: Tab) => void; t: T; onAction: (m: string) => void; refresh: () => void }) {
-  const tabs: Tab[] = ["programs", "advisors", "materials", "timeline", "signals", "offers"];
-  return (
-    <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex flex-wrap gap-2">
-        {tabs.map((k) => (
-          <button key={k} className={`chip ${tab === k ? "border-brand text-brand" : ""}`} onClick={() => setTab(k)}>
-            {t(k)}
-          </button>
-        ))}
-      </div>
-      <div className="mt-3 min-h-0 flex-1 space-y-3 overflow-y-auto pr-1">
-        {!state && <p className="text-sm text-muted">…</p>}
-        {state && tab === "programs" && <ProgramsPanel state={state} t={t} />}
-        {state && tab === "advisors" && <AdvisorsPanel state={state} t={t} onAction={onAction} />}
-        {state && tab === "materials" && <MaterialsPanel state={state} t={t} />}
-        {state && tab === "timeline" && <TimelinePanel state={state} t={t} refresh={refresh} />}
-        {state && tab === "signals" && <SignalsPanel state={state} t={t} refresh={refresh} />}
-        {state && tab === "offers" && <OffersCard cmp={state.comparison} t={t} />}
-      </div>
-    </div>
-  );
+export function PanelContent({ state, tab, t, onAction, refresh }: { state: State; tab: Tab; t: T; onAction: (m: string) => void; refresh: () => void }) {
+  switch (tab) {
+    case "programs":
+      return <ProgramsPanel state={state} t={t} />;
+    case "advisors":
+      return <AdvisorsPanel state={state} t={t} onAction={onAction} />;
+    case "materials":
+      return <MaterialsPanel state={state} t={t} />;
+    case "timeline":
+      return <TimelinePanel state={state} t={t} refresh={refresh} />;
+    case "signals":
+      return <SignalsPanel state={state} t={t} refresh={refresh} />;
+    case "offers":
+      return <OffersCard cmp={state.comparison} t={t} />;
+  }
 }
 
 function statusOf(p: State) {

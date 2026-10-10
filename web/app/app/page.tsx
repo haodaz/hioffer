@@ -1,67 +1,94 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useState } from "react";
-import { Chat } from "@/components/Chat";
-import { Panels, type Tab } from "@/components/Panels";
-import { getState } from "@/lib/api";
+import { Suspense, useCallback, useState } from "react";
+import { CardView } from "@/components/Cards";
+import { Chat, cardTitle } from "@/components/Chat";
+import { Shell } from "@/components/Shell";
+import type { Card } from "@/lib/api";
+import { newConversation, useConversations, type Conversation, type Msg } from "@/lib/conversations";
 import { useLang } from "@/lib/i18n";
 
 export default function Page() {
   return (
     <Suspense>
-      <App />
+      <ChatPage />
     </Suspense>
   );
 }
 
-function App() {
+function ChatPage() {
   const [lang, setLang, t] = useLang();
   const params = useSearchParams();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [state, setState] = useState<any>(null);
-  const [tab, setTab] = useState<Tab>((params.get("tab") as Tab) || "programs");
-  // `?q=` lets the landing page (and demo links) open the app with a first question already sent.
-  const [seed, setSeed] = useState<string | undefined>(params.get("q") ?? undefined);
-  const [err, setErr] = useState<string | null>(null);
+  const { list, save } = useConversations();
+  const [conv, setConv] = useState<Conversation>(() => newConversation());
+  const [pane, setPane] = useState<Card | null>(null);
+  const [, setStateVersion] = useState(0);
+  // `?q=` lets the landing page, the panel pages and demo links open the chat with a first question sent.
+  const seed = params.get("q") ?? undefined;
 
-  const refresh = useCallback(() => {
-    getState()
-      .then((s) => {
-        setState(s);
-        setErr(null);
-      })
-      .catch((e) => setErr(String(e)));
-  }, []);
-  useEffect(refresh, [refresh]);
+  const onMessages = useCallback(
+    (messages: Msg[]) => {
+      setConv((c) => {
+        const next = { ...c, messages };
+        save(next);
+        return next;
+      });
+    },
+    [save],
+  );
 
   return (
-    <div className="flex h-screen flex-col">
-      <header className="flex items-center justify-between border-b border-line bg-surface px-4 py-2">
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
-          <Image src="/hioffer-bot.png" alt="" width={28} height={39} className="h-7 w-auto" />
-          <span>
-            hi<span className="text-brand">offer</span>
-          </span>
-        </Link>
-        <div className="flex items-center gap-2 text-sm">
-          {state && <span className="text-muted">{state.applicant}</span>}
-          {err && <span className="text-bad">API offline</span>}
-          <button className="chip" onClick={() => setLang(lang === "en" ? "zh" : "en")}>
-            {lang === "en" ? "中文" : "EN"}
-          </button>
+    <Shell
+      lang={lang}
+      setLang={setLang}
+      t={t}
+      conversations={list}
+      activeConversation={conv.id}
+      onSelectConversation={(id) => {
+        const c = list.find((x) => x.id === id);
+        if (c) {
+          setConv(c);
+          setPane(null);
+        }
+      }}
+      onNewConversation={() => {
+        setConv(newConversation());
+        setPane(null);
+      }}
+    >
+      <div className="flex h-full">
+        <div className={`min-w-0 flex-1 ${pane ? "hidden md:block" : ""}`}>
+          <Chat
+            key={conv.id}
+            lang={lang}
+            t={t}
+            messages={conv.messages}
+            onMessages={onMessages}
+            onCard={setPane}
+            onStateChange={() => setStateVersion((v) => v + 1)}
+            seed={seed}
+          />
         </div>
-      </header>
-      <main className="grid min-h-0 flex-1 grid-cols-1 gap-4 p-4 lg:grid-cols-[1fr_1fr]">
-        <section className="flex min-h-0 flex-col rounded-2xl border border-line bg-background p-3">
-          <Chat lang={lang} t={t} onStateChange={refresh} seed={seed} />
-        </section>
-        <section className="flex min-h-0 flex-col rounded-2xl border border-line bg-background p-3">
-          <Panels state={state} tab={tab} setTab={setTab} t={t} onAction={(m) => setSeed(m + " ")} refresh={refresh} />
-        </section>
-      </main>
-    </div>
+        {pane && (
+          <aside className="flex w-full flex-col border-l border-line bg-background md:w-[46%] md:max-w-2xl">
+            <div className="flex items-center justify-between border-b border-line bg-surface px-4 py-2 text-sm">
+              <span className="font-medium">{cardTitle(pane)}</span>
+              <button className="chip" onClick={() => setPane(null)}>
+                ✕
+              </button>
+            </div>
+            <div className="min-h-0 flex-1 overflow-y-auto p-3">
+              <CardView card={pane} t={t} onAction={(m) => onMessagesSeed(m)} />
+            </div>
+          </aside>
+        )}
+      </div>
+    </Shell>
   );
+
+  function onMessagesSeed(m: string) {
+    // A card action becomes a chat message: navigate the same page with ?q= so the Chat seeds it.
+    window.location.href = `/app?q=${encodeURIComponent(m)}`;
+  }
 }

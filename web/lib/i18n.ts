@@ -99,6 +99,9 @@ const dict = {
     inList: "in your list",
     addProgram: "Add",
     quick5: "Where else should I apply?",
+    history: "History",
+    newChat: "New chat",
+    askAbout: "Ask hioffer about this page…",
   },
   zh: {
     tagline: "你的博士申请助理。",
@@ -194,6 +197,9 @@ const dict = {
     inList: "已在列表",
     addProgram: "加入",
     quick5: "我还应该申请哪些学校？",
+    history: "历史对话",
+    newChat: "新对话",
+    askAbout: "就这个页面问 hioffer…",
   },
 } as const;
 
