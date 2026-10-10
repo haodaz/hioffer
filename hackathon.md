@@ -135,6 +135,14 @@
   second null case (authors without an OpenAlex id); fixed too. All three programs now have a clean
   connector pass; the fictional applicant's circle has no OpenAlex presence, so the honest result is
   "no co-author or alumni link found".
+- **cfo.ai business plan (Oct 10, late morning):** prompt in `business/cfo-ai-inputs.md`, results in
+  `business/cfo-ai-results.md`, screenshots in `evidence/cfo-ai/`. Ari built an Assumptions page, a monthly
+  P&L + cash-flow page for 2027–2029, a $150k pre-seed scenario and a cash simulator. Headline numbers: max
+  COGS for a 60% margin at $49 is **$19.60** (today's $22 is above it; the planned $9 is well under);
+  445 paying users/month (early COGS) or 300 (later) cover two $6k founder salaries. **The non-obvious
+  finding:** with 70% of sales in Oct–Dec, the funded scenario runs out of cash in **August of Year 2**
+  ($17,650 short) right before the peak, while bootstrapping needs only a ~$900 bridge. Decision: bootstrap
+  the first cycle, pre-sell passes in Aug–Sep, and treat cheaper model routing as the margin lever.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 
@@ -152,9 +160,9 @@
 ## Submission checklist
 
 - [ ] Public repo with hackathon-dated commits
-- [ ] neatlogs traces (before/after a fix, failure recovery)
+- [x] neatlogs traces (before/after a fix, failure recovery) — `evidence/neatlogs/`, build log above
 - [ ] Entire checkpoints / entire-graph output
-- [ ] cfo.ai business plan
+- [x] cfo.ai business plan — `business/cfo-ai-results.md`, `evidence/cfo-ai/`
 - [ ] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai
 - [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190
 - [ ] Quote post of the official neatlogs post during the submission window
