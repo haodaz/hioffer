@@ -11,7 +11,7 @@ const copy = {
     h1a: "Your PhD application,",
     h1b: "run by an agent that shows its sources.",
     pitch:
-      "Give hioffer one goal. It finds programs worth applying to, reads each program's official pages, matches advisors on verified papers, tailors your statement and emails, and keeps your timeline. You send, pay and submit.",
+      "Give HiOffer one goal. It finds programs worth applying to, reads each program's official pages, matches advisors on verified papers, tailors your statement and emails, and keeps your timeline. You send, pay and submit.",
     cta: "Open the live demo",
     cta2: "See the six modules",
     proof: ["Every requirement with a quoted source", "Every paper verified on OpenAlex", "Every sentence traced to your files"],
@@ -20,14 +20,14 @@ const copy = {
     builtTitle: "Built in public, measured honestly",
     builtSub: "48 hours at neatHack. Every run traced, every session checkpointed, every number in the business plan from a measured run.",
     stats: [["7", "defects found in traces, all fixed"], ["2×", "fewer input tokens per call after pruning"], ["$19.60", "max cost per user for a 60% margin at $49"], ["0", "emails sent by the agent, ever"]],
-    boundary: "hioffer drafts, checks and reminds. It never sends an email, pays a fee or submits a form.",
+    boundary: "HiOffer drafts, checks and reminds. It never sends an email, pays a fee or submits a form.",
     sample: "Real output for the fictional demo applicant",
   },
   zh: {
     h1a: "你的博士申请，",
     h1b: "交给一个处处给出来源的 agent。",
     pitch:
-      "给 hioffer 一个目标。它会找值得申请的项目、读每个项目的官方页面、按已验证的论文匹配导师、为每个项目定制你的陈述和套磁信，并帮你盯住时间线。发信、交费、提交由你来做。",
+      "给 HiOffer 一个目标。它会找值得申请的项目、读每个项目的官方页面、按已验证的论文匹配导师、为每个项目定制你的陈述和套磁信，并帮你盯住时间线。发信、交费、提交由你来做。",
     cta: "打开在线演示",
     cta2: "看六个模块",
     proof: ["每条要求附原文引用", "每篇论文经 OpenAlex 验证", "每句话可追溯到你的材料"],
@@ -36,7 +36,7 @@ const copy = {
     builtTitle: "公开构建，诚实度量",
     builtSub: "neatHack 48 小时。每次运行都有 trace，每次会话都有存档，商业计划里的每个数字都来自实际运行。",
     stats: [["7", "个在 trace 里发现并修复的缺陷"], ["2×", "裁剪后每次调用输入 token 减半"], ["$19.60", "$49 定价下保 60% 毛利的单用户成本上限"], ["0", "agent 代发的邮件数"]],
-    boundary: "hioffer 起草、核对、提醒。它从不发邮件、交费或提交表单。",
+    boundary: "HiOffer 起草、核对、提醒。它从不发邮件、交费或提交表单。",
     sample: "虚构演示申请人的真实输出",
   },
 } as const;
