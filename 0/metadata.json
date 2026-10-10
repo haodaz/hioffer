@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JXDE3VKQAN4D3P1QRG2DPX",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T12:43:13.724619Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "hioffer/llm.py",
+    "hioffer/orchestrator.py",
+    "hioffer/tools/web.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "58ac08d76223",
+  "checkpoint_transcript_start": 761,
+  "transcript_lines_at_start": 761,
+  "compact_transcript_start": 91,
+  "token_usage": {
+    "input_tokens": 68,
+    "cache_creation_tokens": 6038,
+    "cache_read_tokens": 569964,
+    "output_tokens": 4941,
+    "api_call_count": 3
+  },
+  "session_metrics": {
+    "turn_count": 8
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T12:43:13.688561Z",
+    "agent_lines": 34,
+    "agent_removed": 1,
+    "human_added": 748,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 782,
+    "total_lines_changed": 784,
+    "agent_percentage": 4.464285714285714,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}
