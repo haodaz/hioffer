@@ -97,8 +97,10 @@
 
 ## Demo
 
+- Live frontend: https://hioffer-one.vercel.app/ (landing page; `/app` needs the Python backend, deployment planned for Oct 12)
+- Repo: https://github.com/haodaz/hioffer
 - Video: TBD
-- Reproduce: TBD
+- Reproduce: see README (Setup / Run)
 
 ## Known limitations and next steps
 
