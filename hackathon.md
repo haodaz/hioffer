@@ -120,6 +120,13 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   first test answer scored 2/1/3 with the comment that it described dataset construction instead of
   isolating the confounder — exactly the kind of thing an advisor would say. Plans and answers are cached in
   `workspace/priya/interviews/`.
+- **Immersive mode (same evening):** the form became a stage. The robot stands in for the professor: it
+  speaks the intro and each question (glow ring while speaking, captions below), then listens on its own
+  (green ring, live mic level bars from a Web Audio analyser), stops after a 1.8 s pause or 90 s, scores,
+  speaks the feedback, and moves to the next question without a click. Interrupt, skip, end, type-instead and
+  a collapsible transcript are there; a report with averages and per-question feedback closes the session.
+  Ideas taken from the user's earlier career-coaching interview: state-specific looks, no confirm step,
+  auto-listen after speaking, caps per turn.
 
 - **Logos and rankings.** Institution logos come from the OpenAlex institution record (Wikimedia). Rankings
   (QS, THE, US News CS, CSRankings) have no free API, so one model call per batch returns approximate positions
