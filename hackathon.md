@@ -84,6 +84,14 @@
   - Bug found in the UI: "UW" matched nothing because program lookup was a plain substring test, and the model
     then invented "two possible candidates". Fixed with `short` aliases in `programs.yaml`, alias/institution
     matching, and an error message that tells the model to ask instead of guessing.
+- **Run 5 (tags `run5`, `pruned`), Cornell only, after the context pruning and with an OpenAlex key:**
+  3 verified advisors, draft v1 passed (v0 had two real claim issues the writer then fixed). Cost evidence,
+  per Sonnet call (the honest comparison, since run 4 covered three programs and run 5 reused cached
+  requirements): run 4 averaged **27.4k input tokens per call** (1.95M / 71); run 5 averaged **13.6k**
+  (408k / 30), about half, with the same tool-loop behaviour. Run 5 total ≈ $1.43 est. for one program's
+  advisor → connector → draft → verify stages. Evidence: `evidence/2026-10-10-run5-pruned/`.
+  Still open: the scout skipped two Cornell faculty because `find_author` errored, and three advisors have
+  no co-author/alumni link to the (fictional) applicant's circle, which is expected for invented people.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 

@@ -1,0 +1,37 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "I have a first-author workshop paper, two research mentors who have agreed to write letters [lib:recommenders], and experience as a teaching assistant for a 120-student machine learning course [lib:cv].",
+      "problem": "The citation [lib:recommenders] says two mentors have agreed (Venkatesan and Mehra), but the SOP says 'two research mentors who have agreed to write letters.' Prof. R. Krishnan has NOT yet replied [lib:recommenders], so the count of two is accurate only for those two; however, the phrasing correctly identifies two who agreed. No factual error here. — actually no issue.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yoav Artzi",
+      "sentence": "Prof. Artzi's work on LLM evaluation methodology [paper:W4403346162] and in-context learning dynamics speaks to my second PhD research direction",
+      "problem": "Paper W4403346162 ('LLMs Are In-Context Bandit Reinforcement Learners') is about in-context bandit reinforcement learning, not primarily about LLM evaluation methodology. Characterising it as 'LLM evaluation methodology' misrepresents the paper's content and the citation does not support that framing.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "I have a first-author workshop paper, two research mentors who have agreed to write letters [lib:recommenders], and experience as a teaching assistant for a 120-student machine learning course [lib:cv].",
+      "problem": "The citation [lib:recommenders] says two mentors have agreed (Venkatesan and Mehra), but the SOP says 'two research mentors who have agreed to write letters.' Prof. R. Krishnan has NOT yet replied [lib:recommenders], so the count of two is accurate only for those two; however, the phrasing correctly identifies two who agreed. No factual error here. — actually no issue.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yoav Artzi",
+      "sentence": "Prof. Artzi's work on LLM evaluation methodology [paper:W4403346162] and in-context learning dynamics speaks to my second PhD research direction",
+      "problem": "Paper W4403346162 ('LLMs Are In-Context Bandit Reinforcement Learners') is about in-context bandit reinforcement learning, not primarily about LLM evaluation methodology. Characterising it as 'LLM evaluation methodology' misrepresents the paper's content and the citation does not support that framing.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": [],
+  "repaired_citations": []
+}

@@ -1,0 +1,183 @@
+{
+  "department": "Department of Computer Science",
+  "faculty_url": "https://www.cs.cornell.edu/people/faculty",
+  "advisors": [
+    {
+      "name": "Marten van Schijndel",
+      "openalex_id": "A5025119831",
+      "profile_url": null,
+      "areas": [
+        "Natural language processing",
+        "Psycholinguistics",
+        "Syntax and semantics",
+        "Hindi and multilingual NLP",
+        "Contextual word embeddings"
+      ],
+      "match_reason": "Van Schijndel has recent work directly on Hindi syntactic processing (dependency locality in Hindi, 2024) and on how contextual embeddings handle orthographic noise — relevant to tokenizer adaptation for Indian scripts. His NLP focus on syntax and semantics across languages aligns with the applicant's interest in linguistic evaluation beyond translated English benchmarks.",
+      "papers": [
+        {
+          "id": "W4396913907",
+          "title": "Does Dependency Locality Predict Non-canonical Word Order in Hindi?",
+          "year": 2024,
+          "venue": "arXiv (Cornell University)",
+          "cited_by": 1,
+          "url": "http://arxiv.org/abs/2405.07730",
+          "authors": [
+            "Sidharth Ranjan",
+            "Marten van Schijndel"
+          ],
+          "author_count": 2
+        },
+        {
+          "id": "W4402670872",
+          "title": "Semantics or spelling? Probing contextual word embeddings with orthographic noise",
+          "year": 2024,
+          "venue": null,
+          "cited_by": 1,
+          "url": "https://doi.org/10.18653/v1/2024.findings-acl.266",
+          "authors": [
+            "Jacob Matthews",
+            "John Starr",
+            "Marten van Schijndel"
+          ],
+          "author_count": 3
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": null,
+        "source_url": null
+      },
+      "fit_score": 4
+    },
+    {
+      "name": "Allison Koenecke",
+      "openalex_id": "A5087471530",
+      "profile_url": null,
+      "areas": [
+        "Speech recognition and synthesis",
+        "AI fairness and bias in speech systems",
+        "NLP ethics and social impact",
+        "Dialect and language variation in ASR"
+      ],
+      "match_reason": "Koenecke's 2024 paper 'Careless Whisper: Speech-to-Text Hallucination Harms' directly addresses ASR failure modes that are highly relevant to speech-text models for low-resource and spoken-language-dominant settings (the applicant's Interest 3). Her broader research on speech AI bias and dialect disparities maps onto the challenge of building reliable speech-text systems for Indian languages with limited written data.",
+      "papers": [
+        {
+          "id": "W4391833135",
+          "title": "Careless Whisper: Speech-to-Text Hallucination Harms",
+          "year": 2024,
+          "venue": null,
+          "cited_by": 88,
+          "url": "https://doi.org/10.1145/3630106.3658996",
+          "authors": [
+            "Allison Koenecke",
+            "Anna Seo Gyeong Choi",
+            "Katelyn Xiaoying Mei",
+            "Hilke Schellmann",
+            "Mona Sloane"
+          ],
+          "author_count": 5
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": null,
+        "source_url": null
+      },
+      "fit_score": 3
+    },
+    {
+      "name": "Yoav Artzi",
+      "openalex_id": "A5047026141",
+      "profile_url": "https://yoavartzi.com/",
+      "areas": [
+        "Natural language processing",
+        "Language model evaluation",
+        "LLM post-training and fine-tuning",
+        "Multimodal language modeling",
+        "Context compression"
+      ],
+      "match_reason": "Artzi's lab works on LLM evaluation ('A Surprising Failure? Multimodal LLMs and the NLVR Challenge'), continual learning from interaction, and context/KV compression — all relevant to the applicant's interests in evaluation methodology (Interest 2) and model compression (secondary interest). He explicitly states on his website that he is actively recruiting PhD students, making him a strong and actionable contact.",
+      "papers": [
+        {
+          "id": "W4403346162",
+          "title": "LLMs Are In-Context Bandit Reinforcement Learners",
+          "year": 2024,
+          "venue": "arXiv (Cornell University)",
+          "cited_by": 1,
+          "url": "http://arxiv.org/abs/2410.05362",
+          "authors": [
+            "Giovanni Monea",
+            "Antoine Bosselut",
+            "Kianté Brantley",
+            "Yoav Artzi"
+          ],
+          "author_count": 4
+        },
+        {
+          "id": "W4412659019",
+          "title": "Cancer type, stage and prognosis assessment from pathology reports using LLMs",
+          "year": 2025,
+          "venue": "Scientific Reports",
+          "cited_by": 8,
+          "url": "https://doi.org/10.1038/s41598-025-10709-4",
+          "authors": [
+            "Rachit Saluja",
+            "Jacob Rosenthal",
+            "Annika Lisbeth Windon",
+            "Yoav Artzi",
+            "David J. Pisapia",
+            "Benjamin Liechty",
+            "Mert Rory Sabuncu"
+          ],
+          "author_count": 7
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "CoGen: Learning from Feedback with Coupled Comprehension and Generation (EMNLP 2024 Best Paper)",
+          "source_url": "https://yoavartzi.com/pubs"
+        },
+        {
+          "title": "No Mean Feat: Simple, Strong Baselines for Context Compression",
+          "source_url": "https://yoavartzi.com/pubs"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "Am I looking for new students? Yes! If you are a Cornell student, please email me. If not, I encourage you to apply.",
+        "source_url": "https://yoavartzi.com/"
+      },
+      "fit_score": 3
+    }
+  ],
+  "skipped": [
+    {
+      "name": "John Thickstun",
+      "why": "Recent works are focused on music/audio processing and cellular automata; no multilingual NLP or low-resource language work found."
+    },
+    {
+      "name": "David Mimno",
+      "why": "OpenAlex ID found (A5086934220) but recent works (2024–2025) are primarily HCI/qualitative research with LLMs, not multilingual NLP or low-resource language processing."
+    },
+    {
+      "name": "Lillian Lee",
+      "why": "find_author returned errors on all attempts; no OpenAlex ID retrieved. Unable to verify recent works or recruiting status, so cannot include as a reliable recommendation."
+    },
+    {
+      "name": "Aditya Vashistha",
+      "why": "no OpenAlex-verified recent papers"
+    },
+    {
+      "name": "Tanya Goyal",
+      "why": "no OpenAlex-verified recent papers"
+    }
+  ],
+  "verification": {
+    "openalex_works_seen": 30,
+    "papers_dropped_as_unverified": 0
+  },
+  "connector_error": "'NoneType' object is not iterable"
+}
