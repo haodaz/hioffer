@@ -46,7 +46,7 @@ function TabPage() {
         <div className="min-h-0 flex-1 overflow-y-auto">
           <div className="mx-auto w-full max-w-4xl space-y-3 px-4 py-6">
             <h1 className="text-lg font-semibold">{t(valid)}</h1>
-            {state ? <PanelContent state={state} tab={valid} t={t} onAction={go} refresh={refresh} /> : <p className="text-sm text-muted">…</p>}
+            {state ? <PanelContent state={state} tab={valid} t={t} onAction={go} refresh={refresh} lang={lang} /> : <p className="text-sm text-muted">…</p>}
           </div>
         </div>
         <form

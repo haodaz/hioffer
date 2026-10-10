@@ -3,18 +3,22 @@
 import { useState } from "react";
 import type { Key } from "@/lib/i18n";
 import { addSignal, upsertTodo } from "@/lib/api";
-import { AdvisorCard, LibraryCard, MaterialsCard, OffersCard, ProgramsCard, RequirementsCard, SignalsCard, TodosCard } from "./Cards";
+import { AdvisorCard, LibraryCard, MaterialsCard, OffersCard, SignalsCard, TodosCard } from "./Cards";
+import { Interview } from "./Interview";
+import { ProgramsView } from "./ProgramsView";
 
 type T = (k: Key) => string;
-export type Tab = "programs" | "advisors" | "materials" | "timeline" | "signals" | "offers";
+export type Tab = "programs" | "advisors" | "materials" | "timeline" | "signals" | "offers" | "interview";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type State = any;
 
-export function PanelContent({ state, tab, t, onAction, refresh }: { state: State; tab: Tab; t: T; onAction: (m: string) => void; refresh: () => void }) {
+export function PanelContent({ state, tab, t, onAction, refresh, lang }: { state: State; tab: Tab; t: T; onAction: (m: string) => void; refresh: () => void; lang?: "en" | "zh" }) {
   switch (tab) {
     case "programs":
-      return <ProgramsPanel state={state} t={t} />;
+      return <ProgramsView state={state} t={t} onAction={onAction} />;
+    case "interview":
+      return <Interview state={state} lang={lang ?? "en"} t={t} />;
     case "advisors":
       return <AdvisorsPanel state={state} t={t} onAction={onAction} />;
     case "materials":
@@ -28,28 +32,6 @@ export function PanelContent({ state, tab, t, onAction, refresh }: { state: Stat
   }
 }
 
-function statusOf(p: State) {
-  if (p.final?.passed) return "complete";
-  if (p.final) return "needs_review";
-  if (p.requirements) return "researched";
-  return "not_started";
-}
-
-function ProgramsPanel({ state, t }: { state: State; t: T }) {
-  const rows = state.programs.map((p: State) => ({
-    name: p.name,
-    deadline: p.requirements?.facts?.find((f: State) => f.key === "deadline")?.value,
-    advisors: p.advisors?.advisors?.length ?? 0,
-    facts: p.requirements?.facts?.length ?? 0,
-    status: statusOf(p),
-  }));
-  return (
-    <>
-      <ProgramsCard rows={rows} t={t} />
-      {state.programs.map((p: State) => p.requirements && <RequirementsCard key={p.key} card={{ kind: "requirements", program: p.name, ...p.requirements }} t={t} />)}
-    </>
-  );
-}
 
 function AdvisorsPanel({ state, t, onAction }: { state: State; t: T; onAction: (m: string) => void }) {
   return (

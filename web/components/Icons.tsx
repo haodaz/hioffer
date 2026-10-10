@@ -61,6 +61,9 @@ export const Icon = {
   library: ({ size, ...p }: P) => (
     <svg {...base(size)} {...p}><path d="M4 4h4v16H4zM10 4h4v16h-4zM16.5 5l3.5 1-3.5 14-3.5-1z" /></svg>
   ),
+  interview: ({ size, ...p }: P) => (
+    <svg {...base(size)} {...p}><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21M8.5 21h7" /></svg>
+  ),
   question: ({ size, ...p }: P) => (
     <svg {...base(size)} {...p}><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3.5M12 17h.01" /></svg>
   ),

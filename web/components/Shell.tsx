@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icons";
 import type { Conversation } from "@/lib/conversations";
 import type { Key, Lang } from "@/lib/i18n";
 
-export const NAV = ["programs", "advisors", "materials", "timeline", "signals", "offers"] as const;
+export const NAV = ["programs", "advisors", "materials", "timeline", "signals", "offers", "interview"] as const;
 export type NavKey = (typeof NAV)[number];
 
 export function Shell({
