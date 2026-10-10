@@ -1,0 +1,15 @@
+{
+  "tool_use_id": "toolu_01CnT2pHgKpCPEK6oDeXc6VB",
+  "agent_id": "a7001ac6c322b5c7c",
+  "subagent_type": "Explore",
+  "task_description": "Study datasquare career features",
+  "token_usage": {
+    "input_tokens": 18,
+    "cache_creation_tokens": 59386,
+    "cache_read_tokens": 350104,
+    "output_tokens": 167,
+    "api_call_count": 9
+  },
+  "started_at": "2026-10-10T12:33:38.024197-04:00",
+  "completed_at": "2026-10-10T12:34:22.062759-04:00"
+}

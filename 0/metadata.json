@@ -1,0 +1,160 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KAR1KQ4J56RGMQ255Q47RT",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T16:36:13.389046Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "demo/posts.md",
+    "hioffer/agents/interview.py",
+    "hioffer/agents/places.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "578423356979",
+  "checkpoint_transcript_start": 3090,
+  "transcript_lines_at_start": 3090,
+  "compact_transcript_start": 380,
+  "token_usage": {
+    "input_tokens": 74,
+    "cache_creation_tokens": 15997,
+    "cache_read_tokens": 4435201,
+    "output_tokens": 11154,
+    "api_call_count": 7,
+    "subagent_tokens": {
+      "input_tokens": 18,
+      "cache_creation_tokens": 59386,
+      "cache_read_tokens": 350104,
+      "output_tokens": 167,
+      "api_call_count": 9
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01JYYANzCuCWopVWrWEFfUr4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d6f8c4a4dcfd",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2159,
+        "end": 2160,
+        "entry_ids": [
+          "4b71a9d0-5499-460c-b123-6c70644d1517"
+        ],
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01LhjXtAXkpJsDzxgQipaNd4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "demo-video"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "af73f90af6d6",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2839,
+        "end": 2840,
+        "entry_ids": [
+          "ff633840-064f-412b-8e93-83d508d4bace"
+        ],
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: demo-video",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 32
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T16:36:13.121572Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 2,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 2,
+    "total_lines_changed": 4,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 276,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "demo/posts.md": 64,
+        "hioffer/agents/interview.py": 55,
+        "hioffer/agents/places.py": 83,
+        "hioffer/server.py": 74
+      }
+    }
+  ]
+}
