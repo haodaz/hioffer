@@ -23,6 +23,7 @@ package = false
 dev = [
     "playwright>=1.63.0",
     "pytest>=9.1.1",
+    "rembg[cpu]>=2.0.69",
 ]
 
 [tool.pytest.ini_options]

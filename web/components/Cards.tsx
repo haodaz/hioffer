@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Card } from "@/lib/api";
 import type { Key } from "@/lib/i18n";
+import { Icon } from "./Icons";
 
 type T = (k: Key) => string;
 type Fact = { key: string; required?: string; value: string; source_url?: string; quote?: string };
@@ -220,7 +221,7 @@ export function AdvisorCard({ a, t, onAction }: { a: Advisor; t: T; onAction: (m
       )}
       <div className="mt-3 flex gap-2">
         <button className="btn-ghost" onClick={() => onAction(`Show the outreach email draft for ${a.name}`)}>
-          ✉️ {t("emails")}
+          <Icon.mail size={16} /> {t("emails")}
         </button>
       </div>
     </div>
@@ -262,7 +263,7 @@ export function MaterialsCard({ card, t }: { card: Card; t: T }) {
           {card.program as string} · v{String(card.version)}
         </div>
         <div className={`text-xs font-medium ${v.passed ? "text-ok" : "text-warn"}`}>
-          {v.passed ? `✓ ${t("verified")}` : `${t("needsReview")} · ${(v.writer_issues ?? []).length} ${t("issues")}`}
+          {v.passed ? t("verified") : `${t("needsReview")} · ${(v.writer_issues ?? []).length} ${t("issues")}`}
         </div>
       </div>
       <div className="mt-2 flex flex-wrap gap-2">
@@ -448,7 +449,7 @@ export function OffersCard({ cmp, t }: { cmp: Comparison; t: T }) {
                 <tr key={o.id} className="border-t border-line align-top">
                   <td className="py-2 pr-2">
                     <div className="font-medium">
-                      {i === 0 ? "① " : i === 1 ? "② " : `${i + 1}. `}
+                      {`${i + 1}. `}
                       {o.program}
                     </div>
                     <div className="text-muted">
@@ -505,7 +506,7 @@ export function RecommendationsCard({ card, t, onAction }: { card: Card; t: T; o
                   <div className="text-xs text-muted">{it.reason}</div>
                 </div>
                 {existing.has(it.institution) ? (
-                  <span className="text-xs text-ok">✓ {t("inList")}</span>
+                  <span className="flex items-center gap-1 text-xs text-ok"><Icon.check size={14} /> {t("inList")}</span>
                 ) : (
                   <button className="chip" onClick={() => onAction(`Add ${it.institution} (${it.department_guess ?? "Computer Science"}) PhD to my programs`)}>
                     + {t("addProgram")}

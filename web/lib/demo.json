@@ -1,0 +1,223 @@
+{
+  "program": "University of Washington CSE PhD",
+  "facts": [
+    {
+      "key": "deadline",
+      "required": "yes",
+      "value": "December 15 (or the next business day if the 15th falls on a weekend), 11:59 pm Pacific Time. One cycle per ye",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "All Ph.D. application materials are submitted electronically through the online application portal and must be received by December 15th (or"
+    },
+    {
+      "key": "application_fee",
+      "required": "yes",
+      "value": "$90 USD, non-refundable, paid online via MasterCard or Visa.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "The UW Graduate School administers the online application portal and collects an $90, non-refundable application fee for all graduate progra"
+    },
+    {
+      "key": "personal_statement",
+      "required": "yes",
+      "value": "One personal statement (also called statement of purpose). No stated word or page limit. Must address: (a) how",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Submit a personal statement of that includes: a) how you became interested in doing research, b) a relevant project or research experience t"
+    },
+    {
+      "key": "letters_of_recommendation",
+      "required": "yes",
+      "value": "Exactly 3 letters required. Should come from those who can speak to demonstrated research potential with speci",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "quote": "Three letters are required from all applicants. The best folks to write letters of recommendation are those people who can speak to your dem"
+    },
+    {
+      "key": "gre",
+      "required": "no",
+      "value": "GRE is NOT required and NOT accepted. Scores will not be reviewed or considered even if submitted.",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/faq/",
+      "quote": "GRE scores are no longer required or accepted for the Ph.D. program. GRE scores will not be reviewed or considered by the Allen School, even"
+    }
+  ],
+  "advisor": {
+    "name": "Yulia Tsvetkov",
+    "areas": [
+      "Natural Language Processing",
+      "Multilingual & Culturally Inclusive Modeling",
+      "AI Ethics & Fairness"
+    ],
+    "fit_score": 5,
+    "takes_students": "yes",
+    "identity": "high",
+    "identity_detail": "University of Washington (2021–2026)",
+    "papers": [
+      {
+        "title": "Trusting Your Evidence: Hallucinate Less with Context-aware Decoding",
+        "venue": "NAACL-HLT 2024",
+        "year": 2024
+      },
+      {
+        "title": "Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+        "venue": "ACL 2024",
+        "year": 2024
+      }
+    ],
+    "match": "Tsvetkov's lab explicitly pursues 'NLP for All' — extending language technology across linguistic and cultural boundaries. Her 2024 NeurIPS paper MAGNET directly addresses multilingual tokenization fairness for LLMs (the…"
+  },
+  "sop": {
+    "excerpt": "In 2025 I built a Tamil–English code-switched evaluation set of 2,400 sentences and tested two open 7B models on it. Both lost 18–26 points relative to monolingual Tamil baselines. People in Chennai do not speak monolingual Tamil to a chatbot; they switch registers mid-sentence. That single result shaped everything I have done since: current evaluation benchmarks, almost all derived from translated English data, hide…",
+    "words": 620,
+    "passed": true,
+    "citations": 24
+  },
+  "email": {
+    "to": "Yulia Tsvetkov",
+    "subject": "Prospective PhD student — multilingual tokenization and code-switching evaluation",
+    "excerpt": "I am Priya Raman, a final-year B.Tech student in Computer Science at NIT Tiruchirappalli (CGPA 9.21/10), applying to UW Allen School for Fall 2027. I am writing to ask whether you are planning to take PhD students this cycle.…"
+  },
+  "todos": [
+    {
+      "task": "Email Yulia Tsvetkov (draft ready)",
+      "program": "University of Washington CSE PhD",
+      "due": "2026-10-31",
+      "kind": "outreach",
+      "source_url": "https://homes.cs.washington.edu/~yuliats/",
+      "id": "university-of-washington-cse-phd-1",
+      "done": false
+    },
+    {
+      "task": "Email Hannaneh Hajishirzi (draft ready)",
+      "program": "University of Washington CSE PhD",
+      "due": "2026-10-31",
+      "kind": "outreach",
+      "source_url": "https://homes.cs.washington.edu/~hannaneh/",
+      "id": "university-of-washington-cse-phd-2",
+      "done": false
+    },
+    {
+      "task": "Ask recommenders: Exactly 3 letters required. Should come from those who can speak to demonstrated research potential with specific details. Not personal references. Submitted electronically via the application system (Interfolio is not accepted). Letters must be received by the application deadline.",
+      "program": "University of Washington CSE PhD",
+      "due": "2026-11-17",
+      "kind": "letters",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "id": "university-of-washington-cse-phd-3",
+      "done": false
+    },
+    {
+      "task": "Send English test scores: Required for all non-native English speakers unless holding a qualifying English-medium degree. Accepted tests: TOEFL iB",
+      "program": "University of Washington CSE PhD",
+      "due": "2026-11-24",
+      "kind": "tests",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "id": "university-of-washington-cse-phd-5",
+      "done": false
+    },
+    {
+      "task": "Upload transcripts: Unofficial transcripts uploaded at application time (PDF). Official transcripts are NOT required until after an offer is",
+      "program": "University of Washington CSE PhD",
+      "due": "2026-12-01",
+      "kind": "documents",
+      "source_url": "https://www.cs.washington.edu/academics/graduate/phd-program/phd-admissions/how-apply/",
+      "id": "university-of-washington-cse-phd-6",
+      "done": false
+    }
+  ],
+  "signals": [
+    {
+      "id": "s1",
+      "date": "2026-10-20",
+      "program": "University of Washington CSE PhD",
+      "advisor": "Yulia Tsvetkov",
+      "kind": "email_sent",
+      "note": "Sent outreach email with CV.",
+      "sample": true
+    },
+    {
+      "id": "s2",
+      "date": "2026-10-27",
+      "program": "University of Washington CSE PhD",
+      "advisor": "Yulia Tsvetkov",
+      "kind": "reply_positive",
+      "note": "Replied: taking 1-2 students, encouraged to apply and mention her name.",
+      "sample": true
+    },
+    {
+      "id": "s3",
+      "date": "2026-10-21",
+      "program": "University of Maryland CS PhD",
+      "advisor": "Marine Carpuat",
+      "kind": "email_sent",
+      "note": "Sent outreach email.",
+      "sample": true
+    }
+  ],
+  "offers": [
+    {
+      "id": "o1",
+      "program": "University of Washington CSE PhD",
+      "advisor": "Yulia Tsvetkov",
+      "stipend_usd": 46000,
+      "years_guaranteed": 5,
+      "respond_by": "2027-04-15",
+      "note": "RA offer in TsvetShop; health insurance included.",
+      "sample": true
+    },
+    {
+      "id": "o2",
+      "program": "University of Maryland CS PhD",
+      "advisor": null,
+      "stipend_usd": 38000,
+      "years_guaranteed": 2,
+      "respond_by": "2027-04-15",
+      "note": "TA for first two years, advisor assigned after rotation.",
+      "sample": true
+    }
+  ],
+  "tiers": {
+    "reach": [
+      [
+        "Carnegie Mellon University",
+        197
+      ],
+      [
+        "Stanford University",
+        116
+      ],
+      [
+        "Massachusetts Institute of Technology",
+        75
+      ]
+    ],
+    "match": [
+      [
+        "Johns Hopkins University",
+        87
+      ],
+      [
+        "University of Pennsylvania",
+        77
+      ],
+      [
+        "Georgia Institute of Technology",
+        85
+      ]
+    ],
+    "safety": [
+      [
+        "Northeastern University",
+        74
+      ],
+      [
+        "University of Florida",
+        37
+      ],
+      [
+        "Purdue University West Lafayette",
+        36
+      ]
+    ]
+  },
+  "queries": [
+    "parameter-efficient fine-tuning",
+    "tokenizer adaptation multilingual",
+    "code-switching evaluation"
+  ]
+}

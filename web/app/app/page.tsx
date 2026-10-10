@@ -1,11 +1,12 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import { CardView } from "@/components/Cards";
 import { Chat, cardTitle } from "@/components/Chat";
 import { Shell } from "@/components/Shell";
-import type { Card } from "@/lib/api";
+import { Icon } from "@/components/Icons";
+import { getState, type Card } from "@/lib/api";
 import { newConversation, useConversations, type Conversation, type Msg } from "@/lib/conversations";
 import { useLang } from "@/lib/i18n";
 
@@ -23,7 +24,12 @@ function ChatPage() {
   const { list, save } = useConversations();
   const [conv, setConv] = useState<Conversation>(() => newConversation());
   const [pane, setPane] = useState<Card | null>(null);
-  const [, setStateVersion] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [state, setState] = useState<any>(null);
+  const refresh = useCallback(() => {
+    getState().then(setState).catch(() => setState(null));
+  }, []);
+  useEffect(refresh, [refresh]);
   // `?q=` lets the landing page, the panel pages and demo links open the chat with a first question sent.
   const seed = params.get("q") ?? undefined;
 
@@ -66,7 +72,8 @@ function ChatPage() {
             messages={conv.messages}
             onMessages={onMessages}
             onCard={setPane}
-            onStateChange={() => setStateVersion((v) => v + 1)}
+            onStateChange={refresh}
+            state={state}
             seed={seed}
           />
         </div>
@@ -74,8 +81,8 @@ function ChatPage() {
           <aside className="flex w-full flex-col border-l border-line bg-background md:w-[46%] md:max-w-2xl">
             <div className="flex items-center justify-between border-b border-line bg-surface px-4 py-2 text-sm">
               <span className="font-medium">{cardTitle(pane)}</span>
-              <button className="chip" onClick={() => setPane(null)}>
-                ✕
+              <button className="chip" onClick={() => setPane(null)} aria-label="close">
+                <Icon.close size={16} />
               </button>
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto p-3">

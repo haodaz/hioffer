@@ -6,11 +6,13 @@ import ReactMarkdown from "react-markdown";
 import { chat, type Card, type Event } from "@/lib/api";
 import type { Msg } from "@/lib/conversations";
 import type { Key, Lang } from "@/lib/i18n";
+import { Brief } from "./Brief";
 import { ConfirmCard } from "./Cards";
+import { Icon, type IconName } from "./Icons";
 
-const CARD_ICON: Record<string, string> = {
-  programs: "🎓", requirements: "📋", advisor: "🧑‍🏫", materials: "📄", library: "🗂", todos: "🗓",
-  signals: "📡", offers: "⚖️", recommendations: "🧭", confirm: "❓",
+const CARD_ICON: Record<string, IconName> = {
+  programs: "programs", requirements: "programs", advisor: "advisors", materials: "materials", library: "library",
+  todos: "timeline", signals: "signals", offers: "offers", recommendations: "compass", confirm: "question",
 };
 
 export function cardTitle(c: Card): string {
@@ -27,8 +29,10 @@ export function cardTitle(c: Card): string {
 }
 
 export function Chat({
-  lang, t, messages, onMessages, onCard, onStateChange, seed,
+  lang, t, messages, onMessages, onCard, onStateChange, seed, state,
 }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  state?: any;
   lang: Lang;
   t: (k: Key) => string;
   messages: Msg[];
@@ -83,7 +87,7 @@ export function Chat({
           if (e.card.kind !== "confirm") onCard(e.card);
         }
         if (e.type === "delta") last.content += e.text;
-        if (e.type === "error") last.content += `\n⚠️ ${e.message}`;
+        if (e.type === "error") last.content += `\n\nError: ${e.message}`;
         if (e.type === "final") last.pending = false;
       });
       if (e.type === "tool_end" && ["add_todo", "run_prepare", "log_signal", "add_offer", "add_program"].includes(e.name)) touched = true;
@@ -101,17 +105,7 @@ export function Chat({
     <div className="flex h-full flex-col">
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-2xl space-y-5 px-4 py-6">
-          {messages.length === 0 && (
-            <div className="flex items-center gap-4">
-              <Image src="/hioffer-bot.png" alt="hioffer" width={96} height={134} className="h-auto w-20 shrink-0" priority />
-              <div>
-                <p className="text-base">
-                  👋 {t("tagline")} {t("sub")}
-                </p>
-                <p className="mt-1 text-xs text-muted">{t("boundary")}</p>
-              </div>
-            </div>
-          )}
+          {messages.length === 0 && <Brief state={state} lang={lang} t={t} onAsk={send} />}
           {messages.map((m, i) =>
             m.role === "user" ? (
               <div key={i} className="ml-auto w-fit max-w-[85%] rounded-2xl bg-brand px-4 py-2 text-sm text-white">
@@ -119,7 +113,7 @@ export function Chat({
               </div>
             ) : (
               <div key={i} className="flex gap-3">
-                <Image src="/hioffer-bot.png" alt="" width={32} height={45} className="mt-1 h-11 w-8 shrink-0 self-start object-contain" />
+                <Image src="/mascot-bot.png" alt="" width={32} height={45} className="mt-1 h-11 w-8 shrink-0 self-start object-contain" />
                 <div className="min-w-0 flex-1 space-y-2">
                   {m.tools.length > 0 && (
                     <details className="text-xs text-muted" open={m.pending}>
@@ -142,7 +136,8 @@ export function Chat({
                           </div>
                         ) : (
                           <button key={k} className="chip" onClick={() => onCard(c)}>
-                            {CARD_ICON[c.kind] ?? "🗂"} {cardTitle(c)}
+                            {(() => { const I = Icon[CARD_ICON[c.kind] ?? "library"]; return <I size={15} className="text-brand" />; })()}
+                            {cardTitle(c)}
                           </button>
                         ),
                       )}
@@ -163,7 +158,7 @@ export function Chat({
       </div>
       <div className="border-t border-line bg-surface">
         <div className="mx-auto w-full max-w-2xl px-4 py-3">
-          <div className="mb-2 flex flex-wrap gap-2">
+          <div className={`mb-2 flex flex-wrap gap-2 ${messages.length === 0 ? "hidden" : ""}`}>
             {quick.map((q) => (
               <button key={q} className="chip" onClick={() => send(t(q))} disabled={busy}>
                 {t(q)}

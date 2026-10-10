@@ -75,6 +75,15 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   dated a signal "2025" without it).
 - hioffer's face is the robot from the cover image (chat avatar, header).
 
+### 2026-10-10 — UI v2 (afternoon)
+
+- Landing page rebuilt to explain what each module does and how far it goes, with a real sample card per
+  module rendered from the demo workspace (`web/lib/demo.json`), a transparent applicant + robot mascot cut from
+  the cover with `rembg` (no more screenshot-as-avatar), and a "built in public, measured honestly" strip with
+  the measured numbers. All emoji replaced by a small inline SVG icon set. The app home is now a brief: greeting
+  card, four live counters (programs, verified advisors, drafts verified, to-dos due in 30 days) and a five-line
+  "hioffer says" summary computed from server state, so the agent feels ongoing rather than reactive.
+
 ### 2026-10-10 — the six modules
 
 1. **Find programs:** `recommend_programs` → five 2-3-word OpenAlex phrases from the applicant's interests →
