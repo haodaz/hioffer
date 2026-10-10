@@ -19,7 +19,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
+from datetime import date
+
 from . import config
+from .agents.decider import compare_offers
 from .chat import ChatAgent
 from .state import Workspace
 
@@ -71,8 +74,57 @@ def build_state(applicant: str) -> dict:
         "library": [{k: v for k, v in i.items() if k != "text"} for i in library["items"]],
         "programs": programs,
         "todos": ws.load("todos", []),
+        "signals": ws.load("signals", []),
+        "offers": ws.load("offers", []),
+        "comparison": compare_offers(
+            ws.load("offers", []),
+            {p["name"]: (p["advisors"] or {}) for p in programs},
+            ws.load("signals", []),
+        ),
         "summary": ws.load("summary"),
     }
+
+
+class Signal(BaseModel):
+    id: str | None = None
+    program: str
+    advisor: str | None = None
+    kind: str  # email_sent | reply_positive | reply_neutral | reply_negative | interview | waitlist | admit | reject | funding_offer
+    date: str | None = None
+    note: str | None = None
+
+
+@app.post("/api/applicants/{applicant}/signals")
+def add_signal(applicant: str, sig: Signal) -> list:
+    ws = _ws(applicant)
+    signals = ws.load("signals", [])
+    rec = sig.model_dump()
+    rec["id"] = rec["id"] or f"s{len(signals) + 1}"
+    rec["date"] = rec["date"] or date.today().isoformat()
+    signals = [s for s in signals if s["id"] != rec["id"]] + [rec]
+    ws.save("signals", signals)
+    return signals
+
+
+class Offer(BaseModel):
+    id: str | None = None
+    program: str
+    advisor: str | None = None
+    stipend_usd: int | None = None
+    years_guaranteed: int | None = None
+    respond_by: str | None = None
+    note: str | None = None
+
+
+@app.post("/api/applicants/{applicant}/offers")
+def upsert_offer(applicant: str, offer: Offer) -> list:
+    ws = _ws(applicant)
+    offers = ws.load("offers", [])
+    rec = offer.model_dump()
+    rec["id"] = rec["id"] or f"o{len(offers) + 1}"
+    offers = [o for o in offers if o["id"] != rec["id"]] + [rec]
+    ws.save("offers", offers)
+    return offers
 
 
 @app.get("/api/applicants/{applicant}/state")

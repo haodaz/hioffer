@@ -35,6 +35,10 @@ export function CardView({ card, t, onAction }: { card: Card; t: T; onAction: (m
       return <TodosCard todos={card.todos as never[]} t={t} />;
     case "confirm":
       return <ConfirmCard card={card} t={t} onAction={onAction} />;
+    case "signals":
+      return <SignalsCard signals={card.signals as Signal[]} t={t} />;
+    case "offers":
+      return <OffersCard cmp={card as unknown as Comparison} t={t} />;
     default:
       return <pre className="card overflow-auto text-xs">{JSON.stringify(card, null, 2)}</pre>;
   }
@@ -376,6 +380,96 @@ export function ConfirmCard({ card, t, onAction }: { card: Card; t: T; onAction:
           {t("confirmNo")}
         </button>
       </div>
+    </div>
+  );
+}
+
+export type Signal = { id: string; date: string; program: string; advisor?: string | null; kind: string; note?: string; sample?: boolean };
+export type Offer = { id: string; program: string; advisor?: string | null; stipend_usd?: number | null; years_guaranteed?: number | null; respond_by?: string | null; note?: string; sample?: boolean };
+export type Comparison = { weights: Record<string, number>; ranked: (Offer & { subscores: Record<string, number>; total: number; reasons: string[] })[] };
+
+const KIND_COLOR: Record<string, string> = {
+  reply_positive: "text-ok", interview: "text-ok", admit: "text-ok", funding_offer: "text-ok",
+  reply_negative: "text-bad", reject: "text-bad", waitlist: "text-warn",
+};
+
+export function SignalsCard({ signals, t }: { signals: Signal[]; t: T }) {
+  const sorted = [...signals].sort((a, b) => b.date.localeCompare(a.date));
+  return (
+    <div className="card">
+      <div className="mb-2 flex items-center justify-between text-sm font-semibold">
+        <span>{t("signals")}</span>
+        {signals.some((s) => s.sample) && <span className="tag">{t("sample")}</span>}
+      </div>
+      {sorted.length === 0 && <p className="text-xs text-muted">{t("noSignals")}</p>}
+      <ul className="space-y-2">
+        {sorted.map((s) => (
+          <li key={s.id} className="text-sm">
+            <span className="mr-2 font-mono text-xs text-muted">{s.date}</span>
+            <span className={`mr-2 text-xs font-medium ${KIND_COLOR[s.kind] ?? "text-muted"}`}>{s.kind.replace(/_/g, " ")}</span>
+            <span className="font-medium">{s.advisor ?? s.program}</span>
+            {s.advisor && <span className="text-xs text-muted"> · {s.program}</span>}
+            {s.note && <div className="text-xs text-muted">{s.note}</div>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export function OffersCard({ cmp, t }: { cmp: Comparison; t: T }) {
+  const keys = Object.keys(cmp.weights);
+  return (
+    <div className="card">
+      <div className="mb-1 flex items-center justify-between text-sm font-semibold">
+        <span>{t("compare")}</span>
+        {cmp.ranked.some((o) => o.sample) && <span className="tag">{t("sample")}</span>}
+      </div>
+      <p className="mb-2 text-xs text-muted">{t("decideNote")}</p>
+      {cmp.ranked.length === 0 && <p className="text-xs text-muted">{t("noOffers")}</p>}
+      {cmp.ranked.length > 0 && (
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="text-left text-muted">
+                <th className="py-1 pr-2">{t("programs")}</th>
+                {keys.map((k) => (
+                  <th key={k} className="py-1 pr-2">
+                    {k.replace(/_/g, " ")} <span className="font-normal">×{cmp.weights[k]}</span>
+                  </th>
+                ))}
+                <th className="py-1">{t("total")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cmp.ranked.map((o, i) => (
+                <tr key={o.id} className="border-t border-line align-top">
+                  <td className="py-2 pr-2">
+                    <div className="font-medium">
+                      {i === 0 ? "① " : i === 1 ? "② " : `${i + 1}. `}
+                      {o.program}
+                    </div>
+                    <div className="text-muted">
+                      {o.advisor ?? "—"} · {t("stipend")} ${(o.stipend_usd ?? 0).toLocaleString()} · {o.years_guaranteed ?? 0} {t("years")}
+                      {o.respond_by ? ` · ${t("respondBy")} ${o.respond_by}` : ""}
+                    </div>
+                    {o.note && <div className="text-muted">{o.note}</div>}
+                  </td>
+                  {keys.map((k) => (
+                    <td key={k} className="py-2 pr-2">
+                      <div className="h-2 w-16 rounded bg-background">
+                        <div className="h-2 rounded bg-brand" style={{ width: `${Math.round(o.subscores[k] * 100)}%` }} />
+                      </div>
+                      <div className="text-muted">{o.subscores[k].toFixed(2)}</div>
+                    </td>
+                  ))}
+                  <td className="py-2 font-semibold">{o.total.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

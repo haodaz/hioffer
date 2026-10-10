@@ -102,6 +102,12 @@
   scores; upload transcripts; pay the fee and submit). Deadline strings are normalised to ISO dates with one
   Haiku call; everything else is arithmetic. 23 to-dos across the three programs, shown in the Timeline panel
   with checkboxes. The confirm card for `run_prepare` was verified in the UI (no run triggered).
+- **Signals and Offers (modules 5 and 6):** signals (email sent, reply ±, interview, waitlist, admit, reject,
+  funding) can be logged from the panel or by telling the agent ("Hajishirzi replied, positive"); offers are
+  compared by a deterministic, visible-weight scorer (advisor fit 0.35, funding 0.30, signals 0.20, guarantee
+  0.15) that the agent only explains, never overrides. Demo data for both is a clearly labelled fictional
+  sample scenario. The agent's system prompt now carries the program/advisor roster so it resolves
+  "Hajishirzi" → UW instead of asking. hioffer's face is the robot from the cover (chat avatar, header).
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 

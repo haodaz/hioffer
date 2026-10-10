@@ -1,0 +1,38 @@
+[
+  {
+    "id": "s1",
+    "date": "2026-10-20",
+    "program": "University of Washington CSE PhD",
+    "advisor": "Yulia Tsvetkov",
+    "kind": "email_sent",
+    "note": "Sent outreach email with CV.",
+    "sample": true
+  },
+  {
+    "id": "s2",
+    "date": "2026-10-27",
+    "program": "University of Washington CSE PhD",
+    "advisor": "Yulia Tsvetkov",
+    "kind": "reply_positive",
+    "note": "Replied: taking 1-2 students, encouraged to apply and mention her name.",
+    "sample": true
+  },
+  {
+    "id": "s3",
+    "date": "2026-10-21",
+    "program": "University of Maryland CS PhD",
+    "advisor": "Marine Carpuat",
+    "kind": "email_sent",
+    "note": "Sent outreach email.",
+    "sample": true
+  },
+  {
+    "id": "s4",
+    "date": "2026-11-05",
+    "program": "University of Maryland CS PhD",
+    "advisor": "Marine Carpuat",
+    "kind": "reply_neutral",
+    "note": "Auto-reply: admissions are committee-based; apply through the portal.",
+    "sample": true
+  }
+]

@@ -33,6 +33,15 @@ export async function upsertTodo(todo: Record<string, unknown>) {
   return r.json();
 }
 
+export async function addSignal(sig: Record<string, unknown>) {
+  const r = await fetch(`${API}/api/applicants/${APPLICANT}/signals`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(sig),
+  });
+  return r.json();
+}
+
 /** POST a chat message and stream Server-Sent Events to `onEvent`. */
 export async function chat(
   message: string,

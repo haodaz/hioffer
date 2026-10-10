@@ -2,20 +2,20 @@
 
 import { useState } from "react";
 import type { Key } from "@/lib/i18n";
-import { upsertTodo } from "@/lib/api";
-import { AdvisorCard, LibraryCard, MaterialsCard, ProgramsCard, RequirementsCard, TodosCard } from "./Cards";
+import { addSignal, upsertTodo } from "@/lib/api";
+import { AdvisorCard, LibraryCard, MaterialsCard, OffersCard, ProgramsCard, RequirementsCard, SignalsCard, TodosCard } from "./Cards";
 
 type T = (k: Key) => string;
-export type Tab = "programs" | "advisors" | "materials" | "timeline";
+export type Tab = "programs" | "advisors" | "materials" | "timeline" | "signals" | "offers";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type State = any;
 
 export function Panels({ state, tab, setTab, t, onAction, refresh }: { state: State; tab: Tab; setTab: (t: Tab) => void; t: T; onAction: (m: string) => void; refresh: () => void }) {
-  const tabs: Tab[] = ["programs", "advisors", "materials", "timeline"];
+  const tabs: Tab[] = ["programs", "advisors", "materials", "timeline", "signals", "offers"];
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {tabs.map((k) => (
           <button key={k} className={`chip ${tab === k ? "border-brand text-brand" : ""}`} onClick={() => setTab(k)}>
             {t(k)}
@@ -28,6 +28,8 @@ export function Panels({ state, tab, setTab, t, onAction, refresh }: { state: St
         {state && tab === "advisors" && <AdvisorsPanel state={state} t={t} onAction={onAction} />}
         {state && tab === "materials" && <MaterialsPanel state={state} t={t} />}
         {state && tab === "timeline" && <TimelinePanel state={state} t={t} refresh={refresh} />}
+        {state && tab === "signals" && <SignalsPanel state={state} t={t} refresh={refresh} />}
+        {state && tab === "offers" && <OffersCard cmp={state.comparison} t={t} />}
       </div>
     </div>
   );
@@ -136,6 +138,47 @@ function TimelinePanel({ state, t, refresh }: { state: State; t: T; refresh: () 
         <input className="flex-1 rounded-xl border border-line px-3 py-2 text-sm" placeholder={t("addTodo")} value={task} onChange={(e) => setTask(e.target.value)} />
         <input type="date" className="rounded-xl border border-line px-3 py-2 text-sm" value={due} onChange={(e) => setDue(e.target.value)} />
         <button className="btn">{t("addTodo")}</button>
+      </form>
+    </>
+  );
+}
+
+const KINDS = ["email_sent", "reply_positive", "reply_neutral", "reply_negative", "interview", "waitlist", "admit", "reject", "funding_offer"];
+
+function SignalsPanel({ state, t, refresh }: { state: State; t: T; refresh: () => void }) {
+  const [program, setProgram] = useState<string>(state.programs[0]?.name ?? "");
+  const [advisor, setAdvisor] = useState("");
+  const [kind, setKind] = useState("email_sent");
+  const [note, setNote] = useState("");
+  return (
+    <>
+      <SignalsCard signals={state.signals} t={t} />
+      <form
+        className="card grid gap-2 sm:grid-cols-2"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          await addSignal({ program, advisor: advisor || null, kind, note });
+          setNote("");
+          refresh();
+        }}
+      >
+        <select className="rounded-xl border border-line px-3 py-2 text-sm" value={program} onChange={(e) => setProgram(e.target.value)}>
+          {state.programs.map((p: State) => (
+            <option key={p.key} value={p.name}>
+              {p.short ?? p.name}
+            </option>
+          ))}
+        </select>
+        <select className="rounded-xl border border-line px-3 py-2 text-sm" value={kind} onChange={(e) => setKind(e.target.value)}>
+          {KINDS.map((k) => (
+            <option key={k} value={k}>
+              {k.replace(/_/g, " ")}
+            </option>
+          ))}
+        </select>
+        <input className="rounded-xl border border-line px-3 py-2 text-sm" placeholder={t("advisors")} value={advisor} onChange={(e) => setAdvisor(e.target.value)} />
+        <input className="rounded-xl border border-line px-3 py-2 text-sm" placeholder="note" value={note} onChange={(e) => setNote(e.target.value)} />
+        <button className="btn sm:col-span-2">{t("logSignal")}</button>
       </form>
     </>
   );

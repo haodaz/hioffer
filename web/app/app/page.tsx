@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
@@ -39,8 +40,11 @@ function App() {
   return (
     <div className="flex h-screen flex-col">
       <header className="flex items-center justify-between border-b border-line bg-surface px-4 py-2">
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          hi<span className="text-brand">offer</span>
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
+          <Image src="/hioffer-bot.png" alt="" width={28} height={39} className="h-7 w-auto" />
+          <span>
+            hi<span className="text-brand">offer</span>
+          </span>
         </Link>
         <div className="flex items-center gap-2 text-sm">
           {state && <span className="text-muted">{state.applicant}</span>}

@@ -17,7 +17,9 @@ from .state import Workspace
 
 SYSTEM = """You are hioffer, a PhD-application agent. You help ONE applicant prepare applications:
 find programs and their official requirements, find advisors whose recent papers match, assemble and tailor
-materials, keep a to-do timeline. The applicant sends emails, pays fees and submits; you never do.
+materials, keep a to-do timeline, log signals (replies, interviews, admits) and compare offers with visible
+weights. The applicant sends emails, pays fees and submits; you never do. Offer comparison is decision support,
+not advice: show the table and the trade-offs, let the applicant decide.
 
 Style: short, concrete, warm but not gushing. Reply in {lang_name}. When a tool returns data the UI shows it as a
 card, so do not repeat the card's contents in prose; add only what the card does not say (what to do next, caveats,
@@ -50,6 +52,24 @@ class ChatAgent:
                 {"type": "object", "properties": {"task": {"type": "string"}, "program": {"type": "string"}, "due": {"type": "string", "description": "YYYY-MM-DD or empty"}}, "required": ["task"]},
                 self.add_todo,
             ),
+            Tool("show_signals", "Outreach / admissions signals logged so far (emails sent, replies, interviews, admits).", {"type": "object", "properties": {}}, self.show_signals),
+            Tool(
+                "log_signal", "Record a signal the applicant reports: an email they sent, a reply, an interview, a waitlist, an admit, a reject or a funding offer.",
+                {"type": "object", "properties": {
+                    "program": {"type": "string"}, "advisor": {"type": "string"},
+                    "kind": {"type": "string", "enum": ["email_sent", "reply_positive", "reply_neutral", "reply_negative", "interview", "waitlist", "admit", "reject", "funding_offer"]},
+                    "note": {"type": "string"}, "date": {"type": "string", "description": "YYYY-MM-DD, default today"}},
+                 "required": ["program", "kind"]},
+                self.log_signal,
+            ),
+            Tool(
+                "add_offer", "Record an admission offer the applicant received (stipend, guaranteed years, response deadline).",
+                {"type": "object", "properties": {"program": {"type": "string"}, "advisor": {"type": "string"}, "stipend_usd": {"type": "integer"},
+                                                  "years_guaranteed": {"type": "integer"}, "respond_by": {"type": "string"}, "note": {"type": "string"}},
+                 "required": ["program"]},
+                self.add_offer,
+            ),
+            Tool("compare_offers", "Rank the recorded offers with transparent weights (advisor fit, funding, signals, guarantee).", {"type": "object", "properties": {}}, self.compare_offers),
             Tool(
                 "run_prepare", "Run the full pipeline for one program (requirements → advisors → connections → draft → verify). Costs money and minutes.",
                 {"type": "object", "properties": {"program": {"type": "string"}, "confirmed": {"type": "boolean"}}, "required": ["program", "confirmed"]},
@@ -134,6 +154,41 @@ class ChatAgent:
         self.card("todos", {"todos": todos, "added": t["id"]})
         return {"added": t}
 
+    def show_signals(self) -> dict:
+        signals = self.ws.load("signals", [])
+        self.card("signals", {"signals": signals})
+        return {"signals": signals}
+
+    def log_signal(self, program: str, kind: str, advisor: str = "", note: str = "", date: str = "") -> dict:
+        from datetime import date as _date
+
+        p = self._prog(program)
+        signals = self.ws.load("signals", [])
+        rec = {"id": f"s{len(signals) + 1}", "date": date or _date.today().isoformat(), "program": p["name"],
+               "advisor": advisor or None, "kind": kind, "note": note}
+        signals.append(rec)
+        self.ws.save("signals", signals)
+        self.card("signals", {"signals": signals, "added": rec["id"]})
+        return {"added": rec}
+
+    def add_offer(self, program: str, advisor: str = "", stipend_usd: int | None = None, years_guaranteed: int | None = None, respond_by: str = "", note: str = "") -> dict:
+        p = self._prog(program)
+        offers = self.ws.load("offers", [])
+        rec = {"id": f"o{len(offers) + 1}", "program": p["name"], "advisor": advisor or None, "stipend_usd": stipend_usd,
+               "years_guaranteed": years_guaranteed, "respond_by": respond_by or None, "note": note}
+        offers.append(rec)
+        self.ws.save("offers", offers)
+        return {"added": rec, **self.compare_offers()}
+
+    def compare_offers(self) -> dict:
+        from .agents.decider import compare_offers
+
+        offers = self.ws.load("offers", [])
+        adv = {p["name"]: (self.ws.load(f"{slug(p['name'])}/advisors_connected") or self.ws.load(f"{slug(p['name'])}/advisors") or {}) for p in self.programs}
+        cmp = compare_offers(offers, adv, self.ws.load("signals", []))
+        self.card("offers", cmp)
+        return {"weights": cmp["weights"], "ranked": [{"program": r["program"], "total": r["total"], "reasons": r["reasons"]} for r in cmp["ranked"]]}
+
     def run_prepare(self, program: str, confirmed: bool) -> dict:
         p = self._prog(program)
         if not confirmed:
@@ -149,6 +204,16 @@ class ChatAgent:
     def card(self, kind: str, data: dict) -> None:
         self.emit({"type": "card", "card": {"kind": kind, **data}})
 
+    def _context(self) -> str:
+        """Compact facts the agent should not have to ask about: programs, their aliases, matched advisors."""
+        lines = []
+        for p in self.programs:
+            k = slug(p["name"])
+            adv = self.ws.load(f"{k}/advisors_connected") or self.ws.load(f"{k}/advisors") or {}
+            names = ", ".join(a["name"] for a in adv.get("advisors", [])) or "none yet"
+            lines.append(f"- {p['name']} (short: {p.get('short', '')}; institution: {p.get('institution', '')}) — advisors: {names}")
+        return "\n\nAPPLICANT'S PROGRAMS AND MATCHED ADVISORS (resolve names to programs yourself):\n" + "\n".join(lines)
+
     def _log(self, line: str) -> None:
         self.emit({"type": "tool_log", "text": line.strip()})
 
@@ -157,7 +222,7 @@ class ChatAgent:
         from .config import MODEL
 
         by_name = {t.name: t for t in self.tools}
-        messages = [{"role": "system", "content": SYSTEM.format(lang_name=LANG_NAMES[self.lang])}]
+        messages = [{"role": "system", "content": SYSTEM.format(lang_name=LANG_NAMES[self.lang]) + self._context()}]
         messages += [{"role": h["role"], "content": h["content"]} for h in history[-12:] if h.get("role") in ("user", "assistant") and h.get("content")]
         messages.append({"role": "user", "content": message})
         for _ in range(6):

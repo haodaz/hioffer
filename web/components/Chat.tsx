@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { chat, type Card, type Event } from "@/lib/api";
 import type { Key, Lang } from "@/lib/i18n";
@@ -63,11 +64,14 @@ export function Chat({ lang, t, onStateChange, seed }: { lang: Lang; t: (k: Key)
     <div className="flex min-h-0 flex-1 flex-col">
       <div className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-1">
         {msgs.length === 0 && (
-          <div className="card">
-            <p className="text-sm">
-              👋 {t("tagline")} {t("sub")}
-            </p>
-            <p className="mt-1 text-xs text-muted">{t("boundary")}</p>
+          <div className="card flex items-center gap-4">
+            <Image src="/hioffer-bot.png" alt="hioffer" width={96} height={134} className="h-auto w-20 shrink-0" priority />
+            <div>
+              <p className="text-sm">
+                👋 {t("tagline")} {t("sub")}
+              </p>
+              <p className="mt-1 text-xs text-muted">{t("boundary")}</p>
+            </div>
           </div>
         )}
         {msgs.map((m, i) =>
@@ -76,7 +80,9 @@ export function Chat({ lang, t, onStateChange, seed }: { lang: Lang; t: (k: Key)
               {m.content}
             </div>
           ) : (
-            <div key={i} className="space-y-2">
+            <div key={i} className="flex gap-2">
+              <Image src="/hioffer-bot.png" alt="" width={32} height={45} className="mt-1 h-auto w-8 shrink-0 rounded-full bg-surface" />
+              <div className="min-w-0 flex-1 space-y-2">
               {m.tools.length > 0 && (
                 <details className="text-xs text-muted" open={m.pending}>
                   <summary className="cursor-pointer">
@@ -100,6 +106,7 @@ export function Chat({ lang, t, onStateChange, seed }: { lang: Lang; t: (k: Key)
                 </div>
               )}
               {m.pending && !m.content && m.tools.length === 0 && <div className="text-xs text-muted">{t("thinking")}</div>}
+              </div>
             </div>
           ),
         )}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "o1",
+    "program": "University of Washington CSE PhD",
+    "advisor": "Yulia Tsvetkov",
+    "stipend_usd": 46000,
+    "years_guaranteed": 5,
+    "respond_by": "2027-04-15",
+    "note": "RA offer in TsvetShop; health insurance included.",
+    "sample": true
+  },
+  {
+    "id": "o2",
+    "program": "University of Maryland CS PhD",
+    "advisor": null,
+    "stipend_usd": 38000,
+    "years_guaranteed": 2,
+    "respond_by": "2027-04-15",
+    "note": "TA for first two years, advisor assigned after rotation.",
+    "sample": true
+  }
+]
