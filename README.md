@@ -34,7 +34,7 @@ tool call, plus a CHAIN span when malformed JSON has to be repaired.
 - **neatlogs** traces every agent run (model/tool calls, tokens, cost). Runs are tagged (`run1` … `run5`,
   `after-fix`, `pruned`) so before/after comparisons are one filter away.
 - **Entire** records the coding-agent sessions behind each commit (`entire checkpoint list`).
-- **cfo.ai** holds the business plan (pricing, costs, revenue, runway), fed by the per-run cost in neatlogs.
+- **cfo.ai** holds the business plan (pricing, costs, revenue, runway), fed by the per-run cost in neatlogs: https://cfo.ai/s/A_qiW6hIGmm-3fDR
 
 See [hackathon.md](hackathon.md) for the dated build log, the failures found in traces and their fixes.
 

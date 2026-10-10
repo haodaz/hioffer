@@ -1,5 +1,7 @@
 # cfo.ai results for hioffer (2026-10-10)
 
+Public model (Financial outlook + Assumptions, view-only): https://cfo.ai/s/A_qiW6hIGmm-3fDR
+
 Built in cfo.ai ("Ari") from the assumptions in `cfo-ai-inputs.md`, as a hypothetical model
 (no real accounts connected). Screenshots in `evidence/cfo-ai/`. Model horizon Jan 2027–Dec 2029,
 zero opening cash, upfront collection, 70% of purchases in Oct–Dec.

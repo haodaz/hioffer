@@ -171,7 +171,7 @@
 - [ ] Public repo with hackathon-dated commits
 - [x] neatlogs traces (before/after a fix, failure recovery) — `evidence/neatlogs/`, build log above
 - [ ] Entire checkpoints / entire-graph output
-- [x] cfo.ai business plan — `business/cfo-ai-results.md`, `evidence/cfo-ai/`
+- [x] cfo.ai business plan — public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR · `business/cfo-ai-results.md` · `evidence/cfo-ai/`
 - [ ] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai
 - [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190
 - [ ] Quote post of the official neatlogs post during the submission window
