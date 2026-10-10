@@ -1,0 +1,29 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K1DFX2CSFP9FAR4B4YKKE6",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "hioffer/agents/planner.py",
+    "hioffer/orchestrator.py",
+    "scripts/backfill_todos.py",
+    "web/components/Panels.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 160,
+    "cache_creation_tokens": 9552,
+    "cache_read_tokens": 1453790,
+    "output_tokens": 6100,
+    "api_call_count": 5
+  }
+}
