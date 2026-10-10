@@ -45,8 +45,39 @@ def parse_json(text: str, repair: bool = True) -> Any:
         return parse_json(fixed, repair=False)
 
 
+# Rough list prices per million tokens (input, output) used for a local cost estimate per run.
+# neatlogs holds the authoritative numbers; this is for the console summary and the cfo.ai model.
+PRICES = {"claude-sonnet-4.6": (3.0, 15.0), "claude-opus-4.6": (15.0, 75.0), "claude-haiku": (1.0, 5.0)}
+USAGE: dict[str, dict] = {}
+
+
+def _record_usage(model: str, resp) -> None:
+    u = getattr(resp, "usage", None)
+    if not u:
+        return
+    slot = USAGE.setdefault(model, {"calls": 0, "input_tokens": 0, "output_tokens": 0})
+    slot["calls"] += 1
+    slot["input_tokens"] += u.prompt_tokens or 0
+    slot["output_tokens"] += u.completion_tokens or 0
+
+
+def usage_summary() -> dict:
+    total = 0.0
+    for model, s in USAGE.items():
+        pin, pout = PRICES.get(model, (3.0, 15.0))
+        s["est_usd"] = round(s["input_tokens"] / 1e6 * pin + s["output_tokens"] / 1e6 * pout, 4)
+        total += s["est_usd"]
+    return {"models": USAGE, "est_total_usd": round(total, 4)}
+
+
+def _create(**kw):
+    resp = client().chat.completions.create(**kw)
+    _record_usage(kw["model"], resp)
+    return resp
+
+
 def complete(system: str, user: str, model: str = MODEL, max_tokens: int = 4000) -> str:
-    resp = client().chat.completions.create(
+    resp = _create(
         model=model,
         max_tokens=max_tokens,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -89,7 +120,7 @@ def run_tool_agent(
         seen_calls: set[str] = set()
         messages: list[dict] = [{"role": "system", "content": system}, {"role": "user", "content": user}]
         for step in range(max_steps):
-            resp = client().chat.completions.create(
+            resp = _create(
                 model=model,
                 max_tokens=6000,
                 messages=messages,
@@ -112,7 +143,7 @@ def run_tool_agent(
                 messages.append({"role": "tool", "tool_call_id": call.id, "content": result})
         # Out of steps: force a final answer without tools.
         messages.append({"role": "user", "content": "Stop using tools and give your final JSON answer now."})
-        resp = client().chat.completions.create(model=model, max_tokens=6000, messages=messages)
+        resp = _create(model=model, max_tokens=6000, messages=messages)
         return resp.choices[0].message.content or ""
 
     return _run()

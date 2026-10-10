@@ -1,0 +1,120 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "Prof. Tsvetkov's lab currently has nine active PhD students at UW, indicating an open and collaborative research group [lib:profile].",
+      "problem": "The citation lib:profile does not support this claim. lib:profile contains no information about the number of PhD students in Prof. Tsvetkov's lab. This specific number is invented and unsupported by any provided source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "the same tokenizer-fairness problem MAGNET addresses for multilingual models [lib:cv]",
+      "problem": "lib:cv contains no mention of MAGNET. This project name is invented and not supported by any provided source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His documented interest in how data-selection choices encode language ideologies [lib:profile]",
+      "problem": "lib:profile contains no information about Prof. Noah A. Smith's research interests. This claim is unsupported by the cited source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His group's focus on evaluation that captures what actually matters for diverse users [lib:interests]",
+      "problem": "lib:interests describes the applicant's own interests, not Prof. Smith's group's focus. Citing lib:interests for a claim about Prof. Smith's group is an incorrect citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "his lab explicitly admits students every year [lib:profile]",
+      "problem": "lib:profile contains no information about Prof. Zettlemoyer's student admission practices. This claim is unsupported by the cited source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "Prof. Zettlemoyer's group has made parameter-efficient fine-tuning practical at scale",
+      "problem": "No source in the library supports this characterization of Prof. Zettlemoyer's research focus. The claim is unsupported and potentially invented.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Noah A. Smith",
+      "sentence": "Your group's work on how data-quality criteria can encode language ideologies [lib:profile]",
+      "problem": "lib:profile contains no information about Prof. Smith's research on data-quality criteria or language ideologies. This claim is unsupported by the cited source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "At UW Allen School I want to work with Prof. Yulia Tsvetkov, whose TsvetShop lab addresses multilingual tokenizer unfairness and builds NLP resources for under-resourced language varieties—exactly the two threads I have been pulling on [lib:cv].",
+      "problem": "This sentence makes specific claims about Prof. Tsvetkov's lab focus (multilingual tokenizer unfairness, NLP resources for under-resourced language varieties) but cites only lib:cv, which contains no information about Prof. Tsvetkov or her lab. These claims about the advisor need a supporting source.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "Prof. Tsvetkov's lab currently has nine active PhD students at UW, indicating an open and collaborative research group [lib:profile].",
+      "problem": "The citation lib:profile does not support this claim. lib:profile contains no information about the number of PhD students in Prof. Tsvetkov's lab. This specific number is invented and unsupported by any provided source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "the same tokenizer-fairness problem MAGNET addresses for multilingual models [lib:cv]",
+      "problem": "lib:cv contains no mention of MAGNET. This project name is invented and not supported by any provided source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His documented interest in how data-selection choices encode language ideologies [lib:profile]",
+      "problem": "lib:profile contains no information about Prof. Noah A. Smith's research interests. This claim is unsupported by the cited source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His group's focus on evaluation that captures what actually matters for diverse users [lib:interests]",
+      "problem": "lib:interests describes the applicant's own interests, not Prof. Smith's group's focus. Citing lib:interests for a claim about Prof. Smith's group is an incorrect citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "his lab explicitly admits students every year [lib:profile]",
+      "problem": "lib:profile contains no information about Prof. Zettlemoyer's student admission practices. This claim is unsupported by the cited source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "Prof. Zettlemoyer's group has made parameter-efficient fine-tuning practical at scale",
+      "problem": "No source in the library supports this characterization of Prof. Zettlemoyer's research focus. The claim is unsupported and potentially invented.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Noah A. Smith",
+      "sentence": "Your group's work on how data-quality criteria can encode language ideologies [lib:profile]",
+      "problem": "lib:profile contains no information about Prof. Smith's research on data-quality criteria or language ideologies. This claim is unsupported by the cited source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "At UW Allen School I want to work with Prof. Yulia Tsvetkov, whose TsvetShop lab addresses multilingual tokenizer unfairness and builds NLP resources for under-resourced language varieties—exactly the two threads I have been pulling on [lib:cv].",
+      "problem": "This sentence makes specific claims about Prof. Tsvetkov's lab focus (multilingual tokenizer unfairness, NLP resources for under-resourced language varieties) but cites only lib:cv, which contains no information about Prof. Tsvetkov or her lab. These claims about the advisor need a supporting source.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": []
+}

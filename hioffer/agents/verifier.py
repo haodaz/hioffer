@@ -7,12 +7,16 @@ import neatlogs
 from ..llm import complete_json
 
 AUDIT_SYSTEM = """You audit a PhD applicant's drafted materials against their sources.
-For each draft, find sentences that state a fact about the applicant or an advisor which is either
-(a) missing a citation tag, or (b) cited to a source that does not support it.
-Be strict about invented specifics (numbers, names, titles, venues) and lenient about phrasing.
+Sources: LIBRARY items (facts about the applicant, cited [lib:id]); PAPERS (cited [paper:id], with authors,
+venue, year and the advisor they are listed under); ADVISORS (areas, match_reason, takes_students evidence,
+cited [advisor:name]).
+Flag a sentence only when it states a fact that is (a) missing a citation tag, or (b) cited to a source that
+does not contain it, or (c) attributes a paper to the wrong advisor, or (d) invents specifics (numbers, names,
+project names, venues). A first-author "et al." plus venue/year that matches the paper record is fine.
+Be lenient about phrasing and about the applicant's stated research goals.
 Return JSON: {"issues": [{"where": "sop|fit:<advisor>|email:<advisor>", "sentence": str, "problem": str}]}"""
 
-TAG = re.compile(r"\[(lib|paper):([^\]]+)\]")
+TAG = re.compile(r"\[(lib|paper|advisor):([^\]]+)\]")
 
 
 @neatlogs.span(kind="GUARDRAIL", name="verifier")
@@ -20,6 +24,7 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
     issues: list[dict] = []
     lib_ids = {i["id"] for i in library["items"]}
     paper_ids = {p["id"] for a in advisors["advisors"] for p in a.get("papers", [])}
+    advisor_names = {a["name"].lower() for a in advisors["advisors"]}
 
     # 1. Word limit.
     sop = materials["sop"]
@@ -32,8 +37,12 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
     texts.update({f"email:{e['advisor']}": e["body"] for e in materials.get("emails", [])})
     for where, text in texts.items():
         for kind, ident in TAG.findall(text):
-            ref = f"{kind}:{ident}" if kind == "lib" else ident
-            if (kind == "lib" and ref not in lib_ids) or (kind == "paper" and ident not in paper_ids):
+            ok = (
+                (kind == "lib" and f"lib:{ident}" in lib_ids)
+                or (kind == "paper" and ident in paper_ids)
+                or (kind == "advisor" and ident.strip().lower() in advisor_names)
+            )
+            if not ok:
                 issues.append({"check": "citation", "where": where, "problem": f"unknown citation [{kind}:{ident}]"})
     if not TAG.search(sop["text"]):
         issues.append({"check": "citation", "where": "sop", "problem": "SOP has no citation tags at all"})
@@ -55,7 +64,20 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
         "LIBRARY (ids and facts):\n"
         + json.dumps([{"id": i["id"], "key_facts": i["key_facts"]} for i in library["items"]], ensure_ascii=False)
         + "\n\nPAPERS:\n"
-        + json.dumps([{"id": p["id"], "title": p["title"], "advisor": a["name"]} for a in advisors["advisors"] for p in a["papers"]], ensure_ascii=False)
+        + json.dumps(
+            [
+                {"id": p["id"], "title": p["title"], "authors": p.get("authors"), "venue": p.get("venue"),
+                 "year": p.get("year"), "listed_under_advisor": a["name"]}
+                for a in advisors["advisors"] for p in a["papers"]
+            ],
+            ensure_ascii=False,
+        )
+        + "\n\nADVISORS:\n"
+        + json.dumps(
+            [{"name": a["name"], "areas": a.get("areas"), "match_reason": a.get("match_reason"),
+              "takes_students": a.get("takes_students")} for a in advisors["advisors"]],
+            ensure_ascii=False,
+        )
         + "\n\nDRAFTS:\n"
         + json.dumps(texts, ensure_ascii=False),
     )

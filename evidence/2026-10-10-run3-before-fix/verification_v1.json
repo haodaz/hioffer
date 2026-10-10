@@ -1,0 +1,92 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "The lab's stated goal of extending language technology beyond narrow populations [lib:cv] aligns with the tokenizer and adaptation work I began at Microsoft Research India [lib:cv].",
+      "problem": "The claim about the lab's 'stated goal of extending language technology beyond narrow populations' is cited to lib:cv, which contains no such fact about Prof. Tsvetkov's lab.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "His work on context-aware decoding, co-authored with Tsvetkov [paper:W4401042371], sits at the intersection of faithfulness and efficient inference—exactly the combination I want to pursue for Indian-language deployment scenarios [lib:interests].",
+      "problem": "Paper W4401042371 is listed under advisor Yulia Tsvetkov, not Luke Zettlemoyer. The draft attributes co-authorship of that paper to Zettlemoyer, but the library does not support that claim.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His co-contributions to OLMo-era open modeling [paper:W4402671236] provide the shared infrastructure context I would need for data-selection and adaptation experiments [lib:interests].",
+      "problem": "Paper W4402671236 (OLMo) is listed under advisor Hannaneh Hajishirzi, not Noah A. Smith. The draft attributes co-contributions to Smith without library support.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Yulia Tsvetkov",
+      "sentence": "I read your context-aware decoding paper (Shi et al., NAACL 2024) carefully; the finding that amplifying contextual signals reduces hallucination directly motivates an approach I want to extend to code-switched Indian-language inputs where context faithfulness is especially fragile.",
+      "problem": "The email cites the paper as 'Shi et al., NAACL 2024.' The library (W4401042371) provides only a title and advisor association; the author name 'Shi et al.' and venue 'NAACL 2024' are invented specifics not supported by any library source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Hannaneh Hajishirzi",
+      "sentence": "The Dolma corpus (Soldaini et al., ACL 2024) is directly relevant to my next research step: I want to study how data-selection decisions affect downstream performance for under-represented scripts, and the documented provenance in Dolma makes that analysis tractable in a way proprietary corpora do not.",
+      "problem": "The email cites Dolma as 'Soldaini et al., ACL 2024.' The library (W4402671286) provides only a title and advisor association; the author name 'Soldaini et al.' and venue 'ACL 2024' are invented specifics not supported by any library source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Noah A. Smith",
+      "sentence": "I have followed ARK's work on open language modeling, including OLMo (Groeneveld et al., ACL 2024), because open infrastructure is essential for the controlled data-selection experiments I plan to run on Indian language corpora.",
+      "problem": "OLMo (W4402671236) is attributed in the library to Hannaneh Hajishirzi, not Noah A. Smith / ARK. Additionally, the author name 'Groeneveld et al.' and venue 'ACL 2024' are invented specifics not supported by any library source.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "The lab's stated goal of extending language technology beyond narrow populations [lib:cv] aligns with the tokenizer and adaptation work I began at Microsoft Research India [lib:cv].",
+      "problem": "The claim about the lab's 'stated goal of extending language technology beyond narrow populations' is cited to lib:cv, which contains no such fact about Prof. Tsvetkov's lab.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "His work on context-aware decoding, co-authored with Tsvetkov [paper:W4401042371], sits at the intersection of faithfulness and efficient inference—exactly the combination I want to pursue for Indian-language deployment scenarios [lib:interests].",
+      "problem": "Paper W4401042371 is listed under advisor Yulia Tsvetkov, not Luke Zettlemoyer. The draft attributes co-authorship of that paper to Zettlemoyer, but the library does not support that claim.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His co-contributions to OLMo-era open modeling [paper:W4402671236] provide the shared infrastructure context I would need for data-selection and adaptation experiments [lib:interests].",
+      "problem": "Paper W4402671236 (OLMo) is listed under advisor Hannaneh Hajishirzi, not Noah A. Smith. The draft attributes co-contributions to Smith without library support.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Yulia Tsvetkov",
+      "sentence": "I read your context-aware decoding paper (Shi et al., NAACL 2024) carefully; the finding that amplifying contextual signals reduces hallucination directly motivates an approach I want to extend to code-switched Indian-language inputs where context faithfulness is especially fragile.",
+      "problem": "The email cites the paper as 'Shi et al., NAACL 2024.' The library (W4401042371) provides only a title and advisor association; the author name 'Shi et al.' and venue 'NAACL 2024' are invented specifics not supported by any library source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Hannaneh Hajishirzi",
+      "sentence": "The Dolma corpus (Soldaini et al., ACL 2024) is directly relevant to my next research step: I want to study how data-selection decisions affect downstream performance for under-represented scripts, and the documented provenance in Dolma makes that analysis tractable in a way proprietary corpora do not.",
+      "problem": "The email cites Dolma as 'Soldaini et al., ACL 2024.' The library (W4402671286) provides only a title and advisor association; the author name 'Soldaini et al.' and venue 'ACL 2024' are invented specifics not supported by any library source.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Noah A. Smith",
+      "sentence": "I have followed ARK's work on open language modeling, including OLMo (Groeneveld et al., ACL 2024), because open infrastructure is essential for the controlled data-selection experiments I plan to run on Indian language corpora.",
+      "problem": "OLMo (W4402671236) is attributed in the library to Hannaneh Hajishirzi, not Noah A. Smith / ARK. Additionally, the author name 'Groeneveld et al.' and venue 'ACL 2024' are invented specifics not supported by any library source.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": []
+}

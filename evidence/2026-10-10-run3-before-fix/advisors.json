@@ -1,0 +1,298 @@
+{
+  "department": "Paul G. Allen School of Computer Science & Engineering",
+  "faculty_url": "https://www.cs.washington.edu/people/faculty-members/",
+  "advisors": [
+    {
+      "name": "Yulia Tsvetkov",
+      "openalex_id": "A5062910836",
+      "profile_url": "https://homes.cs.washington.edu/~yuliats/",
+      "areas": [
+        "Multilingual NLP",
+        "Tokenizer fairness & adaptation",
+        "Cultural and dialect-inclusive evaluation",
+        "LLM faithfulness & abstention",
+        "AI ethics and equitable language technology"
+      ],
+      "match_reason": "Tsvetkov's lab is the single strongest match. MAGNET (NeurIPS 2024) directly addresses multilingual tokenizer unfairness via adaptive gradient-based tokenization — precisely the applicant's interest in tokenizer adaptation for low-resource languages. Voices Unheard (EMNLP 2024) builds NLP resources for under-resourced dialects (Yorùbá), methodologically identical to what the applicant wants for Indian languages. Teaching LLMs to Abstain across Languages (EMNLP 2024) and Trusting Your Evidence (NAACL 2024, W4401042371) directly address multilingual faithfulness and context-grounded evaluation — core interests 2 and 3. Her stated lab goal is 'NLP for All: extend language technology beyond narrow populations and across linguistic and cultural boundaries.'",
+      "papers": [
+        {
+          "id": "W4401042371",
+          "title": "Trusting Your Evidence: Hallucinate Less with Context-aware Decoding",
+          "year": 2024,
+          "venue": "Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT)",
+          "cited_by": 75,
+          "url": "https://doi.org/10.18653/v1/2024.naacl-short.69",
+          "authors": [
+            "Weijia Shi",
+            "Xiaochuang Han",
+            "Mike Lewis",
+            "Yulia Tsvetkov",
+            "Luke Zettlemoyer",
+            "Wen-tau Yih"
+          ]
+        },
+        {
+          "id": "W4402671287",
+          "title": "Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 38,
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.786",
+          "authors": [
+            "Shangbin Feng",
+            "Weijia Shi",
+            "Yike Wang",
+            "Wenxuan Ding",
+            "Vidhisha Balachandran",
+            "Yulia Tsvetkov"
+          ]
+        },
+        {
+          "id": "W4411934268",
+          "title": "Know Your Limits: A Survey of Abstention in Large Language Models",
+          "year": 2025,
+          "venue": "Transactions of the Association for Computational Linguistics",
+          "cited_by": 35,
+          "url": "https://doi.org/10.1162/tacl_a_00754",
+          "authors": [
+            "Bingbing Wen",
+            "Jihan Yao",
+            "Shangbin Feng",
+            "Chenjun Xu",
+            "Yulia Tsvetkov",
+            "Bill Howe"
+          ]
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "MAGNET: Improving the Multilingual Fairness of Language Models with Adaptive Gradient-Based Tokenization (NeurIPS 2024)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        },
+        {
+          "title": "Voices Unheard: NLP Resources and Models for Yorùbá Regional Dialects (EMNLP 2024)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        },
+        {
+          "title": "Teaching LLMs to Abstain across Languages via Multilingual Feedback (EMNLP 2024)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        },
+        {
+          "title": "DIALECTBENCH: A NLP Benchmark for Dialects, Varieties, and Closely-Related Languages (EMNLP 2024)",
+          "source_url": "https://tsvetshop.github.io/"
+        },
+        {
+          "title": "One Form to Transfer Them All: Pretraining Multilingual Language Models Beyond Native Orthography (EMNLP 2026)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        },
+        {
+          "title": "The Cost of Sounding Different: Accent Bias in Audio Language Models (EMNLP 2026)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        },
+        {
+          "title": "MatFormer: Nested Transformer for Elastic Inference (NeurIPS 2024)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "The TsvetShop lab page lists 9 active PhD students at UW as of 2025–2026, indicating ongoing active recruitment.",
+        "source_url": "https://tsvetshop.github.io/"
+      },
+      "fit_score": 5
+    },
+    {
+      "name": "Hannaneh Hajishirzi",
+      "openalex_id": "A5082305994",
+      "profile_url": "https://homes.cs.washington.edu/~hannaneh/",
+      "areas": [
+        "Large language models (open, efficient)",
+        "Retrieval-augmented generation",
+        "Data selection and pretraining",
+        "Generative AI evaluation",
+        "NLP for science"
+      ],
+      "match_reason": "Hajishirzi leads the H2Lab and co-directs the OLMo/Dolma open LLM effort. OLMo (ACL 2024, W4402671236) and Dolma (ACL 2024, W4402671286) are foundational open model+data infrastructure on which efficient adaptation and data-selection research (interest 1) can be built. Her lab's work on RAG (W7127589252, Nature 2025) directly maps to the applicant's secondary interest in retrieval-augmented generation for government/health information. MatFormer (NeurIPS 2024, on her lab page) addresses elastic/nested inference — relevant to on-device model compression. Her H2Lab page explicitly states goals around making AI 'efficient and effective', and she co-advises students with Tsvetkov on multilingual topics.",
+      "papers": [
+        {
+          "id": "W4402671236",
+          "title": "OLMo: Accelerating the Science of Language Models",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 63,
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.841",
+          "authors": [
+            "Dirk Groeneveld",
+            "Iz Beltagy",
+            "Evan Pete Walsh",
+            "Akshita Bhagia",
+            "Rodney Kinney",
+            "Oyvind Tafjord"
+          ]
+        },
+        {
+          "id": "W4402671286",
+          "title": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 52,
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.840",
+          "authors": [
+            "Luca Soldaini",
+            "Rodney Kinney",
+            "Akshita Bhagia",
+            "Dustin Schwenk",
+            "David Atkinson",
+            "Russell Authur"
+          ]
+        },
+        {
+          "id": "W7127589252",
+          "title": "Synthesizing scientific literature with retrieval-augmented language models",
+          "year": 2026,
+          "venue": "Nature",
+          "cited_by": 31,
+          "url": "https://doi.org/10.1038/s41586-025-10072-4",
+          "authors": [
+            "Akari Asai",
+            "Jacqueline He",
+            "Rulin Shao",
+            "Weijia Shi",
+            "Amanpreet Singh",
+            "Joseph Chee Chang"
+          ]
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "MatFormer: Nested Transformer for Elastic Inference (NeurIPS 2024)",
+          "source_url": "https://h2lab.cs.washington.edu/"
+        },
+        {
+          "title": "OLMo 3 (2025/2026)",
+          "source_url": "https://h2lab.cs.washington.edu/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "H2Lab page lists active PhD students and recent new members as of 2025; lab page footer reads '2026', confirming ongoing group activity.",
+        "source_url": "https://h2lab.cs.washington.edu/"
+      },
+      "fit_score": 4
+    },
+    {
+      "name": "Noah A. Smith",
+      "openalex_id": null,
+      "profile_url": "https://nasmith.github.io/",
+      "areas": [
+        "NLP research methodology & evaluation",
+        "Multilingual NLP",
+        "Open language modeling (OLMo)",
+        "Data selection and quality for LLMs",
+        "Computational social science"
+      ],
+      "match_reason": "Smith's ARK group has a strong track record on multilingual NLP evaluation and data quality — the paper 'Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection' (visible on his S2 page) is directly relevant to low-resource language data selection (interest 1). He co-authored MAGNET (tokenizer fairness) and Voices Unheard (Yorùbá dialects) with Tsvetkov, and co-directs the OLMo open LLM effort, making him a natural co-advisor for students working on efficient LLM adaptation. His explicit focus on 'evaluation that matters' (his bio says 'he also works on core problems of research methodology like evaluation') aligns with interest 2. The Noah's ARK page notes an open undergraduate/master research interest form, suggesting openness to new students.",
+      "papers": [],
+      "unverified_mentions": [
+        {
+          "title": "Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection",
+          "source_url": "https://api.semanticscholar.org/graph/v1/author/144365875?fields=name,affiliations,papers"
+        },
+        {
+          "title": "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models",
+          "source_url": "https://api.semanticscholar.org/graph/v1/author/144365875?fields=name,affiliations,papers"
+        },
+        {
+          "title": "Voices Unheard: NLP Resources and Models for Yorùbá Regional Dialects (EMNLP 2024, co-authored with Tsvetkov)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        },
+        {
+          "title": "MAGNET: Improving the Multilingual Fairness of Language Models with Adaptive Gradient-Based Tokenization (NeurIPS 2024, co-authored with Tsvetkov)",
+          "source_url": "https://homes.cs.washington.edu/~yuliats/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Noah's ARK page says 'If you are an undergraduate or masters student in Seattle and would like to work on research with Noah's ARK, please complete this demonstration of research interest' — but no explicit PhD recruiting statement was found. His homepage mentions 35 graduated PhD students and ongoing mentoring but no 'currently recruiting PhD students' statement.",
+        "source_url": "https://noahs-ark.github.io/"
+      },
+      "fit_score": 4
+    },
+    {
+      "name": "Luke Zettlemoyer",
+      "openalex_id": null,
+      "profile_url": "https://homes.cs.washington.edu/~lsz/",
+      "areas": [
+        "Large language model pretraining & self-supervision",
+        "Natural language semantics",
+        "Efficient LLM methods (QLoRA, PEFT)",
+        "Multilingual NLP",
+        "Open language modeling (OLMo/Dolma co-contributor)"
+      ],
+      "match_reason": "Zettlemoyer's group produced QLoRA (NeurIPS 2023 oral), the seminal parameter-efficient fine-tuning method that is the backbone of adapting large models to low-resource settings — directly relevant to interest 1. He co-contributed to OLMo and Dolma (ACL 2024 best paper awards) and supervised a thesis on 'Towards Large Language Models for Everyone: Instruction Following, Knowledge Retrieval and Multilingualism' (Victoria Lin, 2024). His current student Sneha Kudugunta, listed on his group page, works on multilingual models. His profile page explicitly states 'I admit students every year.'",
+      "papers": [],
+      "unverified_mentions": [
+        {
+          "title": "QLoRA: Efficient Finetuning of Quantized LLMs (NeurIPS 2023)",
+          "source_url": "https://homes.cs.washington.edu/~lsz/"
+        },
+        {
+          "title": "Victoria Lin PhD thesis: Towards Large Language Models for Everyone — Instruction Following, Knowledge Retrieval and Multilingualism (2024)",
+          "source_url": "https://homes.cs.washington.edu/~lsz/"
+        },
+        {
+          "title": "BLT: ACL 2025 Outstanding Paper Award (byte-level tokenization work)",
+          "source_url": "https://homes.cs.washington.edu/~lsz/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "\"I admit students every year, please apply here. We carefully consider every application; emailing will not increase your chances of being accepted.\"",
+        "source_url": "https://homes.cs.washington.edu/~lsz/"
+      },
+      "fit_score": 3
+    },
+    {
+      "name": "Kurtis Heimerl",
+      "openalex_id": "A5016301914",
+      "profile_url": "https://www.cs.washington.edu/people/faculty/kurtis-heimerl/",
+      "areas": [
+        "Computing for Development (ICT4D)",
+        "Community cellular networks",
+        "On-device AI for low-resource communities",
+        "Human-Computer Interaction in under-served contexts"
+      ],
+      "match_reason": "Heimerl's focus is Computing for Development, which superficially connects to deploying language technology in underserved communities. However, his recent 2024–2026 papers (W4401176673 dAuth cellular auth, W4415250212 smart tech for homeless shelters, W7154079896 on-device AI for conservation) are about mobile infrastructure and community technology — not NLP, speech, or Indian-language modeling. His work does not engage with low-resource NLP, multilingual LLMs, or any of the applicant's core interests.",
+      "papers": [],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": null,
+        "source_url": null
+      },
+      "fit_score": 1
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Pang Wei Koh",
+      "why": "Listed as NLP+ML+Generative AI on the faculty page, but OpenAlex lookup failed repeatedly. His recent work visible via co-authorship on Tsvetkov's page focuses on RLHF, reward modeling, and privacy — not multilingual or low-resource NLP. Fit is indirect at best; skipped in favor of stronger NLP matches."
+    },
+    {
+      "name": "Ali Farhadi",
+      "why": "NLP listed as an area but recent focus is primarily computer vision and multimodal models (Molmo/PixMo). No multilingual or low-resource NLP work found."
+    },
+    {
+      "name": "Tim Althoff",
+      "why": "NLP listed but recent work focuses on social computing, mental health text analysis, and labor economics — not multilingual or low-resource NLP."
+    },
+    {
+      "name": "Natasha Jaques",
+      "why": "NLP listed but primary focus is RL from human feedback and social learning — not multilingual, low-resource, or Indian-language NLP."
+    }
+  ],
+  "verification": {
+    "openalex_works_seen": 18,
+    "papers_dropped_as_unverified": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "programs": [
+    {
+      "program": "University of Washington CSE PhD",
+      "facts": 12,
+      "not_found": [],
+      "advisors": [
+        "Yulia Tsvetkov",
+        "Hannaneh Hajishirzi",
+        "Noah A. Smith",
+        "Luke Zettlemoyer",
+        "Kurtis Heimerl"
+      ],
+      "materials_version": 2,
+      "passed": false,
+      "open_issues": 8,
+      "applicant_todos": 0
+    }
+  ]
+}

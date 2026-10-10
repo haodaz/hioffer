@@ -1,0 +1,162 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "The lab's MAGNET work on adaptive gradient-based tokenization for multilingual fairness maps precisely onto what I found empirically with Kannada: tokenization is where language inequality enters the pipeline.",
+      "problem": "No source in the library or papers list supports the existence of a 'MAGNET' project attributed to Tsvetkov's lab. This is an invented specific not backed by any provided citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "The Voices Unheard line of work on under-resourced dialect NLP is methodologically identical to what I aim to do for Tamil and Hindi varieties [lib:interests].",
+      "problem": "No source in the library or papers list supports the existence of a 'Voices Unheard' project attributed to Tsvetkov's lab. The citation [lib:interests] does not mention this work. This is an invented specific.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "Her lab's retrieval-augmented generation work [paper:W7127589252] connects to my secondary interest in RAG for government and health information in Indian languages [lib:interests].",
+      "problem": "Paper W7127589252 ('Synthesizing scientific literature with retrieval-augmented language models') is attributed to Hajishirzi in the papers list, so the citation is correct for the fit section, but this sentence in the SOP characterizes it only as RAG work, which is fair. However, the paper title is about synthesizing scientific literature, not government/health information — this is a stretch but acceptable. No hard issue here beyond the MAGNET/Voices Unheard ones.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "MAGNET's gradient-based approach to adaptive tokenization for multilingual fairness maps directly onto my finding that adding 6k Kannada tokens cut token count by 41% and improved QA F1 by 3.4 points [lib:cv].",
+      "problem": "No source in the library or papers list supports the existence of a 'MAGNET' project attributed to Tsvetkov's lab. This is an invented specific with no supporting citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "The Voices Unheard line of work on under-resourced dialects is methodologically identical to what I aim to do for Indian-language varieties [lib:interests].",
+      "problem": "No source in the library or papers list supports the existence of a 'Voices Unheard' project attributed to Tsvetkov's lab. This is an invented specific with no supporting citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Hannaneh Hajishirzi",
+      "sentence": "Her lab's retrieval-augmented generation work published in Nature [paper:W7127589252] connects to my secondary interest in RAG for government and health information in Indian languages [lib:interests].",
+      "problem": "The paper W7127589252 ('Synthesizing scientific literature with retrieval-augmented language models') is not described as published in Nature anywhere in the provided sources. 'Published in Nature' is an invented specific not supported by the citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His work on data ideology and quality in language model pretraining — co-authored with Tsvetkov on both MAGNET tokenizer fairness and Voices Unheard dialect resources — directly engages the question of whose language is treated as high-quality, which is central to building fair systems for Tamil and Kannada speakers [lib:interests].",
+      "problem": "No source in the library or papers list supports 'MAGNET tokenizer fairness' or 'Voices Unheard dialect resources' as projects co-authored by Smith and Tsvetkov. These are invented specifics with no supporting citations.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "Prof. Zettlemoyer's group originated QLoRA, the parameter-efficient fine-tuning method I use daily via PEFT/LoRA in my Kannada tokenizer adaptation work [lib:cv].",
+      "problem": "No source in the library or papers list attributes QLoRA to Zettlemoyer's group. This is an invented specific (QLoRA is publicly known to originate from Tim Dettmers et al., not Zettlemoyer) and is not supported by the provided citation [lib:cv].",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "His recent byte-level tokenization work (BLT, ACL 2025 outstanding paper) also intersects with my interest in tokenizer design for scripts where sentencepiece over-segments [lib:interests].",
+      "problem": "No source in the library or papers list supports attributing 'BLT' or an 'ACL 2025 outstanding paper' on byte-level tokenization to Zettlemoyer. This is an invented specific with no supporting citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "His stated policy of admitting students every year lowers the risk of applying.",
+      "problem": "No source in the library or papers list supports this claim about Zettlemoyer's admissions policy. This fact is asserted without any citation and is not found in the provided materials.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Noah A. Smith",
+      "sentence": "I am also aware that you co-direct the OLMo effort [paper:W4402671236], which would give me the open infrastructure I need for reproducible multilingual experiments.",
+      "problem": "Paper W4402671236 (OLMo) is attributed to Hannaneh Hajishirzi in the papers list, not to Noah A. Smith. Claiming Smith co-directs OLMo is not supported by the provided citation.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "The lab's MAGNET work on adaptive gradient-based tokenization for multilingual fairness maps precisely onto what I found empirically with Kannada: tokenization is where language inequality enters the pipeline.",
+      "problem": "No source in the library or papers list supports the existence of a 'MAGNET' project attributed to Tsvetkov's lab. This is an invented specific not backed by any provided citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "The Voices Unheard line of work on under-resourced dialect NLP is methodologically identical to what I aim to do for Tamil and Hindi varieties [lib:interests].",
+      "problem": "No source in the library or papers list supports the existence of a 'Voices Unheard' project attributed to Tsvetkov's lab. The citation [lib:interests] does not mention this work. This is an invented specific.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "Her lab's retrieval-augmented generation work [paper:W7127589252] connects to my secondary interest in RAG for government and health information in Indian languages [lib:interests].",
+      "problem": "Paper W7127589252 ('Synthesizing scientific literature with retrieval-augmented language models') is attributed to Hajishirzi in the papers list, so the citation is correct for the fit section, but this sentence in the SOP characterizes it only as RAG work, which is fair. However, the paper title is about synthesizing scientific literature, not government/health information — this is a stretch but acceptable. No hard issue here beyond the MAGNET/Voices Unheard ones.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "MAGNET's gradient-based approach to adaptive tokenization for multilingual fairness maps directly onto my finding that adding 6k Kannada tokens cut token count by 41% and improved QA F1 by 3.4 points [lib:cv].",
+      "problem": "No source in the library or papers list supports the existence of a 'MAGNET' project attributed to Tsvetkov's lab. This is an invented specific with no supporting citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Yulia Tsvetkov",
+      "sentence": "The Voices Unheard line of work on under-resourced dialects is methodologically identical to what I aim to do for Indian-language varieties [lib:interests].",
+      "problem": "No source in the library or papers list supports the existence of a 'Voices Unheard' project attributed to Tsvetkov's lab. This is an invented specific with no supporting citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Hannaneh Hajishirzi",
+      "sentence": "Her lab's retrieval-augmented generation work published in Nature [paper:W7127589252] connects to my secondary interest in RAG for government and health information in Indian languages [lib:interests].",
+      "problem": "The paper W7127589252 ('Synthesizing scientific literature with retrieval-augmented language models') is not described as published in Nature anywhere in the provided sources. 'Published in Nature' is an invented specific not supported by the citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Noah A. Smith",
+      "sentence": "His work on data ideology and quality in language model pretraining — co-authored with Tsvetkov on both MAGNET tokenizer fairness and Voices Unheard dialect resources — directly engages the question of whose language is treated as high-quality, which is central to building fair systems for Tamil and Kannada speakers [lib:interests].",
+      "problem": "No source in the library or papers list supports 'MAGNET tokenizer fairness' or 'Voices Unheard dialect resources' as projects co-authored by Smith and Tsvetkov. These are invented specifics with no supporting citations.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "Prof. Zettlemoyer's group originated QLoRA, the parameter-efficient fine-tuning method I use daily via PEFT/LoRA in my Kannada tokenizer adaptation work [lib:cv].",
+      "problem": "No source in the library or papers list attributes QLoRA to Zettlemoyer's group. This is an invented specific (QLoRA is publicly known to originate from Tim Dettmers et al., not Zettlemoyer) and is not supported by the provided citation [lib:cv].",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "His recent byte-level tokenization work (BLT, ACL 2025 outstanding paper) also intersects with my interest in tokenizer design for scripts where sentencepiece over-segments [lib:interests].",
+      "problem": "No source in the library or papers list supports attributing 'BLT' or an 'ACL 2025 outstanding paper' on byte-level tokenization to Zettlemoyer. This is an invented specific with no supporting citation.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "fit:Luke Zettlemoyer",
+      "sentence": "His stated policy of admitting students every year lowers the risk of applying.",
+      "problem": "No source in the library or papers list supports this claim about Zettlemoyer's admissions policy. This fact is asserted without any citation and is not found in the provided materials.",
+      "fixable_by": "writer"
+    },
+    {
+      "check": "claim",
+      "where": "email:Noah A. Smith",
+      "sentence": "I am also aware that you co-direct the OLMo effort [paper:W4402671236], which would give me the open infrastructure I need for reproducible multilingual experiments.",
+      "problem": "Paper W4402671236 (OLMo) is attributed to Hannaneh Hajishirzi in the papers list, not to Noah A. Smith. Claiming Smith co-directs OLMo is not supported by the provided citation.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": []
+}

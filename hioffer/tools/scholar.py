@@ -18,19 +18,24 @@ def find_author(name: str, institution: str = "") -> dict:
     out = []
     for a in data.get("results", []):
         insts = [i.get("display_name", "") for i in a.get("last_known_institutions", [])]
-        if institution and not any(institution.lower() in i.lower() for i in insts):
-            continue
+        affs = [x.get("institution", {}).get("display_name", "") for x in a.get("affiliations", [])]
+        # Soft match only: faculty often have a lab or industry affiliation as "last known"
+        # institution (e.g. a UW professor listed under an AI institute), so never drop candidates.
+        hit = bool(institution) and any(institution.lower() in i.lower() for i in insts + affs)
         out.append(
             {
                 "id": a["id"].rsplit("/", 1)[-1],
                 "name": a.get("display_name"),
                 "institutions": insts,
+                "past_affiliations": [x for x in affs if x][:6],
+                "institution_match": hit,
                 "works_count": a.get("works_count"),
                 "cited_by_count": a.get("cited_by_count"),
                 "topics": [t.get("display_name") for t in a.get("topics", [])[:5]],
             }
         )
-    return {"candidates": out}
+    out.sort(key=lambda c: (not c["institution_match"], -(c["works_count"] or 0)))
+    return {"candidates": out, "hint": "Pick the candidate whose topics/affiliations fit; institution_match is a hint, not a rule."}
 
 
 def recent_works(author_id: str, since_year: int = 2024, limit: int = 6) -> dict:

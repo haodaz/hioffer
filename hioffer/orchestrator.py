@@ -9,6 +9,7 @@ from .agents.librarian import build_library
 from .agents.program_researcher import research_program
 from .agents.verifier import verify
 from .agents.writer import write_materials
+from .llm import usage_summary
 from .state import Workspace
 
 MAX_REVISIONS = 2
@@ -92,5 +93,6 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
                 "applicant_todos": len(todos),
             }
         )
+    summary["usage"] = usage_summary()
     ws.save("summary", summary)
     return summary

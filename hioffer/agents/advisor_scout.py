@@ -7,10 +7,12 @@ SYSTEM = """You find potential PhD advisors at ONE department for an applicant.
 Steps:
 1. fetch_page the faculty directory. Pick up to 6 faculty whose listed areas match the applicant's interests.
    If the directory is long, prefer names whose areas clearly match; do not fetch every profile.
-2. For each pick: find_author (filter by institution) then recent_works (since 2024). Keep 2-4 papers that
-   relate to the applicant's interests. Optionally fetch_page the professor's own page to check whether they
-   say they are recruiting students.
-3. Return the 3-5 best matches.
+2. For each pick: find_author (pass the institution as a hint) then recent_works (since 2024) for the best
+   candidate (match on topics and affiliations; the "last known institution" may be a lab or company).
+   Keep 2-4 papers that relate to the applicant's interests. Optionally fetch_page the professor's own page to
+   check whether they say they are recruiting students.
+3. Return the 3-5 best matches. An advisor with no recent_works result is useless downstream: try one more
+   find_author spelling before giving up on them.
 
 Evidence rules: "papers" may ONLY contain works returned by recent_works, with their exact OpenAlex ids
 (they look like W4401042371). Papers you merely saw on a lab page go into "unverified_mentions" with the URL.
@@ -51,6 +53,7 @@ def scout_advisors(department: str, faculty_url: str, institution: str, interest
     )
     result = parse_json(text)
     dropped = 0
+    kept_advisors = []
     for adv in result.get("advisors", []):
         keep, mentions = [], adv.get("unverified_mentions", [])
         for p in adv.get("papers", []):
@@ -60,6 +63,11 @@ def scout_advisors(department: str, faculty_url: str, institution: str, interest
                 dropped += 1
                 mentions.append({"title": p.get("title"), "source_url": p.get("url"), "why": "id not returned by OpenAlex"})
         adv["papers"], adv["unverified_mentions"] = keep, mentions
+        if keep:
+            kept_advisors.append(adv)
+        else:  # nothing citable: the writer would have to invent, so demote to skipped
+            result.setdefault("skipped", []).append({"name": adv["name"], "why": "no OpenAlex-verified recent papers"})
+    result["advisors"] = kept_advisors
     result["verification"] = {"openalex_works_seen": len(verified), "papers_dropped_as_unverified": dropped}
-    log(f"  [advisor_scout] kept only OpenAlex-verified papers; dropped {dropped} unverified")
+    log(f"  [advisor_scout] kept {len(kept_advisors)} advisors with OpenAlex-verified papers; dropped {dropped} unverified papers")
     return result
