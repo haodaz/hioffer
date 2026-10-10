@@ -1,0 +1,5 @@
+vercel的env要填吗，能不能给我复制一套在剪贴板
+
+---
+
+部署好了，地址是 https://hioffer-one.vercel.app/
