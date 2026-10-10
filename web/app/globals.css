@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f6f2;
+  --surface: #ffffff;
+  --foreground: #17202a;
+  --muted: #6b7280;
+  --line: #e6e4dd;
+  --brand: #1f6bff;
+  --brand-soft: #e8f0ff;
+  --ok: #15803d;
+  --warn: #b45309;
+  --bad: #b91c1c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.card {
+  @apply rounded-2xl border border-line bg-surface p-4 shadow-sm;
+}
+.chip {
+  @apply rounded-full border border-line bg-surface px-3 py-1 text-sm text-foreground hover:border-brand hover:text-brand;
+}
+.tag {
+  @apply inline-block rounded-md bg-brand-soft px-2 py-0.5 text-xs font-medium text-brand;
+}
+.btn {
+  @apply rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50;
+}
+.btn-ghost {
+  @apply rounded-xl border border-line bg-surface px-4 py-2 text-sm font-medium hover:border-brand;
+}
+.prose-sm p { @apply my-1; }
+.prose-sm ul { @apply my-1 list-disc pl-5; }
+.prose-sm strong { @apply font-semibold; }

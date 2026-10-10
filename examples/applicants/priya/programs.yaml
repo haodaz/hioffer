@@ -1,15 +1,18 @@
 programs:
   - name: University of Washington CSE PhD
+    short: UW
     institution: University of Washington
     department: Paul G. Allen School of Computer Science & Engineering
     admissions_url: https://www.cs.washington.edu/academics/phd/admissions
     faculty_url: https://www.cs.washington.edu/people/faculty
   - name: University of Maryland CS PhD
+    short: UMD
     institution: University of Maryland
     department: Department of Computer Science
     admissions_url: https://www.cs.umd.edu/grad/admissions
     faculty_url: https://www.cs.umd.edu/people/faculty
   - name: Cornell University CS PhD
+    short: Cornell
     institution: Cornell
     department: Department of Computer Science
     admissions_url: https://www.cs.cornell.edu/phd/admissions

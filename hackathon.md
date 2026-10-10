@@ -75,6 +75,15 @@
   - **Cost:** run 4 used ~1.95M input tokens / 45k output tokens over 71 Sonnet calls (≈ $6.5 at list
     price). The tool loops re-send every fetched page on every step. Fix: older tool results are pruned to
     600 chars (newest 3 kept), page text capped at 9k chars. Before/after cost comparison is the next run.
+- **Step 2, chat product (same day):** FastAPI backend (`hioffer/server.py`) streams Server-Sent Events
+  (`tool_start`, `tool_log`, `tool_end`, `card`, `delta`, `final`); the root chat agent (`hioffer/chat.py`) talks
+  and "speaks in cards" (programs, requirements with sources, advisor, materials, library, todos, confirm).
+  Next.js 16 + Tailwind frontend in `web/`: landing page with the cover image, `/app` with chat on the left and
+  Programs / Advisors / Materials / Timeline panels on the right, English/Chinese toggle. Expensive actions
+  (`run_prepare`) show a confirm card first.
+  - Bug found in the UI: "UW" matched nothing because program lookup was a plain substring test, and the model
+    then invented "two possible candidates". Fixed with `short` aliases in `programs.yaml`, alias/institution
+    matching, and an error message that tells the model to ask instead of guessing.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 
