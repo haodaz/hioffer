@@ -9,10 +9,10 @@ from pathlib import Path
 from typing import Callable
 
 import neatlogs
-import yaml
 
 from .llm import Tool, _create, parse_json  # noqa: F401
 from .orchestrator import prepare_applications, slug
+from .programs import add_program, load_programs
 from .state import Workspace
 
 SYSTEM = """You are hioffer, a PhD-application agent. You help ONE applicant prepare applications:
@@ -39,7 +39,7 @@ class ChatAgent:
         self.ws = Workspace(workspace_dir)
         self.emit = emit
         self.lang = lang if lang in LANG_NAMES else "en"
-        self.programs = yaml.safe_load((applicant_dir / "programs.yaml").read_text())["programs"]
+        self.programs = load_programs(applicant_dir, self.ws.root)
         self.tools = [
             Tool("show_programs", "List the applicant's target programs and their status.", {"type": "object", "properties": {}}, self.show_programs),
             Tool("show_requirements", "Official requirements of one program with sources.", _prog_params(), self.show_requirements),
@@ -52,6 +52,12 @@ class ChatAgent:
                 {"type": "object", "properties": {"task": {"type": "string"}, "program": {"type": "string"}, "due": {"type": "string", "description": "YYYY-MM-DD or empty"}}, "required": ["task"]},
                 self.add_todo,
             ),
+            Tool("recommend_programs", "Suggest institutions to apply to, tiered reach/match/safety, from OpenAlex evidence of recent papers on the applicant's topics. Use when the applicant has no or few programs or asks where to apply.",
+                 {"type": "object", "properties": {"country": {"type": "string", "description": "ISO-2 country code, default US"}}}, self.recommend_programs),
+            Tool("add_program", "Add a program to the applicant's list. URLs may be omitted and added later; the pipeline needs both before it can run.",
+                 {"type": "object", "properties": {"name": {"type": "string"}, "short": {"type": "string"}, "institution": {"type": "string"}, "department": {"type": "string"},
+                                                   "admissions_url": {"type": "string"}, "faculty_url": {"type": "string"}}, "required": ["name", "institution", "department"]},
+                 self.add_program),
             Tool("show_signals", "Outreach / admissions signals logged so far (emails sent, replies, interviews, admits).", {"type": "object", "properties": {}}, self.show_signals),
             Tool(
                 "log_signal", "Record a signal the applicant reports: an email they sent, a reply, an interview, a waitlist, an admit, a reject or a funding offer.",
@@ -154,6 +160,24 @@ class ChatAgent:
         self.card("todos", {"todos": todos, "added": t["id"]})
         return {"added": t}
 
+    def recommend_programs(self, country: str = "US") -> dict:
+        from .agents.recommender import recommend_programs
+
+        library = self.ws.load("library")
+        if not library:
+            return {"error": "no material library yet; run the librarian first (run_prepare)"}
+        rec = recommend_programs(library, country=country or "US", log=self._log)
+        self.card("recommendations", {"existing": [p["institution"] for p in self.programs], **rec})
+        return {"positioning": rec.get("positioning"), "tiers": {k: [(i["institution"], i["papers"]) for i in v] for k, v in rec.get("tiers", {}).items()}, "caveat": rec["caveat"]}
+
+    def add_program(self, name: str, institution: str, department: str, short: str = "", admissions_url: str = "", faculty_url: str = "") -> dict:
+        rec = {"name": name, "short": short or institution.split()[0], "institution": institution, "department": department,
+               "admissions_url": admissions_url or None, "faculty_url": faculty_url or None, "added_in_chat": True}
+        add_program(self.ws.root, rec)
+        self.programs = load_programs(self.applicant_dir, self.ws.root)
+        self.show_programs()
+        return {"added": rec, "needs_urls": not (admissions_url and faculty_url)}
+
     def show_signals(self) -> dict:
         signals = self.ws.load("signals", [])
         self.card("signals", {"signals": signals})
@@ -212,7 +236,10 @@ class ChatAgent:
             adv = self.ws.load(f"{k}/advisors_connected") or self.ws.load(f"{k}/advisors") or {}
             names = ", ".join(a["name"] for a in adv.get("advisors", [])) or "none yet"
             lines.append(f"- {p['name']} (short: {p.get('short', '')}; institution: {p.get('institution', '')}) — advisors: {names}")
-        return "\n\nAPPLICANT'S PROGRAMS AND MATCHED ADVISORS (resolve names to programs yourself):\n" + "\n".join(lines)
+        from datetime import date
+
+        return (f"\n\nTODAY: {date.today().isoformat()}\n\nAPPLICANT'S PROGRAMS AND MATCHED ADVISORS (resolve names to programs yourself):\n"
+                + "\n".join(lines))
 
     def _log(self, line: str) -> None:
         self.emit({"type": "tool_log", "text": line.strip()})

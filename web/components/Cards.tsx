@@ -35,6 +35,8 @@ export function CardView({ card, t, onAction }: { card: Card; t: T; onAction: (m
       return <TodosCard todos={card.todos as never[]} t={t} />;
     case "confirm":
       return <ConfirmCard card={card} t={t} onAction={onAction} />;
+    case "recommendations":
+      return <RecommendationsCard card={card} t={t} onAction={onAction} />;
     case "signals":
       return <SignalsCard signals={card.signals as Signal[]} t={t} />;
     case "offers":
@@ -470,6 +472,50 @@ export function OffersCard({ cmp, t }: { cmp: Comparison; t: T }) {
           </table>
         </div>
       )}
+    </div>
+  );
+}
+
+type RecItem = { institution: string; department_guess?: string; papers?: number; reason: string; evidence_url?: string; tier: string };
+export function RecommendationsCard({ card, t, onAction }: { card: Card; t: T; onAction: (m: string) => void }) {
+  const tiers = (card.tiers as Record<string, RecItem[]>) ?? {};
+  const existing = new Set((card.existing as string[]) ?? []);
+  const label: Record<string, string> = { reach: t("reach"), match: t("match"), safety: t("safety") };
+  return (
+    <div className="card">
+      <div className="mb-1 text-sm font-semibold">{t("recommendations")}</div>
+      {typeof card.positioning === "string" && <p className="mb-2 text-sm">{card.positioning}</p>}
+      <p className="mb-2 text-xs text-muted">
+        OpenAlex · {(card.queries as string[])?.join(" / ")} · {card.caveat as string}
+      </p>
+      {(["reach", "match", "safety"] as const).map((k) => (
+        <div key={k} className="mt-2">
+          <div className="text-xs font-medium text-muted">{label[k]}</div>
+          <ul className="divide-y divide-line">
+            {(tiers[k] ?? []).map((it) => (
+              <li key={it.institution} className="flex flex-wrap items-center justify-between gap-2 py-1.5 text-sm">
+                <div className="min-w-0 flex-1">
+                  <span className="font-medium">{it.institution}</span>
+                  <span className="text-xs text-muted"> · {it.department_guess}</span>
+                  {it.evidence_url && (
+                    <a className="ml-2 text-xs text-brand underline" href={it.evidence_url} target="_blank" rel="noreferrer">
+                      {it.papers} {t("papersShort")}
+                    </a>
+                  )}
+                  <div className="text-xs text-muted">{it.reason}</div>
+                </div>
+                {existing.has(it.institution) ? (
+                  <span className="text-xs text-ok">✓ {t("inList")}</span>
+                ) : (
+                  <button className="chip" onClick={() => onAction(`Add ${it.institution} (${it.department_guess ?? "Computer Science"}) PhD to my programs`)}>
+                    + {t("addProgram")}
+                  </button>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }

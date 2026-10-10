@@ -2,7 +2,6 @@
 from pathlib import Path
 
 import neatlogs
-import yaml
 
 from .agents.advisor_scout import scout_advisors
 from .agents.connector import find_connections
@@ -12,6 +11,7 @@ from .agents.program_researcher import research_program
 from .agents.verifier import verify
 from .agents.writer import write_materials
 from .llm import usage_summary
+from .programs import load_programs
 from .state import Workspace
 
 MAX_REVISIONS = 2
@@ -25,7 +25,7 @@ def slug(s: str) -> str:
 def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filter: list[str] | None = None, log=print) -> dict:
     applicant_dir = Path(applicant_dir)
     ws = Workspace(Path(workspace_root) / applicant_dir.name)
-    programs = yaml.safe_load((applicant_dir / "programs.yaml").read_text())["programs"]
+    programs = load_programs(applicant_dir, ws.root)
     if program_filter:
         programs = [p for p in programs if any(f.lower() in p["name"].lower() for f in program_filter)]
 
@@ -46,6 +46,10 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
         log(f"\n=== {prog['name']} ===")
 
         # Step 2: requirements with sources.
+        if not prog.get("admissions_url") or not prog.get("faculty_url"):
+            log("skipped: program has no admissions/faculty URL yet (add them in chat)")
+            summary["programs"].append({"program": prog["name"], "status": "blocked", "reason": "missing admissions_url or faculty_url"})
+            continue
         if not ws.has(f"{key}/requirements"):
             log("requirements: researching official pages")
             ws.save(f"{key}/requirements", research_program(prog["name"], prog["admissions_url"], log=log))

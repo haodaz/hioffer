@@ -24,6 +24,7 @@ from datetime import date
 from . import config
 from .agents.decider import compare_offers
 from .chat import ChatAgent
+from .programs import load_programs
 from .state import Workspace
 
 APPLICANTS_DIR = Path("examples/applicants")
@@ -49,10 +50,8 @@ def _latest(ws: Workspace, key: str, prefix: str) -> Any:
 
 
 def build_state(applicant: str) -> dict:
-    import yaml
-
     ws = _ws(applicant)
-    programs_cfg = yaml.safe_load((APPLICANTS_DIR / applicant / "programs.yaml").read_text())["programs"]
+    programs_cfg = load_programs(APPLICANTS_DIR / applicant, ws.root)
     library = ws.load("library", {"items": []})
     programs = []
     for p in programs_cfg:

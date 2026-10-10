@@ -58,7 +58,7 @@ export function Chat({ lang, t, onStateChange, seed }: { lang: Lang; t: (k: Key)
     if (touched) onStateChange();
   }
 
-  const quick = ["quick1", "quick2", "quick3", "quick4"] as const;
+  const quick = ["quick1", "quick5", "quick2", "quick3", "quick4"] as const;
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">

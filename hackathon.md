@@ -108,6 +108,14 @@
   0.15) that the agent only explains, never overrides. Demo data for both is a clearly labelled fictional
   sample scenario. The agent's system prompt now carries the program/advisor roster so it resolves
   "Hajishirzi" → UW instead of asking. hioffer's face is the robot from the cover (chat avatar, header).
+- **Find programs (module 1, recommendation):** `recommend_programs` turns the applicant's interests into
+  five short OpenAlex search phrases, counts 2024+ papers per US university on those topics (hard evidence of
+  research activity), then one model call positions the applicant and tiers 8-10 institutions as
+  reach / match / safety with reasons citing the counts; it is told that selectivity is general knowledge and
+  must never state admit rates, deadlines or fees. First attempt used 3-6-word phrases and two of three
+  returned 0-1 institutions (OpenAlex ANDs every word); 2-3-word standard terms fixed it (CMU 197 papers,
+  Stanford 116, JHU 87). Each tier item has an "Add" button → `add_program` → `workspace/programs_extra.json`,
+  merged with `programs.yaml`; programs without URLs are reported as blocked until the applicant supplies them.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 
