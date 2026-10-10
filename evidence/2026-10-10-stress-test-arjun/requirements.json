@@ -1,0 +1,108 @@
+{
+  "program": "University of Michigan Robotics PhD",
+  "start_url": "https://robotics.umich.edu/academics/graduate/admissions/",
+  "facts": [
+    {
+      "key": "deadline",
+      "required": "yes",
+      "value": "December 1 (for Fall admission; PhD program)",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/",
+      "quote": "PhD applications for Fall admission are due December 1. We do not offer Winter admission for the PhD program."
+    },
+    {
+      "key": "application_fee",
+      "required": "yes",
+      "value": "$75 for domestic applicants; $90 for international applicants",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/graduate-application/",
+      "quote": "Rackham Graduate School charges a non-refundable application fee of $75 (domestic) or $90 (international) at the time of application submission."
+    },
+    {
+      "key": "fee_waiver",
+      "required": "optional",
+      "value": "Fee waivers available; applicants must apply through Rackham's fee waiver process before submitting the application",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/graduate-application/",
+      "quote": "Application fee waivers are available for those who qualify. You must apply for a fee waiver before you submit your application. More information is available on the Rackham website."
+    },
+    {
+      "key": "statement_of_purpose",
+      "required": "yes",
+      "value": "Academic Statement of Purpose: up to 500 words; describe research experience, interests, and career goals; address specific areas/faculty at U-M",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/academic-and-personal-statements/",
+      "quote": "Academic Statement of Purpose ... We suggest keeping the Academic Statement of Purpose to 500 words or less. This statement should discuss your research experiences, research interests, and how a graduate degree supports your career goals. We strongly encourage you to address specific research areas and/or faculty at U-M."
+    },
+    {
+      "key": "personal_statement",
+      "required": "yes",
+      "value": "Personal Statement: up to 500 words; describe how background, identity, interests, and activities contribute to your work and to diversity/community",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/academic-and-personal-statements/",
+      "quote": "Personal Statement ... We suggest keeping the Personal Statement to 500 words or less. Describe how your background, identity, interests, and activities have informed your academic and professional pursuits and will help you contribute to our community and field."
+    },
+    {
+      "key": "letters_of_recommendation",
+      "required": "yes",
+      "value": "3 letters required, from professors, employers, or others who know the applicant well; recommenders are contacted via the online application; letters are due by the application deadline",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/letters-of-recommendation/",
+      "quote": "Our department requires three letters of recommendation. They should be from professors, employers, or others who know you well... Letters are due by the application deadline."
+    },
+    {
+      "key": "cv",
+      "required": "yes",
+      "value": "Résumé or CV required; no page/length limit specified; should include education, research/work experience, publications, skills, awards",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/resume-curriculum-vitae/",
+      "quote": "As part of your application to our graduate programs, all applicants are required to submit a resumé or curriculum vitae (CV). This document is an essential part of your application, providing the admissions committee with a comprehensive overview of your academic and professional achievements."
+    },
+    {
+      "key": "transcripts",
+      "required": "yes",
+      "value": "Scanned/electronic copy of official transcript uploaded with application for review; official transcripts required from all institutions attended only after admission",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/transcripts/",
+      "quote": "A scanned/electronic copy of the official transcript will be used for initial review by our admissions committee. This transcript should be uploaded with your application... You will be required to have your institution send official transcripts directly to our department after admission."
+    },
+    {
+      "key": "gre",
+      "required": "no",
+      "value": "GRE is NOT required and NOT accepted for PhD admissions; Rackham discontinued GRE for all doctoral programs beginning with the 2022–2023 admissions cycle",
+      "source_url": "https://rackham.umich.edu/admissions/applying/tests/",
+      "quote": "GRE general test scores are no longer included in the admissions process for Rackham's doctoral programs."
+    },
+    {
+      "key": "toefl_ielts",
+      "required": "yes",
+      "value": "Required for non-native English speakers (TOEFL, IELTS, MET, or ECPE accepted); scores valid for 2 years; exemptions for those educated entirely in English; TOEFL institution code 1839",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/english-proficiency-test-scores/",
+      "quote": "Applicants whose native language is not English must demonstrate English proficiency and are required to provide one of the following tests: TOEFL, MET, ECPE, or IELTS. Submission deadline: Test scores must be received on or before the application deadline."
+    },
+    {
+      "key": "writing_sample",
+      "required": "no",
+      "value": "Not listed as a required or optional component anywhere on the Robotics admissions pages",
+      "source_url": "https://robotics.umich.edu/academics/graduate/admissions/",
+      "quote": "Not found on any admissions sub-page."
+    }
+  ],
+  "not_found": [
+    "writing_sample",
+    "research_statement"
+  ],
+  "pages_checked": [
+    "https://robotics.umich.edu/academics/graduate/admissions/",
+    "https://robotics.umich.edu/academics/graduate/admissions/graduate-application/",
+    "https://robotics.umich.edu/academics/graduate/admissions/letters-of-recommendation/",
+    "https://robotics.umich.edu/academics/graduate/admissions/transcripts/",
+    "https://robotics.umich.edu/academics/graduate/admissions/academic-and-personal-statements/",
+    "https://robotics.umich.edu/academics/graduate/admissions/resume-curriculum-vitae/",
+    "https://robotics.umich.edu/academics/graduate/admissions/english-proficiency-test-scores/",
+    "https://rackham.umich.edu/admissions/applying/tests/",
+    "https://rackham.umich.edu/faculty-and-staff/resources-for-directors/holistic-admissions/holistic-admissions-best-practices/discontinuing-the-use-of-the-gre-in-rackham-phd-admissions-decisions/"
+  ],
+  "notes": [
+    "The PhD deadline of December 1 is strict — there is no Winter admission for the PhD program.",
+    "The program uses TWO separate statements (Academic Statement of Purpose + Personal Statement), each capped at 500 words. There is no single combined 'statement of purpose'.",
+    "All 3 recommendation letters must be received by the application deadline (not after).",
+    "Fee waivers must be applied for BEFORE submitting the application — applicants cannot request one retroactively.",
+    "GRE scores are completely discontinued for all Rackham PhD programs as of the 2022–2023 cycle; scores will not be accepted.",
+    "Transcripts uploaded at application are informal scanned copies; official transcripts are only required after admission.",
+    "English test score minimum thresholds are set by Rackham (not published on the Robotics page itself); applicants should consult the Rackham 'Required Tests for Non-Native English Speakers' page for specific minimums.",
+    "Writing sample is not a component of the Robotics PhD application — it does not appear on any of the official admissions sub-pages."
+  ]
+}

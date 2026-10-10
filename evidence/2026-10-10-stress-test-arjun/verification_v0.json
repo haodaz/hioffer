@@ -1,0 +1,23 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "With 40 teleoperated demonstrations per task the policy reached 78% success on cup stacking and 61% on towel folding, outperforming a behavior-cloning baseline by 34 and 32 percentage points respectively [lib:cv].",
+      "problem": "The specific margins of 34 and 32 percentage points over a behavior-cloning baseline are not present in any library source; lib:cv only states the diffusion policy outperformed a behaviour-cloning baseline on towel folding without giving numeric margins.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "sop",
+      "sentence": "With 40 teleoperated demonstrations per task the policy reached 78% success on cup stacking and 61% on towel folding, outperforming a behavior-cloning baseline by 34 and 32 percentage points respectively [lib:cv].",
+      "problem": "The specific margins of 34 and 32 percentage points over a behavior-cloning baseline are not present in any library source; lib:cv only states the diffusion policy outperformed a behaviour-cloning baseline on towel folding without giving numeric margins.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": [],
+  "repaired_citations": []
+}

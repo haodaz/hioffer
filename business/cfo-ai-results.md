@@ -35,6 +35,12 @@ zero opening cash, upfront collection, 70% of purchases in Oct–Dec.
   from **Oct-28**, December 2029 cash **$1,076,600**.
 - Ari flagged what the inputs did not cover: free-tier delivery cost, taxes, fees, capex, working-capital delays.
 
+## Measured later the same day
+A full single-program run for a second applicant (requirements → advisors → connections → draft → verify,
+with context pruning) cost **$0.83** at list price (`evidence/2026-10-10-stress-test-arjun/summary.json`).
+That puts a 10-program season at ≈ $9 of model time on Sonnet alone, which reaches the model's "later COGS"
+line without any cheaper-model routing. The routing experiment below therefore matters less than it did.
+
 ## Caveat added after testing (same day)
 The "$9 from month 7" cost assumption relies on moving the research tool loops to a cheaper model. A first
 test on `claude-haiku` returned no usable facts (see `hackathon.md`), so that assumption is unproven; the

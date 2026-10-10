@@ -136,6 +136,18 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   at the full program name, and the run then "succeeded" with an empty program list ($0.04 spent on the library).
   Fixed: the filter matches name, short alias and institution, and an empty match now exits with the known names.
 
+- **Run (tags `stress-test`, `arjun-umich`):** complete, end to end, on a field the prompts were never tuned
+  for. 11 sourced facts (writing sample and research statement correctly "not found"); 5 advisors kept with
+  OpenAlex-verified papers (4 identities anchored high, 1 medium), 4 skipped with a stated reason (e.g. "soft
+  robotics and fabrication focus; no clear overlap"); draft v0 failed once because the writer computed
+  "34 and 32 percentage points over the baseline" from the CV's raw numbers and the auditor refused a number
+  not literally in a source — strict, but the safe direction — and v1 passed. **Cost: $0.83 for the whole
+  program** (20 Sonnet calls, 188k input tokens), versus ≈ $2.2 per program in run 4 before pruning. Evidence:
+  `evidence/2026-10-10-stress-test-arjun/`.
+- **Finding 2:** none of the robotics-specific gaps I expected appeared; the general design (sourced facts,
+  verified papers, tagged sentences) held. What did not transfer: the home brief greets "Priya" by name and the
+  demo workspace is single-applicant; multi-applicant state is the next structural step.
+
 ### 2026-10-10 — business plan and cost
 
 - **cfo.ai** (public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR; inputs `business/cfo-ai-inputs.md`, results

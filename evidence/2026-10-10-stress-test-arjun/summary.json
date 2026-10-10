@@ -1,0 +1,41 @@
+{
+  "programs": [
+    {
+      "program": "University of Michigan Robotics PhD",
+      "facts": 11,
+      "not_found": [
+        "writing_sample",
+        "research_statement"
+      ],
+      "advisors": [
+        "Nima Fazeli",
+        "Ankit Goyal",
+        "Dmitry Berenson",
+        "Bernadette Bucher",
+        "Odest Chadwicke Jenkins"
+      ],
+      "materials_version": 1,
+      "status": "complete",
+      "passed": true,
+      "open_issues": 0,
+      "applicant_todos": 0
+    }
+  ],
+  "usage": {
+    "models": {
+      "claude-sonnet-4.6": {
+        "calls": 20,
+        "input_tokens": 188065,
+        "output_tokens": 17552,
+        "est_usd": 0.8275
+      },
+      "claude-haiku": {
+        "calls": 1,
+        "input_tokens": 123,
+        "output_tokens": 39,
+        "est_usd": 0.0003
+      }
+    },
+    "est_total_usd": 0.8278
+  }
+}
