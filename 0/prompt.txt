@@ -1,0 +1,7 @@
+<task-notification>
+<task-id>bz5ph3bwj</task-id>
+<tool-use-id>toolu_017mKZiGFVP3b5KuZzos6sa9</tool-use-id>
+<output-file>/private/tmp/claude-502/-Users-aisandbox-Documents-hioffer/e2661771-c3b5-4f41-acd4-5e5f7a1bed0e/tasks/bz5ph3bwj.output</output-file>
+<status>completed</status>
+<summary>Background command "Wait for the stress test to finish and show its summary" completed (exit code 0)</summary>
+</task-notification>

@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KBXZMPJANP9AREHAG4QDYP",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "business/cfo-ai-results.md",
+    "evidence/2026-10-10-stress-test-arjun/advisors_connected.json",
+    "evidence/2026-10-10-stress-test-arjun/materials_v1.json",
+    "evidence/2026-10-10-stress-test-arjun/requirements.json",
+    "evidence/2026-10-10-stress-test-arjun/summary.json",
+    "evidence/2026-10-10-stress-test-arjun/verification_v0.json",
+    "evidence/2026-10-10-stress-test-arjun/verification_v1.json",
+    "hackathon.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 36,
+    "cache_creation_tokens": 1702,
+    "cache_read_tokens": 1389861,
+    "output_tokens": 2344,
+    "api_call_count": 2
+  }
+}
