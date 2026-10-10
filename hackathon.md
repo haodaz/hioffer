@@ -107,7 +107,7 @@
 
 ## Demo
 
-- Live frontend: https://hioffer-one.vercel.app/ (landing page; `/app` needs the Python backend, deployment planned for Oct 12)
+- Live demo: https://hioffer-one.vercel.app/ (frontend on Vercel) → `/app` talks to the API at https://hioffer-production.up.railway.app (Docker on Railway, demo workspace pre-loaded)
 - Repo: https://github.com/haodaz/hioffer
 - Video: TBD
 - Reproduce: see README (Setup / Run)
