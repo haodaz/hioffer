@@ -1,0 +1,88 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JZBT3QE9XEB6YJJTVQ4PJG",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T13:17:17.627564Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "evidence/2026-10-10-run5-pruned/advisors_connected.json",
+    "evidence/2026-10-10-run5-pruned/materials_v1.json",
+    "evidence/2026-10-10-run5-pruned/summary.json",
+    "evidence/2026-10-10-run5-pruned/verification_v0.json",
+    "evidence/2026-10-10-run5-pruned/verification_v1.json",
+    "hackathon.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "adfb72daadf6",
+  "checkpoint_transcript_start": 1254,
+  "transcript_lines_at_start": 1254,
+  "compact_transcript_start": 155,
+  "token_usage": {
+    "input_tokens": 68,
+    "cache_creation_tokens": 3428,
+    "cache_read_tokens": 803859,
+    "output_tokens": 2616,
+    "api_call_count": 3
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 11
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T13:17:17.548894Z",
+    "agent_lines": 314,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 314,
+    "total_lines_changed": 314,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}
