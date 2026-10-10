@@ -1,0 +1,299 @@
+{
+  "department": "Department of Computer Science, University of Maryland, College Park",
+  "faculty_url": "https://www.cs.umd.edu/people/faculty",
+  "advisors": [
+    {
+      "name": "Marine Carpuat",
+      "openalex_id": "A5078390032",
+      "profile_url": "https://www.cs.umd.edu/~marine/",
+      "areas": [
+        "Multilingual NLP",
+        "Machine Translation",
+        "Speech & Multimodality",
+        "Cross-lingual LLM evaluation",
+        "Human-centered AI for non-native speakers"
+      ],
+      "match_reason": "Carpuat is the strongest match overall. Her group works directly on cross-lingual generalization and alignment in multilingual LLMs (\"Can you map it to English? The role of cross-lingual alignment in the multilingual performance of LLMs\"), speech-to-text quality estimation (SpeechQE on direct speech translation), and evaluation frameworks for AI-mediated communication that go beyond surface accuracy — all mapping tightly onto the applicant's interests in multilingual LLM adaptation, evaluation beyond translated benchmarks, and speech-text models. She also runs the CLIP Lab at UMD, the central hub for all NLP work at the department.",
+      "papers": [
+        {
+          "id": "W4402684056",
+          "title": "XLAVS-R: Cross-Lingual Audio-Visual Speech Representation Learning for Noise-Robust Speech Perception",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 11,
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.697",
+          "authors": [
+            "HyoJung Han",
+            "Mohamed A. Anwar",
+            "Juan Pino",
+            "Wei-Ning Hsu",
+            "Marine Jacinthe Carpuat",
+            "Bowen Shi"
+          ]
+        },
+        {
+          "id": "W4401042399",
+          "title": "Guiding Large Language Models to Post-Edit Machine Translation with Error Annotations",
+          "year": 2024,
+          "venue": "Findings of the Association for Computational Linguistics: NAACL",
+          "cited_by": 13,
+          "url": "https://doi.org/10.18653/v1/2024.findings-naacl.265",
+          "authors": [
+            "Dayeon Ki",
+            "Marine Jacinthe Carpuat"
+          ]
+        },
+        {
+          "id": "W4409736318",
+          "title": "Sustaining Human Agency, Attending to Its Cost: An Investigation into Generative AI Design for Non-Native Speakers' Language Use",
+          "year": 2025,
+          "venue": "CHI Conference on Human Factors in Computing Systems",
+          "cited_by": 6,
+          "url": "https://doi.org/10.1145/3706598.3713626",
+          "authors": [
+            "Yimin Xiao",
+            "Cartor Hancock",
+            "Sweta Agrawal",
+            "Nikita Mehandru",
+            "Niloufar Salehi",
+            "Marine Jacinthe Carpuat"
+          ]
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "Can you map it to English? The role of cross-lingual alignment in the multilingual performance of LLMs (Ravisankar, Han, Wiegreffe, Carpuat · EACL 2026)",
+          "source_url": "https://www.cs.umd.edu/~marine/"
+        },
+        {
+          "title": "Multiple LLM agents debate for equitable cultural alignment (Ki, Rudinger, Zhou, Carpuat · ACL 2025)",
+          "source_url": "https://www.cs.umd.edu/~marine/"
+        },
+        {
+          "title": "SpeechQE: estimating the quality of direct speech translation (Han, Duh, Carpuat · EMNLP 2024)",
+          "source_url": "https://www.cs.umd.edu/~marine/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Profile page describes active research directions and lists current group members, but contains no explicit statement about accepting PhD students for a specific cycle.",
+        "source_url": "https://www.cs.umd.edu/~marine/"
+      },
+      "fit_score": 5,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://www.cs.umd.edu/~marine/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5078390032",
+            "detail": "University of Maryland, Baltimore (2015–2026)"
+          }
+        ],
+        "reasons": []
+      },
+      "connections": []
+    },
+    {
+      "name": "Rachel Rudinger",
+      "openalex_id": "A5082447472",
+      "profile_url": "https://www.rachelrudinger.com/",
+      "areas": [
+        "Computational semantics and pragmatics",
+        "Commonsense reasoning",
+        "Social and cultural fairness in AI",
+        "LLM evaluation methodology"
+      ],
+      "match_reason": "Rudinger's research on \"social and cultural fairness in AI\" and evaluation methodology for LLMs aligns with the applicant's interest in evaluation that measures what matters for multilingual users — cultural grounding and fairness rather than translated English benchmarks. Her ACL 2025 paper (with Carpuat) on LLM agents debating for equitable cultural alignment is particularly relevant. However, her core focus is on commonsense reasoning and semantics in English, not low-resource multilingual adaptation or Indian languages specifically.",
+      "papers": [
+        {
+          "id": "W4402671226",
+          "title": "Do Large Language Models Discriminate in Hiring Decisions on the Basis of Race, Ethnicity, and Gender?",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 17,
+          "url": "https://doi.org/10.18653/v1/2024.acl-short.37",
+          "authors": [
+            "Haozhe An",
+            "Christabel Acquaye",
+            "Colin G. Wang",
+            "Zongxia Li",
+            "Rachel Rudinger"
+          ]
+        },
+        {
+          "id": "W4402640336",
+          "title": "How Often Are Errors in Natural Language Reasoning Due to Paraphrastic Variability?",
+          "year": 2024,
+          "venue": "Transactions of the Association for Computational Linguistics",
+          "cited_by": 4,
+          "url": "http://dx.doi.org/10.1162/tacl_a_00692",
+          "authors": [
+            "Neha Pundlik Srikanth",
+            "Marine Jacinthe Carpuat",
+            "Rachel Rudinger"
+          ]
+        },
+        {
+          "id": "W4412886673",
+          "title": "Which of These Best Describes Multiple Choice Evaluation with LLMs? A) Forced B) Flawed C) Fixable D) All of the Above",
+          "year": 2025,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 5,
+          "url": "https://doi.org/10.18653/v1/2025.acl-long.169",
+          "authors": [
+            "Nishant Balepur",
+            "Rachel Rudinger",
+            "Jordan Lee Boyd-Graber"
+          ]
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "Multiple LLM agents debate for equitable cultural alignment (Ki, Rudinger, Zhou, Carpuat · ACL 2025)",
+          "source_url": "https://www.cs.umd.edu/~marine/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "Website (rachelrudinger.com) states: \"I am planning to admit PhD students for the 2026-2027 application cycle (enrollment for Fall 2027). If you are interested in working with me, please list my name in your application to the Computer Science PhD program.\"",
+        "source_url": "https://www.rachelrudinger.com/"
+      },
+      "fit_score": 3,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://www.rachelrudinger.com/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5082447472",
+            "detail": "University of Maryland, Baltimore (2020–2026)"
+          }
+        ],
+        "reasons": []
+      },
+      "connections": []
+    },
+    {
+      "name": "Sarah Wiegreffe",
+      "openalex_id": "A5079108871",
+      "profile_url": "https://sarahwie.github.io/",
+      "areas": [
+        "Mechanistic interpretability",
+        "Explainable AI",
+        "LLM reliability and transparency",
+        "Natural language explanations"
+      ],
+      "match_reason": "Wiegreffe joined UMD CS in Fall 2025. Her expertise is in mechanistic interpretability and the faithfulness of natural language explanations — this touches the applicant's secondary interest in faithfulness evaluation. Her MIB benchmark (ICML 2025) and work on chain-of-thought monitorability could be relevant for understanding why multilingual models fail. However, her research has no direct connection to low-resource languages, Indian-language NLP, PEFT, or speech-text models.",
+      "papers": [
+        {
+          "id": "W4402671639",
+          "title": "The Unreasonable Effectiveness of Easy Training Data for Hard Tasks",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 3,
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.378",
+          "authors": [
+            "Peter Hase",
+            "Mohit Bansal",
+            "Peter E. Clark",
+            "Sarah Wiegreffe"
+          ]
+        },
+        {
+          "id": "W4404784049",
+          "title": "Mechanistic?",
+          "year": 2024,
+          "venue": "BlackBoxNLP Workshop @ EMNLP",
+          "cited_by": 10,
+          "url": "http://dx.doi.org/10.18653/v1/2024.blackboxnlp-1.30",
+          "authors": [
+            "Naomi Saphra",
+            "Sarah Wiegreffe"
+          ]
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "MIB: A Mechanistic Interpretability Benchmark (Mueller, Geiger, Wiegreffe et al. · ICML 2025)",
+          "source_url": "https://sarahwie.github.io/"
+        },
+        {
+          "title": "Can you map it to English? The role of cross-lingual alignment in the multilingual performance of LLMs (Ravisankar, Han, Wiegreffe, Carpuat · EACL 2026)",
+          "source_url": "https://www.cs.umd.edu/~marine/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Profile page lists current group members and active research but does not contain an explicit statement about PhD admissions for any particular application cycle.",
+        "source_url": "https://sarahwie.github.io/"
+      },
+      "fit_score": 2,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://sarahwie.github.io/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5079108871",
+            "detail": "University of Maryland, College Park (2024–2026)"
+          }
+        ],
+        "reasons": []
+      },
+      "connections": []
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Jordan Boyd-Graber",
+      "why": "Has formally moved to Nanyang Technological University (NTU), Singapore as of August 2026 (confirmed on his own website and openings page). His openings page lists CCDS NTU PhD positions only, with an NTU email address. While he retains an affiliate listing at UMD CS, he is no longer admitting UMD PhD students and is not an active UMD advisor."
+    },
+    {
+      "name": "Heng Huang",
+      "why": "Listed under NLP on the directory but research focuses on federated learning, biomedical ML, and computer vision; no relevant recent work on multilingual NLP or Indian languages."
+    },
+    {
+      "name": "Furong Huang",
+      "why": "Listed under NLP but primarily works on ML theory, robustness, and federated learning; no recent work in multilingual NLP or low-resource language adaptation."
+    },
+    {
+      "name": "Hal Daumé III",
+      "why": "no OpenAlex-verified recent papers"
+    },
+    {
+      "name": "Mohit Iyyer",
+      "why": "no OpenAlex-verified recent papers"
+    }
+  ],
+  "verification": {
+    "openalex_works_seen": 24,
+    "papers_dropped_as_unverified": 0
+  },
+  "circle": [
+    {
+      "name": "S. Venkatesan",
+      "role": "advisor",
+      "openalex": null
+    },
+    {
+      "name": "Anjali Mehra",
+      "role": "mentor",
+      "openalex": null
+    },
+    {
+      "name": "R. Krishnan",
+      "role": "mentor",
+      "openalex": null
+    }
+  ]
+}

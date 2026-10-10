@@ -1,0 +1,330 @@
+{
+  "queries": [
+    "parameter-efficient fine-tuning",
+    "tokenizer adaptation multilingual",
+    "code-switching evaluation",
+    "low-resource language models",
+    "speech-text multilingual models"
+  ],
+  "country": "US",
+  "candidates": [
+    {
+      "institution": "Carnegie Mellon University",
+      "openalex_id": "I74973139",
+      "papers": 197,
+      "queries": {
+        "parameter-efficient fine-tuning": 75,
+        "code-switching evaluation": 18,
+        "low-resource language models": 91,
+        "speech-text multilingual models": 13
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI74973139%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Harvard University",
+      "openalex_id": "I136199984",
+      "papers": 123,
+      "queries": {
+        "parameter-efficient fine-tuning": 47,
+        "tokenizer adaptation multilingual": 1,
+        "code-switching evaluation": 7,
+        "low-resource language models": 65,
+        "speech-text multilingual models": 3
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI136199984%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Stanford University",
+      "openalex_id": "I97018004",
+      "papers": 116,
+      "queries": {
+        "parameter-efficient fine-tuning": 41,
+        "code-switching evaluation": 13,
+        "low-resource language models": 59,
+        "speech-text multilingual models": 3
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI97018004%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Johns Hopkins University",
+      "openalex_id": "I145311948",
+      "papers": 87,
+      "queries": {
+        "parameter-efficient fine-tuning": 31,
+        "tokenizer adaptation multilingual": 1,
+        "code-switching evaluation": 6,
+        "low-resource language models": 49
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI145311948%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Georgia Institute of Technology",
+      "openalex_id": "I130701444",
+      "papers": 85,
+      "queries": {
+        "parameter-efficient fine-tuning": 44,
+        "code-switching evaluation": 5,
+        "low-resource language models": 36
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI130701444%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "New York University",
+      "openalex_id": "I57206974",
+      "papers": 80,
+      "queries": {
+        "parameter-efficient fine-tuning": 32,
+        "low-resource language models": 48
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI57206974%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "University of Pennsylvania",
+      "openalex_id": "I79576946",
+      "papers": 77,
+      "queries": {
+        "parameter-efficient fine-tuning": 35,
+        "tokenizer adaptation multilingual": 2,
+        "code-switching evaluation": 8,
+        "low-resource language models": 28,
+        "speech-text multilingual models": 4
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI79576946%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "openalex_id": "I157725225",
+      "papers": 76,
+      "queries": {
+        "parameter-efficient fine-tuning": 44,
+        "tokenizer adaptation multilingual": 1,
+        "low-resource language models": 31
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI157725225%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "openalex_id": "I63966007",
+      "papers": 75,
+      "queries": {
+        "parameter-efficient fine-tuning": 41,
+        "low-resource language models": 34
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI63966007%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Northeastern University",
+      "openalex_id": "I12912129",
+      "papers": 74,
+      "queries": {
+        "parameter-efficient fine-tuning": 37,
+        "low-resource language models": 33,
+        "speech-text multilingual models": 4
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI12912129%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "The University of Texas at Austin",
+      "openalex_id": "I86519309",
+      "papers": 70,
+      "queries": {
+        "parameter-efficient fine-tuning": 34,
+        "tokenizer adaptation multilingual": 4,
+        "code-switching evaluation": 5,
+        "low-resource language models": 27
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI86519309%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "University of Southern California",
+      "openalex_id": "I1174212",
+      "papers": 69,
+      "queries": {
+        "parameter-efficient fine-tuning": 40,
+        "low-resource language models": 29
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI1174212%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Microsoft (United States)",
+      "openalex_id": "I1290206253",
+      "papers": 65,
+      "queries": {
+        "parameter-efficient fine-tuning": 31,
+        "tokenizer adaptation multilingual": 3,
+        "low-resource language models": 31
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI1290206253%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Yale University",
+      "openalex_id": "I32971472",
+      "papers": 65,
+      "queries": {
+        "parameter-efficient fine-tuning": 27,
+        "code-switching evaluation": 6,
+        "low-resource language models": 29,
+        "speech-text multilingual models": 3
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI32971472%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "Amazon (United States)",
+      "openalex_id": "I1311688040",
+      "papers": 59,
+      "queries": {
+        "parameter-efficient fine-tuning": 33,
+        "low-resource language models": 26
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI1311688040%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "United States Department of Energy",
+      "openalex_id": "I1330989302",
+      "papers": 44,
+      "queries": {
+        "parameter-efficient fine-tuning": 38,
+        "code-switching evaluation": 6
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI1330989302%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "University of Washington",
+      "openalex_id": "I201448701",
+      "papers": 44,
+      "queries": {
+        "low-resource language models": 44
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI201448701%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Alow-resource%20language%20models"
+    },
+    {
+      "institution": "University of California, Berkeley",
+      "openalex_id": "I95457486",
+      "papers": 43,
+      "queries": {
+        "parameter-efficient fine-tuning": 34,
+        "code-switching evaluation": 6,
+        "speech-text multilingual models": 3
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI95457486%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    },
+    {
+      "institution": "University of Florida",
+      "openalex_id": "I33213144",
+      "papers": 37,
+      "queries": {
+        "code-switching evaluation": 6,
+        "low-resource language models": 31
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI33213144%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Acode-switching%20evaluation"
+    },
+    {
+      "institution": "Purdue University West Lafayette",
+      "openalex_id": "I219193219",
+      "papers": 36,
+      "queries": {
+        "parameter-efficient fine-tuning": 31,
+        "code-switching evaluation": 5
+      },
+      "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI219193219%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning"
+    }
+  ],
+  "positioning": "Priya Raman is a strong late-undergraduate applicant with a coherent research identity in multilingual NLP for Indian languages, supported by a first-author ACL-family workshop paper, a Microsoft Research India internship, and concrete empirical results (41% tokenizer compression, 18\u201326 pt code-switch degradation findings). To strengthen the application she should aim for a full-venue publication (not just a workshop) before Fall 2027 deadlines and secure her third recommender (Prof. R. Krishnan) promptly, as the speech-processing course project is a meaningful differentiator for speech-text research interests.",
+  "tiers": {
+    "reach": [
+      {
+        "institution": "Carnegie Mellon University",
+        "department_guess": "Language Technologies Institute",
+        "papers": 197,
+        "reason": "CMU leads all candidates with 197 papers including 91 on low-resource LMs and 75 on PEFT, making it the strongest research-activity fit for Priya's core topics, but selectivity at LTI is among the highest in NLP globally (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI74973139%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "reach"
+      },
+      {
+        "institution": "Stanford University",
+        "department_guess": "Computer Science",
+        "papers": 116,
+        "reason": "Stanford's 116 papers spanning 59 on low-resource LMs and 13 on code-switching evaluation align well with Priya's interests, but CS PhD admission selectivity is extremely high (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI97018004%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "reach"
+      },
+      {
+        "institution": "Massachusetts Institute of Technology",
+        "department_guess": "Computer Science",
+        "papers": 75,
+        "reason": "MIT's 75 papers including 41 on PEFT and 34 on low-resource LMs show solid activity in Priya's areas, though overall CS PhD selectivity is among the most competitive in the US (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI63966007%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "reach"
+      }
+    ],
+    "match": [
+      {
+        "institution": "Johns Hopkins University",
+        "department_guess": "Computer Science",
+        "papers": 87,
+        "reason": "JHU's 87 papers with 49 on low-resource LMs and strong historical presence in speech and multilingual NLP (CLSP) map directly onto Priya's code-switching and speech-text interests, and selectivity is high but navigable for a profile at this level (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI145311948%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "match"
+      },
+      {
+        "institution": "University of Pennsylvania",
+        "department_guess": "Computer and Information Science",
+        "papers": 77,
+        "reason": "Penn's 77 papers include 8 on code-switching evaluation and 4 on speech-text multilingual models\u2014two of Priya's most specific research axes\u2014at a selectivity level that makes it a realistic target (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI79576946%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "match"
+      },
+      {
+        "institution": "Georgia Institute of Technology",
+        "department_guess": "Computer Science",
+        "papers": 85,
+        "reason": "Georgia Tech's 85 papers with 44 on PEFT and known strength in speech and NLP provide strong topical alignment, and PhD admission selectivity is competitive but typically more accessible than top-5 programs (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI130701444%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "match"
+      },
+      {
+        "institution": "University of Illinois Urbana-Champaign",
+        "department_guess": "Computer Science",
+        "papers": 76,
+        "reason": "UIUC's 76 papers including 44 on PEFT and active multilingual NLP groups offer a good research fit, and PhD selectivity is high but the department's size increases placement probability for strong international applicants (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI157725225%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "match"
+      },
+      {
+        "institution": "The University of Texas at Austin",
+        "department_guess": "Computer Science",
+        "papers": 70,
+        "reason": "UT Austin's 70 papers stand out with 4 on tokenizer adaptation multilingual and 5 on code-switching evaluation\u2014directly matching Priya's most specialized work\u2014at a selectivity level appropriate for a match tier (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI86519309%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "match"
+      }
+    ],
+    "safety": [
+      {
+        "institution": "Northeastern University",
+        "department_guess": "Computer Science",
+        "papers": 74,
+        "reason": "Northeastern's 74 papers including 37 on PEFT and 4 on speech-text multilingual models show meaningful activity in Priya's areas, and PhD admission selectivity is comparatively lower than peer research universities making it a viable safety (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI12912129%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "safety"
+      },
+      {
+        "institution": "University of Florida",
+        "department_guess": "Computer and Information Science",
+        "papers": 37,
+        "reason": "UF's 37 papers with 31 on low-resource LMs and 6 on code-switching evaluation confirm relevant faculty activity, and PhD program selectivity is considerably more accessible, providing a strong safety option (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI33213144%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Acode-switching%20evaluation",
+        "tier": "safety"
+      },
+      {
+        "institution": "Purdue University West Lafayette",
+        "department_guess": "Computer Science",
+        "papers": 36,
+        "reason": "Purdue's 36 papers including 31 on PEFT and 5 on code-switching evaluation show focused activity matching Priya's core methods, and overall PhD admission selectivity is lower than most peers on this list, making it a reliable safety (general knowledge, not data).",
+        "evidence_url": "https://api.openalex.org/works?filter=authorships.institutions.lineage%3AI219193219%2Cfrom_publication_date%3A2024-01-01%2Ctitle_and_abstract.search%3Aparameter-efficient%20fine-tuning",
+        "tier": "safety"
+      }
+    ]
+  },
+  "caveat": "Paper counts are OpenAlex evidence of research activity; tiers add general knowledge of selectivity, not admissions data."
+}

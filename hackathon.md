@@ -124,6 +124,17 @@
   the page as context. Conversations persist in the browser. Found and fixed during the rework: a seeded
   question created the conversation twice; the avatar was stretched by flex; Next.js 16 requires `useParams`
   inside `<Suspense>` for prerendering.
+- **neatlogs evidence captured (`evidence/neatlogs/`):** 01 traces list (32 traces on Oct 10, tagged per run);
+  02 run 5 trace tree (WORKFLOW → advisor_scout AGENT → LLM spans with token counts → TOOL spans with
+  latency, 106 steps, 2m43s); 03 the three detections neatlogs configured (Expensive LLM Call > $1, Slow LLM
+  Response > 30 s, Execution Failed on any ERROR span); 04 Execution Failed flagged spans; 05 run 1's
+  `prepare_applications` span with the error text `Expecting ',' delimiter: line 31 column 156 (char 3102)`.
+  **The detection found something I had missed:** three `connector` spans failed (two during a test at 08:38
+  on the OpenAlex 429, one inside run 5 at 09:15 with `'NoneType' object is not iterable`), so Cornell's
+  package had silently skipped the relationship step. Re-running the connector after the null-field fix hit a
+  second null case (authors without an OpenAlex id); fixed too. All three programs now have a clean
+  connector pass; the fictional applicant's circle has no OpenAlex presence, so the honest result is
+  "no co-author or alumni link found".
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 

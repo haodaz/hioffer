@@ -64,7 +64,8 @@
           }
         ],
         "reasons": []
-      }
+      },
+      "connections": []
     },
     {
       "name": "Allison Koenecke",
@@ -116,7 +117,8 @@
           }
         ],
         "reasons": []
-      }
+      },
+      "connections": []
     },
     {
       "name": "Yoav Artzi",
@@ -195,7 +197,8 @@
           }
         ],
         "reasons": []
-      }
+      },
+      "connections": []
     }
   ],
   "skipped": [
@@ -224,5 +227,21 @@
     "openalex_works_seen": 30,
     "papers_dropped_as_unverified": 0
   },
-  "connector_error": "'NoneType' object is not iterable"
+  "circle": [
+    {
+      "name": "S. Venkatesan",
+      "role": "advisor",
+      "openalex": null
+    },
+    {
+      "name": "Anjali Mehra",
+      "role": "mentor",
+      "openalex": null
+    },
+    {
+      "name": "R. Krishnan",
+      "role": "mentor",
+      "openalex": null
+    }
+  ]
 }

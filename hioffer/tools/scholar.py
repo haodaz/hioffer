@@ -160,10 +160,13 @@ def coauthors(author_id: str, since_year: int = 2021, limit: int = 100) -> dict:
     people: dict[str, dict] = {}
     for w in data.get("results", []):
         for au in w.get("authorships", []):
-            aid = au["author"]["id"].rsplit("/", 1)[-1]
+            author = au.get("author") or {}
+            if not author.get("id"):  # OpenAlex sometimes lists authors without a resolved id
+                continue
+            aid = author["id"].rsplit("/", 1)[-1]
             if aid == author_id:
                 continue
-            p = people.setdefault(aid, {"id": aid, "name": au["author"]["display_name"], "papers": 0, "example": None})
+            p = people.setdefault(aid, {"id": aid, "name": author.get("display_name"), "papers": 0, "example": None})
             p["papers"] += 1
             if not p["example"]:
                 p["example"] = {"id": w["id"].rsplit("/", 1)[-1], "title": w.get("title"), "year": w.get("publication_year")}

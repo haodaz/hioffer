@@ -34,5 +34,13 @@
     "kind": "reply_neutral",
     "note": "Auto-reply: admissions are committee-based; apply through the portal.",
     "sample": true
+  },
+  {
+    "id": "s5",
+    "date": "2025-07-14",
+    "program": "University of Washington CSE PhD",
+    "advisor": "Hannaneh Hajishirzi",
+    "kind": "reply_positive",
+    "note": "Hajishirzi replied positively and suggested the applicant mention her lab in the SOP."
   }
 ]
