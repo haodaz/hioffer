@@ -1,0 +1,178 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KBTQNE4W7GQDTSN0161T9W",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T16:55:09.991193Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "examples/applicants/arjun/README.md",
+    "examples/applicants/arjun/cv.md",
+    "examples/applicants/arjun/interests.md",
+    "examples/applicants/arjun/profile.md",
+    "examples/applicants/arjun/programs.yaml",
+    "examples/applicants/arjun/recommenders.md",
+    "examples/applicants/arjun/sop_draft.md",
+    "hioffer/agents/places.py",
+    "hioffer/agents/recommender.py",
+    "hioffer/chat.py",
+    "hioffer/orchestrator.py",
+    "hioffer/server.py",
+    "web/app/app/page.tsx",
+    "web/components/Cards.tsx",
+    "web/components/ProgramMap.tsx",
+    "web/components/ProgramsView.tsx"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "824c4aabb72f",
+  "checkpoint_transcript_start": 3292,
+  "transcript_lines_at_start": 3292,
+  "compact_transcript_start": 404,
+  "token_usage": {
+    "input_tokens": 166,
+    "cache_creation_tokens": 23055,
+    "cache_read_tokens": 5410561,
+    "output_tokens": 13674,
+    "api_call_count": 8
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01JYYANzCuCWopVWrWEFfUr4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d6f8c4a4dcfd",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2159,
+        "end": 2160,
+        "entry_ids": [
+          "4b71a9d0-5499-460c-b123-6c70644d1517"
+        ],
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01LhjXtAXkpJsDzxgQipaNd4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "demo-video"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "af73f90af6d6",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2839,
+        "end": 2840,
+        "entry_ids": [
+          "ff633840-064f-412b-8e93-83d508d4bace"
+        ],
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: demo-video",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 33
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T16:55:09.711885Z",
+    "agent_lines": 83,
+    "agent_removed": 8,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 7,
+    "total_committed": 83,
+    "total_lines_changed": 98,
+    "agent_percentage": 92.85714285714286,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 136,
+      "user_lines_removed": 7,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "examples/applicants/arjun/README.md": 5,
+        "examples/applicants/arjun/cv.md": 31,
+        "examples/applicants/arjun/interests.md": 11,
+        "examples/applicants/arjun/profile.md": 9,
+        "examples/applicants/arjun/programs.yaml": 13,
+        "examples/applicants/arjun/recommenders.md": 5,
+        "examples/applicants/arjun/sop_draft.md": 17,
+        "hioffer/agents/recommender.py": 14,
+        "hioffer/orchestrator.py": 6,
+        "web/components/Cards.tsx": 20,
+        "web/components/ProgramMap.tsx": 5
+      },
+      "user_removed_per_file": {
+        "hioffer/orchestrator.py": 1,
+        "web/components/Cards.tsx": 1,
+        "web/components/ProgramMap.tsx": 5
+      }
+    }
+  ]
+}

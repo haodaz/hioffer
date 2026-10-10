@@ -1,0 +1,41 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4KBTQNE4W7GQDTSN0161T9W",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "examples/applicants/arjun/README.md",
+    "examples/applicants/arjun/cv.md",
+    "examples/applicants/arjun/interests.md",
+    "examples/applicants/arjun/profile.md",
+    "examples/applicants/arjun/programs.yaml",
+    "examples/applicants/arjun/recommenders.md",
+    "examples/applicants/arjun/sop_draft.md",
+    "hioffer/agents/places.py",
+    "hioffer/agents/recommender.py",
+    "hioffer/chat.py",
+    "hioffer/orchestrator.py",
+    "hioffer/server.py",
+    "web/app/app/page.tsx",
+    "web/components/Cards.tsx",
+    "web/components/ProgramMap.tsx",
+    "web/components/ProgramsView.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 166,
+    "cache_creation_tokens": 23055,
+    "cache_read_tokens": 5410561,
+    "output_tokens": 13674,
+    "api_call_count": 8
+  }
+}

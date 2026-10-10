@@ -1,0 +1,15 @@
+地图模式在选校选项目推荐的时候也有用。可以用项目卡列+地图位置的方式标记。
+
+---
+
+<task-notification>
+<task-id>b3laegv9o</task-id>
+<tool-use-id>toolu_012e4gsmvhzPoyhBHjfp3P8E</tool-use-id>
+<output-file>/private/tmp/claude-502/-Users-aisandbox-Documents-hioffer/e2661771-c3b5-4f41-acd4-5e5f7a1bed0e/tasks/b3laegv9o.output</output-file>
+<status>completed</status>
+<summary>Background command "Stress test: full pipeline for the robotics applicant at UMich (background)" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+为精致记得加上logo，院校要给名次，把几个ranking都放上去
