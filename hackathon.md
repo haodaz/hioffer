@@ -26,8 +26,11 @@
 
 - **Planned:** repo bootstrap, Entire enabled before the first code commit, first neatlogs trace, then the end-to-end agent loop.
 - **Done:** installed Entire CLI 0.11.4, `git init`, `entire enable --agent claude-code` (9 Claude Code hooks installed, checkpoints stored as git refs). Created `.gitignore`, `.env.example`, README, this file.
-- **Failures / notes:** Entire could not import session history before the first commit ("cannot import sessions without a valid anchor commit"), which is expected for an empty repo; the first commit is the config files.
-- **Evidence:** to be added (Entire checkpoint ids, neatlogs trace links).
+- **Done:** Python 3.12 venv via uv (`neatlogs` 1.4.26, `openai`), `scripts/hello_trace.py` sent the first trace (WORKFLOW span + one auto-instrumented chat call to `claude-sonnet-4.6` on the hackathon LiteLLM proxy). Model replied "hioffer is alive".
+- **Failures / notes:**
+  - Entire could not import session history before the first commit ("cannot import sessions without a valid anchor commit"), expected for an empty repo; the first commit is the config files. Hooks logged turn-start/turn-end from the first session.
+  - `.env` was first filled with the docs page URL as `LITELLM_BASE_URL`; the real endpoint is `https://litellm.vision.aivar.app/v1` (from neatlogs.com/hackathon/models). Fixed before the first run.
+- **Evidence:** first neatlogs trace tagged `hello-trace` in workflow `hioffer` (link to be added).
 
 ## Demo
 
