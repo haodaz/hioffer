@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>HiOffer — busy on every step</title>
+<style>
+  :root { --bg:#f5f7fb; --card:#fff; --ink:#16213a; --mut:#6b7a90; --line:#e4e9f2; --brand:#2f6bff; --soft:#e9f0ff; --ok:#15803d; --oks:#e7f7ec; --warn:#b45309; --bad:#c0262d; --bads:#fdecec; }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  html,body { width:1080px; height:1440px; overflow:hidden; background:
+    radial-gradient(700px 400px at 5% -5%, #e4ecff 0%, transparent 60%),
+    radial-gradient(600px 400px at 100% 0%, #fdeeea 0%, transparent 55%), var(--bg);
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif; color:var(--ink); }
+  .page { position:relative; width:1080px; height:1440px; padding:34px 36px 28px; display:grid; grid-template-rows:auto auto 520px 470px auto; gap:18px; }
+  .brand { display:flex; align-items:center; justify-content:space-between }
+  .logo { display:flex; align-items:center; gap:10px; font-size:30px; font-weight:800; letter-spacing:-.5px }
+  .logo b { color:var(--brand) }
+  .logo img { height:38px }
+  .tag { font-size:13px; color:var(--mut) }
+  .modules { display:flex; gap:8px }
+  .mod { flex:1; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:10px 44px 10px 12px; font-size:12px; color:var(--mut); position:relative; overflow:hidden }
+  .mod b { display:block; font-size:14px; color:var(--ink); margin-bottom:2px }
+  .mod .n { position:absolute; right:12px; top:10px; font-size:20px; font-weight:700; color:var(--brand) }
+  .mod::after { content:""; position:absolute; left:0; bottom:0; height:3px; width:0; background:var(--brand); animation: fill 24s linear infinite }
+  .mod:nth-child(2)::after { animation-delay:4s } .mod:nth-child(3)::after { animation-delay:8s } .mod:nth-child(4)::after { animation-delay:12s } .mod:nth-child(5)::after { animation-delay:16s } .mod:nth-child(6)::after { animation-delay:20s }
+  @keyframes fill { 0%{width:0} 16%{width:100%} 17%{width:0} 100%{width:0} }
+  .row { display:grid; gap:18px }
+  .row.a { grid-template-columns: 1fr 1.1fr 1fr }
+  .row.b { grid-template-columns: 1.15fr 1fr 1fr }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px 18px; box-shadow:0 8px 24px -18px rgba(22,33,58,.25); position:relative; overflow:hidden; display:flex; flex-direction:column }
+  .card h3 { font-size:17px; margin-bottom:2px }
+  .card .sub { font-size:12px; color:var(--mut); margin-bottom:12px }
+  .pill { display:inline-block; font-size:10px; padding:2px 7px; border-radius:6px; background:var(--soft); color:#1b47b8; font-weight:600 }
+  /* 1 programs bars */
+  .bars { display:flex; flex-direction:column; gap:14px; flex:1; justify-content:center }
+  .bar { display:grid; grid-template-columns: 118px 1fr 40px; gap:10px; align-items:center; font-size:14px }
+  .bar .t { height:14px; background:var(--soft); border-radius:6px; overflow:hidden }
+  .bar .t i { display:block; height:100%; width:0; background:var(--brand); border-radius:6px; animation: grow 6s ease-out infinite }
+  .bar .t i.reach { background:var(--bad) } .bar .t i.safety { background:var(--ok) }
+  .bar small { color:var(--mut); text-align:right }
+  @keyframes grow { 0%{width:0} 40%{width:var(--w)} 85%{width:var(--w)} 100%{width:0} }
+  .tiers { display:flex; gap:6px; margin-top:10px; font-size:11.5px }
+  .tiers span { padding:2px 7px; border-radius:6px } .r{background:var(--bads);color:var(--bad)} .m{background:var(--soft);color:#1b47b8} .s{background:var(--oks);color:var(--ok)}
+  /* 2 requirements */
+  .facts { display:flex; flex-direction:column; gap:8px; flex:1; justify-content:center }
+  .fact { font-size:12.5px; line-height:1.35; padding:8px 11px; border-radius:10px; border:1px solid var(--line); opacity:.45; transform:translateX(6px); animation: light 12s infinite }
+  .fact q { display:block; color:var(--mut); font-style:italic; font-size:11px; margin-top:2px }
+  .fact .ok { float:right; color:var(--ok); font-weight:700; font-size:10px; opacity:0; animation: pop 12s infinite }
+  .fact:nth-child(1){animation-delay:0s} .fact:nth-child(2){animation-delay:2s} .fact:nth-child(3){animation-delay:4s} .fact:nth-child(4){animation-delay:6s} .fact:nth-child(5){animation-delay:8s}
+  .fact:nth-child(1) .ok{animation-delay:0s} .fact:nth-child(2) .ok{animation-delay:2s} .fact:nth-child(3) .ok{animation-delay:4s} .fact:nth-child(4) .ok{animation-delay:6s} .fact:nth-child(5) .ok{animation-delay:8s}
+  @keyframes light { 0%,100%{opacity:.45;transform:translateX(6px);border-color:var(--line)} 8%,60%{opacity:1;transform:none;border-color:var(--brand)} 70%{opacity:1;border-color:var(--line)} }
+  @keyframes pop { 0%,8%{opacity:0} 14%,60%{opacity:1} 70%,100%{opacity:0} }
+  /* 3 orbit */
+  .orbit { position:relative; flex:1; min-height:330px; margin:0 -6px }
+  .orbit .center { position:absolute; left:50%; top:50%; width:74px; height:74px; margin:-37px 0 0 -37px; border-radius:50%; background:#fff; border:3px solid var(--brand); display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:0 0 0 12px var(--soft) }
+  .orbit .center img { height:110px; margin-top:28px }
+  .ring { position:absolute; left:50%; top:50%; border:1px dashed #c9d6f3; border-radius:50%; transform:translate(-50%,-50%) }
+  .sat { position:absolute; left:50%; top:50%; width:0; height:0; animation: spin linear infinite }
+  .sat .node { position:absolute; left:0; top:0; transform:translate(-50%,-50%); background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px 11px; font-size:12px; white-space:nowrap; box-shadow:0 2px 8px rgba(22,33,58,.12) }
+  .sat .node b { color:var(--ok); font-size:9px; margin-left:4px }
+  .sat .node.paper { background:var(--soft); color:#1b47b8; font-size:11px; border:none }
+  @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+  .sat .node { animation: counter linear infinite; }
+  @keyframes counter { from{transform:translate(-50%,-50%) rotate(0)} to{transform:translate(-50%,-50%) rotate(-360deg)} }
+  /* 4 materials */
+  .sop { font-size:15px; line-height:1.75; flex:1; padding-top:14px }
+  .sop .c { display:inline-block; font-size:11px; padding:0 4px; border-radius:4px; background:var(--soft); color:#1b47b8; margin:0 2px; opacity:.35; animation: cite 10s infinite }
+  .sop .c:nth-of-type(1){animation-delay:.5s}.sop .c:nth-of-type(2){animation-delay:1.5s}.sop .c:nth-of-type(3){animation-delay:2.5s}.sop .c:nth-of-type(4){animation-delay:3.5s}.sop .c:nth-of-type(5){animation-delay:4.5s}.sop .c:nth-of-type(6){animation-delay:5.5s}
+  @keyframes cite { 0%,100%{opacity:.35;background:var(--soft)} 10%,70%{opacity:1;background:#cfe0ff} }
+  .verify { margin-top:8px; display:flex; gap:8px; font-size:12.5px }
+  .verify span { padding:5px 8px; border-radius:8px; background:var(--bg) }
+  .verify .pass { background:var(--oks); color:var(--ok); font-weight:600; animation: blink 10s infinite }
+  @keyframes blink { 0%,60%{opacity:.4} 70%,100%{opacity:1} }
+  /* 5 timeline */
+  .todos { display:flex; flex-direction:column; gap:16px; flex:1; justify-content:center }
+  .todo { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; line-height:1.3 }
+  .todo i { width:18px; height:18px; border:1.5px solid var(--line); border-radius:4px; flex:none; margin-top:1px; position:relative; animation: tick 14s infinite }
+  .todo i::after { content:""; position:absolute; left:5px; top:1px; width:5px; height:10px; border:solid var(--ok); border-width:0 2px 2px 0; transform:rotate(45deg); opacity:0; animation: tickmark 14s infinite }
+  .todo:nth-child(1) i,.todo:nth-child(1) i::after{animation-delay:1s}.todo:nth-child(2) i,.todo:nth-child(2) i::after{animation-delay:3s}.todo:nth-child(3) i,.todo:nth-child(3) i::after{animation-delay:5s}.todo:nth-child(4) i,.todo:nth-child(4) i::after{animation-delay:7s}.todo:nth-child(5) i,.todo:nth-child(5) i::after{animation-delay:9s}
+  @keyframes tick { 0%,5%{border-color:var(--line);background:#fff} 10%,80%{border-color:var(--ok);background:var(--oks)} 90%,100%{border-color:var(--line);background:#fff} }
+  @keyframes tickmark { 0%,8%{opacity:0} 12%,80%{opacity:1} 90%,100%{opacity:0} }
+  .todo small { color:var(--mut); display:block; font-size:12px }
+  /* 6 interview */
+  .chart { flex:1; display:flex; flex-direction:column; justify-content:center }
+  .chart svg { width:100%; height:200px }
+  .chart path.line { fill:none; stroke-width:3; stroke-dasharray:600; stroke-dashoffset:600; animation: draw 12s infinite }
+  @keyframes draw { 0%{stroke-dashoffset:600} 45%{stroke-dashoffset:0} 85%{stroke-dashoffset:0} 100%{stroke-dashoffset:600} }
+  .chips { display:flex; gap:6px; margin-top:10px; font-size:12px }
+  .chips span { padding:2px 6px; border-radius:6px }
+  .score { display:flex; gap:8px; margin-top:8px }
+  .score div { flex:1; background:var(--bg); border-radius:10px; padding:8px 10px; font-size:12px; color:var(--mut) }
+  .score div b { display:block; font-size:24px; color:#1b47b8 }
+  /* footer */
+  .foot { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:12px 16px }
+  .stat .k { font-size:11px; color:var(--mut) }
+  .stat .v { font-size:26px; font-weight:800; color:var(--brand); letter-spacing:-.5px }
+  .stat .v.ok { color:var(--ok) }
+  .credits { grid-column: 1 / -1; display:flex; justify-content:space-between; font-size:11px; color:var(--mut); padding:0 4px }
+  .busy { position:absolute; right:36px; top:36px; display:flex; align-items:center; gap:8px; font-size:12px; color:var(--mut) }
+  .busy .dot { width:8px; height:8px; border-radius:50%; background:var(--ok); animation: pulse 1.6s infinite }
+  @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(21,128,61,.5)} 60%{box-shadow:0 0 0 8px rgba(21,128,61,0)} }
+  .mascot { position:absolute; right:40px; bottom:112px; height:150px; opacity:.95 }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand">
+    <div class="logo"><img src="../../web/public/mascot-bot.png" alt="" /><span>Hi<b>Offer</b></span><span class="tag" style="margin-left:10px;font-weight:400">your PhD-application agent, busy on every step</span></div>
+    <div class="busy"><span class="dot"></span> live run · 3 programs · 8 advisors · 23 to-dos</div>
+  </div>
+
+  <div class="modules">
+    <div class="mod"><b>01 Find programs</b>OpenAlex paper counts per university<span class="n">13</span></div>
+    <div class="mod"><b>02 Check requirements</b>official pages, quoted<span class="n">36</span></div>
+    <div class="mod"><b>03 Assess advisors</b>verified papers, two-source identity<span class="n">8</span></div>
+    <div class="mod"><b>04 Assemble materials</b>SOP · fit · emails, every sentence tagged<span class="n">3</span></div>
+    <div class="mod"><b>05 Support the process</b>dated to-dos only you can do<span class="n">23</span></div>
+    <div class="mod"><b>06 Interview & decide</b>mock interview · offer weights<span class="n">7</span></div>
+  </div>
+
+  <div class="row a">
+    <div class="card">
+      <h3>Where your research is happening</h3><div class="sub">2024+ papers on your topics · OpenAlex · reach / match / safety</div>
+      <div class="bars">
+        <div class="bar"><span>Carnegie Mellon</span><div class="t"><i class="reach" style="--w:100%"></i></div><small>197</small></div>
+        <div class="bar"><span>Stanford</span><div class="t"><i class="reach" style="--w:59%"></i></div><small>116</small></div>
+        <div class="bar"><span>Johns Hopkins</span><div class="t"><i style="--w:44%"></i></div><small>87</small></div>
+        <div class="bar"><span>Georgia Tech</span><div class="t"><i style="--w:43%"></i></div><small>85</small></div>
+        <div class="bar"><span>UPenn</span><div class="t"><i style="--w:39%"></i></div><small>77</small></div>
+        <div class="bar"><span>UIUC</span><div class="t"><i style="--w:39%"></i></div><small>76</small></div>
+        <div class="bar"><span>Northeastern</span><div class="t"><i class="safety" style="--w:38%"></i></div><small>74</small></div>
+        <div class="bar"><span>Purdue</span><div class="t"><i class="safety" style="--w:18%"></i></div><small>36</small></div>
+      </div>
+      <div class="tiers"><span class="r">reach · CMU, Stanford, MIT</span><span class="m">match · JHU, UPenn, GT, UIUC, UT</span><span class="s">safety · NEU, UF, Purdue</span></div>
+    </div>
+    <div class="card">
+      <h3>Every requirement with the sentence it came from</h3><div class="sub">University of Washington CSE PhD · 12 facts · 3 pages read</div>
+      <div class="facts">
+        <div class="fact"><span class="ok">sourced</span><span class="pill">deadline</span> December 15, 11:59 PM Pacific<q>December 15 (or the next business day if the 15th falls on a weekend)</q></div>
+        <div class="fact"><span class="ok">sourced</span><span class="pill">fee</span> $90, non-refundable<q>$90 non-refundable fee, paid through the UW Graduate School's TouchNet portal</q></div>
+        <div class="fact"><span class="ok">sourced</span><span class="pill">letters</span> exactly 3, due with the application<q>Three letters are required from all applicants…</q></div>
+        <div class="fact"><span class="ok">sourced</span><span class="pill">GRE</span> not required, not reviewed<q>GRE scores are no longer required or accepted for the Ph.D. program</q></div>
+        <div class="fact"><span class="ok">sourced</span><span class="pill">statement</span> one personal statement, no stated limit<q>One ‘Personal Statement’ (also referred to as a statement of purpose)</q></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Advisors whose last two years match you</h3><div class="sub">papers only if OpenAlex returned them · identity: faculty page + affiliation</div>
+      <div class="orbit">
+        <div class="ring" style="width:170px;height:170px"></div>
+        <div class="ring" style="width:250px;height:250px"></div>
+        <div class="center"><img src="../../web/public/mascot-duo.png" alt="" /></div>
+        <div class="sat" style="animation-duration:22s"><div class="node" style="left:0;top:-85px;animation-duration:22s">Tsvetkov <b>taking students</b></div></div>
+        <div class="sat" style="animation-duration:22s;animation-delay:-11s"><div class="node" style="left:0;top:-85px;animation-duration:22s;animation-delay:-11s">Hajishirzi <b>taking students</b></div></div>
+        <div class="sat" style="animation-duration:34s;animation-direction:reverse"><div class="node paper" style="left:0;top:-125px;animation-duration:34s;animation-direction:reverse">Context-aware decoding ’24</div></div>
+        <div class="sat" style="animation-duration:34s;animation-direction:reverse;animation-delay:-11s"><div class="node paper" style="left:0;top:-125px;animation-duration:34s;animation-direction:reverse;animation-delay:-11s">OLMo ’24</div></div>
+        <div class="sat" style="animation-duration:34s;animation-direction:reverse;animation-delay:-22s"><div class="node paper" style="left:0;top:-125px;animation-duration:34s;animation-direction:reverse;animation-delay:-22s">Dolma ’24</div></div>
+      </div>
+      <div class="tiers"><span class="s">identity: two sources agree · 8/8</span><span class="m">skipped with a reason · 13</span></div>
+    </div>
+  </div>
+
+  <div class="row b">
+    <div class="card">
+      <h3>One library, tailored per program, every claim tagged</h3><div class="sub">SOP 620 words · 2 fit paragraphs · 2 outreach emails · verifier passed</div>
+      <div class="sop">In 2025 I built a Tamil–English code-switched evaluation set of 2,400 sentences<span class="c">lib:cv</span> and found that two open 7B models lost 18–26 points<span class="c">lib:cv</span>. At Microsoft Research India I extended a SentencePiece vocabulary with 6,000 Kannada tokens, cutting tokens per sentence by 41%<span class="c">lib:cv</span>. Her NAACL 2024 paper on context-aware decoding<span class="c">paper:W4401042371</span> connects to my interest in faithfulness evaluation<span class="c">lib:interests</span>; the lab explicitly pursues “NLP for All”<span class="c">advisor:Tsvetkov</span>.</div>
+      <div class="verify"><span>word limit ✓</span><span>citations resolve ✓</span><span>claims supported ✓</span><span class="pass">verified · v1</span></div>
+    </div>
+    <div class="card">
+      <h3>What only you can do, dated</h3><div class="sub">from the official deadlines · 23 to-dos across 3 programs</div>
+      <div class="todos">
+        <div class="todo"><i></i><div>Email Marine Carpuat (draft ready)<small>UMD · 2026-10-20</small></div></div>
+        <div class="todo"><i></i><div>Email Yulia Tsvetkov (draft ready)<small>UW · 2026-10-31</small></div></div>
+        <div class="todo"><i></i><div>Ask recommenders: exactly 3 letters<small>UW · 2026-11-17</small></div></div>
+        <div class="todo"><i></i><div>Upload unofficial transcripts (PDF)<small>UW · 2026-12-01</small></div></div>
+        <div class="todo"><i></i><div>Pay $90 fee and submit<small>UW · 2026-12-15</small></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Mock interview, scored and coached</h3><div class="sub">7 questions from your materials + the advisor's papers · impression per answer</div>
+      <div class="chart">
+        <svg viewBox="0 0 300 120">
+          <line x1="20" x2="280" y1="60" y2="60" stroke="#e4e9f2" stroke-dasharray="3 3"/>
+          <path class="line" d="M20,60 L72,40 L124,40 L176,60 L228,80 L280,60" stroke="#2f6bff"/>
+          <g font-size="10" fill="#6b7a90" text-anchor="middle"><text x="72" y="112">Q1</text><text x="124" y="112">Q2</text><text x="176" y="112">Q3</text><text x="228" y="112">Q4</text><text x="280" y="112">Q5</text></g>
+          <g font-size="10" font-weight="700" text-anchor="middle"><text x="72" y="30" fill="#15803d">+10</text><text x="124" y="30" fill="#6b7a90">0</text><text x="176" y="50" fill="#c0262d">−10</text><text x="228" y="70" fill="#c0262d">−10</text><text x="280" y="50" fill="#15803d">+10</text></g>
+        </svg>
+        <div class="chips"><span class="s">what worked</span><span class="r">what to improve</span><span class="m">a stronger version</span><span class="m">follow-up</span></div>
+        <div class="score"><div>fit<b>4.0</b></div><div>depth<b>3.0</b></div><div>clarity<b>4.0</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="stat"><div class="k">neatlogs · defects found in traces, fixed</div><div class="v" data-count="7">0</div></div>
+    <div class="stat"><div class="k">Entire · checkpoints, one per commit</div><div class="v" data-count="52">0</div></div>
+    <div class="stat"><div class="k">cost per program, measured</div><div class="v ok" data-count="0.83" data-prefix="$" data-dec="2">$0</div></div>
+    <div class="stat"><div class="k">emails sent by the agent</div><div class="v ok">0</div></div>
+    <div class="credits"><span>Built in public for #neatHack · traced with neatlogs · checkpointed with Entire · priced with cfo.ai</span><span>hioffer-one.vercel.app · github.com/haodaz/hioffer</span></div>
+  </div>
+</div>
+<script>
+  // counters tick up over the first seconds, hold, then restart with the 24 s loop
+  const els = [...document.querySelectorAll('[data-count]')];
+  function run() {
+    const t0 = performance.now();
+    (function step() {
+      const p = Math.min(1, (performance.now() - t0) / 3000);
+      els.forEach(el => { const v = +el.dataset.count, dec = +(el.dataset.dec || 0); el.textContent = (el.dataset.prefix || '') + (v * (1 - Math.pow(1 - p, 3))).toFixed(dec); });
+      if (p < 1) requestAnimationFrame(step);
+    })();
+  }
+  run(); setInterval(run, 24000);
+</script>
+</body>
+</html>
