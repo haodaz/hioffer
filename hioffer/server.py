@@ -23,6 +23,8 @@ from datetime import date
 
 from . import config
 from .agents.decider import compare_offers
+from .agents.interview import evaluate_answer, plan_interview
+from .agents.places import build_places
 from .chat import ChatAgent
 from .programs import load_programs
 from .state import Workspace
@@ -80,8 +82,80 @@ def build_state(applicant: str) -> dict:
             {p["name"]: (p["advisors"] or {}) for p in programs},
             ws.load("signals", []),
         ),
+        "places": ws.load("places", {}),
         "summary": ws.load("summary"),
     }
+
+
+@app.post("/api/applicants/{applicant}/places")
+def refresh_places(applicant: str) -> dict:
+    """Fill in location, climate and living notes for programs that lack them (cheap; cached)."""
+    ws = _ws(applicant)
+    programs = load_programs(APPLICANTS_DIR / applicant, ws.root)
+    places = build_places(programs, ws.load("places", {}), log=lambda s: None)
+    ws.save("places", places)
+    return places
+
+
+class InterviewStart(BaseModel):
+    program: str
+    advisor: str
+
+
+def _interview_key(program: str, advisor: str) -> str:
+    slug = lambda s: "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-")
+    return f"interviews/{slug(program)}--{slug(advisor)}"
+
+
+@app.post("/api/applicants/{applicant}/interview/plan")
+def interview_plan(applicant: str, body: InterviewStart) -> dict:
+    ws = _ws(applicant)
+    key = _interview_key(body.program, body.advisor)
+    cached = ws.load(key)
+    if cached:
+        return cached
+    programs = load_programs(APPLICANTS_DIR / applicant, ws.root)
+    prog = next((p for p in programs if p["name"] == body.program), None)
+    if not prog:
+        raise HTTPException(404, "unknown program")
+    k = "".join(c if c.isalnum() else "-" for c in prog["name"].lower()).strip("-")
+    adv = (ws.load(f"{k}/advisors_connected") or ws.load(f"{k}/advisors") or {}).get("advisors", [])
+    advisor = next((a for a in adv if a["name"] == body.advisor), None)
+    if not advisor:
+        raise HTTPException(404, "unknown advisor")
+    plan = plan_interview(ws.load("library"), advisor, prog["name"])
+    plan["answers"] = []
+    ws.save(key, plan)
+    return plan
+
+
+class InterviewAnswer(BaseModel):
+    program: str
+    advisor: str
+    question_id: str
+    answer: str
+
+
+MAX_EVALS = 16
+
+
+@app.post("/api/applicants/{applicant}/interview/answer")
+def interview_answer(applicant: str, body: InterviewAnswer) -> dict:
+    ws = _ws(applicant)
+    key = _interview_key(body.program, body.advisor)
+    plan = ws.load(key)
+    if not plan:
+        raise HTTPException(404, "no interview plan yet")
+    if len(plan.get("answers", [])) >= MAX_EVALS:
+        raise HTTPException(429, "evaluation limit reached for this interview")
+    q = next((x for x in plan["questions"] if x["id"] == body.question_id), None)
+    if not q:
+        raise HTTPException(404, "unknown question")
+    ev = evaluate_answer(q, body.answer, plan["advisor"])
+    rec = {"question_id": q["id"], "answer": body.answer[:1500], **ev}
+    plan.setdefault("answers", []).append(rec)
+    ws.save(key, plan)
+    return rec
 
 
 class Signal(BaseModel):
