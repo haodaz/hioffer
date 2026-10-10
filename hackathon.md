@@ -139,5 +139,5 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 - [x] Entire checkpoints — `evidence/entire/`, refs pushed to the repo
 - [x] cfo.ai business plan — https://cfo.ai/s/A_qiW6hIGmm-3fDR
 - [ ] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai
-- [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190
+- [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190 · day-1 wrap: https://x.com/vibedding/status/2108953313676771343
 - [ ] Quote post of the official neatlogs post during the submission window (Oct 12, 7:00–11:55 PM IST)
