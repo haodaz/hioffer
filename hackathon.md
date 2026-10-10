@@ -104,6 +104,23 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 6. **Decide offers:** deterministic comparison with visible weights (advisor fit 0.35, funding 0.30, signals
    0.20, guarantee 0.15); the agent explains, never overrides. Demo signals/offers are a labelled fictional sample.
 
+### 2026-10-10 — places and mock interview (late afternoon)
+
+- **Programs as places.** The program list now has three modes: requirements, places, map. Each program gets
+  coordinates and city from its OpenAlex institution record, last year's climate from the Open-Meteo archive
+  (January lows, July highs, rain days; free, sourced), and a short living note from one model call that is
+  explicitly labelled "general knowledge, verify" with a link, because there is no free citable cost-of-living
+  source. Map is Leaflet + OpenStreetMap, no key. Seattle 1.8/25.9 °C and 127 rain days; Ithaca −7.9/28.7 °C
+  and 161 rain days: the kind of thing an applicant from Chennai should see before choosing.
+- **Mock interview, by voice.** Per advisor, one model call turns the applicant's library and the advisor's
+  verified papers into 7 questions across fit → your project → advisor's papers → methods → future →
+  logistics, each with the fact or paper it comes from and what a strong answer includes. The browser speaks
+  the question (speechSynthesis) and listens (SpeechRecognition, Chrome; typing always works). Each answer is
+  scored fit/depth/clarity 1–5 with blunt feedback and a follow-up; 16 evaluations per interview max. The
+  first test answer scored 2/1/3 with the comment that it described dataset construction instead of
+  isolating the confounder — exactly the kind of thing an advisor would say. Plans and answers are cached in
+  `workspace/priya/interviews/`.
+
 ### 2026-10-10 — business plan and cost
 
 - **cfo.ai** (public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR; inputs `business/cfo-ai-inputs.md`, results
