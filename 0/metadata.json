@@ -1,0 +1,74 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K1GE3BPVCN2ZZSGRRBSAJ0",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T13:54:46.353064Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "business/cfo-ai-inputs.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "ef43273211f0",
+  "checkpoint_transcript_start": 1506,
+  "transcript_lines_at_start": 1506,
+  "compact_transcript_start": 186,
+  "token_usage": {
+    "input_tokens": 32,
+    "cache_creation_tokens": 1920,
+    "cache_read_tokens": 297760,
+    "output_tokens": 2881,
+    "api_call_count": 1
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 15
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T13:54:46.269635Z",
+    "agent_lines": 68,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 68,
+    "total_lines_changed": 68,
+    "agent_percentage": 100,
+    "metric_version": 2
+  }
+}
