@@ -1,5 +1,6 @@
 """Advisor scout: match faculty to the applicant's interests, with cited recent papers."""
 from ..llm import Tool, parse_json, run_tool_agent
+from .identity import anchor_identity
 from ..tools.scholar import FIND_AUTHOR, RECENT_WORKS
 from ..tools.web import FETCH_PAGE
 
@@ -64,6 +65,7 @@ def scout_advisors(department: str, faculty_url: str, institution: str, interest
                 mentions.append({"title": p.get("title"), "source_url": p.get("url"), "why": "id not returned by OpenAlex"})
         adv["papers"], adv["unverified_mentions"] = keep, mentions
         if keep:
+            adv["identity"] = anchor_identity(adv, institution, faculty_url)
             kept_advisors.append(adv)
         else:  # nothing citable: the writer would have to invent, so demote to skipped
             result.setdefault("skipped", []).append({"name": adv["name"], "why": "no OpenAlex-verified recent papers"})

@@ -11,6 +11,7 @@ SYSTEM = """You write application materials for a PhD applicant. You may ONLY us
 - what the advisor record says about an advisor's areas, lab, student recruiting and "connections" (co-author or
   alumni links to the applicant's circle; cite as [advisor:<name>]). A connection may be mentioned in an email only
   as a factual link ("my advisor X co-authored ... with you"), never as a claimed introduction or endorsement.
+  If an advisor's "identity.confidence" is "low", cite only their papers, not facts about them.
 - requirements from the program facts.
 Every sentence that states a fact about the applicant must cite [lib:..]; every sentence that states a fact about
 an advisor must cite [paper:..] or [advisor:..]. Never cite a library item for a fact about a professor.
@@ -38,6 +39,7 @@ def write_materials(library: dict, program: dict, advisors: dict, feedback: list
             "name": a["name"], "areas": a.get("areas"), "match_reason": a.get("match_reason"),
             "takes_students": a.get("takes_students"), "profile_url": a.get("profile_url"),
             "connections": a.get("connections", []),
+            "identity": a.get("identity"),
             "papers": [{k: p.get(k) for k in ("id", "title", "year", "venue", "authors")} for p in a["papers"]],
         }
         for a in advisors["advisors"]

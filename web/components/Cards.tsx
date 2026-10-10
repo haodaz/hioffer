@@ -16,6 +16,7 @@ type Advisor = {
   papers: Paper[];
   takes_students?: { verdict: string; evidence?: string | null; source_url?: string | null };
   connections?: { type: string; via: string; evidence: string; source_url?: string }[];
+  identity?: { confidence: "high" | "medium" | "low"; sources: { type: string; url?: string; detail?: string }[]; reasons: string[] };
 };
 
 export function CardView({ card, t, onAction }: { card: Card; t: T; onAction: (msg: string) => void }) {
@@ -146,6 +147,28 @@ export function AdvisorCard({ a, t, onAction }: { a: Advisor; t: T; onAction: (m
           </div>
         </div>
       </div>
+      {a.identity && (
+        <div className="mt-1 text-xs text-muted">
+          <span className={`font-medium ${a.identity.confidence === "high" ? "text-ok" : a.identity.confidence === "medium" ? "text-warn" : "text-bad"}`}>
+            {t("identity")}: {t(`identity_${a.identity.confidence}` as Key)}
+          </span>{" "}
+          ·{" "}
+          {a.identity.sources.map((s, i) => (
+            <span key={i}>
+              {i > 0 && " + "}
+              {s.url ? (
+                <a className="underline" href={s.url} target="_blank" rel="noreferrer">
+                  {s.type.replace(/_/g, " ")}
+                </a>
+              ) : (
+                s.type.replace(/_/g, " ")
+              )}
+              {s.detail ? ` (${s.detail})` : ""}
+            </span>
+          ))}
+          {a.identity.reasons.length > 0 && <span> · {a.identity.reasons.join("; ")}</span>}
+        </div>
+      )}
       {a.match_reason && <p className="mt-2 text-sm">{a.match_reason}</p>}
       {a.takes_students?.evidence && (
         <p className="mt-1 text-xs text-muted">

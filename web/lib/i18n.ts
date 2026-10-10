@@ -73,6 +73,10 @@ const dict = {
     keyFacts: "Key facts",
     evidence: "Evidence",
     skipped: "Not included",
+    identity: "Identity",
+    identity_high: "two sources agree",
+    identity_medium: "one source only",
+    identity_low: "unverified",
   },
   zh: {
     tagline: "你的博士申请助理。",
@@ -142,6 +146,10 @@ const dict = {
     keyFacts: "关键事实",
     evidence: "证据",
     skipped: "未纳入",
+    identity: "身份",
+    identity_high: "两来源一致",
+    identity_medium: "仅单一来源",
+    identity_low: "未验证",
   },
 } as const;
 
