@@ -1,0 +1,15 @@
+Checkpoint tokens
+
+Checkpoint: 01M4JWGWXT03G7ZRCJ65YMZB10
+Session:    e2661771-c3b5-4f41-acd4-5e5f7a1bed0e
+Agent:      Claude Code
+Model:      claude-fable-5-1
+Branch:     main
+
+Token usage
+Total:  2025.9k tokens
+  Input: 396 | Cache read: 1942.9k | Cache write: 49.9k | Output: 32.8k | API calls: 18
+
+Recommendations
+- Cache/context replay is 95.9% of token volume; reduce unnecessary follow-up calls in this large-context session.
+- Output tokens are elevated; keep the next answer tight and avoid restating evidence.

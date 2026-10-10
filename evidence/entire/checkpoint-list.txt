@@ -1,0 +1,87 @@
+  branch       main
+  checkpoints  28
+
+● 01M4K5PHJ5W9J5HB2S9HMXS18Z  "好的"
+  10-10 11:07 (385bf3b) cfo.ai public model link in hackathon.md, README and business results
+
+● 01M4K5N623S5RGWVFJRD7TRKGV  Research-model routing switch; Haiku comparison on Cornel...
+  10-10 11:07 (2b0d91c) Research-model routing switch; Haiku comparison on Cornell requirements (nega...
+
+● 01M4K5JA23YP43QFB7NH7WCHRV  "进去了"
+  10-10 11:05 (0abf10c) cfo.ai business plan: results, screenshots, decisions; checklist updated
+
+● 01M4K54JMN438M6SV9VTXHXTZE  "剩下只有你能做的两件事，不急但别忘：\n\n1. cfo.ai：贴 business/cfo-ai-inputs.md..."
+  10-10 10:58 (9d38e8f) neatlogs evidence screenshots; connector null-id fix found via Execution Fail...
+
+● 01M4K4E1C3WXCWEX9GQ9MZSZWF  "这里交互有点问题。\n人管的ai native功能、人ai对话，都是拆开的功能。就像咱们侧导航。然后侧导航下半截是对..."
+  10-10 10:45 (d8606e3) Chat-first layout: sidebar nav + history, full-width chat, card preview pane,...
+
+● 01M4K45SAAXP0ANQ4XDH51M4K4  Find programs: OpenAlex-evidenced reach/match/safety reco...
+  10-10 10:41 (72bd37d) Find programs: OpenAlex-evidenced reach/match/safety recommendations with Add...
+
+● 01M4K3Z59B6BYZ75Z0V3EDYCB9  "好的谢谢你，选不了config也点不了保存"
+  10-10 10:37 (2d176f7) Signals and Offers modules: log signals via panel or chat, transparent offer ...
+
+● 01M4K3JJ20XSAMRM5VYNRG5N3V  README: live demo links
+  10-10 10:30 (b965aa0) README: live demo links
+
+● 01M4K3HV7TK52TVJ71KED45R2S  "Remove the public framework prefix to keep this value pri..."
+  10-10 10:30 (b754815) web: default to the hosted API when not served from localhost
+
+● 01M4K2WK77P8RDJ22WDXC35HPY  "<task-notification>\n<task-id>birmjf3bo</task-id>\n<tool-us..."
+  10-10 10:18 (ff1b5e1) hackathon.md: hosted API URL
+
+● 01M4K1JS86Y0S6D35RQ9GE2RYZ  Dockerfile for the API + demo workspace snapshot (fiction...
+  10-10 09:56 (18f9e98) Dockerfile for the API + demo workspace snapshot (fictional applicant) so a h...
+
+● 01M4K1HQ43KDYQ44HNRMTJ8BCT  demo: 3-minute video script covering the agent, neatlogs,...
+  10-10 09:55 (ea3a54c) demo: 3-minute video script covering the agent, neatlogs, Entire and cfo.ai
+
+● 01M4K1GE3BPVCN2ZZSGRRBSAJ0  business: cfo.ai inputs from measured per-run costs (pric...
+  10-10 09:54 (aa52924) business: cfo.ai inputs from measured per-run costs (pricing, COGS, growth, f...
+
+● 01M4K1EQFFWZYSABT6SYSGHZJ2  hackathon.md: planner and confirm-card notes
+  10-10 09:53 (959b5a7) hackathon.md: planner and confirm-card notes
+
+● 01M4K1DFX2CSFP9FAR4B4YKKE6  Planner: dated to-dos per program (outreach, letters, tes...
+  10-10 09:53 (30e8128) Planner: dated to-dos per program (outreach, letters, tests, transcripts, fee...
+
+● 01M4K1AK5XZ2J2KEG8XH2W7V8S  "https://x.com/vibedding/status/2108912402540458190"
+  10-10 09:51 (f32a599) Identity anchoring for advisors: faculty page + OpenAlex affiliation, shown o...
+
+● 01M4K00S3SPJV0BDQBZ3B3D7XZ  "发了，链接是[ https://x.com/](https://x.com/vibedding/status/21..."
+  10-10 09:28 (6079789) hackathon.md: day-1 build-in-public post
+
+● 01M4JZSWAV4MW0DDYFJDENBDP3  "vercel的env要填吗，能不能给我复制一套在剪贴板"
+  10-10 09:24 (55f863a) hackathon.md: live frontend URL and repo link
+
+● 01M4JZCERTFG1MSGW6R3XV6W54  "我过去都是用vercel+supabase就全都弄完了，这个项目的不同之处在哪里？请你教教我"
+  10-10 09:17 (803c611) scholar: tolerate null institution/affiliation fields from OpenAlex (Lillian ...
+
+● 01M4JZBT3QE9XEB6YJJTVQ4PJG  "<task-notification>\n<task-id>b3gjptjqq</task-id>\n<tool-us..."
+  10-10 09:17 (e2018dc) Run 5 evidence: Cornell complete with pruned context; per-call input tokens h...
+
+● 01M4JZABN8YFNH73AKYZKQTAWD  "给我一个基本产品截图我配图"
+  10-10 09:16 (4296623) App: ?q= and ?tab= deep links for seeded questions; product screenshots; play...
+
+● 01M4JZ5V18ECN3NH0V8NQENXAY  "git@github.com:haodaz/hioffer.git\nOPENALEX_MAILTO=写什么"
+  10-10 09:13 (6cbcfe7) README: architecture, setup and run instructions
+
+● 01M4JXXRSMG4RJTATRWQRXQDWV  "你看看/datasquare有没有这个key你可以拿去"
+  10-10 08:52 (f6b477d) Web UI: FastAPI SSE chat backend, root chat agent with cards, Next.js landing...
+
+● 01M4JXDE3VKQAN4D3P1QRG2DPX  "<task-notification>\n<task-id>btekojzdm</task-id>\n<tool-us..."
+  10-10 08:43 (a2a0095) Prune old tool results, cap page size, report advisor-less programs as blocke...
+
+● 01M4JX9GVBZVR7650XP26KK422  "你做看人才学者的话，一定去看看/datasquare。多信源验真、出人才查询的ai回答，我做的很好。"
+  10-10 08:41 (fd23107) Connector (co-author/alumni links), OpenAlex cache+key+backoff, citation id r...
+
+● 01M4JWW48BJ8NKW6PBDN3ZGSQR  "<task-notification>\n<task-id>bqoo7vte3</task-id>\n<tool-us..."
+  10-10 08:33 (69cdc35) Fix advisor evidence chain: soft institution match, drop paper-less advisors,...
+
+● 01M4JWGWXT03G7ZRCJ65YMZB10  "<pasted_content id=\"62d1\">\n[neatHack](https://neatlogs.co..."
+  10-10 08:27 (627dd90) Agent core: librarian, program researcher, advisor scout, writer, verifier, o...
+
+● 01M4JVAM2S0R7FBKAT5VMHM1ED  "我拿到claude key，在粘贴板里，你看还需要什么"
+  10-10 08:06 (77dff5d) First neatlogs trace works; record endpoint fix in build log
+

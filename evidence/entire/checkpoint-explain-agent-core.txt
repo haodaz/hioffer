@@ -1,0 +1,208 @@
+● Checkpoint 01M4JWGWXT03G7ZRCJ65YMZB10
+  session  e2661771-c3b5-4f41-acd4-5e5f7a1bed0e
+  created  2026-10-10 12:27:38
+  author   haodaz <haoz214@gmail.com>
+  tokens   2025.9k
+  commits  627dd90 Agent core: librarian, program researcher, advisor scout, writer, verifier, orchestrator
+────────────────────────────────────────────────────────────
+## Intent
+
+产品上因为是个agent比赛，你可以参考mamapal，用户有可以人工管理、查看的其他AI native工具（比如申请项目、导师、我的材料、timelin...
+
+## Summary
+
+*Not generated yet. Run ‘entire checkpoint explain --generate 01M4JWGWXT03G7ZRCJ65YMZB10‘ to create an AI summary.*
+
+## Files (16)
+
+- `hioffer/__init__.py`
+- `hioffer/agents/__init__.py`
+- `hioffer/agents/advisor_scout.py`
+- `hioffer/agents/librarian.py`
+- `hioffer/agents/program_researcher.py`
+- `hioffer/agents/verifier.py`
+- `hioffer/agents/writer.py`
+- `hioffer/cli.py`
+- `hioffer/config.py`
+- `hioffer/llm.py`
+- `hioffer/orchestrator.py`
+- `hioffer/state.py`
+- `hioffer/tools/__init__.py`
+- `hioffer/tools/files.py`
+- `hioffer/tools/scholar.py`
+- `hioffer/tools/web.py`
+
+── Transcript (checkpoint scope) ───────────────────────────
+[Assistant] 你贴的那页和我刚才配的一致（接口地址、模型名都对），不用再改。
+
+现在三件基础都通了：
+- **Entire**：刚才那次提交生成了第一个存档点（`01M4JV…`，绑定到提交 `77dff5d`），并且能看到它引用的就是这段对话。
+- **neatlogs**：第一条 trace 已发出，你在页面上应该能看到。
+- **模型**：LiteLLM 代理调用成功。
+
+接下来是 agent 本身。我打算这样搭，用大白话说：
+
+**架构（一个"项目经理 + 几个专员 + 一个质检员"）**
+
+1. **工作区（state）**：每个申请人一个文件夹 `workspace/<申请人>/`，里面是 JSON 文件：材料库、每个项目的要求、匹配到的导师、生成的文档、校验结果。每一步做完就写盘，崩了再跑会跳过已完成的步骤，这就是"断点续跑"。
+2. **规划器（planner）**：拿到目标（"申请这 3 个项目"），拆成固定的任务清单：建材料库 → 查要求 → 找导师 → 写定制材料 → 校验 → 不通过就改。
+3. **工具（tools）**：读网页（官方页面，保存 URL + 原文摘录）、查 OpenAlex / Semantic Scholar（导师近期论文）、读本地文件（CV、SOP）、数字数。这些都是普通 Python 函数，模型只负责决定调哪个、怎么总结。
+4. **质检员（verifier）**：独立一轮检查：字数是否超限、每条事实是否有来源、要求清单是否全覆盖。不通过的条目打回重写，最多重试 N 次。
+5. **neatlogs** 把每个步骤包成 span（WORKFLOW → AGENT → TOOL），这样失败在哪、哪步最花钱，一眼能看出来；这也是 cfo.ai 定价要用的"每次运行成本"。
+
+**第一天目标**：先打通最小闭环：一个虚构申请人 + 1 个真实项目（后面扩到 3 个），从读材料到输出一份带来源的"申请包"，并通过校验。界面和落地页放后面。
+
+没有异议的话我就开始写代码，先做材料库和工作区这一层。
+
+[User] 产品上因为是个agent比赛，你可以参考mamapal，用户有可以人工管理、查看的其他AI native工具（比如申请项目、导师、我的材料、timeline/todo之类的吧），但launch和核心的是与ai对话的交互框架。ai可以说话，也可以把一些功能和数据做成特殊的交互卡（本质是一种总特殊的“说话”），替用户完成各种执行。
+请你看看那个项目的感觉，或者/zhiji-yida里面一答智能体的感觉。
+总智能体可以调用子智能体干活。
+
+[Tool] Bash: Locate the mamapal and zhiji-yida projects on disk
+
+[Tool] Agent: Study mamapal and zhiji-yida UX
+
+[Assistant] 看完了两个项目（只看了设计，没有拷任何代码）。它们的共同点正是你说的：**对话是主入口，agent 既能"说话"，也能把结果变成可操作的卡片**；旁边有几个可以人工翻看、管理的页面；根 agent 按"模式"分派给子 agent。
+
+把这套感觉搬到 hioffer，我建议这样定：
+
+**1. 产品形态**
+- **落地页**（未登录，用封面图）→ 点进去就是和 hioffer 对话。
+- **主界面**：左边对话，右边四个面板可切换：**Programs**（申请项目）、**Advisors**（导师）、**Materials**（我的材料）、**Timeline**（截止日期 + 待办）。面板里的数据全是 agent 产出的，用户可以手动改、删、打勾。
+- **卡片**（agent 的"特殊说话"）：
+  - `profile_receipt`：已保存到你的档案 · N 项（可展开）
+  - `program_card`：某项目的要求清单，每条带来源链接和原文摘录
+  - `advisor_card`：某导师 + 3 篇近期论文 + 匹配理由 + "是否在招生"的判断
+  - `draft_card`：SOP 变体 / 套磁信草稿，带字数、校验状态，按钮：采用 / 让它改
+  - `checklist_card`：某项目的材料覆盖情况（已有 / 缺 / 待改）
+  - `confirm_card`：花钱或耗时的动作（深度检索 3 个项目的导师）先确认再跑
+  - `todo_card`：加到 Timeline 的待办（寄信、交费、提交，都是人做）
+
+**2. 技术拆法**
+- **后端 Python（FastAPI）**：根 agent `hioffer` 流式输出（SSE），事件类型：`delta`（文字）、`tool_start/log/end`（进度）、`card`（卡片 JSON）、`final`。根 agent 用原生 function calling 调子 agent：`librarian`（材料库）、`program_researcher`（项目要求）、`advisor_scout`（导师匹配）、`writer`（定制文档）、`verifier`（质检）。每个子 agent 是一个 neatlogs `AGENT` span，每个工具是 `TOOL` span，所以 neatlogs 里能看到完整的树和每一步的花费。
+- **状态**：`workspace/<applicant>/` 下的 JSON 文件，面板读它，卡片按钮直接调 REST 接口改它（不绕回模型），改完卡片重渲染。
+- **前端 Next.js + Tailwind**：和你另外两个项目一致。先只做聊天 + 卡片 + 四个面板，不做登录。
+
+**3. 顺序（48 小时）**
+1. 今天：agent 核心先在命令行跑通一个申请人 × 1 个项目的完整闭环（材料库 → 要求 → 导师 → 草稿 → 校验），全程进 neatlogs。
+2. 明早：FastAPI 流式接口 + 聊天界面 + 卡片。
+3. 明天下午：四个面板、落地页、扩到 3 个项目、找一次真实失败并修好（before/after trace）。
+4. 周日：cfo.ai、视频、hackathon.md 收尾、X 上发帖。
+
+没意见我就从第 1 步开始。唯一想确认的：前端用 Next.js（功能全但多一个服务）你 OK 吗？如果想更省事，我也可以用 FastAPI 直接托管一个单页前端。
+
+[User] Next.js 可以，开始第1步
+
+[Assistant] 开始。先验证几个真实项目页面能不能被程序抓取（有些学校网站会挡机器人），选能抓的做 demo。
+
+[Tool] Bash: Probe candidate program and faculty pages for fetchability
+
+[Assistant] 华盛顿大学（UW CSE）的招生页和教师页都能抓，先用它做第一个项目。再确认 OpenAlex 接口可用，并加上网页解析的依赖。
+
+[Tool] Bash: Test OpenAlex API, add HTML/PDF deps, preview UW admissions page text
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/__init__.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/config.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/llm.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/state.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/tools/__init__.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/tools/web.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/tools/scholar.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/tools/files.py
+
+[Assistant] Now the five sub-agents, the orchestrator, the CLI, and the fictional demo applicant.
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/agents/__init__.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/agents/librarian.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/agents/program_researcher.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/agents/advisor_scout.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/agents/writer.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/agents/verifier.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/orchestrator.py
+
+[Tool] Write: /Users/aisandbox/Documents/hioffer/hioffer/cli.py
+
+[Tool] Bash: Create the fictional demo applicant and check imports
+
+[Assistant] Imports are fine. Now the first end-to-end run (this takes a few minutes: it reads the five files, browses UW's pages, queries OpenAlex, writes, verifies).
+
+[Tool] Bash: Run the full agent loop on the demo applicant (first run)
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/llm.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/llm.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/llm.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/llm.py
+
+[Tool] Bash: Re-run the agent (resumes from the library checkpoint) after the JSON-repair fix
+
+[Tool] ToolSearch
+
+[Tool] Bash: Show the second run's log and resulting workspace files
+
+[Tool] Bash: Inspect verification issues, extracted requirements and the v2 draft
+
+[Tool] Bash: Check advisor paper ids and the research_statement fact
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/program_researcher.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/advisor_scout.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/advisor_scout.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/advisor_scout.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/advisor_scout.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/verifier.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/agents/verifier.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/orchestrator.py
+
+[Tool] Edit: /Users/aisandbox/Documents/hioffer/hioffer/orchestrator.py
+
+[Assistant] 先把失败那次的输出留作证据（虚构申请人，可公开），提交修复，然后删掉该项目的旧结果重跑（材料库保留，验证断点续跑）。
+
+[Tool] Bash: Save failed-run evidence, commit the fixes, clear program outputs for a re-run
+
+[Tool] Bash: Run the agent again after the fixes (run3), logging to scratchpad
+
+[Assistant] 趁第三次运行在跑，我把今天的失败和修复写进 `hackathon.md` 的构建日志（结果数字等跑完再补）。
+
+[Tool] Bash: Append the day's failures and fixes to the hackathon.md build log
+
+[Tool] Write: /Users/aisandbox/.claude/projects/-Users-aisandbox-Documents-hioffer/memory/hioffer-product-decisions.md
+
+[Tool] Bash: Index the memory and list Entire checkpoints
+
+[Assistant] Entire 已有 2 个存档点，各绑一次提交。等 run3 的同时，我探一下另外两个学校的页面能不能抓，为扩到 3 个项目做准备。
+
+[Tool] Bash: Probe more admissions and faculty pages for fetchability
+
+[Assistant] 马里兰（UMD）和康奈尔（Cornell）的招生页和教师页都能抓，加进项目列表（先不跑，等 run3 完看一下成本再决定）。
+
+[Tool] Bash: Add UMD and Cornell to programs.yaml; peek at run3 progress
+
+[Assistant] run3 的日志因为缓冲还没写出来，等后台任务结束通知。目前这一轮做的事：
+
+- **修复并提交**了三处问题（JSON 修复、重复抓取、论文 ID 造假 + 覆盖误报），Entire 存档点 2 个。
+- **证据**存在 `evidence/2026-10-10-run2-before-fix/`，构建日志已写进 `hackathon.md`。
+- **项目列表**现在是 UW、UMD、Cornell 三所（后两所先不跑，等看完 run3 的花费）。
+
+等 run3 跑完我会给你看：要求、导师、SOP 片段，以及 neatlogs 里 run2 vs run3 的对比。

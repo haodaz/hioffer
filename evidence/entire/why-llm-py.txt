@@ -1,0 +1,11 @@
+
+  hioffer/llm.py
+  180 lines · 0% AI (0) · 0% human (0) · 100% mixed (180)
+
+  Top checkpoints:
+  - 01M4JWGWXT03G7ZRCJ65YMZB10  127 lines · Claude Code · session e2661771 · "<pasted_content id=\"62d1\"> [neatHack](https://neatlogs.com/hackathon)[← Building resour..."
+  - 01M4JWW48BJ8NKW6PBDN3ZGSQR  34 lines · Claude Code · session e2661771 · "<task-notification> <task-id>bqoo7vte3</task-id> <tool-use-id>toolu_01QenVpGUispUhSykAz..."
+  - 01M4JXDE3VKQAN4D3P1QRG2DPX  19 lines · Claude Code · session e2661771 · "<task-notification> <task-id>btekojzdm</task-id> <tool-use-id>toolu_018HJ2VJ9AECHmavHFX..."
+
+  Tip: entire why hioffer/llm.py:<line> shows the prompt behind a specific line.
+

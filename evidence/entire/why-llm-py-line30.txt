@@ -1,0 +1,10 @@
+
+  Line 30 in hioffer/llm.py
+      start = min([i for i in (text.find("{"), text.find("[")) if i >= 0] or [0])
+
+  [MX] by Claude Code · claude-fable-5-1 · checkpoint 01M4JWGWXT03G7ZRCJ65YMZB10 · session e2661771 · commit 627dd909
+  Session prompt: "<pasted_content id=\"62d1\"> [neatHack](https://neatlogs.com/hackathon)[← Building resources](https://neatlogs.com/hackathon#resources) LiteLLM · Nova & Claude..."
+  (session-level prompt — may not appear in this checkpoint's transcript; see the checkpoint explain command below for what drove this checkpoint)
+
+  Full context: entire checkpoint explain 01M4JWGWXT03G7ZRCJ65YMZB10
+
