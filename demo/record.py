@@ -25,9 +25,10 @@ def beat(name: str) -> None:
 
 
 def wait_reply(page, timeout=90) -> None:
-    """Wait until the assistant's last message has finished (the 'steps' summary appears)."""
+    """Wait until one more assistant message has finished (one more 'steps' summary than before the question)."""
+    before = page.locator("summary", has_text="steps").count()
     for _ in range(timeout):
-        if page.locator("summary", has_text="steps").count() > 0:
+        if page.locator("summary", has_text="steps").count() > before:
             return
         time.sleep(1)
 
@@ -62,6 +63,7 @@ with sync_playwright() as p:
     time.sleep(5)
 
     # 3. Ask for advisors -> card pane
+    n0 = page.locator("summary", has_text="steps").count()
     page.get_by_role("button", name="Who are the best-fit advisors at UW?").first.click()
     beat("ask advisors")
     wait_reply(page)

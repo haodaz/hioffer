@@ -17,3 +17,5 @@ workspace/
 # OS
 .DS_Store
 .cache/
+demo/out/
+demo/tts/
