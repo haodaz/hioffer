@@ -7,6 +7,7 @@ import yaml
 from .agents.advisor_scout import scout_advisors
 from .agents.connector import find_connections
 from .agents.librarian import build_library
+from .agents.planner import merge_todos, plan_todos
 from .agents.program_researcher import research_program
 from .agents.verifier import verify
 from .agents.writer import write_materials
@@ -108,6 +109,12 @@ def prepare_applications(applicant_dir: Path, workspace_root: Path, program_filt
             for t in result.get("applicant_todos", [])
         ]
         ws.save(f"{key}/final", {"materials_version": attempt, "passed": result["passed"], "issues": result["issues"], "todos": todos})
+
+        # Step 6: dated to-dos for the human (outreach, letters, tests, fee + submit).
+        log("planner: timeline")
+        generated = plan_todos(prog["name"], requirements, advisors, materials)
+        generated += [{"id": f"{key}-todo-{i}", "done": False, "kind": "applicant", **t} for i, t in enumerate(todos)]
+        ws.save("todos", merge_todos(ws.load("todos", []), generated))
         summary["programs"].append(
             {
                 "program": prog["name"],

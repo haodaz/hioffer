@@ -115,7 +115,7 @@ function TimelinePanel({ state, t, refresh }: { state: State; t: T; refresh: () 
         </ul>
       </div>
       <TodosCard
-        todos={state.todos}
+        todos={[...state.todos].sort((a: State, b: State) => (a.due ?? "9999").localeCompare(b.due ?? "9999"))}
         t={t}
         onToggle={async (id, done) => {
           await upsertTodo({ id, done });

@@ -92,6 +92,11 @@
   advisor → connector → draft → verify stages. Evidence: `evidence/2026-10-10-run5-pruned/`.
   Still open: the scout skipped two Cornell faculty because `find_author` errored, and three advisors have
   no co-author/alumni link to the (fictional) applicant's circle, which is expected for invented people.
+- **Identity anchoring (Oct 10, later):** each kept advisor now carries `identity`: faculty directory /
+  profile page + OpenAlex affiliation history. Same name alone never counts; no affiliation overlap → medium,
+  no affiliation data → low (writer may then cite only papers). Backfilled on the three programs: all 8
+  advisors "high" (e.g. Tsvetkov: University of Washington 2021–2026 on OpenAlex). Also fixed a crash on
+  OpenAlex records with `null` institutions that had made the scout skip Lillian Lee at Cornell.
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 
