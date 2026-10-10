@@ -97,6 +97,11 @@
   no affiliation data → low (writer may then cite only papers). Backfilled on the three programs: all 8
   advisors "high" (e.g. Tsvetkov: University of Washington 2021–2026 on OpenAlex). Also fixed a crash on
   OpenAlex records with `null` institutions that had made the scout skip Lillian Lee at Cornell.
+- **Planner / timeline:** after a program package is verified, a planner turns requirements + advisors into
+  dated to-dos for the human (email each advisor with a ready draft; ask and remind recommenders; send test
+  scores; upload transcripts; pay the fee and submit). Deadline strings are normalised to ISO dates with one
+  Haiku call; everything else is arithmetic. 23 to-dos across the three programs, shown in the Timeline panel
+  with checkboxes. The confirm card for `run_prepare` was verified in the UI (no run triggered).
 - **Added:** connector step (co-author and alumni links between the applicant's circle and each advisor,
   each edge with an OpenAlex paper or affiliation as evidence). Scope deliberately small.
 
