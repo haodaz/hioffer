@@ -56,8 +56,14 @@ with sync_playwright() as p:
     smooth_scroll(page, 2600)
     time.sleep(1.5)
 
+    # 1b. Login with the demo code
+    page.goto(f"{base}/login", wait_until="networkidle")
+    beat("login")
+    time.sleep(1.5)
+    page.get_by_role("button", name="Priya Raman").first.click()
+    page.wait_for_url("**/app", timeout=15000)
+
     # 2. App home brief
-    page.goto(f"{base}/app", wait_until="networkidle")
     time.sleep(1)
     beat("app brief")
     time.sleep(5)
@@ -88,12 +94,30 @@ with sync_playwright() as p:
     # 5. Timeline page
     page.goto(f"{base}/app/timeline", wait_until="networkidle")
     beat("timeline page")
+    time.sleep(4)
+
+    # 6. Programs as places + map
+    page.goto(f"{base}/app/programs", wait_until="networkidle")
+    beat("places")
+    time.sleep(3)
+    page.get_by_role("button", name="Map").click()
+    beat("map")
     time.sleep(5)
 
-    # 6. Offers page
+    # 7. Mock interview (cached plan + prior answers; no mic in headless, so the question is read on screen)
+    page.goto(f"{base}/app/interview", wait_until="networkidle")
+    time.sleep(1)
+    page.get_by_role("button", name="Start interview").click()
+    beat("interview start")
+    time.sleep(3)
+    page.get_by_role("button", name="Skip").click(force=True)
+    beat("interview question")
+    time.sleep(6)
+
+    # 8. Offers page
     page.goto(f"{base}/app/offers", wait_until="networkidle")
     beat("offers page")
-    time.sleep(5)
+    time.sleep(4)
 
     beat("end")
     ctx.close()

@@ -18,7 +18,8 @@ F = imageio_ffmpeg.get_ffmpeg_exe()
 D = Path(__file__).parent
 OUT = D / "out"
 beats = {b["name"]: b["t"] for b in json.loads((OUT / "beats.json").read_text())}
-dur = {d["id"]: d["dur"] for d in json.loads((D / "tts" / "durations.json").read_text())}
+TEMPO = 1.05  # narration played slightly faster than recorded; inaudible, keeps the cut under 3:00
+dur = {d["id"]: d["dur"] / TEMPO for d in json.loads((D / "tts" / "durations.json").read_text())}
 narr = {n["id"]: n["text"] for n in json.loads((D / "narration.json").read_text())}
 EV = D.parent / "evidence"
 PAD = 0.35  # silence after each narration before the next visual
@@ -30,16 +31,17 @@ PAD = 0.35  # silence after each narration before the next visual
 # the narration (static pages slow down harmlessly, waiting for the model speeds up).
 segments = [
     ("01", {"kind": "clip", "start": beats["landing hero"], "end": beats["landing modules"]}),
-    ("02", {"kind": "clip", "start": beats["landing modules"], "end": beats["app brief"] - 0.3}),
-    ("03", {"kind": "clip", "start": beats["app brief"], "end": beats["ask advisors"]}),
+    ("02", {"kind": "clip", "start": beats["landing modules"], "end": beats["login"] - 0.3}),
+    ("03", {"kind": "clip", "start": beats["login"], "end": beats["ask advisors"]}),
     ("04", {"kind": "clip", "start": beats["ask advisors"], "end": beats["ask drafts"]}),
     ("05", {"kind": "clip", "start": beats["ask drafts"], "end": beats["timeline page"] - 0.3}),
-    ("06", {"kind": "clip", "start": beats["timeline page"], "end": beats["end"]}),
-    ("07", {"kind": "stills", "images": [EV / "neatlogs/02-run5-trace-tree.jpg", EV / "neatlogs/05-run1-json-error-in-trace.jpg"]}),
-    ("08", {"kind": "stills", "images": [EV / "neatlogs/04-execution-failed-flagged-spans.jpg"]}),
-    ("09", {"kind": "stills", "images": [OUT / "entire-still.png"]}),
-    ("10", {"kind": "stills", "images": [EV / "cfo-ai/03-financial-outlook-funding-gap.jpg", EV / "cfo-ai/01-assumptions-page.jpg"]}),
-    ("11", {"kind": "clip", "start": beats["landing hero"], "end": beats["landing modules"]}),
+    ("06", {"kind": "clip", "start": beats["timeline page"], "end": beats["interview start"] - 0.3}),
+    ("07", {"kind": "clip", "start": beats["interview start"], "end": beats["offers page"] - 0.3}),
+    ("08", {"kind": "stills", "images": [EV / "neatlogs/02-run5-trace-tree.jpg", EV / "neatlogs/05-run1-json-error-in-trace.jpg"]}),
+    ("09", {"kind": "stills", "images": [EV / "neatlogs/04-execution-failed-flagged-spans.jpg"]}),
+    ("10", {"kind": "stills", "images": [OUT / "entire-still.png"]}),
+    ("11", {"kind": "stills", "images": [EV / "cfo-ai/03-financial-outlook-funding-gap.jpg", EV / "cfo-ai/01-assumptions-page.jpg"]}),
+    ("12", {"kind": "clip", "start": beats["offers page"], "end": beats["end"]}),
 ]
 
 parts: list[Path] = []
@@ -116,7 +118,7 @@ inputs = ["-i", str(OUT / "video_only.mp4")]
 fl, mix = [], ""
 for i, (nid, s) in enumerate(starts):
     inputs += ["-i", str(D / "tts" / f"{nid}.wav")]
-    fl.append(f"[{i + 1}:a]aresample=48000,adelay={int(s * 1000)}|{int(s * 1000)}[a{i}]"); mix += f"[a{i}]"
+    fl.append(f"[{i + 1}:a]aresample=48000,atempo={TEMPO},adelay={int(s * 1000)}|{int(s * 1000)}[a{i}]"); mix += f"[a{i}]"
 style = "FontName=Helvetica,FontSize=15,PrimaryColour=&H00FFFFFF,OutlineColour=&H66000000,BackColour=&H66000000,BorderStyle=4,Outline=0,Shadow=0,MarginV=22,Alignment=2"
 fc = ";".join(fl) + f";{mix}amix=inputs={len(starts)}:normalize=0,alimiter=limit=0.9[aout];[0:v]subtitles={OUT / 'subs.srt'}:force_style='{style}'[vout]"
 subprocess.run([F, "-loglevel", "error", "-y", *inputs, "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]",

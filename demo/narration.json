@@ -5,42 +5,46 @@
  },
  {
   "id": "02",
-  "text": "Six modules, one conversation: find programs, check requirements, assess advisors, assemble materials, support the process, track signals and decide offers. Each is a page you can manage, and things the agent does for you in chat."
+  "text": "Six modules, one conversation: find programs, check requirements, assess advisors, assemble materials, support the process, interview and decide. Each is a page you can manage, and things the agent does for you."
  },
  {
   "id": "03",
-  "text": "Inside, HiOffer opens with a brief: three programs, eight verified advisors, nine to-dos due this month, and what to do next. The agent is ongoing, not just reactive."
+  "text": "Each applicant has a workspace behind an invite code. Inside, HiOffer opens with a brief: three programs, eight verified advisors, nine to-dos due this month, and what to do next."
  },
  {
   "id": "04",
-  "text": "Ask for the best-fit advisors at UW. The agent calls its tools, then answers with a card. Yulia Tsvetkov: identity anchored by two sources, recent papers verified on OpenAlex, and whether she says she is taking students."
+  "text": "Ask for the best-fit advisors at UW. The agent calls its tools, then answers with a card: identity anchored by two sources, recent papers verified on OpenAlex, and whether she says she is taking students."
  },
  {
   "id": "05",
-  "text": "Ask for the drafts. A statement within the limit, a fit paragraph per advisor, an outreach email each. Every sentence is tagged back to the applicant's files or a verified paper, and a verifier has checked them. You copy. HiOffer never sends."
+  "text": "Ask for the drafts: a statement within the limit, a fit paragraph per advisor, an outreach email each. Every sentence is tagged to the applicant's files or a verified paper, and every cited paper is re-checked on OpenAlex. You copy. HiOffer never sends."
  },
  {
   "id": "06",
-  "text": "The timeline holds what only a human can do: email each advisor, remind recommenders, pay and submit, dated from the official deadlines. Offers are compared with visible weights. Decision support, not a decision."
+  "text": "The timeline holds what only a human can do, dated from the official deadlines. Programs are also places: climate from Open-Meteo, four rankings, and living notes labelled as general knowledge, on a map."
  },
  {
   "id": "07",
-  "text": "Every run is one neatlogs trace: a span per sub-agent and per tool call, with tokens and latency. Run one died on a malformed JSON reply; the trace shows the exact error. In run three the verifier caught the writer inventing a paper, and the trace led to the real bug: my OpenAlex filter had dropped the professor's real papers."
+  "text": "And a mock interview. A stand-in professor asks what this advisor would plausibly ask, from your materials and their papers; you answer out loud. Each answer gets what worked, what to improve, and the interviewer's impression moves up or down."
  },
  {
   "id": "08",
-  "text": "A neatlogs detection then caught a connector span failing silently inside run five. Fixed the same hour. Pruning old tool results halved input tokens per call."
+  "text": "Every run is one neatlogs trace: a span per sub-agent and per tool call, with tokens and latency. Run one died on a malformed JSON reply; the trace shows the exact error. In run three the verifier caught the writer inventing a paper, and the trace led to the real bug in my OpenAlex filter."
  },
  {
   "id": "09",
-  "text": "Entire recorded every coding session behind every commit: twenty-eight checkpoints in a day. Checkpoint explain shows the intent and the files; entire why traces one line of code back to the conversation that wrote it."
+  "text": "A neatlogs detection then caught a connector span failing silently inside run five. Fixed the same hour. Pruning old tool results halved input tokens; a full program run now costs eighty-three cents."
  },
  {
   "id": "10",
-  "text": "Pricing comes from the traces: about two dollars of model time per program. In cfo.ai, a forty-nine dollar season pass needs cost under nineteen sixty for a sixty percent margin. One surprise: with sales peaking in autumn, a hundred-fifty-thousand-dollar raise runs out of cash before year two's peak, while bootstrapping needs a nine-hundred-dollar bridge."
+  "text": "Entire recorded every coding session behind every commit: more than fifty checkpoints in two days. Checkpoint explain shows the intent and the files; entire why traces one line back to the conversation that wrote it."
  },
  {
   "id": "11",
+  "text": "Pricing comes from the traces. In cfo.ai, a forty-nine dollar season pass needs cost under nineteen sixty for a sixty percent margin; we measure eighty-three cents per program. And one surprise: with sales peaking in autumn, a hundred-fifty-thousand-dollar raise runs out of cash before year two's peak."
+ },
+ {
+  "id": "12",
   "text": "Everything is public: the repo, the build log with every failure, the traces, the plan. HiOffer, built in public for neatHack."
  }
 ]
