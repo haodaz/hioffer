@@ -44,11 +44,13 @@ It will not pretend to know what the real interview holds. It just makes you say
 
 ## 5 · Sun evening — stress test + video v2
 
-Stress test: a second fictional applicant, different field, from zero to a complete package.
+Stress test #2: a third fictional applicant, a third field. HCI undergrad, Cornell Information Science, pages the agent had never seen.
 
-[What broke: …] [What the trace showed: …] [What I changed: …]
+Result: complete in one run, $0.94. 11 requirements quoted from official pages. 4 advisors, every identity anchored, papers OpenAlex-verified. One professor skipped, not guessed, after four lookups couldn't pin her name.
 
-Updated demo (v2): https://youtu.be/ANmeUiV3tBw
+What broke: the writer turned the CV's "2.3× more errors caught" into "tripled". The verifier refused the paraphrased number; draft v1 passed.
+
+All three applicants are live with demo codes. Updated demo (v2): https://youtu.be/ANmeUiV3tBw
 Every failure is in hackathon.md with the trace that found it. #neatHack
 
 ## 6 · Mon, submission window — the quote post (must be a quote of the official neatlogs post)
