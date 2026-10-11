@@ -9,7 +9,7 @@ type State = any;
 
 /** The home brief: who you are to the agent right now, and what is ongoing. Computed from server state only. */
 export function Brief({ state, lang, t, onAsk }: { state: State | null; lang: Lang; t: (k: Key) => string; onAsk: (q: string) => void }) {
-  const name = "Priya";
+  const name = (state?.applicant_name as string | undefined)?.split(" ")[0] ?? "there";
   const programs: State[] = state?.programs ?? [];
   const todos: State[] = state?.todos ?? [];
   const signals: State[] = state?.signals ?? [];

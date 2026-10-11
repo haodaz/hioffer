@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Icon } from "@/components/Icons";
 import type { Conversation } from "@/lib/conversations";
+import { getSession, setSession } from "@/lib/api";
 import type { Key, Lang } from "@/lib/i18n";
 
 export const NAV = ["programs", "advisors", "materials", "timeline", "signals", "offers", "interview"] as const;
@@ -75,7 +76,12 @@ export function Shell({
           ))}
         </div>
         <div className="flex items-center justify-between border-t border-line px-5 py-3 text-xs text-muted">
-          <span>Priya · demo</span>
+          <span className="truncate">
+            {getSession()?.name ?? "—"}{" "}
+            <button className="text-brand hover:underline" onClick={() => { setSession(null); router.push("/login"); }}>
+              · {t("switchApplicant")}
+            </button>
+          </span>
           <button className="chip" onClick={() => setLang(lang === "en" ? "zh" : "en")}>
             {lang === "en" ? "中文" : "EN"}
           </button>

@@ -6,7 +6,43 @@ export const API =
   (typeof window !== "undefined" && !["localhost", "127.0.0.1"].includes(window.location.hostname)
     ? HOSTED_API
     : "http://localhost:8000");
-export const APPLICANT = process.env.NEXT_PUBLIC_APPLICANT ?? "priya";
+/** Session = invite code + applicant id, kept in the browser. No session: the app pages send you to /login. */
+export type Session = { applicant: string; name: string; code: string };
+const SKEY = "hioffer.session";
+export function getSession(): Session | null {
+  try {
+    const raw = localStorage.getItem(SKEY);
+    return raw ? (JSON.parse(raw) as Session) : null;
+  } catch {
+    return null;
+  }
+}
+export function setSession(s: Session | null) {
+  try {
+    if (s) localStorage.setItem(SKEY, JSON.stringify(s));
+    else localStorage.removeItem(SKEY);
+  } catch {}
+}
+function who(): { id: string; headers: Record<string, string> } {
+  const s = getSession();
+  return { id: s?.applicant ?? "priya", headers: { "content-type": "application/json", "X-Invite": s?.code ?? "" } };
+}
+
+export async function login(code: string): Promise<Session> {
+  const r = await fetch(`${API}/api/login`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ code }) });
+  if (!r.ok) throw new Error(r.status === 401 ? "unknown code" : `HTTP ${r.status}`);
+  const s = (await r.json()) as Session;
+  setSession(s);
+  return s;
+}
+
+export async function createApplicant(body: { name: string; files: { name: string; content: string }[]; programs: Record<string, string>[] }): Promise<Session> {
+  const r = await fetch(`${API}/api/applicants`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const s = (await r.json()) as Session;
+  setSession(s);
+  return s;
+}
 
 export type Card = { kind: string } & Record<string, unknown>;
 export type Event =
@@ -19,24 +55,27 @@ export type Event =
   | { type: "error"; message: string };
 
 export async function getState() {
-  const r = await fetch(`${API}/api/applicants/${APPLICANT}/state`, { cache: "no-store" });
+  const w = who();
+  const r = await fetch(`${API}/api/applicants/${w.id}/state`, { cache: "no-store", headers: w.headers });
   if (!r.ok) throw new Error(`state ${r.status}`);
   return r.json();
 }
 
 export async function upsertTodo(todo: Record<string, unknown>) {
-  const r = await fetch(`${API}/api/applicants/${APPLICANT}/todos`, {
+  const w = who();
+  const r = await fetch(`${API}/api/applicants/${w.id}/todos`, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: w.headers,
     body: JSON.stringify(todo),
   });
   return r.json();
 }
 
 export async function addSignal(sig: Record<string, unknown>) {
-  const r = await fetch(`${API}/api/applicants/${APPLICANT}/signals`, {
+  const w = who();
+  const r = await fetch(`${API}/api/applicants/${w.id}/signals`, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: w.headers,
     body: JSON.stringify(sig),
   });
   return r.json();
@@ -49,9 +88,10 @@ export async function chat(
   lang: string,
   onEvent: (e: Event) => void,
 ) {
-  const r = await fetch(`${API}/api/applicants/${APPLICANT}/chat`, {
+  const w = who();
+  const r = await fetch(`${API}/api/applicants/${w.id}/chat`, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: w.headers,
     body: JSON.stringify({ message, history, lang }),
   });
   if (!r.ok || !r.body) {
@@ -81,4 +121,10 @@ export async function chat(
       }
     }
   }
+}
+
+/** Fetch helper for applicant routes used by components (interview, places). */
+export async function apiPost(path: string, body: unknown): Promise<Response> {
+  const w = who();
+  return fetch(`${API}/api/applicants/${w.id}${path}`, { method: "POST", headers: w.headers, body: JSON.stringify(body) });
 }

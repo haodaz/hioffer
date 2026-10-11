@@ -4,7 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import { PanelContent, type Tab } from "@/components/Panels";
 import { NAV, Shell } from "@/components/Shell";
-import { getState } from "@/lib/api";
+import { getSession, getState } from "@/lib/api";
 import { newConversation, useConversations } from "@/lib/conversations";
 import { useLang } from "@/lib/i18n";
 
@@ -28,7 +28,10 @@ function TabPage() {
   const refresh = useCallback(() => {
     getState().then(setState).catch(() => setState(null));
   }, []);
-  useEffect(refresh, [refresh]);
+  useEffect(() => {
+    if (!getSession()) { router.replace("/login"); return; }
+    refresh();
+  }, [refresh, router]);
 
   const valid = (NAV as readonly string[]).includes(tab) ? (tab as Tab) : "programs";
   const go = (q: string) => router.push(`/app?q=${encodeURIComponent(q)}`);

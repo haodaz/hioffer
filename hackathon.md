@@ -165,6 +165,16 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   which the first version of this check got wrong for a minute). Tested: 5/5 real UW citations pass; a wrong
   id with a real title fails; a real id with an invented title fails. Cached, so it costs nothing on re-runs.
 
+### 2026-10-11 — accounts and multiple applicants (morning)
+
+- An applicant is a folder of materials plus a workspace; an **invite code** is the only credential (no
+  password system in a 48-hour build). Two fixed demo codes (`PRIYA-DEMO`, `ARJUN-DEMO`) open the two
+  fictional applicants; `/new` creates a workspace from pasted or uploaded materials and a program list,
+  returns a fresh code, and calls no model until the agent is asked to run. Every applicant route now
+  requires the matching code (`X-Invite` header; 401 otherwise). The home brief greets the applicant by the
+  name in their profile; the sidebar shows who is signed in and lets you switch. User-created applicants live
+  in `data/` (git-ignored); the demo snapshot stays in `examples/`.
+
 ### 2026-10-10 — business plan and cost
 
 - **cfo.ai** (public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR; inputs `business/cfo-ai-inputs.md`, results

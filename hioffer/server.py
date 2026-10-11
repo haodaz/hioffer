@@ -14,7 +14,7 @@ import threading
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
@@ -22,6 +22,7 @@ from pydantic import BaseModel
 from datetime import date
 
 from . import config
+from .accounts import applicant_dir, create_applicant, profile_name, resolve
 from .agents.decider import compare_offers
 from .agents.interview import evaluate_answer, plan_interview
 from .agents.places import build_places, build_rankings
@@ -37,10 +38,63 @@ app = FastAPI(title="hioffer")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
-def _ws(applicant: str) -> Workspace:
-    if not (APPLICANTS_DIR / applicant).exists():
+def _dir(applicant: str) -> Path:
+    d = applicant_dir(applicant)
+    if not d:
         raise HTTPException(404, "unknown applicant")
+    return d
+
+
+def _ws(applicant: str) -> Workspace:
+    _dir(applicant)
     return Workspace(WORKSPACE_DIR / applicant)
+
+
+def require_invite(applicant: str, x_invite: str | None = Header(default=None)) -> str:
+    """Every applicant route needs the invite code that maps to that applicant."""
+    if resolve(x_invite or "") != applicant:
+        raise HTTPException(401, "invite code does not match this applicant")
+    return applicant
+
+
+class LoginIn(BaseModel):
+    code: str
+
+
+@app.post("/api/login")
+def login(body: LoginIn) -> dict:
+    applicant = resolve(body.code)
+    if not applicant:
+        raise HTTPException(401, "unknown invite code")
+    return {"applicant": applicant, "name": profile_name(applicant), "code": body.code.strip().upper()}
+
+
+class ApplicantFile(BaseModel):
+    name: str
+    content: str
+
+
+class ProgramIn(BaseModel):
+    name: str
+    short: str | None = None
+    institution: str
+    department: str | None = None
+    admissions_url: str | None = None
+    faculty_url: str | None = None
+
+
+class CreateIn(BaseModel):
+    name: str
+    files: list[ApplicantFile] = []
+    programs: list[ProgramIn] = []
+
+
+@app.post("/api/applicants")
+def create(body: CreateIn) -> dict:
+    """Create an applicant from pasted materials; returns the invite code. No model calls."""
+    if not body.name.strip():
+        raise HTTPException(400, "name required")
+    return create_applicant(body.name.strip(), [f.model_dump() for f in body.files], [p.model_dump(exclude_none=True) for p in body.programs])
 
 
 def _latest(ws: Workspace, key: str, prefix: str) -> Any:
@@ -53,7 +107,7 @@ def _latest(ws: Workspace, key: str, prefix: str) -> Any:
 
 def build_state(applicant: str) -> dict:
     ws = _ws(applicant)
-    programs_cfg = load_programs(APPLICANTS_DIR / applicant, ws.root)
+    programs_cfg = load_programs(_dir(applicant), ws.root)
     library = ws.load("library", {"items": []})
     programs = []
     for p in programs_cfg:
@@ -72,6 +126,7 @@ def build_state(applicant: str) -> dict:
         )
     return {
         "applicant": applicant,
+        "applicant_name": profile_name(applicant),
         "library": [{k: v for k, v in i.items() if k != "text"} for i in library["items"]],
         "programs": programs,
         "todos": ws.load("todos", []),
@@ -89,10 +144,10 @@ def build_state(applicant: str) -> dict:
 
 
 @app.post("/api/applicants/{applicant}/rankings")
-def refresh_rankings(applicant: str) -> dict:
+def refresh_rankings(applicant: str, _auth: str = Depends(require_invite)) -> dict:
     """Approximate rankings for every institution in the program list and the latest recommendations."""
     ws = _ws(applicant)
-    names = [p["institution"] for p in load_programs(APPLICANTS_DIR / applicant, ws.root)]
+    names = [p["institution"] for p in load_programs(_dir(applicant), ws.root)]
     rec = ws.load("recommendations") or {}
     names += [it["institution"] for items in rec.get("tiers", {}).values() for it in items]
     rankings = build_rankings(list(dict.fromkeys(names)), ws.load("rankings", {}))
@@ -101,10 +156,10 @@ def refresh_rankings(applicant: str) -> dict:
 
 
 @app.post("/api/applicants/{applicant}/places")
-def refresh_places(applicant: str) -> dict:
+def refresh_places(applicant: str, _auth: str = Depends(require_invite)) -> dict:
     """Fill in location, climate and living notes for programs that lack them (cheap; cached)."""
     ws = _ws(applicant)
-    programs = load_programs(APPLICANTS_DIR / applicant, ws.root)
+    programs = load_programs(_dir(applicant), ws.root)
     places = build_places(programs, ws.load("places", {}), log=lambda s: None)
     ws.save("places", places)
     return places
@@ -121,13 +176,13 @@ def _interview_key(program: str, advisor: str) -> str:
 
 
 @app.post("/api/applicants/{applicant}/interview/plan")
-def interview_plan(applicant: str, body: InterviewStart) -> dict:
+def interview_plan(applicant: str, body: InterviewStart, _auth: str = Depends(require_invite)) -> dict:
     ws = _ws(applicant)
     key = _interview_key(body.program, body.advisor)
     cached = ws.load(key)
     if cached:
         return cached
-    programs = load_programs(APPLICANTS_DIR / applicant, ws.root)
+    programs = load_programs(_dir(applicant), ws.root)
     prog = next((p for p in programs if p["name"] == body.program), None)
     if not prog:
         raise HTTPException(404, "unknown program")
@@ -153,7 +208,7 @@ MAX_EVALS = 16
 
 
 @app.post("/api/applicants/{applicant}/interview/answer")
-def interview_answer(applicant: str, body: InterviewAnswer) -> dict:
+def interview_answer(applicant: str, body: InterviewAnswer, _auth: str = Depends(require_invite)) -> dict:
     ws = _ws(applicant)
     key = _interview_key(body.program, body.advisor)
     plan = ws.load(key)
@@ -181,7 +236,7 @@ class Signal(BaseModel):
 
 
 @app.post("/api/applicants/{applicant}/signals")
-def add_signal(applicant: str, sig: Signal) -> list:
+def add_signal(applicant: str, sig: Signal, _auth: str = Depends(require_invite)) -> list:
     ws = _ws(applicant)
     signals = ws.load("signals", [])
     rec = sig.model_dump()
@@ -203,7 +258,7 @@ class Offer(BaseModel):
 
 
 @app.post("/api/applicants/{applicant}/offers")
-def upsert_offer(applicant: str, offer: Offer) -> list:
+def upsert_offer(applicant: str, offer: Offer, _auth: str = Depends(require_invite)) -> list:
     ws = _ws(applicant)
     offers = ws.load("offers", [])
     rec = offer.model_dump()
@@ -214,7 +269,7 @@ def upsert_offer(applicant: str, offer: Offer) -> list:
 
 
 @app.get("/api/applicants/{applicant}/state")
-def get_state(applicant: str) -> dict:
+def get_state(applicant: str, _auth: str = Depends(require_invite)) -> dict:
     return build_state(applicant)
 
 
@@ -227,7 +282,7 @@ class Todo(BaseModel):
 
 
 @app.post("/api/applicants/{applicant}/todos")
-def upsert_todo(applicant: str, todo: Todo) -> list:
+def upsert_todo(applicant: str, todo: Todo, _auth: str = Depends(require_invite)) -> list:
     ws = _ws(applicant)
     todos = ws.load("todos", [])
     if todo.id:
@@ -247,10 +302,10 @@ class ChatIn(BaseModel):
 
 
 @app.post("/api/applicants/{applicant}/chat")
-async def chat(applicant: str, body: ChatIn):
+async def chat(applicant: str, body: ChatIn, _auth: str = Depends(require_invite)):
     _ws(applicant)
     q: queue.Queue = queue.Queue()
-    agent = ChatAgent(applicant, APPLICANTS_DIR / applicant, WORKSPACE_DIR / applicant, emit=q.put, lang=body.lang)
+    agent = ChatAgent(applicant, _dir(applicant), WORKSPACE_DIR / applicant, emit=q.put, lang=body.lang)
 
     def run():
         try:

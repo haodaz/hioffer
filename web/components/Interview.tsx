@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Cards";
 import { ProfessorAvatar } from "@/components/ProfessorAvatar";
-import { API, APPLICANT } from "@/lib/api";
+import { apiPost } from "@/lib/api";
 import type { Key, Lang } from "@/lib/i18n";
 
 type Q = { id: string; stage: string; question: string; why: string; strong_answer_includes: string[] };
@@ -95,7 +95,7 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
 
   async function start() {
     setError(null); setLoading(true);
-    const r = await fetch(`${API}/api/applicants/${APPLICANT}/interview/plan`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ program, advisor }) });
+    const r = await apiPost("/interview/plan", { program, advisor });
     setLoading(false);
     if (!r.ok) { setError(`HTTP ${r.status}`); return; }
     const p: Plan = await r.json();
@@ -168,7 +168,7 @@ export function Interview({ state, lang, t }: { state: State; lang: Lang; t: (k:
     setLines((l) => [...l, { role: "you", text }]);
     setPhase("thinking"); setCaption(L ? "…" : "…");
     const q = p.questions[idxRef.current];
-    const r = await fetch(`${API}/api/applicants/${APPLICANT}/interview/answer`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ program, advisor, question_id: q.id, answer: text }) });
+    const r = await apiPost("/interview/answer", { program, advisor, question_id: q.id, answer: text });
     if (!r.ok) { setPhase("idle"); setError(r.status === 429 ? t("limitReached") : `HTTP ${r.status}`); return; }
     const ev: Eval = await r.json();
     setEvals((x) => [...x, ev]);

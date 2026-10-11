@@ -19,3 +19,6 @@ workspace/
 .cache/
 demo/out/
 demo/tts/
+
+# applicants created through the app (materials are personal)
+data/

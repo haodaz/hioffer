@@ -78,7 +78,7 @@ export default function Landing() {
           <button className="chip" onClick={() => setLang(lang === "en" ? "zh" : "en")}>
             {lang === "en" ? "中文" : "EN"}
           </button>
-          <Link href="/app" className="btn">
+          <Link href="/login" className="btn">
             {c.cta}
           </Link>
         </div>
@@ -93,7 +93,7 @@ export default function Landing() {
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{c.pitch}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/app" className="btn">
+            <Link href="/login" className="btn">
               {c.cta} <Icon.arrow size={16} />
             </Link>
             <a href="#modules" className="btn-ghost">

@@ -1,12 +1,12 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import { CardView } from "@/components/Cards";
 import { Chat, cardTitle } from "@/components/Chat";
 import { Shell } from "@/components/Shell";
 import { Icon } from "@/components/Icons";
-import { getState, type Card } from "@/lib/api";
+import { getSession, getState, type Card } from "@/lib/api";
 import { newConversation, useConversations, type Conversation, type Msg } from "@/lib/conversations";
 import { useLang } from "@/lib/i18n";
 
@@ -21,6 +21,7 @@ export default function Page() {
 function ChatPage() {
   const [lang, setLang, t] = useLang();
   const params = useSearchParams();
+  const router = useRouter();
   const { list, save } = useConversations();
   const [conv, setConv] = useState<Conversation>(() => newConversation());
   const [pane, setPane] = useState<Card | null>(null);
@@ -29,7 +30,10 @@ function ChatPage() {
   const refresh = useCallback(() => {
     getState().then(setState).catch(() => setState(null));
   }, []);
-  useEffect(refresh, [refresh]);
+  useEffect(() => {
+    if (!getSession()) { router.replace("/login"); return; }
+    refresh();
+  }, [refresh, router]);
   // `?q=` lets the landing page, the panel pages and demo links open the chat with a first question sent.
   const seed = params.get("q") ?? undefined;
 
