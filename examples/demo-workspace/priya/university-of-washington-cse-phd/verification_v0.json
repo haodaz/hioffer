@@ -2,5 +2,11 @@
   "passed": true,
   "issues": [],
   "writer_issues": [],
-  "applicant_todos": []
+  "applicant_todos": [],
+  "repaired_citations": [],
+  "openalex_rechecked": {
+    "papers": 5,
+    "of": 5,
+    "at": "2026-10-11T02:17+00:00"
+  }
 }

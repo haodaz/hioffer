@@ -100,6 +100,125 @@
       },
       "feedback": "You spent almost your entire answer on dataset construction details the professor didn't ask about, then landed on a single confounder ('code-switched sentences are also slightly longer') without doing any ablation to investigate it—that's not an isolation attempt, it's an admission of a gap. Tsvetkov's question explicitly asked about tokenization versus data scarcity versus other causes, and you never touched tokenizer fertility, error-type analysis, or training-data hypotheses, which are the exact levers a NLP researcher would be expected to reach for first.",
       "follow_up": "If you ran a token-fertility analysis on your 2,400 sentences and found that code-switched inputs fragment into, say, 40% more subword tokens than monolingual Tamil, how would you then disentangle whether the performance drop is driven by that fragmentation versus the model simply never seeing Tamil–English mixed text during pretraining?"
+    },
+    {
+      "question_id": "q1",
+      "answer": "My background is Tamil-first: I grew up switching between Tamil and English inside one sentence, and my first paper showed open 7B models lose 18 to 26 points exactly there. So for me 'NLP for All' is concrete: the gap is not only data, it is tokenizers that fragment Indic scripts and benchmarks translated from English that never contain code-switching. Those two are what I would want to attack first.",
+      "scores": {
+        "fit": 3,
+        "depth": 3,
+        "clarity": 4
+      },
+      "impression_delta": 1,
+      "impression_note": "Personal grounding and a real number, but no lab awareness",
+      "good": [
+        "Concrete quantitative anchor: '18 to 26 points exactly there' signals you have real results, not just opinions",
+        "Correctly names two structural gaps—tokenizer fragmentation and translated-from-English benchmarks—not just 'more data'",
+        "The Tamil-first framing makes the motivation feel lived, not performed"
+      ],
+      "improve": [
+        "Name Tsvetkov's actual work: reference MAGNET or Voices Unheard by name and draw the explicit analogy—'the tokenization fairness argument you made for Yorùbá applies directly to Tamil's agglutinative morphology'—this is the single biggest miss",
+        "Add the third gap you skipped: labeled code-switching data scarcity; saying 'those two are what I'd attack first' implies you know a third but chose not to mention it, which reads as shallow preparation",
+        "Cut 'exactly there'—it adds no precision and sounds filler; replace that breath with one sentence on what method you used to expose the 18-26 point drop"
+      ],
+      "model_answer_hint": "A strong answer would have connected the Tamil code-switching degradation finding to MAGNET's tokenization-fairness framework, named the missing culturally grounded eval sets and code-switching corpora as parallel unsolved problems to those Tsvetkov's lab faced with Yorùbá, and proposed one concrete next step that bridges both contexts.",
+      "feedback": "You've got a real result and you know what the structural problems are—that's a better start than most. But I'm sitting here wondering whether you've actually read our lab's papers or just read our mission statement, because you never once mentioned how what we've already built might connect to what you want to do next.",
+      "follow_up": "If you were to adapt MAGNET's tokenization-fairness objective specifically for Tamil's agglutinative morphology, what would you change about the loss function?"
+    },
+    {
+      "question_id": "q2",
+      "answer": "I think tokenization is the main driver in my data. Code-switched Tamil-English fragments into roughly forty percent more subword tokens than monolingual Tamil, and across the 2,400 sentences the per-sentence drop correlates with token fertility at about 0.6. What I have not done is separate it from data scarcity: the clean test is to fine-tune on the same code-switched data under two tokenizers and see how much of the gap closes. That is the first experiment I would run.",
+      "scores": {
+        "fit": 3,
+        "depth": 2,
+        "clarity": 4
+      },
+      "impression_delta": 0,
+      "impression_note": "Promising start, but stopped before the hard questions",
+      "good": [
+        "Concrete fertility number ('forty percent more subword tokens') and correlation (0.6) shows the answer is grounded in actual data, not speculation",
+        "Correctly identifies the confound and proposes a clean ablation: 'fine-tune on the same code-switched data under two tokenizers'",
+        "Answer is tight and doesn't waste time on hedging"
+      ],
+      "improve": [
+        "No error analysis at all—break down the 18-26 point drop by error type (NER confusion, morphological agreement, transliteration failures) to show you looked past aggregate metrics",
+        "Missing the link to script-mixing literature (e.g., Kannada/Dravidian tokenizer work)—name it explicitly to signal broader awareness of the field Tsvetkov works in",
+        "Acknowledge that correlation 0.6 between fertility and drop is suggestive but not causal; a sentence-level regression doesn't rule out the possibility that harder sentences are both longer *and* code-switched"
+      ],
+      "model_answer_hint": "A strong answer would have combined the fertility correlation with an error-type breakdown, acknowledged the confound between input length and code-switching density, connected to prior work on subword fragmentation in Dravidian scripts, and named at least one limitation of the correlation-based evidence before proposing the controlled fine-tuning ablation.",
+      "feedback": "The fertility correlation is a good start, but correlation between token count and performance drop doesn't tell me whether it's the tokenizer or just that code-switched sentences are structurally harder. I want to hear what the actual errors looked like—was the model hallucinating English names, losing Tamil morphology, or something else entirely?",
+      "follow_up": "When you looked at the sentences where the drop was worst, what type of error was most common—and did those sentences share any structural feature beyond high"
+    },
+    {
+      "question_id": "q3",
+      "answer": "The 6,000 Kannada tokens were chosen by training a sentencepiece model on 200 megabytes of Kannada web text and keeping the pieces with the highest frequency that were not already in the base vocabulary, with their embeddings initialised as the mean of the base subwords they replaced. The 41 percent fewer tokens is the easy part; the 3.4 F1 points came only after that initialisation, random init actually hurt for the first epoch. Where I would push next is doing this on a fairness criterion like MAGNET rather than frequency alone.",
+      "scores": {
+        "fit": 3,
+        "depth": 3,
+        "clarity": 4
+      },
+      "impression_delta": -1,
+      "impression_note": "Sidesteps vocabulary-size ablation; sounds post-hoc rather than principled",
+      "good": [
+        "Concrete initialization detail: 'mean of the base subwords they replaced' shows real implementation knowledge",
+        "The convergence observation — 'random init actually hurt for the first epoch' — is a specific, credible empirical finding",
+        "Pivoting to MAGNET shows awareness of equity issues in tokenization"
+      ],
+      "improve": [
+        "Never explained *why 6,000*: mention that you ran ablations over 2k/4k/6k/8k and 6k was the knee in the fertility-vs-parameter-cost curve, or admit you didn't and that's a gap",
+        "Cut the MAGNET pivot — it's a distraction here; save it for a 'future work' question; instead address the embedding-matrix cost (6k new tokens × hidden dim = X million extra parameters and what that meant for your budget)",
+        "Acknowledge generalization limits: the interviewer implicitly asked whether 3.4 F1 holds beyond QA — one sentence on that would have closed the loop"
+      ],
+      "model_answer_hint": "A strong answer would have described an ablation over 2k/4k/6k/8k token additions showing 6k as the inflection point where fertility gain flattens relative to the ~19M extra embedding parameters, confirmed subword-averaging initialization halved convergence time versus random init, and honestly flagged that gains on QA may not transfer to generation tasks or to multilingual settings covering the full Dravidian family.",
+      "feedback": "You've clearly run this experiment, but right now the 6,000 number sounds arbitrary — I don't see the decision logic. Walk me through what changed between 4,000 and 6,000 tokens that made you stop there, because that's what tells me you understand the trade-off rather than got lucky."
+    },
+    {
+      "question_id": "q4",
+      "answer": "I read context-aware decoding as contrasting the output distribution with and without the retrieved context and amplifying the difference, so the model leans on evidence instead of its prior. For Indian-language health information that matters because the prior is weak and the retrieved document is often the only correct source. What I am unsure about is whether the contrast is stable when the context is in Tamil and the model's prior is mostly English; I would want to measure faithfulness separately for same-language and cross-language context.",
+      "scores": {
+        "fit": 3,
+        "depth": 2,
+        "clarity": 4
+      },
+      "impression_delta": -1,
+      "impression_note": "Shows reading but stops before proposing real experiment",
+      "good": [
+        "Correctly describes the CAD mechanism ('contrasting the output distribution with and without the retrieved context') — shows actual paper comprehension",
+        "Identifies a genuinely interesting cross-lingual instability: 'whether the contrast is stable when the context is in Tamil and the model's prior is mostly English'",
+        "Grounds it concretely in Indian-language health information, which is a reasonable motivating domain"
+      ],
+      "improve": [
+        "You left the experimental design at 'I would want to measure faithfulness separately' — name the actual setup: e.g., retrieve Tamil MedQA-style passages, swap in conflicting parametric facts, measure how often the model reverts to its English prior across resource levels",
+        "You never distinguished the two distinct failure modes: low-resource context may cause under-parsing (model ignores Tamil context) vs. over-reliance on noisy retrieved text — naming both shows you've thought past the obvious direction",
+        "Connect to the evaluation gap: translated benchmarks won't catch culturally-specific correct answers; say you need natively-authored Tamil/Kannada gold labels to measure faithfulness meaningfully, or the metric is confounded"
+      ],
+      "model_answer_hint": "A strong answer would argue low-resource languages create two opposing failure modes (ignoring unparseable context vs. blindly copying noisy text), then sketch a concrete multilingual CAD evaluation using natively-authored conflicting-context probes in Tamil/Kannada with culturally appropriate gold answers — not translated English benchmarks.",
+      "feedback": "You understood the paper mechanically and flagged a real instability, but you stopped exactly where I needed you to go further — I want to know how you'd actually run that experiment and what would count as evidence. The health-information framing is a nice hook, but right now it's decoration rather than something driving your methodology.",
+      "follow_up": ""
+    },
+    {
+      "question_id": "q5",
+      "answer": "With new vocabulary, LoRA on attention alone is not enough because the new embedding rows start untrained. In my internship we made the new embedding rows and the output head trainable, kept LoRA for attention and MLP at rank 16, and trained in two stages: embeddings first on plain Kannada text, then everything on the QA data. That stabilised training and used about a third of the memory of full fine-tuning.",
+      "scores": {
+        "fit": 4,
+        "depth": 3,
+        "clarity": 4
+      },
+      "impression_delta": 1,
+      "impression_note": "Practical hybrid shown, but no initialization insight",
+      "good": [
+        "Correctly identifies the core problem: 'new embedding rows start untrained' — shows real understanding, not regurgitation",
+        "Hybrid approach (trainable embeddings + LoRA on attention/MLP) is exactly the right structural move",
+        "Two-stage curriculum (embeddings on plain text first, then task data) is a legitimate practical solution and shows hands-on experience"
+      ],
+      "improve": [
+        "Missing subword-averaging initialization entirely — mention that you can initialize new token embeddings as the mean of their constituent subword embeddings to dramatically reduce cold-start steps; cite Minixhofer et al. or similar",
+        "Rank 16 is stated without justification; briefly explain why you chose it (e.g., ablated ranks, or followed a baseline) — otherwise it sounds like a hyperparameter you just tried",
+        "You said 'output head' but didn't distinguish tied vs. untied weights; clarify whether you trained the unembedding matrix separately, as this matters for models like LLaMA vs. older GPT-2-style models"
+      ],
+      "model_answer_hint": "A strong answer would have added that new embedding rows can be initialized via subword-averaging of existing tokens (citing prior work like FOCUS or Minixhofer 2022), which makes the two-stage warm-up shorter and more principled, and would have noted that tied embeddings require special handling to avoid gradient conflicts.",
+      "feedback": "You nailed the structural fix — trainable embeddings plus LoRA is the right call, and the two-stage curriculum shows real engineering sense. What I didn't hear is how you initialize those new rows before you start training, because random init means those embeddings are noisy for potentially hundreds of steps.",
+      "follow_up": "If you initialized the new Kannada token embeddings as the average of their Unicode subword pieces from the existing vocabulary, how do you think that"
     }
   ]
 }
