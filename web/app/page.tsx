@@ -2,19 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { Icon } from "@/components/Icons";
 import demo from "@/lib/demo.json";
 import { useLang, type Lang } from "@/lib/i18n";
 
 const copy = {
   en: {
-    h1a: "Your PhD application,",
-    h1b: "run by an agent that shows its sources.",
+    h1a: "From school list to offer.",
+    h1b: "Carefully, with your AI.",
     pitch:
-      "Give HiOffer one goal. It finds programs worth applying to, reads each program's official pages, matches advisors on verified papers, tailors your statement and emails, and keeps your timeline. You send, pay and submit.",
+      "PhD applications are something you can do yourself — and now, with your AI. HiOffer is the trustworthy, meticulous agent that reads the official pages, finds the advisors who fit, writes with sources, rehearses the interview with you, and leaves the sending to you.",
     cta: "Open the live demo",
     cta2: "See the six modules",
-    proof: ["Every requirement with a quoted source", "Every paper verified on OpenAlex", "Every sentence traced to your files"],
+    proof: ["Nothing invented: every claim has a source", "Nothing missed: deadlines, letters, fees, all dated", "Nothing sent without you"],
     modulesTitle: "Six modules, one conversation",
     modulesSub: "Each module is a page you can manage by hand, and a set of things the agent does for you in chat.",
     builtTitle: "Built in public, measured honestly",
@@ -24,13 +25,13 @@ const copy = {
     sample: "Real output for the fictional demo applicant",
   },
   zh: {
-    h1a: "你的博士申请，",
-    h1b: "交给一个处处给出来源的 agent。",
+    h1a: "从选校到 offer。",
+    h1b: "细致、可信，和你的 AI 一起。",
     pitch:
-      "给 HiOffer 一个目标。它会找值得申请的项目、读每个项目的官方页面、按已验证的论文匹配导师、为每个项目定制你的陈述和套磁信，并帮你盯住时间线。发信、交费、提交由你来做。",
+      "博士申请可以自己做——现在，和你的 AI 一起。HiOffer 是一个可信赖、做事细致的助理：读官方页面、找真正匹配的导师、每句话带来源地写、陪你演练面试，把发送留给你。",
     cta: "打开在线演示",
     cta2: "看六个模块",
-    proof: ["每条要求附原文引用", "每篇论文经 OpenAlex 验证", "每句话可追溯到你的材料"],
+    proof: ["不编造：每条结论有来源", "不遗漏：截止、推荐信、费用都排好日期", "不代发：发送永远由你来"],
     modulesTitle: "六个模块，一场对话",
     modulesSub: "每个模块既是一个你可以手动管理的页面，也是 agent 在对话里替你做的一组事。",
     builtTitle: "公开构建，诚实度量",
@@ -108,10 +109,7 @@ export default function Landing() {
             ))}
           </ul>
         </div>
-        <div className="relative">
-          <div className="absolute inset-6 rounded-full bg-brand-soft blur-3xl" />
-          <Image src="/mascot-duo.png" alt="HiOffer: an applicant and her agent" width={760} height={800} priority className="relative mx-auto h-auto w-full max-w-md" />
-        </div>
+        <HeroCarousel lang={lang} />
       </section>
 
       <section id="modules" className="pt-10">
