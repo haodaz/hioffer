@@ -155,6 +155,16 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   verified papers, tagged sentences) held. What did not transfer: the home brief greets "Priya" by name and the
   demo workspace is single-applicant; multi-applicant state is the next structural step.
 
+### 2026-10-10 — a question from X changed the verifier (night)
+
+- The first reply to the build-in-public posts asked whether the verifier checks paper ids against OpenAlex
+  itself or trusts the scout. Honest answer at the time: the scout's tool wrapper captured what OpenAlex
+  returned and dropped anything else, and the verifier resolved citations against that captured set, but it
+  never re-queried OpenAlex. Now it does: every cited id is fetched again at verification time and must
+  match **both id and title** (existence alone proves nothing: almost any W-number resolves to some paper,
+  which the first version of this check got wrong for a minute). Tested: 5/5 real UW citations pass; a wrong
+  id with a real title fails; a real id with an invented title fails. Cached, so it costs nothing on re-runs.
+
 ### 2026-10-10 — business plan and cost
 
 - **cfo.ai** (public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR; inputs `business/cfo-ai-inputs.md`, results

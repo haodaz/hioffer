@@ -21,6 +21,20 @@ Return JSON: {"issues": [{"where": "sop|fit:<advisor>|email:<advisor>", "sentenc
 TAG = re.compile(r"\[(lib|paper|advisor):([^\]]+)\]")
 
 
+def _openalex_matches(work_id: str, title: str) -> bool:
+    """True if OpenAlex serves this id AND its title matches ours. Existence alone proves nothing: almost
+    any W-number resolves to some paper. Disk-cached; a network failure counts as unknown, not missing."""
+    from difflib import SequenceMatcher
+
+    from ..tools.scholar import _get
+
+    try:
+        got = (_get(f"/works/{work_id}", select="id,title").get("title") or "").lower()
+    except Exception as e:  # 404 -> missing; anything else -> do not block
+        return "404" not in str(e)
+    return SequenceMatcher(None, got, (title or "").lower()).ratio() >= 0.6
+
+
 @neatlogs.span(kind="GUARDRAIL", name="verifier")
 def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dict:
     issues: list[dict] = []
@@ -32,6 +46,13 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
     sop = materials["sop"]
     if sop.get("word_limit") and sop["word_count"] > sop["word_limit"]:
         issues.append({"check": "word_limit", "problem": f"SOP is {sop['word_count']} words, limit {sop['word_limit']}"})
+
+    # 1b. Re-check every cited paper id against OpenAlex itself (cached), independently of what the scout
+    #     captured during its run. A stale cache or a bad merge cannot slip through this way.
+    titles = {p["id"]: p.get("title", "") for a in advisors["advisors"] for p in a.get("papers", [])}
+    for pid in sorted(paper_ids):
+        if not _openalex_matches(pid, titles.get(pid, "")):
+            issues.append({"check": "openalex", "problem": f"paper {pid} does not match an OpenAlex record with that title", "fixable_by": "applicant"})
 
     # 2. Citation tags must resolve. A paper id that is one or two characters off from exactly one
     #    known id is a transcription slip, not a fabrication: repair it in place and record the fix.
