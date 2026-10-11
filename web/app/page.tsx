@@ -87,7 +87,7 @@ export default function Landing() {
 
       <section className="grid items-center gap-8 py-10 md:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-[44px] md:leading-[1.15]">
             {c.h1a}
             <br />
             <span className="text-brand">{c.h1b}</span>
