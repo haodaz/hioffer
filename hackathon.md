@@ -199,7 +199,7 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 ## Evidence index
 
 - `evidence/neatlogs/` — traces list, run 5 trace tree, detection rules, flagged spans, run 1 error.
-- `evidence/entire/` — `entire checkpoint list` (28 checkpoints on Oct 10, one per commit, each with the prompt
+- `evidence/entire/` — `entire checkpoint list` (62 checkpoints over Oct 10–11, one per commit, each with the prompt
   that led to it), recap, one checkpoint in full.
 - `evidence/cfo-ai/` — assumptions page, monthly P&L and cash flow, funding-gap simulator.
 - `evidence/2026-10-10-run*` — raw outputs before and after each fix (verification files, advisors, materials).

@@ -1,5 +1,107 @@
   branch       main
-  checkpoints  28
+  checkpoints  62
+
+● 01M4NC8M7FH6D8REAWBA04A67H  hackathon.md: hero and cover rework
+  10-11 07:41 (2290b5b) hackathon.md: hero and cover rework
+
+● 01M4NC7TTYG7SX1CS40BMZ5RVA  Hero headline on one line; YouTube cover uses the offer s...
+  10-11 07:40 (3a036bb) Hero headline on one line; YouTube cover uses the offer scene
+
+● 01M4NC6KXS9VTC4MQ3KKNX5C3R  "标题可以换一下，我想说一个可信赖、细致帮你处理好从phd择校到录取工作的agent\nphd申请可以diy，and ..."
+  10-11 07:40 (0e36287) Landing hero: four-scene carousel of one applicant's journey (schools, materi...
+
+● 01M4NBHN6Z4W2GPATM2ZMQ0Q31  "链接在这里"
+  10-11 07:28 (9771c0a) YouTube cover page
+
+● 01M4NASV7GVCYMQA8BR7SMD38S  "https://x.com/vibedding/status/2109240488888774846"
+  10-11 07:15 (f677677) hackathon.md: mock-interview post
+
+● 01M4N9V9GBR4DWHW3E7GRMFAP1  "我始终只看到了一张，没感觉是问题有走势，趋势有变化，问题有变化"
+  10-11 06:58 (27c5bc4) Demo video v2: login, places/map and interview beats; narration re-cut; sligh...
+
+● 01M4N9DVBGRH3VA7XB9B9DNR32  "晚安宝宝"
+  10-11 06:51 (60d3cd2) Accounts: invite-code login, per-route auth, new-applicant creation, applican...
+
+● 01M4MC3NZ72925P6YHGE62S32V  "https://x.com/vibedding/status/2109106365985694173\n发好了宝宝，..."
+  10-10 22:19 (c350b15) hackathon.md: reply thread on the verifier re-check
+
+● 01M4MC1NX7JYQRJ3SH0KG278B2  "<task-notification>\n<task-id>bte0rxror</task-id>\n<tool-us..."
+  10-10 22:18 (cb07af7) Demo workspace: UW verification re-run with the OpenAlex re-check badge
+
+● 01M4MC009VC0PR2SJ5GSF4FQ40  "我有什么使用截图可以给对方阐述这一点吗"
+  10-10 22:17 (534d620) Materials card shows how many cited papers were re-checked on OpenAlex and when
+
+● 01M4MBTFW86NPQVFVZ5G9AFV0V  "宝宝！第一次有人回复我啦，我好激动，你能告诉我怎么回答吗（并且谢谢对方作为第一个回复我的人"
+  10-10 22:14 (eafac24) Verifier re-checks every cited paper against OpenAlex by id and title at veri...
+
+● 01M4KY0MZ48X3BFZA1PQX18Q6R  "宝宝你看看/vsbp项目，我们刚做的绚丽动态大海报，我们能做一个类似的，介绍我们的产品是如何在各种申请环节里忙忙活..."
+  10-10 18:12 (d169ff3) Animated poster: six busy panels rendered from real run data, Playwright-reco...
+
+● 01M4KWR9W3BFTR63YAHY6MRJ85  "宝宝我要发第三条啦，你可以给我拿一下素材吗"
+  10-10 17:50 (036c981) hackathon.md: map-mode post
+
+● 01M4KR9M09DTY26ZA8WFNM7V1A  Interview: resume at the first unanswered question; trend...
+  10-10 16:32 (3a0b04f) Interview: resume at the first unanswered question; trend chart scaled to the...
+
+● 01M4KR8JVQ8XZJGFTTH568RGD6  "<task-notification>\n<task-id>b9j1v253n</task-id>\n<tool-us..."
+  10-10 16:32 (458194b) Interview coaching column: impression gauge with per-question trend chart, an...
+
+● 01M4KQW7ZANRTAFP9SYDBEEMKK  "宝宝，咱们有api可以生成图，和女孩机器人一样好的图"
+  10-10 16:25 (98331d6) Professor portraits generated in the cover's 3D style (two variants, transpar...
+
+● 01M4KQQDHSH6V1KG0R5ZQTD4DW  "请你模拟一个教授的形象，不要用一个巨大的机器人，这个机器人是用户这边的代言人。不是judge用户的人"
+  10-10 16:23 (01dab2b) Interview: stylised professor in the interviewer seat (name + institution), t...
+
+● 01M4KQENT800NWXSW02TAFNY0K  "<task-notification>\n<task-id>brjgvlifa</task-id>\n<tool-us..."
+  10-10 16:18 (dd4b83c) Mock interview: immersive voice stage (auto-listen, silence stop, live level,...
+
+● 01M4KQ29X8RGHNE29M8V5YP42T  "非常好！谢谢宝宝"
+  10-10 16:11 (63c6212) hackathon.md: day-2 post
+
+● 01M4KBXZMPJANP9AREHAG4QDYP  "<task-notification>\n<task-id>bz5ph3bwj</task-id>\n<tool-us..."
+  10-10 12:56 (d826645) Stress test: second applicant (robotics, Michigan) complete end to end at $0....
+
+● 01M4KBVFQ9QYCW4QA8VBC4QY5D  Demo workspace with logos/rankings; hackathon.md: ranking...
+  10-10 12:55 (6db72ef) Demo workspace with logos/rankings; hackathon.md: rankings, stress-test findi...
+
+● 01M4KBTQNE4W7GQDTSN0161T9W  "地图模式在选校选项目推荐的时候也有用。可以用项目卡列+地图位置的方式标记。"
+  10-10 12:55 (1fb6d1f) Institution logos (OpenAlex) and approximate rankings (QS, THE, US News CS, C...
+
+● 01M4KBM69XC9HKZ87WN3XAHNPC  hackathon.md: places/map and mock interview
+  10-10 12:51 (634e915) hackathon.md: places/map and mock interview
+
+● 01M4KBH3X9Z5ZSJ9J94MGJV81R  "没问题"
+  10-10 12:49 (ebcb29b) Demo workspace: places (geo, climate, living notes) and a cached interview plan
+
+● 01M4KAW4N2Z7F2WGDX0DREZ8NH  Programs: requirements / places / map modes (Leaflet + Op...
+  10-10 12:38 (b5df4a0) Programs: requirements / places / map modes (Leaflet + OpenStreetMap, OpenAle...
+
+● 01M4KAR1KQ4J56RGMQ255Q47RT  "非常好，第一轮就这么发。\n你看一下/datasquare有一个/career的代码。借鉴2个地方，排成我们下一轮优..."
+  10-10 12:36 (8606a69) hackathon.md: demo v1 video post; places/interview backend; post schedule
+
+● 01M4KAFXR48205WGKZW7YK78M9  "<task-notification>\n<task-id>bnd2fodmf</task-id>\n<tool-us..."
+  10-10 12:31 (cd5f983) Demo video pipeline: Playwright recording, qwen3-tts narration, ffmpeg assemb...
+
+● 01M4KA14TWPTNHHNYM7DXB8DVV  "先用现在的版本录视频吧，HiOffer改成2个大写，2个词分颜色做的很好"
+  10-10 12:23 (eeed98c) Brand: remaining HiOffer mentions in copy; demo recording script
+
+● 01M4KA0D7GC1FGNFBYNCB2P11F  "先用现在的版本录视频吧，HiOffer改成2个大写，2个词分颜色做的很好"
+  10-10 12:23 (61621b6) Brand: HiOffer (two words, two colours) across the UI
+
+● 01M4K9WC6CC61JGSMH18370QMR  "然后参考aitooffer项目，把一些可以精致打磨的内容细节、项目展示的效果，都借鉴过来。"
+  10-10 12:21 (65683e6) UI v2: landing page with per-module sample cards and transparent mascot, home...
+
+● 01M4K9GM354PJ2ZVGPG3CMZEAM  "发了，链接是https://x.com/vibedding/status/2108953313676771343\n..."
+  10-10 12:14 (63bb2fc) hackathon.md: second X post
+
+● 01M4K61SNAREBG2FNJA26N8MW0  README: tests and evidence sections
+  10-10 11:14 (8f14746) README: tests and evidence sections
+
+● 01M4K6178N132XEPGQJE757ZCD  "好，继续收尾打磨吧，谢谢宝宝。视频可以晚一些再录"
+  10-10 11:13 (e7c4d1b) Tests for deterministic logic; parse_json ignores prose after the JSON value
+
+● 01M4K60BMQMBM63AJQGBSNPVTM  "好，继续收尾打磨吧，谢谢宝宝。视频可以晚一些再录"
+  10-10 11:13 (16d2436) hackathon.md restructured for judges (run table, modules, evidence index); En...
 
 ● 01M4K5PHJ5W9J5HB2S9HMXS18Z  "好的"
   10-10 11:07 (385bf3b) cfo.ai public model link in hackathon.md, README and business results
