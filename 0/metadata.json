@@ -1,0 +1,192 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4NC6KXS9VTC4MQ3KKNX5C3R",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T11:40:06.783176Z",
+  "branch": "main",
+  "checkpoints_count": 3,
+  "save_step_count": 1,
+  "files_touched": [
+    "demo/poster/cover.html",
+    "web/app/page.tsx"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "273f46065a7a",
+  "checkpoint_transcript_start": 4598,
+  "transcript_lines_at_start": 4598,
+  "compact_transcript_start": 597,
+  "token_usage": {
+    "input_tokens": 210,
+    "cache_creation_tokens": 22497,
+    "cache_read_tokens": 12878019,
+    "output_tokens": 10841,
+    "api_call_count": 14,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d983e8cccd68",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01JYYANzCuCWopVWrWEFfUr4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "d6f8c4a4dcfd",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2159,
+        "end": 2160,
+        "entry_ids": [
+          "4b71a9d0-5499-460c-b123-6c70644d1517"
+        ],
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01LhjXtAXkpJsDzxgQipaNd4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "demo-video"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "af73f90af6d6",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2839,
+        "end": 2840,
+        "entry_ids": [
+          "ff633840-064f-412b-8e93-83d508d4bace"
+        ],
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: demo-video",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "prompt-skill-claude-code-companydata-2026-10-10T20:23:53.849544Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "companydata"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "a79ad0e091f1",
+      "timestamp": "2026-10-10T20:23:53.849544Z",
+      "native": {
+        "command": "/companydata"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/companydata",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 62
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T11:40:06.216306Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 14,
+    "total_committed": 0,
+    "total_lines_changed": 14,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 54,
+      "user_lines_removed": 14,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "demo/poster/cover.html": 2,
+        "web/app/page.tsx": 10,
+        "web/components/HeroCarousel.tsx": 42
+      },
+      "user_removed_per_file": {
+        "demo/poster/cover.html": 2,
+        "web/app/page.tsx": 12
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 54,
+      "agent_lines_removed": 14
+    }
+  ]
+}

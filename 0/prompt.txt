@@ -1,0 +1,32 @@
+标题可以换一下，我想说一个可信赖、细致帮你处理好从phd择校到录取工作的agent
+phd申请可以diy，and with your ai
+
+---
+
+我觉得这个cover，以及静态页最冲击的第一屏，都可以换换了。
+
+---
+
+我们用更好的预期和价值形容产品。
+
+---
+
+banner既然是页面，我们占了动态优势，右边的图能不能好几个轮播。帮忙选选校，帮忙做材料（目前的），帮忙模拟面试，拿到offer庆祝。人物换没关系，感觉是帮助了很多人
+
+---
+
+我还是喜欢亚洲小姑娘这个，更像本科直申
+
+---
+
+<task-notification>
+<task-id>bf6hxpnag</task-id>
+<tool-use-id>toolu_014o2yteNwDrSj7t7rc7AbSM</tool-use-id>
+<output-file>/private/tmp/claude-502/-Users-aisandbox-Documents-hioffer/e2661771-c3b5-4f41-acd4-5e5f7a1bed0e/tasks/bf6hxpnag.output</output-file>
+<status>completed</status>
+<summary>Background command "Generate three hero scenes (schools, interview, offer) with the same robot and different students" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+信封上别写字，ai容易拼错。而是是offer（带钱的
