@@ -1,0 +1,28 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "check": "claim",
+      "where": "email:Kaitlyn Zhou",
+      "sentence": "My first-authored paper on SourceSpeak—a plug-in delivering non-visual provenance cues that tripled error detection in a within-subjects study—is currently under review [lib:cv].",
+      "problem": "The library and CV state participants caught 2.3 times more incorrect answers (i.e., 2.3×), not tripled (3×). The word 'tripled' invents a specific number not supported by any source.",
+      "fixable_by": "writer"
+    }
+  ],
+  "writer_issues": [
+    {
+      "check": "claim",
+      "where": "email:Kaitlyn Zhou",
+      "sentence": "My first-authored paper on SourceSpeak—a plug-in delivering non-visual provenance cues that tripled error detection in a within-subjects study—is currently under review [lib:cv].",
+      "problem": "The library and CV state participants caught 2.3 times more incorrect answers (i.e., 2.3×), not tripled (3×). The word 'tripled' invents a specific number not supported by any source.",
+      "fixable_by": "writer"
+    }
+  ],
+  "applicant_todos": [],
+  "repaired_citations": [],
+  "openalex_rechecked": {
+    "papers": 7,
+    "of": 7,
+    "at": "2026-10-11T12:17+00:00"
+  }
+}

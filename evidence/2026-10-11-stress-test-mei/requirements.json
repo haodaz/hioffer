@@ -1,0 +1,105 @@
+{
+  "program": "Cornell Information Science PhD",
+  "start_url": "https://infosci.cornell.edu/phd/admissions",
+  "facts": [
+    {
+      "key": "deadline",
+      "required": "yes",
+      "value": "December 1, 2026 (for Fall 2027 entry). No spring applications accepted. No materials accepted after the deadline.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "For Fall 2027, the Information Science Ph.D. application deadline is December 1, 2026. We do not accept spring applications. All application materials are due by December 1, 2026."
+    },
+    {
+      "key": "application_fee",
+      "required": "yes",
+      "value": "$105 non-refundable, submitted electronically",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "There is a $105 non-refundable application fee that must be submitted electronically with your application."
+    },
+    {
+      "key": "fee_waiver",
+      "required": "optional",
+      "value": "Available for financial hardship or qualified participants of certain special programs; details on Graduate School's website",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "The fee may be waived in cases of financial hardship or for qualified participants of certain special programs. For information about methods of payment or requesting a fee waiver, visit the Graduate School's Website."
+    },
+    {
+      "key": "statement_of_purpose",
+      "required": "yes",
+      "value": "Academic Statement of Purpose required; no explicit word/page limit stated. Must address: research questions of interest and why they matter; how interests relate to Cornell faculty work; ultimate goal in pursuing a PhD.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "A successful academic statement of purpose will address the following topics: Questions and Issues you're interested in exploring as a PhD student and why they matter to you; How your research interests relate to the work of Faculty at Cornell; Your ultimate goal in pursuing a PhD."
+    },
+    {
+      "key": "personal_statement",
+      "required": "yes",
+      "value": "Personal Statement required; 1,000-word limit. Must describe how background/experiences influenced decision to pursue graduate degree and ability to contribute to Cornell's community of inclusion.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "The personal statement will ask you to describe within 1,000 words how your background and experiences influenced your decision and ability to pursue a graduate degree."
+    },
+    {
+      "key": "letters_of_recommendation",
+      "required": "yes",
+      "value": "3 letters required, from professors or supervisors familiar with academic or professional work; must be submitted electronically by December 1 deadline; paper copies not accepted.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "Your application must include three letters of recommendation. The letters should be from professors or supervisors who are familiar with your academic or professional work and who can testify to your potential in Information Science."
+    },
+    {
+      "key": "cv",
+      "required": "optional",
+      "value": "Resume listed under 'Optional Materials'; not required but may be submitted to enhance application.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "Additional materials such as resume, writing samples, and portfolio are not required but may be submitted if you feel this will enhance your application."
+    },
+    {
+      "key": "transcripts",
+      "required": "yes",
+      "value": "Scanned/unofficial transcripts from all previous colleges uploaded by applicant at submission. Official paper transcript required only upon admission and acceptance. No paper copies accepted during application. International transcripts must include original language plus certified English translation.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "Your application should include completed and scanned transcripts of all previous college and university work... If you are submitting unofficial transcripts, the Graduate School will require that you submit official transcripts should you be accepted into the program."
+    },
+    {
+      "key": "gre",
+      "required": "unknown",
+      "value": "Not mentioned anywhere on the IS PhD admissions page; GRE is not listed as a required or optional application component.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "N/A — GRE is not referenced on the admissions page; the checklist of required materials does not include it."
+    },
+    {
+      "key": "toefl_ielts",
+      "required": "yes",
+      "value": "Required for international applicants; specific minimum score thresholds not listed on the IS page — details deferred to Cornell Graduate School's English Language Proficiency page.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "International applicants will need an official TOEFL or IELTS score."
+    },
+    {
+      "key": "writing_sample",
+      "required": "optional",
+      "value": "Writing samples listed under 'Optional Materials'; not required but may be submitted to enhance the application.",
+      "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+      "quote": "Additional materials such as resume, writing samples, and portfolio are not required but may be submitted if you feel this will enhance your application."
+    }
+  ],
+  "not_found": [
+    "research_statement"
+  ],
+  "pages_checked": [
+    "https://infosci.cornell.edu/phd/admissions (redirected to https://infosci.cornell.edu/phd-information-science/apply)",
+    "https://infosci.cornell.edu/phd-information-science/apply",
+    "https://gradschool.cornell.edu/admissions/application-steps/pay-fees/ (403 Forbidden)",
+    "https://gradschool.cornell.edu/admissions/prepare/english-language-proficiency-requirement/ (403 Forbidden)",
+    "https://gradschool.cornell.edu/admissions/prepare/standardized-tests/ (403 Forbidden)",
+    "https://gradschool.cornell.edu/admissions/apply/ (403 Forbidden)",
+    "https://infosci.cornell.edu/phd/admissions/faq (404 Not Found)",
+    "https://infosci.cornell.edu/phd-information-science/apply/faq (404 Not Found)"
+  ],
+  "notes": [
+    "STRICT DEADLINE: 'No application materials will be accepted, and no submitted applications will be updated after the deadline.' Decisions communicated by mid-February.",
+    "Letters of recommendation are also due by December 1 — they are not given extra time after the application deadline.",
+    "GRE is completely absent from the admissions page checklist and FAQs; Cornell IS PhD does not appear to require or accept GRE scores, but applicants should confirm directly as no explicit 'GRE not required' statement was found on the fetched page.",
+    "TOEFL/IELTS score thresholds are on the Cornell Graduate School's English Language Proficiency page (https://gradschool.cornell.edu/admissions/prepare/english-language-proficiency-requirement/) — that page returned 403 and could not be scraped; applicants must check it directly.",
+    "Fee waiver details are also on the Cornell Graduate School's website (https://gradschool.cornell.edu/admissions/application-steps/pay-fees/) — also 403; check directly.",
+    "The Academic Statement of Purpose has no stated word/page limit on the IS page.",
+    "There is a Cornell IS PhD Student-Applicant Reading Program (SARP) offered by ISGSA for applicants seeking feedback on draft materials, with a particular focus on scholars who have navigated significant barriers."
+  ]
+}

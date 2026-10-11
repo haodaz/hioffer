@@ -1,0 +1,287 @@
+{
+  "department": "Department of Information Science",
+  "faculty_url": "https://infosci.cornell.edu/people/faculty",
+  "advisors": [
+    {
+      "name": "Shiri Azenkot",
+      "openalex_id": "A5060708945",
+      "profile_url": "https://tech.cornell.edu/people/shiri-azenkot/",
+      "areas": [
+        "Accessibility",
+        "Blind and low-vision (BLV) users",
+        "AI-powered assistive interfaces",
+        "Human-computer interaction",
+        "Mobile and wearable assistive technology"
+      ],
+      "match_reason": "Azenkot is the closest possible match to interest #1. Her 2024 CHI paper (W4396833521) directly investigates how blind and low-vision people use AI-powered scene description tools—exactly the kind of empirical study of BLV users with LLM-backed interfaces the applicant wants to do. She also co-authored the 2024 CHI study on ableist harassment of disabled content creators (W4396832472), demonstrating her broader use of mixed-methods qualitative work with disabled populations. Her Cornell Tech profile explicitly names accessible information access as her core theme.",
+      "papers": [
+        {
+          "id": "W4396833521",
+          "title": "Investigating Use Cases of AI-Powered Scene Description Applications for Blind and Low Vision People",
+          "year": 2024,
+          "venue": "CHI Conference on Human Factors in Computing Systems",
+          "cited_by": 45,
+          "url": "https://doi.org/10.1145/3613904.3642211",
+          "authors": [
+            "Ricardo E. Gonzalez Penuela",
+            "Jazmin Collins",
+            "Cynthia L. Bennett",
+            "Shiri Azenkot"
+          ],
+          "author_count": 4
+        },
+        {
+          "id": "W4396832472",
+          "title": "\"Vulnerable, Victimized, and Objectified\": Understanding Ableist Hate and Harassment Experienced by Disabled Content Creators on Social Media",
+          "year": 2024,
+          "venue": "CHI Conference on Human Factors in Computing Systems",
+          "cited_by": 40,
+          "url": "https://doi.org/10.1145/3613904.3642180",
+          "authors": [
+            "Sharon Heung",
+            "Lucy Jiang",
+            "Shiri Azenkot",
+            "Aditya Vashistha"
+          ],
+          "author_count": 4
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Cornell Tech profile page active and lab running (multiple PhD students listed on Cornell Tech site), but no explicit 'recruiting' statement was accessible—personal website SSL error prevented checking a join/recruiting page.",
+        "source_url": "https://tech.cornell.edu/people/shiri-azenkot/"
+      },
+      "fit_score": 5,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://tech.cornell.edu/people/shiri-azenkot/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5060708945",
+            "detail": "Cornell University (2014–2026)"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "name": "Kaitlyn Zhou",
+      "openalex_id": "A5031278789",
+      "profile_url": null,
+      "areas": [
+        "Human-LLM interaction",
+        "Language model reliability and uncertainty",
+        "NLP + HCI",
+        "AI ethics"
+      ],
+      "match_reason": "Zhou's research sits exactly at the intersection of LLM behavior and human reliance, directly relevant to interest #1 (how users verify what a model says). Her 2024 ACL paper (W4402671787) studies how LLMs' reluctance to express uncertainty harms user decision-making, and her 2025 NAACL paper (W4411119305) proposes an interaction-centered framework for measuring human reliance on LMs—both methodologically and topically aligned with the applicant's goal of studying provenance and trust in LLM interfaces. Her mixed HCI+NLP methods also complement the applicant's mixed-methods orientation.",
+      "papers": [
+        {
+          "id": "W4402671787",
+          "title": "Relying on the Unreliable: The Impact of Language Models' Reluctance to Express Uncertainty",
+          "year": 2024,
+          "venue": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "cited_by": 33,
+          "url": "https://doi.org/10.18653/v1/2024.acl-long.198",
+          "authors": [
+            "Kaitlyn Zhou",
+            "Jena Hwang",
+            "Xiang Ren",
+            "Maarten Sap"
+          ],
+          "author_count": 4
+        },
+        {
+          "id": "W4411119305",
+          "title": "REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance",
+          "year": 2025,
+          "venue": "Conference of the Nations of the Americas Chapter of the ACL (NAACL)",
+          "cited_by": 10,
+          "url": "https://doi.org/10.18653/v1/2025.naacl-long.113",
+          "authors": [
+            "Kaitlyn Zhou",
+            "Jena D. Hwang",
+            "Xiang Ren",
+            "Nouha Dziri",
+            "Dan Jurafsky",
+            "Maarten Sap"
+          ],
+          "author_count": 6
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Cornell IS faculty page returned empty; personal website returned 404; no recruiting statement could be retrieved.",
+        "source_url": null
+      },
+      "fit_score": 4,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://infosci.cornell.edu/people/faculty"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5031278789",
+            "detail": "Cornell University (2026–2026)"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "name": "Aditya Vashistha",
+      "openalex_id": "A5072922547",
+      "profile_url": "https://www.adityavashistha.com/",
+      "areas": [
+        "HCI for marginalized communities",
+        "Cross-cultural AI interaction",
+        "ICT in the Global South",
+        "Disability and AI",
+        "Ethics of AI"
+      ],
+      "match_reason": "Vashistha is an excellent match for interest #2 (older adults and cross-cultural conversational agent use). His 2025 CHI paper (W4409746764) on AI writing suggestions homogenizing toward Western styles directly shows his focus on cultural asymmetries in AI, relevant to Chinese households and non-Western conversational agent use. He also co-authored the 2024 CHI study on ableist hate against disabled creators (W4396832472), showing he works across disability and marginalized-community HCI. His lab page lists five active PhD advisees, confirming active mentorship.",
+      "papers": [
+        {
+          "id": "W4409746764",
+          "title": "AI Suggestions Homogenize Writing Toward Western Styles and Diminish Cultural Nuances",
+          "year": 2025,
+          "venue": "CHI Conference on Human Factors in Computing Systems",
+          "cited_by": 93,
+          "url": "https://doi.org/10.1145/3706598.3713564",
+          "authors": [
+            "Dhruv Agarwal",
+            "Mor Naaman",
+            "Aditya Vashistha"
+          ],
+          "author_count": 3
+        },
+        {
+          "id": "W4396832472",
+          "title": "\"Vulnerable, Victimized, and Objectified\": Understanding Ableist Hate and Harassment Experienced by Disabled Content Creators on Social Media",
+          "year": 2024,
+          "venue": "CHI Conference on Human Factors in Computing Systems",
+          "cited_by": 40,
+          "url": "https://doi.org/10.1145/3613904.3642180",
+          "authors": [
+            "Sharon Heung",
+            "Lucy Jiang",
+            "Shiri Azenkot",
+            "Aditya Vashistha"
+          ],
+          "author_count": 4
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "Lab people page lists five current PhD advisees: Deepak Varuvel Dennison, Gauri Nayak, Dhruv Agarwal, Ian René Solano-Kamaiko, and Farhana Shahid, plus one postdoc—confirming active PhD advising and a running lab.",
+        "source_url": "https://www.adityavashistha.com/people.html"
+      },
+      "fit_score": 4,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://www.adityavashistha.com/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5072922547",
+            "detail": "Cornell University (2019–2026)"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "name": "Susan R. Fussell",
+      "openalex_id": "A5089448650",
+      "profile_url": "https://communication.cals.cornell.edu/people/susan-fussell/",
+      "areas": [
+        "Human-computer interaction",
+        "Computer-mediated communication",
+        "Conversational agents and chatbots",
+        "Cross-cultural communication",
+        "CSCW"
+      ],
+      "match_reason": "Fussell is the best available match for the cross-cultural conversational agent and trust angle in interest #2. Her 2025 CSCW paper (W4406258040) examines a fact-checking chatbot deployed in private messaging groups in a real-world context—directly relevant to chatbot trust and error repair. Her 2025 ACM CHI paper (W4410513031) on parasocial relationships with AI-simulated voice messages touches on user trust and emotional engagement with AI agents. Her long-standing focus on cross-cultural and multilingual communication in CSCW further aligns with Chinese household contexts.",
+      "papers": [
+        {
+          "id": "W4406258040",
+          "title": "Countering Misinformation in Private Messaging Groups: Insights From a Fact-checking Chatbot",
+          "year": 2025,
+          "venue": "Proceedings of the ACM on Human-Computer Interaction (CSCW)",
+          "cited_by": 11,
+          "url": "https://doi.org/10.1145/3701189",
+          "authors": [
+            "Tuan-He Lee",
+            "Susan R. Fussell"
+          ],
+          "author_count": 2
+        },
+        {
+          "id": "W4410513031",
+          "title": "Can Fans Build Parasocial Relationships through Idols' Simulated Voice Messages?: A Study of AI Private Call Users' Perceptions, Cognitions, and Behaviors",
+          "year": 2025,
+          "venue": "Proceedings of the ACM on Human-Computer Interaction (CHI)",
+          "cited_by": 9,
+          "url": "https://doi.org/10.1145/3706598.3714045",
+          "authors": [
+            "Eun Jeong Kang",
+            "Haesoo Kim",
+            "Hyunwoo Kim",
+            "Susan R. Fussell",
+            "Juho Kim"
+          ],
+          "author_count": 5
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Personal website and Cornell faculty page both failed to load; no recruiting statement could be retrieved.",
+        "source_url": null
+      },
+      "fit_score": 3,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://communication.cals.cornell.edu/people/susan-fussell/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5089448650",
+            "detail": "Cornell University (2009–2026)"
+          }
+        ],
+        "reasons": []
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Qian Yang",
+      "why": "Despite four separate OpenAlex find_author attempts (with 'Cornell', 'Cornell Tech', no institution, and alternate name orderings), no OpenAlex author record matching the Cornell IS HCI faculty member Qian Yang could be identified. Per evidence rules, an advisor with no recent_works result is not reportable; she cannot be included without a verified OpenAlex ID."
+    },
+    {
+      "name": "Lisa Huang",
+      "why": "Listed as an Assistant Teaching Professor rather than a research-track professor. Her stated focus is programming-systems pedagogy for non-programmers rather than HCI/accessibility research. Not a viable PhD research advisor for this profile."
+    }
+  ],
+  "verification": {
+    "openalex_works_seen": 23,
+    "papers_dropped_as_unverified": 0
+  }
+}

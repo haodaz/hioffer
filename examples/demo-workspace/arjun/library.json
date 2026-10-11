@@ -1,0 +1,124 @@
+{
+  "items": [
+    {
+      "id": "lib:README",
+      "file": "README.md",
+      "word_count": 49,
+      "text": "# Stress-test applicant (fictional)\n\nArjun Mehta is a second fictional applicant, used on Oct 11 to test HiOffer on a different field (robotics /\nembodied AI) with a different file mix (a PDF-free, shorter library and a programs list the agent has never\nseen). Every fact here is invented.\n",
+      "type": "profile",
+      "title": "Stress-Test Applicant Profile: Arjun Mehta (Fictional)",
+      "summary": "This README describes a fictional PhD applicant named Arjun Mehta, created to stress-test the HiOffer system on October 11. The applicant is designed to represent the robotics and embodied AI field with a deliberately different file mix than prior test cases.",
+      "key_facts": [
+        "Applicant name is Arjun Mehta (fictional).",
+        "Used as a stress-test for the HiOffer system on October 11.",
+        "Research field is robotics and embodied AI.",
+        "File library is PDF-free and shorter than prior test cases.",
+        "The programs list used is one the agent has never seen before.",
+        "All facts about this applicant are invented."
+      ]
+    },
+    {
+      "id": "lib:cv",
+      "file": "cv.md",
+      "word_count": 260,
+      "text": "# Arjun Mehta — CV\n\n## Education\n- M.Tech, Robotics, Indian Institute of Science, Bengaluru, 2025–2027 (expected). CGPA 9.4/10.\n- B.E., Mechanical Engineering, BITS Pilani, 2020–2024. CGPA 8.9/10.\n\n## Research experience\n- **Research assistant, Robot Learning Lab, IISc** (Aug 2025 – present), advised by Prof. Meera Natarajan.\n  Built a diffusion-policy pipeline for a $1,800 6-DoF arm; with 40 teleoperated demonstrations per task the\n  policy reached 78% success on cup stacking and 61% on towel folding, versus 44% / 29% for a behaviour-cloning\n  baseline. Submitted to a robotics conference workshop (under review).\n- **Summer intern, TCS Research, Bengaluru** (May–July 2025), mentor: Dr. Ravi Shankar.\n  Real-to-sim reconstruction of a kitchen counter from 12 phone photos; policies trained in the reconstructed\n  scene transferred to the real counter with a 17-point drop in success instead of 41 points for a generic\n  simulated scene.\n- **Undergraduate project, BITS Pilani (2023–24):** low-cost tactile skin (piezoresistive fabric, 64 taxels)\n  for a parallel gripper; detected slip within 60 ms in 91% of trials.\n\n## Publications\n- A. Mehta, S. Rao, M. Natarajan. \"Few-Shot Diffusion Policies on a Sub-$2k Arm.\" Robotics workshop paper, 2026 (under review, first author).\n- A. Mehta, P. Iyer. \"A 64-Taxel Fabric Tactile Skin for Slip Detection.\" Undergraduate research symposium, BITS Pilani, 2024.\n\n## Skills\n- Python, PyTorch, ROS 2, Isaac Sim, MuJoCo, OpenCV; C++ for real-time control; 3D printing and basic electronics.\n\n## Awards\n- Institute Gold Medal, Mechanical Engineering, BITS Pilani, 2024.\n- Best demo, IISc Robotics Day 2026.\n\n## Service\n- Teaching assistant, Introduction to Robotics (M.Tech core), Spring 2026, 60 students.\n",
+      "type": "cv",
+      "title": "Arjun Mehta — Curriculum Vitae",
+      "summary": "CV of Arjun Mehta, an M.Tech Robotics student at IISc Bengaluru with a strong background in robot learning, tactile sensing, and sim-to-real transfer. He has research experience at IISc's Robot Learning Lab and TCS Research, with two publications including a first-authored workshop paper under review. His work spans diffusion policies, teleoperation, and low-cost hardware.",
+      "key_facts": [
+        "M.Tech in Robotics at Indian Institute of Science, Bengaluru (2025–2027 expected), CGPA 9.4/10.",
+        "B.E. in Mechanical Engineering from BITS Pilani (2020–2024), CGPA 8.9/10.",
+        "Research assistant at IISc Robot Learning Lab under Prof. Meera Natarajan since August 2025.",
+        "Built a diffusion-policy pipeline for a $1,800 6-DoF arm achieving 78% success on cup stacking and 61% on towel folding with 40 teleoperated demonstrations per task.",
+        "Summer intern at TCS Research, Bengaluru (May–July 2025), mentored by Dr. Ravi Shankar.",
+        "Developed real-to-sim reconstruction from 12 phone photos; sim-to-real transfer showed only a 17-point success drop vs. 41 points for a generic simulated scene.",
+        "Undergraduate project developed a low-cost piezoresistive fabric tactile skin with 64 taxels that detected slip within 60 ms in 91% of trials.",
+        "First-authored workshop paper: 'Few-Shot Diffusion Policies on a Sub-$2k Arm,' under review (2026), co-authored with S. Rao and M. Natarajan.",
+        "Co-authored undergraduate symposium paper: 'A 64-Taxel Fabric Tactile Skin for Slip Detection,' BITS Pilani, 2024, with P. Iyer.",
+        "Skills include Python, PyTorch, ROS 2, Isaac Sim, MuJoCo, OpenCV, C++ for real-time control, 3D printing, and basic electronics.",
+        "Awarded Institute Gold Medal in Mechanical Engineering, BITS Pilani, 2024.",
+        "Teaching assistant for Introduction to Robotics (M.Tech core) in Spring 2026, serving 60 students."
+      ]
+    },
+    {
+      "id": "lib:interests",
+      "file": "interests.md",
+      "word_count": 91,
+      "text": "# Research interests\n\nI want to work on robot learning for manipulation in unstructured homes, specifically:\n\n1. Learning from few demonstrations: diffusion policies and visuomotor imitation that generalise across object\n   instances and lighting, with a focus on cheap hardware (sub-$2,000 arms).\n2. Tactile sensing for deformable objects (cloth, food), combining vision with low-cost tactile skins.\n3. Sim-to-real for household tasks: domain randomisation and real-to-sim scene reconstruction so that policies\n   trained in simulation transfer to a real kitchen.\n\nSecondary: assistive robotics for elderly care in Indian households; safety constraints for learned policies.\n",
+      "type": "interests",
+      "title": "Research Interests in Robot Learning for Manipulation",
+      "summary": "The applicant focuses on robot learning for manipulation in unstructured home environments, emphasizing low-cost hardware and practical transfer to real settings. Key themes include imitation learning with diffusion policies, tactile sensing for deformable objects, and sim-to-real transfer for household tasks. Secondary interests include assistive robotics for elderly care in Indian households and safety constraints for learned policies.",
+      "key_facts": [
+        "Primary research focus is robot learning for manipulation in unstructured home environments.",
+        "Interested in learning from few demonstrations using diffusion policies and visuomotor imitation that generalise across object instances and lighting.",
+        "Emphasis on cheap hardware, specifically sub-$2,000 robotic arms.",
+        "Interested in tactile sensing for deformable objects such as cloth and food.",
+        "Aims to combine vision with low-cost tactile skins for deformable object manipulation.",
+        "Interested in sim-to-real transfer for household tasks using domain randomisation and real-to-sim scene reconstruction.",
+        "Goal is to transfer policies trained in simulation to a real kitchen environment.",
+        "Secondary interest in assistive robotics for elderly care in Indian households.",
+        "Secondary interest in safety constraints for learned policies."
+      ]
+    },
+    {
+      "id": "lib:profile",
+      "file": "profile.md",
+      "word_count": 71,
+      "text": "# Profile\n\n- Name: Arjun Mehta\n- Current: M.Tech in Robotics, Indian Institute of Science (IISc), Bengaluru. Expected graduation: June 2027.\n- Previous: B.E. in Mechanical Engineering, BITS Pilani, 2024. CGPA 8.9/10.\n- M.Tech CGPA so far: 9.4/10\n- Target: US PhD programs in robotics / embodied AI, Fall 2027 intake\n- Tests: IELTS 8.0 (L8.5 R8.5 W7.5 S7.5), May 2026. GRE: 329 (Q170 V159 AW4.0), March 2026.\n- Citizenship: India\n",
+      "type": "profile",
+      "title": "Arjun Mehta – PhD Applicant Profile",
+      "summary": "Arjun Mehta is an Indian student currently pursuing an M.Tech in Robotics at IISc Bengaluru (expected June 2027), having completed a B.E. in Mechanical Engineering from BITS Pilani in 2024. He is targeting US PhD programs in robotics and embodied AI for Fall 2027. His academic performance is strong, with a 9.4/10 M.Tech CGPA and competitive GRE and IELTS scores.",
+      "key_facts": [
+        "Name: Arjun Mehta",
+        "Currently enrolled in M.Tech in Robotics at the Indian Institute of Science (IISc), Bengaluru, with expected graduation in June 2027",
+        "Completed B.E. in Mechanical Engineering from BITS Pilani in 2024 with a CGPA of 8.9/10",
+        "Current M.Tech CGPA: 9.4/10",
+        "Targeting US PhD programs in robotics and embodied AI for Fall 2027 intake",
+        "IELTS overall band 8.0 (Listening 8.5, Reading 8.5, Writing 7.5, Speaking 7.5), taken May 2026",
+        "GRE score: 329 (Quantitative 170, Verbal 159, Analytical Writing 4.0), taken March 2026",
+        "Citizenship: India"
+      ]
+    },
+    {
+      "id": "lib:recommenders",
+      "file": "recommenders.md",
+      "word_count": 43,
+      "text": "# Recommenders\n\n1. Prof. Meera Natarajan, IISc — M.Tech research advisor, co-author of the workshop submission. Status: agreed.\n2. Dr. Ravi Shankar, TCS Research — internship mentor. Status: agreed.\n3. Prof. K. Subramanian, BITS Pilani — undergraduate project supervisor (tactile skin). Status: agreed.\n",
+      "type": "recommenders",
+      "title": "PhD Application Recommenders",
+      "summary": "Lists three recommenders for a PhD application, all of whom have agreed to write letters. They include an M.Tech research advisor, an industry internship mentor, and an undergraduate project supervisor.",
+      "key_facts": [
+        "Prof. Meera Natarajan from IISc is the M.Tech research advisor and co-author of a workshop submission.",
+        "Prof. Meera Natarajan has agreed to write a recommendation letter.",
+        "Dr. Ravi Shankar from TCS Research served as the applicant's internship mentor.",
+        "Dr. Ravi Shankar has agreed to write a recommendation letter.",
+        "Prof. K. Subramanian from BITS Pilani supervised the applicant's undergraduate project on tactile skin.",
+        "Prof. K. Subramanian has agreed to write a recommendation letter.",
+        "All three recommenders have confirmed their agreement to provide letters."
+      ]
+    },
+    {
+      "id": "lib:sop_draft",
+      "file": "sop_draft.md",
+      "word_count": 184,
+      "text": "# Statement of purpose — rough draft\n\nI want to build robots that can help in ordinary homes, which means learning manipulation skills from very\nlittle data on hardware that families can afford. My M.Tech work at IISc has been about exactly that gap: with\n40 demonstrations per task, a diffusion policy on a $1,800 arm reached 78% on cup stacking and 61% on towel\nfolding, far above a behaviour-cloning baseline. The towel number is the one I think about most: deformable\nobjects are where vision alone fails, and where my undergraduate tactile skin (64 taxels, slip detected in 60 ms)\nsuggests a cheap way forward.\n\nAt TCS Research I worked on the other half of the problem, getting simulation to look like a real kitchen:\nreconstructing a counter from twelve phone photos cut the sim-to-real success drop from 41 points to 17.\n\nIn a PhD I want to combine these threads: few-shot visuomotor learning, low-cost tactile sensing for deformable\nobjects, and real-to-sim transfer for household tasks, with assistive robotics for elderly care as the setting\nthat matters most to me.\n\n[TODO: specific faculty]\n",
+      "type": "sop",
+      "title": "Statement of Purpose – Household Manipulation Robotics",
+      "summary": "The applicant outlines a research vision centered on building affordable home robots capable of manipulation in everyday environments. They draw on M.Tech work at IISc using diffusion policy with limited demonstrations and undergraduate work developing a tactile skin, as well as industry experience at TCS Research on sim-to-real transfer. Their intended PhD focus combines few-shot visuomotor learning, low-cost tactile sensing, and real-to-sim transfer for assistive eldercare robotics.",
+      "key_facts": [
+        "M.Tech completed at IISc (Indian Institute of Science).",
+        "Diffusion policy trained on 40 demonstrations per task on a $1,800 robotic arm.",
+        "Achieved 78% success on cup stacking task with the diffusion policy approach.",
+        "Achieved 61% success on towel folding task, outperforming a behaviour-cloning baseline.",
+        "Developed a tactile skin with 64 taxels as an undergraduate project.",
+        "Tactile skin detects slip events in 60 ms.",
+        "Worked at TCS Research on sim-to-real transfer for kitchen environments.",
+        "Reconstructed a kitchen counter from 12 phone photos for simulation.",
+        "The photo-based reconstruction reduced the sim-to-real success drop from 41 percentage points to 17.",
+        "Intended PhD research areas: few-shot visuomotor learning, low-cost tactile sensing for deformable objects, and real-to-sim transfer.",
+        "Target application domain is assistive robotics for elderly care.",
+        "Specific faculty targets have not yet been identified (noted as TODO in draft)."
+      ]
+    }
+  ]
+}

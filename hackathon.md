@@ -175,6 +175,17 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   name in their profile; the sidebar shows who is signed in and lets you switch. User-created applicants live
   in `data/` (git-ignored); the demo snapshot stays in `examples/`.
 
+### 2026-10-11 — stress test 2: a third field (midday)
+
+- Third fictional applicant `examples/applicants/mei`: Chinese undergraduate, HCI / accessibility, applying to
+  Cornell Information Science (pages never seen by the agent). Complete end to end in one run, **$0.94**
+  (31 Sonnet calls). 11 sourced requirements; 4 advisors kept, all identities anchored high, including an
+  accessibility researcher at fit 5/5; one professor skipped after four OpenAlex lookups could not pin a
+  common name to the department, reported as skipped rather than guessed. Draft v0 failed once: the writer
+  turned the CV's "2.3× more incorrect answers caught" into "tripled" and the auditor refused the paraphrased
+  number; v1 passed. Evidence: `evidence/2026-10-11-stress-test-mei/`. All three applicants now have demo
+  invite codes (`PRIYA-DEMO`, `ARJUN-DEMO`, `MEI-DEMO`).
+
 ### 2026-10-11 — the promise, restated (late morning)
 
 - New first screen: "From school list to offer. Carefully, with your AI." with three promises (nothing

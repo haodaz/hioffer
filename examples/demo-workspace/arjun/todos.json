@@ -1,0 +1,92 @@
+[
+  {
+    "task": "Email Nima Fazeli (draft ready)",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-10-17",
+    "kind": "outreach",
+    "source_url": "https://www.mmintlab.com/",
+    "id": "university-of-michigan-robotics-phd-1",
+    "done": false
+  },
+  {
+    "task": "Email Ankit Goyal (draft ready)",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-10-17",
+    "kind": "outreach",
+    "source_url": "https://robotics.umich.edu/people/faculty/ankit-goyal/",
+    "id": "university-of-michigan-robotics-phd-2",
+    "done": false
+  },
+  {
+    "task": "Email Dmitry Berenson (draft ready)",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-10-17",
+    "kind": "outreach",
+    "source_url": "https://berenson.robotics.umich.edu/",
+    "id": "university-of-michigan-robotics-phd-3",
+    "done": false
+  },
+  {
+    "task": "Email Bernadette Bucher (draft ready)",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-10-17",
+    "kind": "outreach",
+    "source_url": "https://bucherb.github.io/",
+    "id": "university-of-michigan-robotics-phd-4",
+    "done": false
+  },
+  {
+    "task": "Email Odest Chadwicke Jenkins (no draft yet)",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-10-17",
+    "kind": "outreach",
+    "source_url": "https://robotics.umich.edu/people/faculty/chad-jenkins/",
+    "id": "university-of-michigan-robotics-phd-5",
+    "done": false
+  },
+  {
+    "task": "Ask recommenders: 3 letters required, from professors, employers, or others who know the applicant well; recommenders are contacted via the online application; letters are due by the application deadline",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-11-03",
+    "kind": "letters",
+    "source_url": "https://robotics.umich.edu/academics/graduate/admissions/letters-of-recommendation/",
+    "id": "university-of-michigan-robotics-phd-6",
+    "done": false
+  },
+  {
+    "task": "Remind recommenders (letters due with the application)",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-11-24",
+    "kind": "letters",
+    "source_url": "https://robotics.umich.edu/academics/graduate/admissions/letters-of-recommendation/",
+    "id": "university-of-michigan-robotics-phd-7",
+    "done": false
+  },
+  {
+    "task": "Send English test scores: Required for non-native English speakers (TOEFL, IELTS, MET, or ECPE accepted); scores valid for 2 years; exemptions for",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-11-10",
+    "kind": "tests",
+    "source_url": "https://robotics.umich.edu/academics/graduate/admissions/english-proficiency-test-scores/",
+    "id": "university-of-michigan-robotics-phd-8",
+    "done": false
+  },
+  {
+    "task": "Upload transcripts: Scanned/electronic copy of official transcript uploaded with application for review; official transcripts required from ",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-11-17",
+    "kind": "documents",
+    "source_url": "https://robotics.umich.edu/academics/graduate/admissions/transcripts/",
+    "id": "university-of-michigan-robotics-phd-9",
+    "done": false
+  },
+  {
+    "task": "Pay application fee ($75 for domestic applicants; $90 for international applicant) and submit",
+    "program": "University of Michigan Robotics PhD",
+    "due": "2027-12-01",
+    "kind": "submit",
+    "source_url": "https://robotics.umich.edu/academics/graduate/admissions/graduate-application/",
+    "id": "university-of-michigan-robotics-phd-10",
+    "done": false
+  }
+]

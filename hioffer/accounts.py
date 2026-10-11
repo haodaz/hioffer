@@ -13,7 +13,7 @@ from pathlib import Path
 SEED_DIR = Path("examples/applicants")
 DATA_DIR = Path("data/applicants")
 INVITES = Path("data/invites.json")
-DEMO_CODES = {"PRIYA-DEMO": "priya", "ARJUN-DEMO": "arjun"}
+DEMO_CODES = {"PRIYA-DEMO": "priya", "ARJUN-DEMO": "arjun", "MEI-DEMO": "mei"}
 
 
 def applicant_dir(applicant: str) -> Path | None:

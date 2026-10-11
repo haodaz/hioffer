@@ -1,0 +1,83 @@
+[
+  {
+    "task": "Email Shiri Azenkot (draft ready)",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-10-17",
+    "kind": "outreach",
+    "source_url": "https://tech.cornell.edu/people/shiri-azenkot/",
+    "id": "cornell-information-science-phd-1",
+    "done": false
+  },
+  {
+    "task": "Email Kaitlyn Zhou (draft ready)",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-10-17",
+    "kind": "outreach",
+    "source_url": null,
+    "id": "cornell-information-science-phd-2",
+    "done": false
+  },
+  {
+    "task": "Email Aditya Vashistha (draft ready)",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-10-17",
+    "kind": "outreach",
+    "source_url": "https://www.adityavashistha.com/",
+    "id": "cornell-information-science-phd-3",
+    "done": false
+  },
+  {
+    "task": "Email Susan R. Fussell (draft ready)",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-10-17",
+    "kind": "outreach",
+    "source_url": "https://communication.cals.cornell.edu/people/susan-fussell/",
+    "id": "cornell-information-science-phd-4",
+    "done": false
+  },
+  {
+    "task": "Ask recommenders: 3 letters required, from professors or supervisors familiar with academic or professional work; must be submitted electronically by December 1 deadline; paper copies not accepted.",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-11-03",
+    "kind": "letters",
+    "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+    "id": "cornell-information-science-phd-5",
+    "done": false
+  },
+  {
+    "task": "Remind recommenders (letters due with the application)",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-11-24",
+    "kind": "letters",
+    "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+    "id": "cornell-information-science-phd-6",
+    "done": false
+  },
+  {
+    "task": "Send English test scores: Required for international applicants; specific minimum score thresholds not listed on the IS page — details deferred to",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-11-10",
+    "kind": "tests",
+    "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+    "id": "cornell-information-science-phd-7",
+    "done": false
+  },
+  {
+    "task": "Upload transcripts: Scanned/unofficial transcripts from all previous colleges uploaded by applicant at submission. Official paper transcript",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-11-17",
+    "kind": "documents",
+    "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+    "id": "cornell-information-science-phd-8",
+    "done": false
+  },
+  {
+    "task": "Pay application fee ($105 non-refundable, submitted electronically) and submit",
+    "program": "Cornell Information Science PhD",
+    "due": "2026-12-01",
+    "kind": "submit",
+    "source_url": "https://infosci.cornell.edu/phd-information-science/apply",
+    "id": "cornell-information-science-phd-9",
+    "done": false
+  }
+]

@@ -1,0 +1,7 @@
+programs:
+  - name: Cornell Information Science PhD
+    short: Cornell IS
+    institution: Cornell
+    department: Department of Information Science
+    admissions_url: https://infosci.cornell.edu/phd/admissions
+    faculty_url: https://infosci.cornell.edu/people/faculty

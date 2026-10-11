@@ -1,0 +1,406 @@
+{
+  "department": "Robotics Department",
+  "faculty_url": "https://robotics.umich.edu/people/faculty/",
+  "advisors": [
+    {
+      "name": "Nima Fazeli",
+      "openalex_id": "A5031338070",
+      "profile_url": "https://www.mmintlab.com/",
+      "areas": [
+        "Visuo-tactile sensing and manipulation",
+        "Deformable object perception (vision + touch)",
+        "Diffusion-based behavior cloning",
+        "Robot learning for contact-rich tasks",
+        "Assistive robotics and industrial manipulation"
+      ],
+      "match_reason": "Fazeli's MMint Lab is the single strongest match: ViTaSCOPE fuses vision and tactile sensing for in-hand pose estimation (directly matches interest 2), while 'This&That' demonstrates video-generation planning that complements visuomotor imitation (interest 1). The lab's About page explicitly lists 'assistive care' as a high-impact application domain, aligning with the secondary interest. Research on diffusion-based behavior cloning ('Built Different') and cross-embodiment transfer via tactile sensing further covers interests 1 and 3.",
+      "papers": [
+        {
+          "id": "W4414050430",
+          "title": "ViTaSCOPE: Visuo-tactile Implicit Representation for In-hand Pose and Extrinsic Contact Estimation",
+          "year": 2025,
+          "venue": "Proceedings - IEEE International Conference on Robotics and Automation",
+          "cited_by": 5,
+          "url": "https://doi.org/10.1109/icra55743.2025.11128154",
+          "authors": [
+            "Jayjun Lee",
+            "Nima Fazeli"
+          ],
+          "author_count": 2
+        },
+        {
+          "id": "W4413917052",
+          "title": "This&That: Language-Gesture Controlled Video Generation for Robot Planning",
+          "year": 2025,
+          "venue": "Proceedings - IEEE International Conference on Robotics and Automation",
+          "cited_by": 6,
+          "url": "https://doi.org/10.1109/icra55743.2025.11128780",
+          "authors": [
+            "Boyang Wang",
+            "Nikhil Sridhar",
+            "Chao Feng",
+            "Mark Van der Merwe",
+            "Adam Fishman",
+            "Nima Fazeli",
+            "Jeong Joon Park"
+          ],
+          "author_count": 7
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "Built Different: Tactile Perception to Overcome Cross-Embodiment Capability Differences in Collaborative Manipulation (diffusion-based BC + vision-tactile sensors)",
+          "source_url": "https://www.mmintlab.com/research/tactile-collaborative/"
+        },
+        {
+          "title": "VIRDO++: Real-World, Visuo-Tactile Dynamics and Perception of Deformable Objects",
+          "source_url": "https://www.mmintlab.com/virdopp/"
+        },
+        {
+          "title": "Tactile Functasets: Neural Implicit Representations of Tactile Datasets",
+          "source_url": "https://www.mmintlab.com/tactile-functasets/"
+        },
+        {
+          "title": "CALAMARI: Contact-Aware and Language-conditioned spatial Action MApping for contact-RIch manipulation",
+          "source_url": "https://www.mmintlab.com/research/calamari/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "Lab people page lists multiple current PhD students in Robotics (An Dang, Jayjun Lee, Julianne Barteck, Yunhao Luo, James Lorenz), confirming active advising.",
+        "source_url": "https://www.mmintlab.com/people/"
+      },
+      "fit_score": 5,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://www.mmintlab.com/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5031338070",
+            "detail": "University of Michigan (2020–2026)"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "name": "Ankit Goyal",
+      "openalex_id": "A5018789011",
+      "profile_url": "https://robotics.umich.edu/people/faculty/ankit-goyal/",
+      "areas": [
+        "Generalist robot learning",
+        "Dexterous and contact-rich manipulation",
+        "Visuo-tactile manipulation policies",
+        "Learning from few demonstrations",
+        "Robot foundation models and 3D perception"
+      ],
+      "match_reason": "RVT-2 directly targets learning precise manipulation from few demonstrations using 3D multi-view representations (core interest 1), while 3D-MVP advances 3D spatial pretraining for manipulation generalisation across object instances (interests 1 & 3). The faculty profile explicitly lists 'visuo-tactile manipulation policies' and 'learning from human data', aligning tightly with interests 1 and 2. Note: Goyal joins UMich in Fall 2027; prospective students starting in 2026/27 may be his first cohort.",
+      "papers": [
+        {
+          "id": "W4402354093",
+          "title": "RVT-2: Learning Precise Manipulation from Few Demonstrations",
+          "year": 2024,
+          "venue": "Robotics: Science and Systems (RSS 2024)",
+          "cited_by": 48,
+          "url": "https://doi.org/10.15607/rss.2024.xx.055",
+          "authors": [
+            "Ankit Goyal",
+            "Valts Blukis",
+            "Jie Xu",
+            "Yijie Guo",
+            "Yu-Wei Chao",
+            "Dieter Fox"
+          ],
+          "author_count": 6
+        },
+        {
+          "id": "W4413144893",
+          "title": "3D-MVP: 3D Multiview Pretraining for Manipulation",
+          "year": 2025,
+          "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "cited_by": 8,
+          "url": "https://doi.org/10.1109/cvpr63983.2025.01481",
+          "authors": [
+            "Shengyi Qian",
+            "Kaichun Mo",
+            "Valts Blukis",
+            "David F. Fouhey",
+            "Dieter Fox",
+            "Ankit Goyal"
+          ],
+          "author_count": 6
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": "Profile page notes '(Fall 2027)' start date; no explicit recruiting statement found on the UMich directory page or a personal website (site returned 404).",
+        "source_url": "https://robotics.umich.edu/people/faculty/ankit-goyal/"
+      },
+      "fit_score": 5,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://robotics.umich.edu/people/faculty/ankit-goyal/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5018789011",
+            "detail": "University of Michigan (2018–2018)"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "name": "Dmitry Berenson",
+      "openalex_id": "A5083082888",
+      "profile_url": "https://berenson.robotics.umich.edu/",
+      "areas": [
+        "Robot learning for manipulation",
+        "Motion planning under uncertainty",
+        "Deformable object manipulation",
+        "Diffusion-based policies",
+        "Imitation learning and generalisation"
+      ],
+      "match_reason": "Berenson's ARM Lab works on robot learning and manipulation with a recent focus on learning generalizable trajectory distributions (interest 3 — policy generalisation), and the lab homepage advertises an active paper on 'Multimodal Diffusion' policies (interest 1). His trajectory optimisation work (Constrained Stein Variational Trajectory Optimization, IEEE T-RO 2024) provides the safe-planning substrate relevant to the safety-constraints secondary interest. The lab has a long track record on deformable object manipulation, covering interest 2.",
+      "papers": [
+        {
+          "id": "W4392207744",
+          "title": "Learning a Generalizable Trajectory Sampling Distribution for Model Predictive Control",
+          "year": 2024,
+          "venue": "IEEE Transactions on Robotics",
+          "cited_by": 18,
+          "url": "https://doi.org/10.1109/tro.2024.3370026",
+          "authors": [
+            "Thomas Power",
+            "Dmitry Berenson"
+          ],
+          "author_count": 2
+        },
+        {
+          "id": "W4400644189",
+          "title": "Constrained Stein Variational Trajectory Optimization",
+          "year": 2024,
+          "venue": "IEEE Transactions on Robotics",
+          "cited_by": 12,
+          "url": "https://doi.org/10.1109/tro.2024.3428428",
+          "authors": [
+            "Thomas Power",
+            "Dmitry Berenson"
+          ],
+          "author_count": 2
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "Multimodal Diffusion For Robot Manipulation (listed as recent ARM Lab paper)",
+          "source_url": "https://arm.robotics.umich.edu/"
+        },
+        {
+          "title": "Particle-based Conformal Prediction for Contact-Aware Uncertainty Calibration in Stratified Configuration Spaces",
+          "source_url": "https://arm.robotics.umich.edu/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "ARM Lab website lists recent papers with named PhD student co-authors (Thomas Power, Luís Marques, Kristian Popov), confirming active PhD advising.",
+        "source_url": "https://arm.robotics.umich.edu/"
+      },
+      "fit_score": 4,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://berenson.robotics.umich.edu/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5083082888",
+            "detail": "University of Michigan (2016–2026)"
+          }
+        ],
+        "reasons": []
+      }
+    },
+    {
+      "name": "Bernadette Bucher",
+      "openalex_id": "A5071943173",
+      "profile_url": "https://bucherb.github.io/",
+      "areas": [
+        "Embodied AI and mobile manipulation",
+        "Vision-language grounding",
+        "Active perception and navigation",
+        "Robot learning with uncertainty",
+        "Sim-to-real and zero-shot transfer"
+      ],
+      "match_reason": "VLFM (ICRA 2024, 145 citations) demonstrates zero-shot semantic navigation via vision-language frontier maps, which directly supports the sim-to-real and domain generalisation component of interest 3. The zero-shot object-centric instruction-following paper further shows a strong focus on policies that transfer without re-training — relevant to unstructured home environments. Her lab is also co-advising a student with Fazeli, suggesting potential for collaborative projects spanning vision and tactile manipulation.",
+      "papers": [
+        {
+          "id": "W4401417061",
+          "title": "VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation",
+          "year": 2024,
+          "venue": "Proceedings - IEEE International Conference on Robotics and Automation",
+          "cited_by": 145,
+          "url": "https://doi.org/10.1109/icra57147.2024.10610712",
+          "authors": [
+            "Naoki Yokoyama",
+            "Sehoon Ha",
+            "Dhruv Batra",
+            "Jiuguang Wang",
+            "Bernadette Bucher"
+          ],
+          "author_count": 5
+        },
+        {
+          "id": "W4404390404",
+          "title": "Zero-shot Object-Centric Instruction Following: Integrating Foundation Models with Traditional Navigation",
+          "year": 2024,
+          "venue": "IEEE Robotics and Automation Letters",
+          "cited_by": 0,
+          "url": "https://doi.org/10.1109/lra.2024.3468518",
+          "authors": [
+            "Sonia Raychaudhuri",
+            "Duy Ta",
+            "Katrina Ashton",
+            "Chang, Angel X.",
+            "Jiuguang Wang",
+            "Bernadette Bucher"
+          ],
+          "author_count": 6
+        }
+      ],
+      "unverified_mentions": [
+        {
+          "title": "HELIOS: Hierarchical Exploration for Language-grounded Interaction in Open Scenes",
+          "source_url": "https://helios-robot-perception.github.io/"
+        },
+        {
+          "title": "Using Temperature Sampling to Effectively Train Robot Learning Policies on Imbalanced Datasets",
+          "source_url": "https://basavasagarkp.github.io/temp_samp/"
+        }
+      ],
+      "takes_students": {
+        "verdict": "yes",
+        "evidence": "The M&M Lab 'Join Us' page has an active application form stating: 'We will consider student researchers at the University of Michigan, post-doctoral researchers, and visiting scholars.'",
+        "source_url": "https://sites.google.com/umich.edu/mandmlab/join-us"
+      },
+      "fit_score": 3,
+      "identity": {
+        "confidence": "medium",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://bucherb.github.io/"
+          },
+          {
+            "type": "openalex_record",
+            "url": "https://openalex.org/A5071943173",
+            "detail": "latest affiliation Georgia Institute of Technology"
+          }
+        ],
+        "reasons": [
+          "OpenAlex affiliations do not list University of Michigan; latest is Georgia Institute of Technology"
+        ]
+      }
+    },
+    {
+      "name": "Odest Chadwicke Jenkins",
+      "openalex_id": "A5071106238",
+      "profile_url": "https://robotics.umich.edu/people/faculty/chad-jenkins/",
+      "areas": [
+        "Mobile manipulation",
+        "Computer vision for robotics",
+        "Interactive robot systems",
+        "Human-robot interaction"
+      ],
+      "match_reason": "Jenkins works on mobile manipulation and robot learning systems (Robot Learning & Foundational Models focus area), which partially overlaps with household manipulation. The MBot paper (ICRA 2024) showcases scalable, low-cost robot hardware for education — loosely relevant to cheap hardware interest. However, recent works trend toward education platforms and multi-robot coordination rather than imitation learning, tactile sensing, or sim-to-real for kitchen manipulation.",
+      "papers": [
+        {
+          "id": "W4401416838",
+          "title": "MBot: A Modular Ecosystem for Scalable Robotics Education",
+          "year": 2024,
+          "venue": "Proceedings - IEEE International Conference on Robotics and Automation",
+          "cited_by": 7,
+          "url": "https://doi.org/10.1109/icra57147.2024.10610587",
+          "authors": [
+            "Peter Gaskell",
+            "Jana Pavlasek",
+            "Tom Gao",
+            "Abhishek Narula",
+            "Stanley Lewis",
+            "Odest Chadwicke Jenkins"
+          ],
+          "author_count": 6
+        },
+        {
+          "id": "W4392824193",
+          "title": "Stein Variational Belief Propagation for Multi-Robot Coordination",
+          "year": 2024,
+          "venue": "IEEE Robotics and Automation Letters",
+          "cited_by": 5,
+          "url": "https://doi.org/10.1109/lra.2024.3349915",
+          "authors": [
+            "Jana Pavlasek",
+            "Joshua Jing Zhi Mah",
+            "Ruihan Xu",
+            "Odest Chadwicke Jenkins",
+            "Fabio Tozeto Ramos"
+          ],
+          "author_count": 5
+        }
+      ],
+      "unverified_mentions": [],
+      "takes_students": {
+        "verdict": "unknown",
+        "evidence": null,
+        "source_url": null
+      },
+      "fit_score": 2,
+      "identity": {
+        "confidence": "high",
+        "sources": [
+          {
+            "type": "faculty_directory",
+            "url": "https://robotics.umich.edu/people/faculty/chad-jenkins/"
+          },
+          {
+            "type": "openalex_affiliation",
+            "url": "https://openalex.org/A5071106238",
+            "detail": "University of Michigan (2016–2025)"
+          }
+        ],
+        "reasons": []
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Ram Vasudevan",
+      "why": "Research focuses on nonlinear/hybrid dynamical systems, legged locomotion, and autonomous vehicle safety. No recent works on manipulation, imitation learning, tactile sensing, or kitchen/household robotics. Weak fit despite a secondary interest in safety constraints."
+    },
+    {
+      "name": "Patrícia Alves-Oliveira",
+      "why": "Research focuses on social/educational human-robot interaction and child development, not manipulation, tactile sensing, or sim-to-real."
+    },
+    {
+      "name": "Cameron Aubin",
+      "why": "Soft robotics and fabrication focus; no clear overlap with learning-based manipulation policies or tactile sensing for household tasks."
+    },
+    {
+      "name": "Kira Barton",
+      "why": "Focuses on manufacturing automation and precision motion control, not robot learning or household manipulation."
+    }
+  ],
+  "verification": {
+    "openalex_works_seen": 34,
+    "papers_dropped_as_unverified": 0
+  }
+}

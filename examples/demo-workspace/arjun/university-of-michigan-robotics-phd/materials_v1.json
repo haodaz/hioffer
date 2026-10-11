@@ -1,0 +1,56 @@
+{
+  "fit_paragraphs": [
+    {
+      "advisor": "Nima Fazeli",
+      "text": "Prof. Fazeli's MMint Lab sits directly at the intersection of my three research threads. ViTaSCOPE fuses vision and tactile sensing for in-hand pose and extrinsic contact estimation [paper:W4414050430], which mirrors my undergraduate work building a 64-taxel piezoresistive fabric skin for slip detection [lib:cv]. The 'This&That' video-generation planner [paper:W4413917052] complements my IISc diffusion-policy pipeline, where 40 demonstrations on a $1,800 arm reached 78% on cup stacking [lib:cv]. The lab's stated focus on assistive care [advisor:Nima Fazeli] also aligns with my goal of deploying manipulation skills in elderly-care households [lib:interests]."
+    },
+    {
+      "advisor": "Dmitry Berenson",
+      "text": "Prof. Berenson's ARM Lab addresses the generalization problem I care most about. His work on learning generalizable trajectory sampling distributions for model predictive control [paper:W4392207744] maps directly onto my interest in policies that transfer across object instances and lighting conditions [lib:interests]. Constrained Stein Variational Trajectory Optimization [paper:W4400644189] provides a principled path toward the safety constraints I consider essential for household robots [lib:interests]. The lab's active focus on deformable object manipulation [advisor:Dmitry Berenson] connects to my towel-folding results (61% success, versus 29% for a behaviour-cloning baseline) [lib:cv]."
+    },
+    {
+      "advisor": "Ankit Goyal",
+      "text": "Prof. Goyal's work on learning precise manipulation from few demonstrations using multi-view 3D representations [paper:W4402354093] speaks directly to my constraint of 40 demonstrations per task on low-cost hardware [lib:cv]. RVT-2's approach to spatial reasoning [paper:W4402354093] and the 3D-MVP pretraining strategy for cross-instance generalization [paper:W4413144893] would give my diffusion-policy pipeline a stronger perceptual backbone. My sim-to-real reconstruction work—cutting the success drop from 41 to 17 points using 12 phone photos [lib:cv]—could benefit from the 3D spatial pretraining direction Prof. Goyal's group pursues [advisor:Ankit Goyal]."
+    },
+    {
+      "advisor": "Bernadette Bucher",
+      "text": "Prof. Bucher's VLFM work demonstrates zero-shot semantic navigation by grounding vision-language models to frontier maps without task-specific retraining [paper:W4401417061], and the zero-shot object-centric instruction-following paper extends this to unstructured settings [paper:W4404390404]. Both directly address the domain-generalization challenge I encountered when transferring kitchen-counter policies across scenes [lib:cv]. Her lab's emphasis on sim-to-real and zero-shot transfer [advisor:Bernadette Bucher] would complement my real-to-sim reconstruction pipeline and my goal of deploying manipulation in diverse home environments [lib:interests]."
+    }
+  ],
+  "sop": {
+    "text": "The robot I want to build does not live in a lab: it handles a crumpled dish towel on a counter it has never seen, on hardware a family can afford. Three projects have shaped how I think about making that possible.\n\nAt IISc I built a diffusion-policy pipeline for a $1,800 six-degree-of-freedom arm [lib:cv]. With 40 teleoperated demonstrations per task the policy reached 78% success on cup stacking and 61% on towel folding, compared with 44% and 29% for a behaviour-cloning baseline [lib:cv]. The towel result is the one I return to: deformable objects expose the limits of vision-only sensing, which is why my undergraduate project at BITS Pilani constructed a 64-taxel piezoresistive fabric tactile skin that detected slip within 60 ms in 91% of trials [lib:cv]. Combining that kind of low-cost tactile feedback with visuomotor learning is the technical core of what I want to pursue.\n\nThe third thread is sim-to-real transfer. At TCS Research I reconstructed a kitchen counter from twelve phone photos and trained policies in the resulting scene; the success drop relative to the real counter was 17 percentage points rather than 41 points for a generic simulated scene [lib:cv]. That gap still matters, and closing it through domain randomisation and better scene reconstruction is a central goal for my PhD [lib:interests].\n\nAt Michigan I want to work with Prof. Nima Fazeli, whose MMint Lab combines visuo-tactile sensing and diffusion-based behavior cloning for contact-rich tasks [advisor:Nima Fazeli]. ViTaSCOPE's fusion of vision and touch for in-hand pose estimation [paper:W4414050430] is the closest published work to what I am trying to do with fabric tactile skins. I am also drawn to Prof. Dmitry Berenson's ARM Lab: the work on learning generalizable trajectory distributions [paper:W4392207744] addresses exactly the cross-instance generalization problem I hit with towel folding, and the Constrained Stein Variational Trajectory Optimization framework [paper:W4400644189] offers a rigorous path toward the safety constraints that household deployment requires [lib:interests].\n\nLonger term, I want to deploy these systems in assistive-care settings for elderly users in Indian households [lib:interests]—an application domain that demands cheap hardware, robustness to clutter, and safe contact. Michigan's Robotics program, with its depth in manipulation and learning, is the right place to pursue that goal [lib:profile].",
+    "word_limit": 500,
+    "word_count": 369
+  },
+  "emails": [
+    {
+      "advisor": "Nima Fazeli",
+      "subject": "Prospective PhD student (Fall 2027) — visuo-tactile manipulation and diffusion policies",
+      "body": "Dear Prof. Fazeli,\n\nI am Arjun Mehta, an M.Tech student in Robotics at the Indian Institute of Science (Bengaluru), planning to apply to Michigan's PhD program for Fall 2027 [lib:profile].\n\nI read ViTaSCOPE with close attention [paper:W4414050430]: the joint estimation of in-hand pose and extrinsic contact from vision and touch maps directly onto a problem I have been working on. My undergraduate project built a 64-taxel piezoresistive fabric tactile skin that detects slip in 60 ms [lib:cv], and my current M.Tech work trains diffusion policies on a $1,800 arm using 40 demonstrations per task, reaching 78% on cup stacking and 61% on towel folding [lib:cv]. I believe low-cost tactile feedback is the missing piece for deformable-object manipulation, and the MMint Lab's direction seems like the right place to develop that idea further [advisor:Nima Fazeli].\n\nI would be grateful to know whether you are taking PhD students for Fall 2027. I am happy to share my CV or discuss my work at your convenience.\n\nBest regards,\nArjun Mehta",
+      "body_word_count": 166
+    },
+    {
+      "advisor": "Dmitry Berenson",
+      "subject": "Prospective PhD student (Fall 2027) — generalizable manipulation policies",
+      "body": "Dear Prof. Berenson,\n\nI am Arjun Mehta, an M.Tech student in Robotics at IISc Bengaluru, applying to Michigan's PhD program for Fall 2027 [lib:profile].\n\nYour paper on learning generalizable trajectory sampling distributions for model predictive control [paper:W4392207744] is directly relevant to a challenge I have been navigating: my diffusion-policy pipeline achieves 61% success on towel folding with 40 demonstrations, but generalization across unseen object configurations remains the hard part [lib:cv]. I am also interested in the Constrained Stein Variational Trajectory Optimization work [paper:W4400644189] as a framework for safe manipulation in home environments, which is my target application domain [lib:interests].\n\nMy background spans diffusion policies on low-cost hardware, a 64-taxel fabric tactile skin, and real-to-sim scene reconstruction from phone photos [lib:cv]. I would welcome the chance to discuss potential fit and would be glad to send my CV.\n\nCould you let me know whether you are accepting PhD students for Fall 2027?\n\nBest regards,\nArjun Mehta",
+      "body_word_count": 162
+    },
+    {
+      "advisor": "Ankit Goyal",
+      "subject": "Prospective PhD student (Fall 2027) — few-shot manipulation and 3D representations",
+      "body": "Dear Prof. Goyal,\n\nI am Arjun Mehta, an M.Tech Robotics student at IISc Bengaluru, planning to apply to Michigan's PhD program for Fall 2027 [lib:profile].\n\nRVT-2's approach to learning precise manipulation from few demonstrations [paper:W4402354093] resonates strongly with my own constraint: my diffusion-policy experiments use 40 demonstrations per task on a $1,800 arm, and I am actively looking for representation strategies that improve generalization without requiring more data [lib:cv]. The 3D-MVP pretraining work [paper:W4413144893] seems like a promising direction to combine with my real-to-sim reconstruction pipeline, which reduced the sim-to-real success drop from 41 to 17 percentage points using 12 phone photos [lib:cv].\n\nI would be grateful to know whether you plan to take PhD students starting Fall 2027, given your upcoming arrival at Michigan [advisor:Ankit Goyal]. I am happy to share my CV if that would be helpful.\n\nBest regards,\nArjun Mehta",
+      "body_word_count": 155
+    },
+    {
+      "advisor": "Bernadette Bucher",
+      "subject": "Prospective PhD student (Fall 2027) — sim-to-real transfer and zero-shot manipulation",
+      "body": "Dear Prof. Bucher,\n\nI am Arjun Mehta, an M.Tech Robotics student at IISc Bengaluru, applying to Michigan's PhD program for Fall 2027 [lib:profile].\n\nVLFM's zero-shot semantic navigation via vision-language frontier maps [paper:W4401417061] and the zero-shot object-centric instruction-following work [paper:W4404390404] address the cross-domain generalization problem I have been approaching from the manipulation side. At TCS Research I reconstructed kitchen environments from phone photos to reduce sim-to-real gaps, achieving a 17-point rather than 41-point success drop on transfer [lib:cv]. I believe the policy-transfer principles in your navigation work could inform how manipulation policies handle unseen household layouts [lib:interests].\n\nI would like to know whether you are accepting PhD students for Fall 2027. I would be glad to share my CV or discuss potential overlap between my work and the M&M Lab's research agenda [advisor:Bernadette Bucher].\n\nBest regards,\nArjun Mehta",
+      "body_word_count": 149
+    }
+  ],
+  "changes_from_draft": [
+    "Removed the derived margin figures '34 percentage points' and '32 percentage points over a behaviour-cloning baseline' from the SOP; replaced with the raw numbers directly from lib:cv (78% vs 44% cup stacking; 61% vs 29% towel folding) so no arithmetic inference is required.",
+    "All baseline comparison figures now cite lib:cv directly rather than being computed implicitly.",
+    "No other factual claims were changed; advisor citations, paper citations, and program facts remain as before."
+  ]
+}

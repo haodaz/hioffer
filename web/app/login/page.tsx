@@ -50,8 +50,9 @@ export default function Login() {
         <div className="mt-2 flex flex-wrap gap-2">
           <button className="chip" onClick={() => go("PRIYA-DEMO")} disabled={busy}>Priya Raman · NLP · PRIYA-DEMO</button>
           <button className="chip" onClick={() => go("ARJUN-DEMO")} disabled={busy}>Arjun Mehta · robotics · ARJUN-DEMO</button>
+          <button className="chip" onClick={() => go("MEI-DEMO")} disabled={busy}>Mei Lin · HCI · MEI-DEMO</button>
         </div>
-        <p className="mt-2 text-xs text-muted">Both are fictional applicants with real program pages.</p>
+        <p className="mt-2 text-xs text-muted">All three are fictional applicants with real program pages.</p>
       </div>
       <Link href="/new" className="btn-ghost mt-4 justify-center">
         <Icon.plus size={16} /> {t("loginNew")}

@@ -1,0 +1,125 @@
+{
+  "items": [
+    {
+      "id": "lib:README",
+      "file": "README.md",
+      "word_count": 41,
+      "text": "# Stress-test applicant 2 (fictional)\n\nMei Lin is a third fictional applicant (Oct 11): a Chinese undergraduate applying to US Information Science /\nHCI PhD programs. Different field, different file mix, programs never seen by the agent. Every fact is invented.\n",
+      "type": "profile",
+      "title": "Fictional Applicant Profile – Mei Lin",
+      "summary": "This README describes a fictional stress-test applicant named Mei Lin, a Chinese undergraduate applying to US Information Science and HCI PhD programs. The file is a meta-document created to test an application-processing agent with a new field and unseen programs. All facts are explicitly stated to be invented.",
+      "key_facts": [
+        "Applicant name is Mei Lin (fictional).",
+        "Mei Lin is a Chinese undergraduate student.",
+        "She is applying to US Information Science and HCI PhD programs.",
+        "This is identified as stress-test applicant 2 (third fictional applicant).",
+        "The profile was created on October 11.",
+        "All facts about this applicant are explicitly invented.",
+        "The programs she is applying to have never been seen by the agent being tested."
+      ]
+    },
+    {
+      "id": "lib:cv",
+      "file": "cv.md",
+      "word_count": 257,
+      "text": "# Mei Lin — CV\n\n## Education\n- B.Eng., Computer Science, Tsinghua University, 2023–2027 (expected). GPA 3.86/4.0, rank 9/180.\n\n## Research experience\n- **Undergraduate researcher, Pervasive HCI Group, Tsinghua** (Sep 2025 – present), advised by Prof. Li Wei.\n  Ran a 14-participant interview and diary study with blind screen-reader users on how they verify LLM answers;\n  designed \"SourceSpeak\", a screen-reader plug-in that reads provenance cues aloud. In a within-subjects study\n  (n = 12), participants caught 2.3x more incorrect answers with the plug-in. Paper under review at a major\n  HCI conference (first author).\n- **Research intern, Microsoft Research Asia, Beijing** (Jun – Aug 2026), mentor: Dr. Zhang Hua.\n  Conversational-agent study with 20 older adults (65–82) and their adult children; found that error repair\n  initiated by a family member doubled continued use over four weeks. Short paper accepted at a workshop.\n- **Course project, Human-Centered AI (Spring 2026):** a constraint-based design tool that flags\n  inaccessible colour contrast and focus order in Figma prototypes; used by 3 student teams.\n\n## Publications\n- M. Lin, J. Zhou, L. Wei. \"SourceSpeak: Non-Visual Provenance Cues for LLM Answers.\" Under review, 2026 (first author).\n- M. Lin, H. Zhang. \"Family-Mediated Error Repair with Conversational Agents for Older Adults.\" Workshop paper, 2026.\n\n## Skills\n- Mixed-methods research (interviews, diary studies, thematic analysis), prototyping (React, Figma, Swift),\n  statistics in R; screen-reader testing (NVDA, VoiceOver); Mandarin (native), English (fluent).\n\n## Awards\n- Tsinghua Outstanding Undergraduate Research Award, 2026. Second place, Tsinghua Accessibility Hackathon, 2025.\n\n## Service\n- Volunteer, Beijing Blind Technology Center, 2024–present (screen-reader training for new users).\n",
+      "type": "cv",
+      "title": "Mei Lin — Undergraduate CV (HCI / Accessibility)",
+      "summary": "Mei Lin is a Computer Science undergraduate at Tsinghua University (expected 2027) with a GPA of 3.86/4.0 and a rank of 9/180. She has conducted HCI and accessibility research at Tsinghua's Pervasive HCI Group and as an intern at Microsoft Research Asia, focusing on blind users, LLM provenance, and older-adult conversational agents. She has one first-authored paper under review and one accepted workshop paper.",
+      "key_facts": [
+        "B.Eng. in Computer Science at Tsinghua University, 2023–2027 (expected), GPA 3.86/4.0, ranked 9 out of 180.",
+        "Undergraduate researcher in the Pervasive HCI Group at Tsinghua, advised by Prof. Li Wei, since September 2025.",
+        "Ran a 14-participant interview and diary study with blind screen-reader users on verifying LLM answers.",
+        "Designed 'SourceSpeak', a screen-reader plug-in for provenance cues; in a within-subjects study (n=12) participants caught 2.3x more incorrect answers.",
+        "First-authored paper 'SourceSpeak: Non-Visual Provenance Cues for LLM Answers' currently under review at a major HCI conference.",
+        "Research intern at Microsoft Research Asia, Beijing, June–August 2026, mentored by Dr. Zhang Hua.",
+        "Conducted a conversational-agent study with 20 older adults (ages 65–82) and their adult children; family-initiated error repair doubled continued use over four weeks.",
+        "Co-authored short paper 'Family-Mediated Error Repair with Conversational Agents for Older Adults' accepted at a workshop in 2026.",
+        "Built a constraint-based Figma accessibility design tool (flags colour contrast and focus-order issues) used by 3 student teams.",
+        "Skills include mixed-methods research, prototyping in React/Figma/Swift, statistics in R, and screen-reader testing with NVDA and VoiceOver.",
+        "Received the Tsinghua Outstanding Undergraduate Research Award (2026) and second place at the Tsinghua Accessibility Hackathon (2025).",
+        "Volunteer at the Beijing Blind Technology Center since 2024, providing screen-reader training to new users."
+      ]
+    },
+    {
+      "id": "lib:interests",
+      "file": "interests.md",
+      "word_count": 85,
+      "text": "# Research interests\n\nHuman-computer interaction at the intersection of accessibility and large language models:\n\n1. Screen-reader users and LLM interfaces: how blind and low-vision users verify what a model says, and\n   interface designs that expose provenance (where an answer came from) non-visually.\n2. Older adults and conversational agents in Chinese households: trust, repair after errors, and family\n   mediation of technology use.\n3. Mixed-methods evaluation: interview studies and diary studies combined with instrumented prototypes.\n\nSecondary: design tools that let non-programmers specify accessible UI constraints; participatory design.\n",
+      "type": "interests",
+      "title": "Research Interests in HCI, Accessibility, and LLMs",
+      "summary": "The applicant focuses on human-computer interaction at the intersection of accessibility and large language models. Key areas include screen-reader users interacting with LLM interfaces, older adults using conversational agents in Chinese households, and mixed-methods evaluation combining interviews, diary studies, and instrumented prototypes. Secondary interests include design tools for non-programmers and participatory design.",
+      "key_facts": [
+        "Primary research area is human-computer interaction at the intersection of accessibility and large language models.",
+        "Interested in how blind and low-vision screen-reader users verify LLM-generated information.",
+        "Interested in interface designs that expose answer provenance non-visually for blind and low-vision users.",
+        "Studies older adults and conversational agents in Chinese households.",
+        "Research topics around older adults include trust, error repair, and family mediation of technology use.",
+        "Favors mixed-methods evaluation combining interview studies and diary studies with instrumented prototypes.",
+        "Secondary interest in design tools that allow non-programmers to specify accessible UI constraints.",
+        "Secondary interest in participatory design."
+      ]
+    },
+    {
+      "id": "lib:profile",
+      "file": "profile.md",
+      "word_count": 58,
+      "text": "# Profile\n\n- Name: Mei Lin\n- Current: final-year B.Eng. in Computer Science, Tsinghua University, Beijing. Expected graduation: July 2027.\n- GPA: 3.86 / 4.0 (rank 9 / 180)\n- Target: US PhD programs in Information Science / HCI, Fall 2027 intake\n- Tests: TOEFL iBT 108 (R29 L28 S24 W27), April 2026. No GRE.\n- Citizenship: China\n",
+      "type": "profile",
+      "title": "Mei Lin – PhD Applicant Profile",
+      "summary": "Mei Lin is a final-year B.Eng. student in Computer Science at Tsinghua University, Beijing, expecting to graduate in July 2027. She is targeting US PhD programs in Information Science and HCI for Fall 2027 intake. Her academic record includes a GPA of 3.86/4.0 and a TOEFL iBT score of 108.",
+      "key_facts": [
+        "Name: Mei Lin",
+        "Current degree: B.Eng. in Computer Science at Tsinghua University, Beijing",
+        "Expected graduation: July 2027",
+        "GPA: 3.86 / 4.0, ranked 9 out of 180",
+        "Target programs: US PhD in Information Science / HCI, Fall 2027 intake",
+        "TOEFL iBT score: 108 (Reading 29, Listening 28, Speaking 24, Writing 27), taken April 2026",
+        "No GRE score submitted",
+        "Citizenship: China"
+      ]
+    },
+    {
+      "id": "lib:recommenders",
+      "file": "recommenders.md",
+      "word_count": 52,
+      "text": "# Recommenders\n\n1. Prof. Li Wei, Tsinghua University — undergraduate research advisor, co-author of the SourceSpeak submission. Status: agreed.\n2. Dr. Zhang Hua, Microsoft Research Asia — internship mentor, co-author of the workshop paper. Status: agreed.\n3. Prof. Chen Yu, Tsinghua University — taught Human-Centered AI; supervised the course project. Status: asked.\n",
+      "type": "recommenders",
+      "title": "Recommenders List",
+      "summary": "The applicant has identified three recommenders: two from Tsinghua University and one from Microsoft Research Asia. Two have agreed to write letters, while one has been asked but not yet confirmed. The recommenders span undergraduate research, an industry internship, and a course project.",
+      "key_facts": [
+        "Prof. Li Wei is from Tsinghua University and served as the applicant's undergraduate research advisor.",
+        "Prof. Li Wei is a co-author of the SourceSpeak submission.",
+        "Prof. Li Wei has agreed to write a recommendation letter.",
+        "Dr. Zhang Hua is from Microsoft Research Asia and served as the applicant's internship mentor.",
+        "Dr. Zhang Hua is a co-author of a workshop paper.",
+        "Dr. Zhang Hua has agreed to write a recommendation letter.",
+        "Prof. Chen Yu is from Tsinghua University and taught a course called Human-Centered AI.",
+        "Prof. Chen Yu supervised the applicant's course project.",
+        "Prof. Chen Yu has been asked to write a recommendation letter but has not yet confirmed."
+      ]
+    },
+    {
+      "id": "lib:sop_draft",
+      "file": "sop_draft.md",
+      "word_count": 169,
+      "text": "# Statement of purpose — rough draft\n\nI study how people who cannot see a screen can still tell when an AI is wrong. In my diary study with 14\nblind screen-reader users, the most common strategy for checking an LLM answer was asking a sighted friend,\nwhich is exactly the dependence these tools were supposed to remove. SourceSpeak, the plug-in I built in\nresponse, reads provenance cues aloud; in a within-subjects study participants caught 2.3 times more incorrect\nanswers. That result is the core of my first-author submission.\n\nAt Microsoft Research Asia I looked at a different population with a related problem: older adults using\nconversational agents. When a family member initiated the repair after an agent error, continued use over four\nweeks doubled. Trust is repaired socially, not just technically.\n\nIn a PhD I want to design and evaluate interfaces that make AI provenance and errors legible to people who are\nusually left out of the design process, using mixed methods and working prototypes.\n\n[TODO: specific faculty]\n",
+      "type": "sop",
+      "title": "Statement of Purpose – AI Accessibility & Provenance (Rough Draft)",
+      "summary": "The applicant studies how users with disabilities or other marginalized demographics detect and recover from AI errors. They have conducted a diary study with blind screen-reader users, built a prototype plugin called SourceSpeak, and completed research at Microsoft Research Asia on older adults using conversational agents. Their PhD goal is to design and evaluate interfaces that make AI provenance and errors legible to underserved populations.",
+      "key_facts": [
+        "Conducted a diary study with 14 blind screen-reader users examining strategies for verifying LLM answers.",
+        "Found the most common verification strategy among blind users was asking a sighted friend, highlighting continued dependence.",
+        "Built a browser plugin called SourceSpeak that reads provenance cues aloud to screen-reader users.",
+        "Within-subjects study showed SourceSpeak users caught 2.3 times more incorrect AI answers.",
+        "SourceSpeak results are the basis of a first-author paper submission.",
+        "Completed research at Microsoft Research Asia studying older adults using conversational agents.",
+        "Found that when a family member initiated error repair, older adults' continued use of conversational agents doubled over four weeks.",
+        "Concludes that trust in AI agents is repaired socially, not just technically.",
+        "Intends to use mixed methods and working prototypes in PhD research.",
+        "PhD research focus: designing interfaces that make AI provenance and errors legible to users left out of design processes.",
+        "Statement of purpose is a rough draft with a noted TODO for specific faculty."
+      ]
+    }
+  ]
+}
