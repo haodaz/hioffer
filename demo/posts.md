@@ -12,7 +12,7 @@ A PhD-application agent that shows its sources: requirements quoted from officia
 Also in the video: the bug neatlogs caught that I'd missed, 28 Entire checkpoints in one day, and the cfo.ai finding that raising money would run out of cash before the sales peak.
 
 Live: hioffer-one.vercel.app · Repo: github.com/haodaz/hioffer
-[YouTube link]
+https://youtu.be/ANmeUiV3tBw
 
 ## 2 · Sun morning — the honest negative result
 
@@ -48,7 +48,7 @@ Stress test: a second fictional applicant, different field, from zero to a compl
 
 [What broke: …] [What the trace showed: …] [What I changed: …]
 
-Updated demo (v2): [YouTube link]
+Updated demo (v2): https://youtu.be/ANmeUiV3tBw
 Every failure is in hackathon.md with the trace that found it. #neatHack
 
 ## 6 · Mon, submission window — the quote post (must be a quote of the official neatlogs post)
@@ -58,7 +58,7 @@ Submitting HiOffer to #neatHack.
 Team: @vibedding (solo)
 Project: HiOffer, a PhD-application agent that shows its sources
 Repo: github.com/haodaz/hioffer
-Demo: [YouTube link] · Live: hioffer-one.vercel.app
+Demo: https://youtu.be/ANmeUiV3tBw · Live: hioffer-one.vercel.app
 Business plan (cfo.ai): cfo.ai/s/A_qiW6hIGmm-3fDR
 
 Traced with neatlogs, checkpointed with Entire, priced with cfo.ai. Build log with every failure and fix in the repo.

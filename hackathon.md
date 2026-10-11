@@ -208,7 +208,7 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 
 - Live: https://hioffer-one.vercel.app/app (try "Who are the best-fit advisors at UW?", "Where else should I
   apply?", "Show my UW drafts"). Deep links: `/app?q=<question>`.
-- Video v1 (Oct 10): https://x.com/vibedding/status/2108959614410670096 (pipeline in `demo/`; v2 planned Oct 11)
+- Video (v2.1, 2:57, Oct 11): https://youtu.be/ANmeUiV3tBw · v1 (Oct 10) on X: https://x.com/vibedding/status/2108959614410670096 · pipeline in `demo/`
 - Reproduce: README → Setup / Run. Demo applicant is fictional (`examples/applicants/priya/README.md`).
 
 ## Known limitations and next steps
@@ -227,6 +227,6 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 - [x] neatlogs traces (before/after a fix, failure recovery) — `evidence/neatlogs/`, build log table
 - [x] Entire checkpoints — `evidence/entire/`, refs pushed to the repo
 - [x] cfo.ai business plan — https://cfo.ai/s/A_qiW6hIGmm-3fDR
-- [ ] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai
+- [x] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai — https://youtu.be/ANmeUiV3tBw (2:57)
 - [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190 · day-1 wrap: https://x.com/vibedding/status/2108953313676771343 · demo v1 video: https://x.com/vibedding/status/2108959614410670096 · day 2 (negative result + $0.83 run): https://x.com/vibedding/status/2109013776892584442 · map mode: https://x.com/vibedding/status/2109038819521499495 · reply to the first question (verifier re-check): https://x.com/vibedding/status/2109106365985694173 · day 2, mock interview: https://x.com/vibedding/status/2109240488888774846
 - [ ] Quote post of the official neatlogs post during the submission window (Oct 12, 7:00–11:55 PM IST)

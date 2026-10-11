@@ -2,7 +2,7 @@
 
 A PhD-application agent, built in public for neatHack (Oct 10-12, 2026).
 
-**Live demo:** https://hioffer-one.vercel.app (frontend) · API: https://hioffer-production.up.railway.app · Demo applicant is fictional.
+**Demo video (2:57):** https://youtu.be/ANmeUiV3tBw · **Live demo:** https://hioffer-one.vercel.app (demo codes `PRIYA-DEMO` / `ARJUN-DEMO`) · API: https://hioffer-production.up.railway.app · Both demo applicants are fictional.
 
 Give it one goal, e.g. *"prepare my applications to these 3 CS PhD programs"*, and it:
 
