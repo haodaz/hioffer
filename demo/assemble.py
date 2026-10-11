@@ -18,11 +18,11 @@ F = imageio_ffmpeg.get_ffmpeg_exe()
 D = Path(__file__).parent
 OUT = D / "out"
 beats = {b["name"]: b["t"] for b in json.loads((OUT / "beats.json").read_text())}
-TEMPO = 1.05  # narration played slightly faster than recorded; inaudible, keeps the cut under 3:00
+TEMPO = 1.07  # narration played slightly faster than recorded; inaudible, keeps the cut under 3:00
 dur = {d["id"]: d["dur"] / TEMPO for d in json.loads((D / "tts" / "durations.json").read_text())}
 narr = {n["id"]: n["text"] for n in json.loads((D / "narration.json").read_text())}
 EV = D.parent / "evidence"
-PAD = 0.35  # silence after each narration before the next visual
+PAD = 0.2  # silence after each narration before the next visual
 
 # Each segment: narration id, source, and how to produce the visual for exactly `length` seconds.
 # kind "clip": take the app recording from `start`, played at `speed` (>=1 compresses waiting time).

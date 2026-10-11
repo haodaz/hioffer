@@ -1,7 +1,7 @@
 [
  {
   "id": "01",
-  "text": "PhD applicants mostly apply on their own. The hard parts are finding advisors who actually fit, and ten programs with slightly different rules. HiOffer is an agent that does that work and shows its sources."
+  "text": "PhD applicants mostly apply on their own. The hard parts are finding advisors who actually fit, and ten programs with slightly different rules. HiOffer is a careful agent that takes you from school list to offer, and shows its sources."
  },
  {
   "id": "02",
@@ -45,6 +45,6 @@
  },
  {
   "id": "12",
-  "text": "Everything is public: the repo, the build log with every failure, the traces, the plan. HiOffer, built in public for neatHack."
+  "text": "Nothing invented, nothing missed, nothing sent without you. Everything is public: the repo, the build log, the traces, the plan. HiOffer, built in public for neatHack."
  }
 ]
