@@ -175,6 +175,15 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
   name in their profile; the sidebar shows who is signed in and lets you switch. User-created applicants live
   in `data/` (git-ignored); the demo snapshot stays in `examples/`.
 
+### 2026-10-11 — the promise, restated (late morning)
+
+- New first screen: "From school list to offer. Carefully, with your AI." with three promises (nothing
+  invented, nothing missed, nothing sent without you) and a four-scene carousel of one applicant's journey:
+  choosing schools, writing with sources, rehearsing the interview, a funded offer. The scenes were generated
+  with Tongyi Wanxiang in the cover's style, same student and same robot in every frame; an earlier attempt
+  with different students and lettered envelopes was dropped (garbled text, inconsistent characters). The
+  YouTube cover uses the offer scene.
+
 ### 2026-10-10 — business plan and cost
 
 - **cfo.ai** (public model: https://cfo.ai/s/A_qiW6hIGmm-3fDR; inputs `business/cfo-ai-inputs.md`, results
