@@ -253,7 +253,7 @@ export function MaterialsCard({ card, t }: { card: Card; t: T }) {
   const sop = card.sop as { text: string; word_count: number; word_limit: number | null };
   const fits = (card.fit_paragraphs as { advisor: string; text: string }[]) ?? [];
   const emails = (card.emails as { advisor: string; subject: string; body: string }[]) ?? [];
-  const v = (card.verification as { passed?: boolean; writer_issues?: unknown[] }) ?? {};
+  const v = (card.verification as { passed?: boolean; writer_issues?: unknown[]; openalex_rechecked?: { papers: number; of: number; at: string } }) ?? {};
   const [tab, setTab] = useState<"sop" | "fit" | "emails">("sop");
   const [showTags, setShowTags] = useState(false);
   const render = (s: string) => (showTags ? s : stripTags(s));
@@ -263,8 +263,13 @@ export function MaterialsCard({ card, t }: { card: Card; t: T }) {
         <div className="text-sm font-semibold">
           {card.program as string} · v{String(card.version)}
         </div>
-        <div className={`text-xs font-medium ${v.passed ? "text-ok" : "text-warn"}`}>
-          {v.passed ? t("verified") : `${t("needsReview")} · ${(v.writer_issues ?? []).length} ${t("issues")}`}
+        <div className="text-right text-xs">
+          <div className={`font-medium ${v.passed ? "text-ok" : "text-warn"}`}>
+            {v.passed ? t("verified") : `${t("needsReview")} · ${(v.writer_issues ?? []).length} ${t("issues")}`}
+          </div>
+          {v.openalex_rechecked && (
+            <div className="text-muted">{v.openalex_rechecked.papers}/{v.openalex_rechecked.of} {t("rechecked")} · {v.openalex_rechecked.at.slice(0, 16).replace("T", " ")} UTC</div>
+          )}
         </div>
       </div>
       <div className="mt-2 flex flex-wrap gap-2">

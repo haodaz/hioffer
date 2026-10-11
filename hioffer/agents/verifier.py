@@ -1,6 +1,7 @@
 """Verifier: deterministic checks first, then an LLM audit of claims against sources."""
 import json
 import re
+from datetime import datetime, timezone
 
 import neatlogs
 
@@ -50,8 +51,11 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
     # 1b. Re-check every cited paper id against OpenAlex itself (cached), independently of what the scout
     #     captured during its run. A stale cache or a bad merge cannot slip through this way.
     titles = {p["id"]: p.get("title", "") for a in advisors["advisors"] for p in a.get("papers", [])}
+    rechecked = 0
     for pid in sorted(paper_ids):
-        if not _openalex_matches(pid, titles.get(pid, "")):
+        if _openalex_matches(pid, titles.get(pid, "")):
+            rechecked += 1
+        else:
             issues.append({"check": "openalex", "problem": f"paper {pid} does not match an OpenAlex record with that title", "fixable_by": "applicant"})
 
     # 2. Citation tags must resolve. A paper id that is one or two characters off from exactly one
@@ -133,4 +137,5 @@ def verify(library: dict, program: dict, advisors: dict, materials: dict) -> dic
     writer_issues = [i for i in issues if i["fixable_by"] == "writer"]
     return {"passed": not writer_issues, "issues": issues, "writer_issues": writer_issues,
             "applicant_todos": [i for i in issues if i["fixable_by"] == "applicant"],
-            "repaired_citations": repaired}
+            "repaired_citations": repaired,
+            "openalex_rechecked": {"papers": rechecked, "of": len(paper_ids), "at": datetime.now(timezone.utc).isoformat(timespec="minutes")}}
