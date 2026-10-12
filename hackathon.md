@@ -240,4 +240,4 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 - [x] cfo.ai business plan — https://cfo.ai/s/A_qiW6hIGmm-3fDR
 - [x] Demo video (≤3 min) covering neatlogs, Entire, cfo.ai — https://youtu.be/ANmeUiV3tBw (2:57)
 - [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190 · day-1 wrap: https://x.com/vibedding/status/2108953313676771343 · demo v1 video: https://x.com/vibedding/status/2108959614410670096 · day 2 (negative result + $0.83 run): https://x.com/vibedding/status/2109013776892584442 · map mode: https://x.com/vibedding/status/2109038819521499495 · reply to the first question (verifier re-check): https://x.com/vibedding/status/2109106365985694173 · day 2, mock interview: https://x.com/vibedding/status/2109240488888774846 · stress test 2 (Cornell IS, $0.94): https://x.com/vibedding/status/2109261217483083874
-- [ ] Quote post of the official neatlogs post during the submission window (Oct 12, 7:00–11:55 PM IST)
+- [x] Quote post of the official neatlogs launch post (Oct 12, ~7:27 PM IST) — https://x.com/vibedding/status/2109644833623089605
