@@ -55,6 +55,10 @@ Every failure is in hackathon.md with the trace that found it. #neatHack
 
 ## 6 · Mon, submission window — the quote post (must be a quote of the official neatlogs post)
 
+Rules (neatlogs announcement x.com/neatlogs/status/2109582053562032266): quote the official @neatlogs
+*launch* post that goes live at 7:00 PM IST (9:30 AM ET), not the announcement; include the demo video and tag
+@neatlogs, @EntireHQ and @arithecfo; then fill the submission form (link shared later). Both steps required.
+
 Submitting HiOffer to #neatHack.
 
 Team: @vibedding (solo)
@@ -63,4 +67,4 @@ Repo: github.com/haodaz/hioffer
 Demo: https://youtu.be/ANmeUiV3tBw · Live: hioffer-one.vercel.app
 Business plan (cfo.ai): cfo.ai/s/A_qiW6hIGmm-3fDR
 
-Traced with neatlogs, checkpointed with Entire, priced with cfo.ai. Build log with every failure and fix in the repo.
+Traced with @neatlogs, checkpointed with @EntireHQ, priced with @arithecfo. Build log with every failure and fix in the repo. #neatHack
