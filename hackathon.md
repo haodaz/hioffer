@@ -242,3 +242,23 @@ null case (authors without an id). `evidence/neatlogs/03-detections-rules.jpg`, 
 - [x] Public posts on X with #neatHack — day 1: https://x.com/vibedding/status/2108912402540458190 · day-1 wrap: https://x.com/vibedding/status/2108953313676771343 · demo v1 video: https://x.com/vibedding/status/2108959614410670096 · day 2 (negative result + $0.83 run): https://x.com/vibedding/status/2109013776892584442 · map mode: https://x.com/vibedding/status/2109038819521499495 · reply to the first question (verifier re-check): https://x.com/vibedding/status/2109106365985694173 · day 2, mock interview: https://x.com/vibedding/status/2109240488888774846 · stress test 2 (Cornell IS, $0.94): https://x.com/vibedding/status/2109261217483083874
 - [x] Quote post of the official neatlogs launch post (Oct 12, ~7:27 PM IST) — https://x.com/vibedding/status/2109644833623089605
 - [x] Submission form at https://neatlogs.com/submission — received, id d14dec0d-0aad-40f9-a078-eef1f2789ec6 (Oct 12)
+
+## Result
+
+Announced by the organizers on Discord after judging: **11th overall, 86.5 points** (winner: 90.5). Top 20
+qualify for three months of neatlogs Pro. Solo entry, and my first hackathon.
+
+| Criterion | HiOffer | Winner |
+|---|---|---|
+| Idea | 8 | 8 |
+| Execution | 20 | 22 |
+| README | 5 | 5.5 |
+| neatlogs | 12 | 14.5 |
+| Entire | 4.5 | 4.5 |
+| cfo.ai | 4 | 4 |
+| **Total** | **86.5** | **90.5** |
+
+What the scores say: idea, Entire and the business plan were already at the top of the table. The four-point
+gap is execution (−2) and depth of neatlogs use (−2.5; 65th on that column alone). Next time: show more of the
+work through the sponsor's own tool, with more traced before/after fixes and evals, rather than describing them
+in the log.
