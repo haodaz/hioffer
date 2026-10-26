@@ -1,0 +1,148 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M5WWM83JRYPXD78EMCTXEYCY",
+  "session_id": "e2661771-c3b5-4f41-acd4-5e5f7a1bed0e",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-26T19:57:34.272555Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-opus-5-5",
+  "turn_id": "8edc0eae87c3",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 12094,
+    "cache_creation_tokens": 4037602,
+    "cache_read_tokens": 267564161,
+    "output_tokens": 519667,
+    "api_call_count": 535,
+    "subagent_tokens": {
+      "input_tokens": 72,
+      "cache_creation_tokens": 234324,
+      "cache_read_tokens": 1349212,
+      "output_tokens": 502,
+      "api_call_count": 36
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01EshC6Qne6fmeKZHxUgzd2A",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:built-in-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "8edc0eae87c3",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 957,
+        "end": 958,
+        "entry_ids": [
+          "b33a06b5-ddd8-4577-8a13-cd6cde706bef"
+        ],
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01EshC6Qne6fmeKZHxUgzd2A"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:built-in-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01JYYANzCuCWopVWrWEFfUr4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "8edc0eae87c3",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2159,
+        "end": 2160,
+        "entry_ids": [
+          "4b71a9d0-5499-460c-b123-6c70644d1517"
+        ],
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01JYYANzCuCWopVWrWEFfUr4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    },
+    {
+      "id": "claude-skill-toolu_01LhjXtAXkpJsDzxgQipaNd4",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "demo-video"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "8edc0eae87c3",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 2839,
+        "end": 2840,
+        "entry_ids": [
+          "ff633840-064f-412b-8e93-83d508d4bace"
+        ],
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01LhjXtAXkpJsDzxgQipaNd4"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: demo-video",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 2,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_removed_per_file": {
+        ".next/trace": 1,
+        ".next/trace-build": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 2
+    }
+  ]
+}
