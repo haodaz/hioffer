@@ -23,6 +23,16 @@
         "8000"
       ],
       "port": 8000
+    },
+    {
+      "name": "web-demo",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "npm run build && npx next start -p 3100"
+      ],
+      "cwd": "web",
+      "port": 3100
     }
   ]
 }
